@@ -1,0 +1,118 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot');
+	src:url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon.ttf') format('truetype'),
+		url('../fonts/icomoon.woff') format('woff'),
+		url('../fonts/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class*="icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-inicio:before {
+	content: "\e600";
+}
+.icon-edit:before {
+	content: "\e601";
+}
+.icon-image:before {
+	content: "\e602";
+}
+.icon-odontogramas:before {
+	content: "\e603";
+}
+.icon-bitacoras:before {
+	content: "\e604";
+}
+.icon-coin:before {
+	content: "\e605";
+}
+.icon-phone:before {
+	content: "\e606";
+}
+.icon-mail:before {
+	content: "\e607";
+}
+.icon-citas:before {
+	content: "\e608";
+}
+.icon-print:before {
+	content: "\e609";
+}
+.icon-disk:before {
+	content: "\e60a";
+}
+.icon-address-book:before {
+	content: "\e60b";
+}
+.icon-user:before {
+	content: "\e60c";
+}
+.icon-key:before {
+	content: "\e60d";
+}
+.icon-configuracion:before {
+	content: "\e60e";
+}
+.icon-view:before {
+	content: "\e60f";
+}
+.icon-close:before {
+	content: "\e610";
+}
+.icon-info:before {
+	content: "\e611";
+}
+.icon-blocked:before {
+	content: "\e612";
+}
+.icon-correct:before {
+	content: "\e613";
+}
+.icon-enter:before {
+	content: "\e614";
+}
+.icon-filter:before {
+	content: "\e615";
+}
+.icon-gplus:before {
+	content: "\e616";
+}
+.icon-facebook:before {
+	content: "\e617";
+}
+.icon-twitter:before {
+	content: "\e618";
+}
+.icon-facturacion:before {
+	content: "\e619";
+}
+.icon-usuarios:before {
+	content: "\e61a";
+}
+.icon-reportes:before {
+	content: "\e61b";
+}
+.icon-remove:before {
+	content: "\e61c";
+}
+.icon-arrow-down:before {
+	content: "\e61d";
+}
+.icon-arrow-up:before {
+	content: "\e61e";
+}
