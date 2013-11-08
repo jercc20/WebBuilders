@@ -164,7 +164,7 @@ h6 {
 
 /* Forms */
 form input,
-.form-section textarea {
+form textarea {
 	border: 1px solid #999;
     border-radius: 3px;
     box-sizing: border-box;
@@ -181,7 +181,8 @@ form input[type="submit"]:hover,
 form input[type="button"]:hover {
 	background: linear-gradient(#fff, #eaeaea);
 }
-form input:focus {
+form input:focus,
+form textarea:focus {
 	outline: none;
 	border: 1px solid #3f9dcc;
 	box-shadow: 0 0 2px 1px #3f9dcc;
