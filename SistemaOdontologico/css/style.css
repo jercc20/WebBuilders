@@ -1,0 +1,223 @@
+/*
+@author WebBuilders
+*/
+
+/* Global */
+body {
+	font-size: 13px;
+	font-family: Arial, Helvetica, sans-serif;
+	background: url('../imgs/bg-body.jpg'); /* PENDING TO CHANGE IT */
+}
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:focus {
+	outline: none !important;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Rokkitt', serif;
+}
+
+/* Global - Clases */
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.ac {
+	text-align: center;
+}
+.ar {
+	text-align: right;
+}
+.hide {
+	display: none;
+}
+.cb {
+	clear: both;
+}
+.cl {
+	clear: left;
+}
+.clearfix:after {
+	display: block;
+	visibility: hidden;
+	content: '.';
+	height: 0;
+	clear: both;
+}
+
+/* Wrapper */
+#wrapper {
+	position: relative;
+	width: 960px;
+	margin: 0 auto;
+	background: #fff;
+	box-shadow: 0 0 3px #000;
+}
+
+/* Header */
+#nav-top {
+	background: #aaa;
+}
+#nav-top ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#main-menu > li {
+	position: relative;
+	float: left;
+  	border-right: 1px solid #3f9dcc;
+}
+#main-menu ul {
+	position: absolute;
+	left: -1px;
+	top: 50px;
+	min-width: 102%;
+	background: rgba(170, 170, 170, 0.5);
+	opacity: 0;
+	transform-origin: 50% 0;
+	transform: scale(1,0);
+	transition: opacity .4s, transform .6s;
+}
+#main-menu a {
+	display: block;
+	height: 50px;
+	line-height: 50px;
+	padding: 0 15px;
+	color: #000;
+	transition: all .8s;
+}
+#main-menu ul a {
+	height: auto;
+	line-height: 1.5em;
+	padding: 10px 15px;
+}
+#main-menu > li:hover ul {
+	opacity: 1;
+	transform: none;
+}
+#main-menu li a:hover {
+	color: #3f9dcc;
+	background-color: #333;
+	text-decoration: none;
+}
+#main-menu li.active > a {
+	color: #3f9dcc;
+	background-color: #fff;
+}
+#menu-icon {
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 25px;
+	text-align: center;
+	color: #3f9dcc;
+	background: #fff;
+}
+#main-menu #account,
+#main-menu #username {
+	float: right;
+}
+#main-menu #account {
+	width: 80px;
+	height: 50px;
+	text-align: center;
+	border-right: none;
+	background-color: #333;
+}
+#account i {
+	font-size: 20px;
+	line-height: 50px;
+	color: #3f9dcc;
+}
+#account ul {
+	left: auto;
+	right: 0;
+	min-width: 150%;
+}
+#username {
+	padding: 0 15px;
+	line-height: 50px;
+}
+
+/* Container */
+#container {
+	min-height: 580px;
+	padding: 30px;
+}
+
+/* Login */
+#logo {
+	position: absolute;
+	top: 30px;
+	left: 30px;
+	max-width: 300px;
+	max-height: 150px;
+}
+#contact-box {
+	position: absolute;
+	top: 0;
+	right: 30px;
+	padding: 10px 15px 5px;
+	background: #d2d2d2;
+	border-radius: 0 0 15px 15px;
+}
+#contact-box p {
+	margin: 0 0 7px;
+}
+#contact-box i {
+	margin-right: 7px;
+	text-shadow: 1px 1px 1px #fff;
+}
+#login-wrap {
+	position: relative;
+	width: 320px;
+	padding: 30px;
+	margin: 200px auto 0;
+	background: #aaa;
+	border-radius: 10px;
+}
+#login-wrap h1 {
+	margin: 0 0 15px;
+	text-shadow: 1px 1px 1px #fff;
+}
+#login-form input {
+	width: 100%;
+	margin-bottom: 10px;
+	padding: 0.7em;
+	border: 1px solid #999;
+    border-radius: 3px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+#login-form input:focus {
+	outline: none;
+	border: 1px solid #3f9dcc;
+	box-shadow: 0 0 2px 1px #3f9dcc;
+}
+#login-form input[type="submit"] {
+	float: right;
+	width: auto;
+	padding: 0.7em 1.5em;
+	border-bottom-color: #919191;
+	background: linear-gradient(#fff, #ddd);
+}
+#login-form input[type="submit"]:hover {
+	background: linear-gradient(#fff, #eaeaea);
+}
+
+/* Footer */
+#footer {
+	position: relative;
+	margin-top: 12px;
+	padding: 5px 0;
+	background: #aaa;
+	text-align: center;
+	box-shadow: 0 0 3px #000;
+}
