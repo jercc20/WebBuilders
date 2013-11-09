@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<title>Consultar Calendario</title>
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Rokkitt" />
+	<link rel="stylesheet" href="css/icons.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/fullcalendar-print.css" rel='stylesheet' />
+	<link href="css/fullcalendar.css" rel='stylesheet' media='print' />
+</head>
+<body>
+	<div id="wrapper">
+		<div id="container">
+			<div id='calendar'></div>
+		</div>
+	</div>
+	<footer id="footer">
+		<p>&copy; Derechos reservados 2013</p>
+	</footer>
+	<script src="js/vendor/jquery-2.0.3.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/global.js"></script>
+	<script src="js/utils.js"></script>
+	<!-- Prototype files -->
+	<script src="js/prototype.js"></script>
+	<script src="js/vendor/md5.js"></script>
+	<!--FullCalendar files-->
+	<script src="js/vendor/fullcalendar.min.js"></script>
+	<script>
+		$(document).ready(function() {
+		
+			var date = new Date();
+			var d = date.getDate();
+			var m = date.getMonth();
+			var y = date.getFullYear();
+			
+			var calendar = $('#calendar').fullCalendar({
+				header: {
+					left: 'prev,next today',
+					center: 'title',
+					right: 'month,agendaWeek,agendaDay'
+				},
+				selectable: true,
+				selectHelper: true,
+				select: function(start, end, allDay) {
+					var title = prompt('Event Title:');
+					if (title) {
+						calendar.fullCalendar('renderEvent',
+							{
+								title: title,
+								start: start,
+								end: end,
+								allDay: allDay
+							},
+							true // make the event "stick"
+						);
+					}
+					calendar.fullCalendar('unselect');
+				},
+				editable: false,
+				dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie','Jue', 'Vie', 'Sab'],
+ 				dayNames: ['Domingo', 'Lunes', 'Martes', 'Miercoles','Jueves', 'Viernes', 'Sabado'],
+ 				monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'], 
+				monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+			});
+			
+		});
+
+		</script>
+</body>
+</html>
