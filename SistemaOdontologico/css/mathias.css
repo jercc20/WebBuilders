@@ -51,16 +51,6 @@ body{
 td{
 	width: 900px;
 }
-#divFooter{
-	width:960px;
-	text-align: center;
-	border-top:black 2px solid;
-	margin: 0px 0px 0px 0px;
-	height: 20px;
-}
-#divFooter h5{
-	margin: 5px 0px;
-}
 #divbotones{
 	padding: 10px 0px 10px 350px;
 }
