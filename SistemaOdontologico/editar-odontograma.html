@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Editar Odontograma</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+		<link rel="stylesheet" type="text/css" href="css/diego.css">
+	</head>
+	<body>
+		<h1>Editar odontograma</h1>
+		<form>
+			<div id="fl">
+				<table>
+					<tr>
+						<td><label for="odontologo-name">Nombre Odontólogo</label></td>
+						<td><input type="text" id="odontologo-name"/></td>
+					</tr>
+					<tr>
+						<td><label for="id-odontologo">Identificación Odontólogo</label></td>
+						<td><input type="text" id="id-odontologo"/></td>
+					</tr>
+					<tr>
+						<td><label for="date">Fecha</label></td>
+						<td><input type="text" id="date"/></td>
+					</tr>
+					<tr>
+						<td><label for="paciente-nombre">Nombre del paciente</label></td>
+						<td><input type="text" id="paciente-name"/></td>
+					</tr>
+					<tr>
+						<td><label for="id-paciente">Identificación paciente</label></td>
+						<td><input type="text" id="id-paciente"/></td>
+					</tr>
+				</table>
+			</div>
+			<div id="fr">
+				<a href="#">+Agregar procedimiento</a>
+				<p>Vencimiento</p>
+				<p>Zona</p>
+				<p>Costo</p>
+				<p>Maxilectomía</p>
+			</div>
+			<div id="clear"></div>
+			<span id="options">
+				<input type="button" id="save-odontograma" value="Guardar"/>
+				<button id="cancel-save">Cancelar</button>
+			</span>
+		</form>
+	</body>
+</html>

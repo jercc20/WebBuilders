@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Crear odontograma</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+		<link rel="stylesheet" type="text/css" href="css/diego.css">
+	</head>
+	<body>
+		<h1>Crear Odontograma</h1>
+		<form>
+			<div id="odontograma">
+				<div id="side-left">
+					<table>
+						<tr>
+							<td><label for="txtName-odontologo">Nombre Odontólogo</label></td>
+							<td><input type="text" id="txtName-odontologo" class="input-short"/></td>
+						</tr>
+						<tr>
+							<td><label for="txtId-odontologo">Identificación odontólogo</label></td>
+							<td><input type="text" id="txtId-odontologo" class="input-short"/></td>
+						</tr>
+						<tr>
+							<td><label for="txtDate-odontograma">Fecha</label></td>
+							<td><input type="text" id="txtDate-odontograma" class="input-short"/></td>
+						</tr>
+						<tr>
+							<td><label for="txtName-paciente">Nombre del paciente</label></td>
+							<td><input type="text" id="txtName-paciente" class="input-short"/></td>
+						</tr>
+						<tr>
+							<td><label for="txtId-paciente">Identificación del paciente</label></td>
+							<td><input type="text" id="txtId-paciente" class="input-short"></td>
+						</tr>
+					</table>
+				</div>
+				<div id="side-right">
+					<a href="#" id="add-procedimiento">+Agregar procedimiento</a>
+					<table>
+						<tr>
+							<th colspan="2">Vencimiento</th>
+							<th>Zona</th>
+							<th>Costo</th>
+						</tr>
+						<tr>
+							<td>Maxilectomía</td>
+							<td><input type="text" id="date-vence-process1" class="input-short"/></td>
+							<td><input type="text" id="zona-process1" class="input-short"/></td>
+							<td><input type="text" id="costo-process1" class="input-short"/></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Resinas I</td>
+							<td><input type="text" id="date-vence-process2" class="input-short"/></td>
+							<td><input type="text" id="zona-process2" class="input-short"/></td>
+							<td><input type="text" id="costo-process2" class="input-short"/></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Aleación base</td>
+							<td><input type="text" id="date-vence-process3" class="input-short"/></td>
+							<td><input type="text" id="zona-process3" class="input-short"/></td>
+							<td><input type="text" id="costo-process3" class="input-short"/></td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+				<div id="clear"></div>
+				<div id="options">
+					<input type="button" value="Guardar"/>
+					<button id="clean-odontograma">Limpiar</button>
+					<button id="cancel-odontograma">Cancelar</button>
+				</div>
+			</div>
+		</form>
+	</body>
+</html>
