@@ -172,13 +172,15 @@ form textarea {
     -moz-box-sizing: border-box;
 }
 form input[type="submit"],
-form input[type="button"] {
+form input[type="button"],
+form input[type="reset"] {
 	width: auto;
 	padding: 0.7em 1.5em;
 	border-bottom-color: #919191;
 	background: linear-gradient(#fff, #ddd);
 }
 form input[type="submit"]:hover,
+form input[type="button"]:hover,
 form input[type="button"]:hover {
 	background: linear-gradient(#fff, #eaeaea);
 }
@@ -283,7 +285,7 @@ form section.ac {
 
 #popup-wrap {
 	display: none;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -302,6 +304,7 @@ form section.ac {
 	background: #fff;
 	box-shadow: 0 0 2px #000;
 	transition: all .8s;
+	background-size: cover;
 }
 
 #popup.hide {

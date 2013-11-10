@@ -1,328 +1,33 @@
-#divMenu{
-	margin: 0px 0px 0px 40px;
-	text-align: center;
-}
-.listaMenu{
-	display: inline;
-	list-style: none;
-	padding: 10px 10px 10px 30px;
-	margin:0px 0px 0px -10px;
-	background-color: #aaa;
-	border: black 1px solid;
-}
-#tipoUsuario{
-	margin: 10px 0px 0px -3px;
-	padding:10px 20px 10px 70px;
-	display: inline;
-	background-color: #aaa;
-	border: black 1px solid;
-}
-#tituloUsuario h2{
+#titulo-usuario h2{
 	text-align: center;
 	width:960px;
 	margin: 20px 0px 20px 0px;
 }
-#busquedaavanzada{
+#busqueda-avanzada{
 	width: 300px;
 	padding: 0px 0px 0px 0px;
 	margin: 0px 800px 0px 5px;
 }
-#agregarusuario{
+#agregar-usuario{
 	margin: -18px 0px 20px 750px;
 }
-#divtabla {
-	
+#div-tabla {
 	padding: 10px 10px 10px 40px;
 	margin: 0px 35px 0px 5px;
 }
-.rowazul{
-	 background-color:#3f9dcc;
-}
-.rowgris{
-	background-color: white;
-}
-td{
-	width: 900px;
-}
-#divbotones{
-	padding: 10px 0px 10px 350px;
-}
-.imagenborrar{
-	margin: 0px 0px 0px 32px;
-	position: absolute;
-}
-.imagenlapiz{
-	padding: 0px 0px 0px 0px;
-}
-#titulo-usuario{
-	text-align: center;
-}
-#div-cuerpo{
-	border: aqua 1px solid;
-	border-radius: 10px;
-	width: 840px;
-	float: left;
-	margin: 0px 0px 20px 30px;
-}
-.user-form{
-	width:400px;
-	float:left;
-	padding: 20px 10px 20px 0px;
-	text-align: center;
-}
-.lbl-user{
-	display: inline-block;
-	width:140px;
-	margin:10px 0px 0px 10px;
-	text-align: left;
-}
-.txt-user{
-	display: inline-block;
-	width: 150px;
-	margin:10px 0px 0px 10px;
-}
-.lbl-right{
-	float:left;
-	width: 100px;
-	clear: both;
-	text-align: left;
-	margin:22px 0px 0px 10px;
-	padding: 0px 0px 0px 20px;
-}
-.txt-right{
-	float: right;
-	width: 140px;
-	margin:22px 0px 0px 10px;
-}
-
 #div-impairment{
-	
-	width:370px;
- 	float: right;
- 	clear: both;
+	display: inline;
  	margin: 20px 0px 10px 20px;
  	text-align: left;
-}
-
-#div-impairment span{
-	margin: 0px 200px 0px 0px;
-}
-textarea{
-	height: 50px;
 }
 #div-botones{
 	display: inline;
 	margin: 0px 0px 0px 350px;
 
-}
-input{
-	border-radius: 10px;
-	background-color:#999;
-}
-#titulo-usuario{
-	text-align: center;
-}
-#div-cuerpo{
-	border: black 1px solid;
-	border-radius: 10px;
-	width: 900px;
-	float: left;
-	margin: 0px 0px 20px 30px;
-}
-.user-form{
-	width:400px;
-	float:left;
-	padding: 20px 10px 20px 0px;
-	text-align: center;
-}
-.lbl-user{
-	display: inline-block;
-	width:140px;
-	margin:10px 0px 0px 10px;
-	text-align: left;
-}
-.txt-user{
-	display: inline-block;
-	width: 150px;
-	margin:10px 0px 0px 10px;
-}
-.lbl-right{
-	float:left;
-	width: 100px;
-	clear: both;
-	text-align: left;
-	margin:22px 0px 0px 10px;
-	padding: 0px 0px 0px 20px;
-}
-.txt-right{
-	float: right;
-	width: 140px;
-	margin:22px 0px 0px 10px;
-}
-
-#div-impairment{
-	
-	width:370px;
- 	float: right;
- 	clear: both;
- 	margin: 20px 0px 10px 20px;
- 	text-align: left;
-}
-
-#div-impairment span{
-	margin: 0px 200px 0px 0px;
-}
-textarea{
-	height: 50px;
-}
-#div-botones{
-	display: inline;
-	margin: 0px 0px 0px 350px;
-
-}
-input{
-	border-radius: 10px;
-	background-color:#999;
-}
-#titulo-usuario{
-	text-align: center;
-}
-#div-cuerpo{
-	border: aqua 1px solid;
-	border-radius: 10px;
-	width: 900px;
-	float: left;
-	margin: 0px 0px 20px 30px;
-}
-.user-form{
-	width:400px;
-	float:left;
-	padding: 20px 10px 20px 0px;
-	text-align: center;
-}
-.lbl-user{
-	display: inline-block;
-	width:140px;
-	margin:10px 0px 0px 10px;
-	text-align: left;
-}
-.txt-user{
-	display: inline-block;
-	width: 150px;
-	margin:10px 0px 0px 10px;
-}
-.lbl-right{
-	float:left;
-	width: 100px;
-	clear: both;
-	text-align: left;
-	margin:22px 0px 0px 10px;
-	padding: 0px 0px 0px 20px;
-}
-.txt-right{
-	float: right;
-	width: 140px;
-	margin:22px 0px 0px 10px;
-}
-
-#div-impairment{
-	
-	width:370px;
- 	float: right;
- 	clear: both;
- 	margin: 20px 0px 10px 20px;
- 	text-align: left;
-}
-
-#div-impairment span{
-	margin: 0px 200px 0px 0px;
-}
-textarea{
-	height: 50px;
-}
-#div-botones{
-	display: inline;
-	margin: 0px 0px 0px 350px;
-
-}
-input{
-	border-radius: 10px;
-	background-color:#999;
-}
-#divMenu{
-	margin: 0px 0px 0px 40px;
-	text-align: center;
-}
-.listaMenu{
-	display: inline;
-	list-style: none;
-	padding: 10px 10px 10px 30px;
-	margin:0px 0px 0px -10px;
-	background-color: #aaa;
-	border: black 1px solid;
-}
-#tipoUsuario{
-	margin: 10px 0px 0px -3px;
-	padding:10px 20px 10px 70px;
-	display: inline;
-	background-color: #aaa;
-	border: black 1px solid;
-}
-#tituloUsuario h2{
-	text-align: center;
-	width:960px;
-	margin: 20px 0px 20px 0px;
-}
-#busquedaavanzada{
-	width: 300px;
-	padding: 0px 0px 0px 0px;
-	margin: 0px 800px 0px 5px;
-}
-#agregarusuario{
-	margin: -18px 0px 20px 750px;
-}
-#divtabla {
-	
-	padding: 10px 10px 10px 40px;
-	margin: 0px 35px 0px 5px;
-}
-.rowazul{
-	 background-color:#3f9dcc;
-}
-.rowgris{
-	background-color: white;
-}
-td{
-	width: 900px;
-}
-#divFooter{
-	width:960px;
-	text-align: center;
-	border-top:black 2px solid;
-	margin: 0px 0px 0px 0px;
-	height: 20px;
-}
-#divFooter h5{
-	margin: 5px 0px;
-}
-#divbotones{
-	padding: 10px 0px 10px 350px;
-}
-.imagenborrar{
-	margin: 0px 0px 0px 32px;
-	position: absolute;
-}
-.imagenlapiz{
-	padding: 0px 0px 0px 0px;
 }
 #eliminar-usuario{
-
-
 	display: inline;
 	width: 350px;
-}
-#eliminar-usuario{
-	
 	border: black 1px solid;
 	margin:10px 0px 0px 200px;
 	float: left;
@@ -336,69 +41,8 @@ td{
 	border-radius: 5px;
 	padding: 5px 35px 5px 35px;
 }
-#titulo-usuario{
-	text-align: center;
-}
-#div-cuerpo{
-	border: aqua 1px solid;
-	border-radius: 10px;
-	width: 900px;
-	float: left;
-	margin: 0px 0px 20px 30px;
-}
-.user-form{
-	width:400px;
-	float:left;
-	padding: 20px 10px 20px 0px;
-	text-align: center;
-}
-.lbl-user{
-	display: inline-block;
-	width:140px;
-	margin:10px 0px 0px 10px;
-	text-align: left;
-}
-.txt-user{
-	display: inline-block;
-	width: 150px;
-	margin:10px 0px 0px 10px;
-}
-.lbl-right{
-	float:left;
-	width: 100px;
-	clear: both;
-	text-align: left;
-	margin:22px 0px 0px 10px;
-	padding: 0px 0px 0px 20px;
-}
-.txt-right{
-	float: right;
-	width: 140px;
-	margin:22px 0px 0px 10px;
-}
+#add-user{
 
-#div-impairment{
-	
-	width:370px;
- 	float: right;
- 	clear: both;
- 	margin: 20px 0px 10px 20px;
- 	text-align: left;
+	float:right;
+	text-align: right;
 }
-
-#div-impairment span{
-	margin: 0px 200px 0px 0px;
-}
-textarea{
-	height: 50px;
-}
-#div-botones{
-	display: inline;
-	margin: 0px 0px 0px 350px;
-
-}
-input{
-	border-radius: 10px;
-	background-color:#999;
-}
-

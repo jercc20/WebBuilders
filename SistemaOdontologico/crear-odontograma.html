@@ -1,81 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 	<head>
+		<meta charset="utf-8" />
 		<title>Crear odontograma</title>
-		<meta charset="utf-8"/>
-		<link rel="stylesheet" type="text/css" href="css/normalize.css"/>
-		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Rokkitt"/>
-		<link rel="stylesheet" type="text/css" href="css/icons.css"/>
-		<link rel="stylesheet" type="text/css" href="css/data-table.css"/>
-		<link rel="stylesheet" type="text/css" href="css/style.css"/>
-		<link rel="stylesheet" type="text/css" href="css/diego.css"/>
+		<link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Rokkitt" />
+		<link rel="stylesheet" href="css/icons.css" />
+		<link rel="stylesheet" href="css/style.css" />
 	</head>
 	<body>
-		<h1>Crear Odontograma</h1>
-		<form>
-			<div id="odontograma">
-				<div id="side-left">
-					<table>
-						<tr>
-							<td><label for="txtName-odontologo">Nombre Odontólogo</label></td>
-							<td><input type="text" id="txtName-odontologo" class="input-short"/></td>
-						</tr>
-						<tr>
-							<td><label for="txtId-odontologo">Identificación odontólogo</label></td>
-							<td><input type="text" id="txtId-odontologo" class="input-short"/></td>
-						</tr>
-						<tr>
-							<td><label for="txtDate-odontograma">Fecha</label></td>
-							<td><input type="text" id="txtDate-odontograma" class="input-short"/></td>
-						</tr>
-						<tr>
-							<td><label for="txtName-paciente">Nombre del paciente</label></td>
-							<td><input type="text" id="txtName-paciente" class="input-short"/></td>
-						</tr>
-						<tr>
-							<td><label for="txtId-paciente">Identificación del paciente</label></td>
-							<td><input type="text" id="txtId-paciente" class="input-short"></td>
-						</tr>
-					</table>
-				</div>
-				<div id="side-right">
-					<a href="#" class="process" id="new-process">+Agregar procedimiento</a>
-					<table>
-						<tr>
-							<th colspan="2">Vencimiento</th>
-							<th>Zona</th>
-							<th>Costo</th>
-						</tr>
-						<tr>
-							<td>Maxilectomía</td>
-							<td><input type="text" id="date-vence-process1" class="input-short"/></td>
-							<td><input type="text" id="zona-process1" class="input-short"/></td>
-							<td><input type="text" id="costo-process1" class="input-short"/></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>Resinas I</td>
-							<td><input type="text" id="date-vence-process2" class="input-short"/></td>
-							<td><input type="text" id="zona-process2" class="input-short"/></td>
-							<td><input type="text" id="costo-process2" class="input-short"/></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>Aleación base</td>
-							<td><input type="text" id="date-vence-process3" class="input-short"/></td>
-							<td><input type="text" id="zona-process3" class="input-short"/></td>
-							<td><input type="text" id="costo-process3" class="input-short"/></td>
-							<td></td>
-						</tr>
-					</table>
-				</div>
-				<div id="clear"></div>
-				<div id="options">
-					<input type="button" value="Guardar"/>
-					<button id="clean-odontograma">Limpiar</button>
-					<button id="cancel-odontograma">Cancelar</button>
-				</div>
+		<div id="wrapper">
+			<div id="container">
+			<h1>Crear Odontograma</h1>
+				<form class="box-wrap clearfix" action="" method="post">
+					<section class="form-section fl">
+						<label for="odontologo-id">Identificación del odontólogo</label>
+						<input id="odontologo-id" name="txt-odontologo-id" type="text" value="114260189" />
+						<label for="odontologo-name">Nombre del odontólogo</label>
+						<input id="odontologo-name" name="txt-odontologo-name" type="text" required="required" pattern="[A-Za-z]+" />
+						<label for="odontologo-lastname">Primer apellido</label>
+						<input id="odontologo-lastname" name="txt-odontologo-lastname" type="text" required="required" />
+						<label for="odontologo-lastname2">Segundo apellido</label>
+						<input id="odontologo-lastname2" name="txt-odontologo-lastname2" type="text" />
+						<label for="odontograma-date">Fecha de realización</label>
+						<input id="odontograma-date" name="txt-odontograma-date" type="text" required="required" placeholder="dd/mm/yyyy" />
+						<label for="paciente-id">Identificación del paciente</label>
+						<input id="paciente-id" name="txt-paciente-id" type="text" />
+						<label for="paciente-name">Nombre del paciente</label>
+						<input id="paciente-name" name="txt-paciente-name" type="text" required="required" pattern="[A-Za-z]+" />
+						<label for="paciente-lastname">Primer apellido</label>
+						<input id="paciente-lastname" name="txt-paciente-lastname" type="text" required="required" />
+						<label for="paciente-lastname2">Segundo apellido</label>
+						<input id="paciente-lastname2" name="txt-paciente-lastname2" type="text" />
+					</section>
+					<section class="form-section fr">
+						<a href="#">+Agregar procedimiento</a>
+						<div class="hide">
+							<select >
+								<option ></option>
+								<option ></option>
+								<option ></option>
+							</select>
+						</div>
+					</section>
+					<section class="cb ac">
+						<input type="submit" value="Guardar" />
+						<input type="button" value="Limpiar" />
+						<input type="button" value="Cancelar" />
+					</section>
+				</form>
 			</div>
-		</form>
+		</div>
+		<script src="js/vendor/jquery-2.0.3.min.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/global.js"></script>
+		<script src="js/utils.js"></script>
+		<script src="js/prototype.js"></script>
+		<script src="js/vendor/md5.js"></script>
 	</body>
 </html>
