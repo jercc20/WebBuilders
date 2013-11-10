@@ -86,4 +86,16 @@
 		});
 	};
 
+	proto.includeFooter = function(){
+		$.ajax({
+			url: 'includes/footer.html',
+			success: function(data) {
+				$('#wrapper').after( data );
+			},
+			dataType: 'html',
+			cache: false,
+			async: false
+		});
+	};
+
 })(Prototype = {});

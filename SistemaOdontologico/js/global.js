@@ -47,6 +47,7 @@
 
 	var footer = {
 		init: function(){
+			Prototype.includeFooter();
 			this.closePopUp();
 		},
 		closePopUp: function(){
