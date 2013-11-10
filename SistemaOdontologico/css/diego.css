@@ -4,16 +4,8 @@
 .marcada {background-color: #3f9dcc;}
 .process {float: right; color: #3f9dcc; text-decoration: none;}
 .title{text-align: center;}
+.edit-printer {font-size: 25px; color: #000; float: right;}
 
 /*Id*/
 
 #odontograma {border-radius: 15px; border: 1px solid gray;}
-#side-left {display: inline-block; float: left;}
-#side-right {display: inline-block; float: left; border-left: 1px solid gray;}
-#side-right th {text-align: center;}
-#clear {clear: both;}
-#options {position: relative; top: 100px; left: 350px;}
-
-#clear {clear: both;}
-#options {position: relative; left: 400px; top: 10px;}
-#opciones {position: relative; left: 370px; top: 10px;}
