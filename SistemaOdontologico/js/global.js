@@ -2,6 +2,11 @@
 
 	global.init = function(){
 		menu.init();
+		footer.init();
+	};
+
+	global.loginInit = function(){
+		footer.init();
 	};
 
 	var menu = {
@@ -37,6 +42,23 @@
 		},
 		accountLeave: function(){
 			$('i:eq(1)', this).removeClass().addClass('icon-arrow-down');
+		}
+	};
+
+	var footer = {
+		init: function(){
+			this.closePopUp();
+		},
+		closePopUp: function(){
+			$('#popup-wrap, #popup .close').on('click', function(){
+				$('#popup').addClass('hide');
+				setTimeout(function(){
+					$('#popup-wrap').hide();
+				}, 500 );
+			});
+			$('#popup').on('click', function(e){
+				e.stopPropagation();
+			});
 		}
 	};
 

@@ -16,11 +16,10 @@
 				psw = $('#user-psw').val();
 			if( this.checkUser( user ) && this.checkPsw( psw ) ){
 				localStorage.setItem( 'user', user );
-				SO.utils.showPopUp( 'Listo', 'ok' ); //MSG TMP
 				SO.utils.localRedirect('inicio');
 			}
 			else {
-				SO.utils.showPopUp( 'Hubo un error', 'error' ); //MSG TMP
+				SO.utils.showPopUp( 'Hubo un error' ); //MSG TMP
 			}
 		},
 		checkUser: function(user){
@@ -42,7 +41,7 @@
 		logoutMsg: function(){
 			if( localStorage.getItem( 'logout' ) == "1" ){
 				localStorage.removeItem('logout');
-				SO.utils.showPopUp( 'Ha cerrado session', 'info' ); //MSG TMP
+				SO.utils.showPopUp( 'Ha cerrado session' ); //MSG TMP
 			}
 		}
 

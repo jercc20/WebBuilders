@@ -17,8 +17,12 @@
 		window.location = window.location.href.replace( SO.utils.currentFile(), to );
 	};
 
-	util.showPopUp = function(msg, type){
-		console.log( 'msg: ' + msg ); //TMP
+	util.showPopUp = function(msg){
+		$('#popup-content').html(msg);
+		$('#popup-wrap').show();
+		setTimeout(function(){
+			$('#popup').removeClass('hide');
+		}, 500 );
 	};
 
 })(SO.utils = {});
