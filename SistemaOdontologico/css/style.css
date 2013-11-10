@@ -188,7 +188,8 @@ form textarea:focus {
 	border: 1px solid #3f9dcc;
 	box-shadow: 0 0 2px 1px #3f9dcc;
 }
-.form-section {
+.form-section.fl,
+.form-section.fr {
 	width: 46%;
 }
 .form-section.fl {
