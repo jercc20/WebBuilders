@@ -98,6 +98,14 @@ form input[type="reset"] {
 form input[type="reset"]:hover {
     background: linear-gradient(#fff, #eaeaea);
 }
+#tb-dates{
+    float:left;
+    margin:10px;
+}
+#tb-second{
+    float:right;
+    margin:20px;
+}
 
 
 
