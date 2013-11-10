@@ -1,0 +1,20 @@
+#bitacora-popup{
+	width: 480px;
+	margin: 0 auto;
+	padding: 20px;
+	background: #fff;
+	border: 1px solid #000;
+	border-radius: 13px;
+}
+
+#div-table-popup{
+	margin: 0 auto;
+}
+
+.btn-ac{
+	margin-left: 50px;
+}
+
+.row-color{
+	background: #3f9dcc;
+}

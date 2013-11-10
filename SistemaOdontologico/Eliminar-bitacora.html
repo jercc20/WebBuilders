@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<title>Eliminar bitácora</title>
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Rokkitt" />
+	<link rel="stylesheet" href="css/icons.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/data-table.css" />
+	<link rel="stylesheet" type="text/css" href="css/marco.css" />
+</head>
+<body>
+	<div id="wrapper">
+		<div id="container">
+			<h1 class="ac">Consultar Bitácora</h1>
+			<div id="add-bitacora" class="fr">
+				<a href="#">+ Agregar bitácora</a>
+			</div>
+			<table id="tb-dates" class"display">
+				<thead>
+					<tr>
+						<th>Número de bitácora</th>
+						<th>Nombre Usuario</th>
+						<th>Identificación</th>
+						<th>Nombre Odontólogo</th>
+						<th>Fecha realizada</th>
+						<th>Número de procedimientos</th>
+						<th></th>	
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>Marianela Castillo</td>
+						<td>115811465</td>
+						<td>Juan Porras</td>
+						<td>16/08/2013</td>
+						<td>1</td>
+						<td>
+							<a href=""><i class="icon-edit"></i></a> 
+							<a href=""><i class="icon-remove item-remove"></i></a>
+						</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>Esteban Rodríguez</td>
+						<td>115498799</td>
+						<td>Marco Durán</td>
+						<td>05/08/2013</td>
+						<td>1</td>
+						<td>
+							<a href=""><i class="icon-edit"></i></a> 
+							<a href=""><i class="icon-remove item-remove"></i></a>
+						</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>Andrés Brenes</td>
+						<td>245796494</td>
+						<td>Johel Álvarez</td>
+						<td>05/08/2013</td>
+						<td>1</td>
+						<td>
+							<a href=""><i class="icon-edit"></i></a> 
+							<a href=""><i class="icon-remove item-remove"></i></a>
+						</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>Pablo Bermúdez</td>
+						<td>2466847989</td>
+						<td>Juan Porras</td>
+						<td>15/08/2013</td>
+						<td>2</td>
+						<td>
+							<a href=""><i class="icon-edit"></i></a> 
+							<a href=""><i class="icon-remove item-remove"></i></a>
+						</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>Felipe Chinchilla</td>
+						<td>354697879</td>
+						<td>Fernanda Vargas</td>
+						<td>06/08/2013</td>
+						<td>1</td>
+						<td>
+							<a href=""><i class="icon-edit"></i></a> 
+							<a href=""><i class="icon-remove item-remove"></i></a>
+						</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>Laura Salazar</td>
+						<td>356487879</td>
+						<td>Juan Porras</td>
+						<td>15/08/2013</td>
+						<td>1</td>
+						<td>
+							<a href=""><i class="icon-edit"></i></a> 
+							<a href=""><i class="icon-remove item-remove"></i></a>
+						</td>
+					</tr>
+					<tr>
+						<td>7</td>
+						<td>Carla Asofeifa</td>
+						<td>413546548</td>
+						<td>Fernanda Vargas</td>
+						<td>25/06/2013</td>
+						<td>2</td>
+						<td>
+							<a href=""><i class="icon-edit"></i></a> 
+							<a href=""><i class="icon-remove item-remove"></i></a>
+						</td>
+					</tr>
+					<tr>
+						<td>8</td>
+						<td>Federico Ugarte</td>
+						<td>321545644</td>
+						<td>Marco Durán</td>
+						<td>07/08/2013</td>
+						<td>1</td>
+						<td>
+							<a href=""><i class="icon-edit"></i></a> 
+							<a href=""><i class="icon-remove item-remove"></i></a>
+						</td>
+					</tr>
+					<tr>
+						<td>9</td>
+						<td>Gabriel Mora</td>
+						<td>241654889</td>
+						<td>Fernanda Vargas</td>
+						<td>06/08/2013</td>
+						<td>2</td>
+						<td>
+							<a href=""><i class="icon-edit"></i></a> 
+							<a href=""><i class="icon-remove item-remove"></i></a>
+						</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>Paola Mora</td>
+						<td>123154688</td>
+						<td>Johel Álvarez</td>
+						<td>16/06/2013</td>
+						<td>1</td>
+						<td>
+							<a href=""><i class="icon-edit"></i></a> 
+							<a href=""><i class="icon-remove item-remove"></i></a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div id="bitacora-popup" class="hide">
+		<p>¿Está seguro que desea eliminar la bitácora seleccionada?</p>
+		<div class="ac">
+			<button class="btn-accept">Aceptar</button>
+			<button class="close">Cancelar</button>
+		</div>
+	</div>
+	<script src="js/vendor/jquery-2.0.3.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/global.js"></script>
+	<script src="js/utils.js"></script>
+	<!-- Prototype files -->
+	<script src="js/prototype.js"></script>
+	<script src="js/vendor/md5.js"></script>
+	<!--Data Tables files-->
+	<script src="js/vendor/jquery.dataTables.min.js"></script>
+	<script src="js/marco.js"></script>
+</body>
+</html>
