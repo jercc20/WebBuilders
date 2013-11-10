@@ -82,8 +82,11 @@ form input[type="reset"] {
 form input[type="reset"]:hover {
     background: linear-gradient(#fff, #eaeaea);
 }
-#home-tables table{
+.dataTables_wrapper{
     float:left;
+    width:40%;
+    margin:5%;
+    clear:none;
 }
     
 
