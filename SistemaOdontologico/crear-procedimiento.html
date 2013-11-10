@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<title>Crear Cita</title>
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Rokkitt" />
+	<link rel="stylesheet" href="css/icons.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/johel.css" />
+</head>
+<body>
+	<div id="wrapper">
+		<div id="container">
+			<h1 class="ac">Crear procedimiento</h1>
+			<form id="proced-box" action="" method="post">
+				<section class="form-section">
+					<label for="name">Nombre del procedimiento</label>
+					<input id="name" name="txt-name" type="text" required="required" value=""/>
+					<label for="cost">Costo del procedimiento</label>
+					<input id="cost" name="txt-cost" type="text" required="required" value=""/>
+					<label for="notes">Descripcion</label>
+					<textarea id="notes"></textarea>
+				</section>
+
+				<section class="cb ac">
+					<input type="submit" value="Guardar" />
+					<input type="reset" value="Limpiar"/>
+					<input type="button" value="Cancelar"/>
+				</section>
+			</form>
+		</div>
+	</div>
+	<script src="js/vendor/jquery-2.0.3.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/global.js"></script>
+	<script src="js/utils.js"></script>
+	<!-- Prototype files -->
+	<script src="js/prototype.js"></script>
+	<script src="js/vendor/md5.js"></script>
+	<script src="js/johel.js"></script>
+</body>
+</html>
