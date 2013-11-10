@@ -20,6 +20,15 @@ form input[type="reset"]:hover {
 .row-color{
     background: #3f9dcc;
 }
+#notes{
+    width: 389px;
+    height: 119px;
+}
+.impresion{
+    float:right;
+    font-size:20px;
+    
+}
  
 
 
