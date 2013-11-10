@@ -1,0 +1,99 @@
+.main-table {
+    border: 1px solid #3f9dcc;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:5px;
+    text-align: center;
+}
+.main-table th {
+    background-color: #3f9dcc;
+    border: 1px solid #CCCCCC;
+    color: #FFFFFF;
+    padding: 5px;
+}
+.main-table td {
+    border: 1px solid #CCCCCC;
+    padding: 5px;
+}
+.title  {
+    margin:2px;
+    text-align: center;
+    font:20px 'rokkitt';
+
+}
+#btn{
+    margin:10px;
+    padding:2px;
+}
+.impresion a{
+   float:right;
+  
+}
+.rowazul{
+    background-color:#3f9dcc;  
+}
+.rowgris{
+    background-color:#ffffff;
+}
+#register{
+    list-style:none;
+    border: 1px solid #3f9dcc;
+    text-align: center;
+    padding:5px;
+}
+#register li{
+    padding:5px;
+    }
+h1{
+    text-align: center;
+    font-size: 24px;
+}
+#botones_form_div{
+     text-align: center; 
+}
+.delete{
+    background:#FFFFFF;
+    border:solid 1px;
+    width:344px;
+    padding:5px;
+    margin:100px;
+    text-align:center;
+}
+.icon-print{
+    float:right;
+    font-size: 24px;
+}
+#div-botones{
+    padding:15px;
+
+}
+.one{
+    width:400px;
+    height:300px;
+    position:relative;
+    border:solid 1px #808080;
+    float:left;
+    margin:40px;
+   
+}
+.two{
+    width:400px;
+    height:300px;
+    position:relative;
+    border:solid 1px #808080;
+    float:left;
+    margin:5px;
+   
+}
+h2{
+    text-align:center;
+    margin:10px;
+    font-size: 20px;
+}
+
+
+    
+   
+
+   
