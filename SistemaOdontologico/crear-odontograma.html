@@ -7,15 +7,16 @@
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Rokkitt" />
 		<link rel="stylesheet" href="css/icons.css" />
 		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/diego.css" />
 	</head>
 	<body>
 		<div id="wrapper">
 			<div id="container">
-			<h1>Crear Odontograma</h1>
+				<h1 class="title">Crear Odontograma</h1>
 				<form class="box-wrap clearfix" action="" method="post">
 					<section class="form-section fl">
 						<label for="odontologo-id">Identificación del odontólogo</label>
-						<input id="odontologo-id" name="txt-odontologo-id" type="text" value="114260189" />
+						<input id="odontologo-id" name="txt-odontologo-id" type="text" />
 						<label for="odontologo-name">Nombre del odontólogo</label>
 						<input id="odontologo-name" name="txt-odontologo-name" type="text" required="required" pattern="[A-Za-z]+" />
 						<label for="odontologo-lastname">Primer apellido</label>
@@ -25,7 +26,7 @@
 						<label for="odontograma-date">Fecha de realización</label>
 						<input id="odontograma-date" name="txt-odontograma-date" type="text" required="required" placeholder="dd/mm/yyyy" />
 						<label for="paciente-id">Identificación del paciente</label>
-						<input id="paciente-id" name="txt-paciente-id" type="text" />
+						<input id="paciente-id" name="txt-paciente-id" type="text" required="required"/>
 						<label for="paciente-name">Nombre del paciente</label>
 						<input id="paciente-name" name="txt-paciente-name" type="text" required="required" pattern="[A-Za-z]+" />
 						<label for="paciente-lastname">Primer apellido</label>
@@ -34,13 +35,34 @@
 						<input id="paciente-lastname2" name="txt-paciente-lastname2" type="text" />
 					</section>
 					<section class="form-section fr">
-						<a href="#">+Agregar procedimiento</a>
-						<div class="hide">
-							<select >
-								<option ></option>
-								<option ></option>
-								<option ></option>
-							</select>
+						<a href="#" class="popup-process">+Agregar procedimiento</a>
+						<div class="hide" id="process">
+							<table class="display">
+								<tr>
+									<th></th>
+									<th>Vencimiento</th>
+									<th>Precio</th>
+									<th>Zona</th>
+								</tr>
+								<tr>
+									<td>Maxilectomía</td>
+									<td><input type="text" id="txt-process-1" required="required" /></td>
+									<td>2,000,000</td>
+									<td><input type="text" id="txt-zone-process-1" required="required" /></td>
+								</tr>
+								<tr>
+									<td>Resinas 1</td>
+									<td><input type="text" id="txt-process-2" required="required" /></td>
+									<td>22,000</td>
+									<td><input type="text" id="txt-zone-process-2" required="required" /></td>
+								</tr>
+								<tr>
+									<td>Aleación base</td>
+									<td><input type="text" id="txt-process-3" required="required" /></td>
+									<td>15/10/2013</td>
+									<td><input type="text" id="txt-zone-process-3" required="required" /></td>
+								</tr>
+							</table>
 						</div>
 					</section>
 					<section class="cb ac">
@@ -48,6 +70,30 @@
 						<input type="button" value="Limpiar" />
 						<input type="button" value="Cancelar" />
 					</section>
+					<div class="hide" id="process-popup">
+						<label for="process1">Proceso 1</label>
+						<select id="process1">
+							<option value="seleccione">Seleccione</option>
+							<option value="maxilectomia">Maxilectomía</option>
+							<option value="resinas1">Resinas 1</option>
+							<option value="aleacion-base">Aleación base</option>
+						</select>
+						<label for="process2">Proceso 2</label>
+						<select id="process2">
+							<option value="seleccione">Seleccione</option>
+							<option value="maxilectomia">Maxilectomía</option>
+							<option value="resinas1">Resinas 1</option>
+							<option value="aleacion-base">Aleación base</option>
+						</select>
+						<label for="process3">Proceso 3</label>
+						<select id="process3">
+							<option value="seleccione">Seleccione</option>
+							<option value="maxilectomia">Maxilectomía</option>
+							<option value="resinas1">Resinas 1</option>
+							<option value="aleacion-base">Aleación base</option>
+						</select>
+						<input type="button" value="OK" class="close"/>
+					</div>
 				</form>
 			</div>
 		</div>
@@ -57,5 +103,6 @@
 		<script src="js/utils.js"></script>
 		<script src="js/prototype.js"></script>
 		<script src="js/vendor/md5.js"></script>
+		<script src="js/diego.js"></script>
 	</body>
 </html>
