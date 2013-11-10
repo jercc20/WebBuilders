@@ -16,7 +16,6 @@ form input[type="reset"]:hover {
 #print{
     margin-left: 385px;
 }
-
 .row-color{
     background: #3f9dcc;
 }
@@ -27,7 +26,14 @@ form input[type="reset"]:hover {
 .impresion{
     float:right;
     font-size:20px;
-    
+}
+#container .al{
+    margin:auto;
+    clear:none;
+}
+#container .ar{
+    margin:auto;
+    clear:none;
 }
  
 
