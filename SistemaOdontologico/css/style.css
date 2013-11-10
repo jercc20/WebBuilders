@@ -164,6 +164,7 @@ h6 {
 }
 
 /* Forms */
+button,
 form input,
 form textarea {
 	border: 1px solid #999;
@@ -171,6 +172,7 @@ form textarea {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
 }
+button,
 form input[type="submit"],
 form input[type="button"],
 form input[type="reset"] {
@@ -179,6 +181,7 @@ form input[type="reset"] {
 	border-bottom-color: #919191;
 	background: linear-gradient(#fff, #ddd);
 }
+button,
 form input[type="submit"]:hover,
 form input[type="button"]:hover,
 form input[type="button"]:hover {
