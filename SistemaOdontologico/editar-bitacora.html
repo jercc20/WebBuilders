@@ -16,7 +16,7 @@
 			<form class="box-wrap clearfix" action="" method="post">
 				<section class="form-section fl">
 					<label for="dentist-id">Identificación del odontólogo</label>
-					<input id="dentist-id" name="txt-dentist-id" type="text" value="268984877" required="required" />
+					<input id="dentist-id" name="txt-dentist-id" type="text" title="Debe contener de 7 a 9 dígitos" value="268984877" pattern="|^\d{7-9}$|" required="required" />
 					<label for="dentist-name">Nombre del odontólogo</label>
 					<input id="dentist-name" name="txt-dentist-name" type="text" value="Juan Porras" required="required" pattern="[A-Za-z]+" />
 					<label for="patient-id">Identificación del paciente</label>
