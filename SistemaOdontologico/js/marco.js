@@ -10,5 +10,9 @@ jQuery(function($) {
 		SO.utils.showPopUp('Ha sido eliminado');
 });
 
+	$('.item-view').on('click', function(){
+		SO.utils.showPopUp( $('#bitacora-patient-popup').html() );
+});
+
 });
 
