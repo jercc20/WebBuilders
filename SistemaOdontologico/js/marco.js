@@ -3,7 +3,7 @@ jQuery(function($) {
 	$('#tb-dates').dataTable();
 
 	$('.item-remove').on('click', function(){
-		SO.utils.showPopUp( $('#bitacora-popup').html() );
+		SO.utils.showPopUp( $('#popup-remove').html() );
 });
 
 	$('.btn-accept').on('click', function(){
@@ -11,7 +11,7 @@ jQuery(function($) {
 });
 
 	$('.item-view').on('click', function(){
-		SO.utils.showPopUp( $('#bitacora-patient-popup').html() );
+		SO.utils.showPopUp( $('#popup-bitacora').html() );
 });
 
 });

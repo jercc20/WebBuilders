@@ -17,35 +17,35 @@
 			<form class="box-wrap clearfix" action="" method="post">
 				<section class="form-section fl">
 					<label for="dentist-id">Identificación del odontólogo</label>
-					<input id="dentist-id" name="txt-dentist-id" type="text" pattern="[/d]{7-9}" required="required" />
+					<input id="dentist-id" name="txt-dentist-id" type="text"  pattern="[a-zA-Z0-9]" required="required" />
 					<label for="dentist-name">Nombre del odontólogo</label>
-					<input id="dentist-name" name="txt-dentist-name" type="text" required="required" pattern="[A-Za-z]+" />
+					<input id="dentist-name" name="txt-dentist-name" type="text" required="required" pattern="|^[a-zA-Z ñÑáéíóúüç]*$|" />
 					<label for="patient-id">Identificación del paciente</label>
-					<input id="patient-id" name="txt-patient-id" type="text" required="required" />
+					<input id="patient-id" name="txt-patient-id" type="text" pattern="[a-zA-Z0-9]+" required="required" />
 					<label for="patient-name">Nombre del paciente</label>
-					<input id="patient-name" name="txt-patient-name" type="text" required="required" pattern="[A-Za-z]+" />
-					<label for="user-dob">Fecha realizada</label>
-					<input id="date-reliazada" name="txt-date-realizada" type="text" required="required" placeholder="dd/mm/yyyy" />
+					<input id="patient-name" name="txt-patient-name" type="text" pattern="|^[a-zA-Z ñÑáéíóúüÁÉÍÓÚç]*$|" required="required" />
+					<label for="date">Fecha realizada</label>
+					<input id="date" name="txt-date" type="text" required="required" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" />
 					<label for="asistentes">Asistentes que participaron</label>
 					<textarea id="asistentes" name="asistentes"></textarea>
 				</section>
 				<section class="form-section fr">
 					<label for="procedure">Procedimientos</label>
-					<input id="procedure" name="procedure" type="text" placeholder="Procedimiento" required="required" />
+					<input id="procedure" name="procedure" type="text" required="required" />
 					<label for="zone"></label>
-					<input id="zone" name="zone" type="text" placeholder="Zona" required="required" />
+					<input id="zone" name="zone" type="text" required="required" />
 					<label for="procedure-2"></label>
 					<input id="procedure-2" name="procedure-2" type="text" placeholder="Procedimiento" />
 					<label for="zone-2"></label>
 					<input id="zone-2" name="zone-2" type="text" placeholder="Zona" />
 					<label><a href="#">+Agregar procedimiento</a></label>
 					<label for="notes">Notas</label>
-					<textarea id="notes" name="notes" required="required"></textarea>
+					<textarea id="notes" name="notes" required="required">Se realizo la resinas I en el oclusal en el tercer molar</textarea>
 				</section>
 				<section class="cb ac">
-					<input type="submit" value="Guardar" />
-					<input type="button" value="Limpiar" />
-					<input type="button" value="Cancelar" />
+					<input type="submit" value ="Guardar" />
+					<input type="reset" value="Limpiar" />
+					<a href="consultar-bitacoras.html"><input type="button" value="Cancelar" /></a>
 				</section>
 			</form>
 		</div>
