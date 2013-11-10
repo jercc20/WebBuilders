@@ -1,12 +1,12 @@
 /*Globales*/
 
-body {width: 960px; margin: 0 auto; font: "Arial";}
 h1 {text-align: center;}
 
 /*Clases*/
 
 .input-short {width: 150px; margin: 5px 0 0 0;}
 .marcada {background-color: #3f9dcc;}
+.process {float: right; color: #3f9dcc; text-decoration: none;}
 
 /*Id*/
 
@@ -23,6 +23,4 @@ h1 {text-align: center;}
 #fr a {text-align: right; text-decoration: none; color: #3f9dcc;}
 #clear {clear: both;}
 #options {position: relative; left: 400px; top: 10px;}
-
-#agregar-usuarios {float: right; color: #3f9dcc; text-decoration: none;}
 #opciones {position: relative; left: 370px; top: 10px;}
