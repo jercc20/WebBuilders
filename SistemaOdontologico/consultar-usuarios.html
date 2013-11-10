@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="css/icons.css" />
 	<link rel="stylesheet" href="css/style.css" />
 	<link rel="stylesheet" href="css/data-table.css" />
-
+	<link rel="stylesheet" href="css/jquery-ui-1.7.2.custom.css" />
 </head>
 <body>
 	<div id="wrapper">
@@ -16,7 +16,7 @@
 				<div id="add-user">		
 					<a  href="crear-usuario.html">+ agregar usuario</a>
 				</div>
-					<table id="tb-dates" class="display">
+					<table class="data-table display">
 						<thead>
 							<tr>
 								<th>Nombre de Usuario</th>
@@ -180,6 +180,26 @@
 	<script src="js/vendor/md5.js"></script>
 	<!--Data Tables files-->
 	<script src="js/vendor/jquery.dataTables.min.js"></script>
+	<script>
+		jQuery(function($) {
+			$(document).ready(function() {
+			    $('.data-table').dataTable({
+			        "bJQueryUI": true,
+			        "bLengthChange": false,
+			        "sPaginationType": "full_numbers",
+			        "oSearch": {},
+			        "oLanguage": {
+	                    "sLengthMenu": "Mostrando _MENU_ resultados por pagina",
+	                    "sZeroRecords": "No se encontraron resultados",
+	                    "sInfo": "Mostrando _START_ a _END_ de _TOTAL_ resultados",
+	                    "sInfoEmpty": "",
+	                    "sInfoFiltered": "",
+	                    "sSearch": "Buscar "
+			    	}
+			    });
+			});
+		});
+	</script>
 	<script src="js/mathias.js"></script>
 </body>
 </html>
