@@ -68,7 +68,6 @@ h6 {
 /* Header */
 #nav-top {
 	background: #aaa;
-	z-index: 10;
 }
 #nav-top ul {
 	margin: 0;
@@ -79,6 +78,7 @@ h6 {
 	position: relative;
 	float: left;
   	border-right: 1px solid #3f9dcc;
+  	z-index: 10;
 }
 #main-menu ul {
 	position: absolute;
