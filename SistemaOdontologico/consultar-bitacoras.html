@@ -2,14 +2,14 @@
 <html lang="es">
 <head>
 	<meta charset="utf-8" />
-	<title>Consultar bitácora</title>
+	<title>Consultar Roles</title>
 	<link rel="stylesheet" href="css/normalize.css" />
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Rokkitt" />
 	<link rel="stylesheet" href="css/icons.css" />
 	<link rel="stylesheet" href="css/style.css" />
 	<link rel="stylesheet" href="css/data-table.css" />
 	<link rel="stylesheet" href="css/jquery-ui-1.7.2.custom.css" />
-	<link rel="stylesheet" type="text/css" href="css/marco.css" />
+	<link rel="stylesheet" href="css/marco.css">
 </head>
 <body>
 	<div id="wrapper">
@@ -20,7 +20,8 @@
 			</div>
 			<table class"data-table display">
 				<thead>
-					<tr>
+			        <tr>
+			            <tr>
 						<th>Número de bitácora</th>
 						<th>Nombre Usuario</th>
 						<th>Identificación</th>
@@ -28,8 +29,8 @@
 						<th>Fecha realizada</th>
 						<th>Número de procedimientos</th>
 						<th></th>	
-					</tr>
-				</thead>
+			        </tr>
+			    </thead>
 				<tbody>
 					<tr>
 						<td>1</td>
@@ -226,14 +227,13 @@
 		</div>
 	</div>
 	<script src="js/vendor/jquery-2.0.3.min.js"></script>
+	<script src="js/vendor/jquery.dataTables.min.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/global.js"></script>
 	<script src="js/utils.js"></script>
+	<script src="js/marco.js"></script>
 	<!-- Prototype files -->
 	<script src="js/prototype.js"></script>
 	<script src="js/vendor/md5.js"></script>
-	<!--Data Tables files-->
-	<script src="js/vendor/jquery.dataTables.min.js"></script>
-	<script src="js/marco.js"></script>
 </body>
 </html>
