@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<title>Consultar Roles</title>
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Rokkitt" />
+	<link rel="stylesheet" href="css/icons.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/data-table.css" />
+	<link rel="stylesheet" href="css/jquery-ui-1.7.2.custom.css" />
+</head>
+<body>
+	<div id="wrapper">
+		<div id="container">
+			<table class="data-table display">
+			    <thead>
+			        <tr>
+			            <th>Column 1</th>
+			            <th>Column 2</th>
+			            <th>etc</th>
+			        </tr>
+			    </thead>
+			    <tbody>
+			        <tr>
+			            <td>Row 1 Data 1</td>
+			            <td>Row 1 Data 2</td>
+			            <td>etc</td>
+			        </tr>
+			        <tr>
+			            <td>Row 2 Data 1</td>
+			            <td>Row 2 Data 2</td>
+			            <td>etc</td>
+			        </tr>
+			        <tr>
+			            <td>Row 2 Data 1</td>
+			            <td>Row 2 Data 2</td>
+			            <td>etc</td>
+			        </tr>
+			        <tr>
+			            <td>Row 2 Data 1</td>
+			            <td>Row 2 Data 2</td>
+			            <td>etc</td>
+			        </tr>
+			        <tr>
+			            <td>Row 2 Data 1</td>
+			            <td>Row 2 Data 2</td>
+			            <td>etc</td>
+			        </tr>
+			        <tr>
+			            <td>Row 2 Data 1</td>
+			            <td>Row 2 Data 2</td>
+			            <td>etc</td>
+			        </tr>
+			        <tr>
+			            <td>Row 2 Data 1</td>
+			            <td>Row 2 Data 2</td>
+			            <td>etc</td>
+			        </tr>
+			        <tr>
+			            <td>Row 2 Data 1</td>
+			            <td>Row 2 Data 2</td>
+			            <td>etc</td>
+			        </tr>
+			        <tr>
+			            <td>Row 2 Data 1</td>
+			            <td>Row 2 Data 2</td>
+			            <td>etc</td>
+			        </tr>
+			        <tr>
+			            <td>Row 2 Data 1</td>
+			            <td>Row 2 Data 2</td>
+			            <td>etc</td>
+			        </tr>
+			        <tr>
+			            <td>Row 2 Data 1</td>
+			            <td>Row 2 Data 2</td>
+			            <td>etc</td>
+			        </tr>
+			    </tbody>
+			</table>
+		</div>
+	</div>
+	<script src="js/vendor/jquery-2.0.3.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/global.js"></script>
+	<script src="js/utils.js"></script>
+	<!-- Prototype files -->
+	<script src="js/prototype.js"></script>
+	<script src="js/vendor/md5.js"></script>
+
+	<script src="js/vendor/jquery.dataTables.min.js"></script>
+	<script>
+		jQuery(function($) {
+			$(document).ready(function() {
+			    $('.data-table').dataTable({
+			        "bJQueryUI": true,
+			        "bLengthChange": false,
+			        "sPaginationType": "full_numbers",
+			        "oSearch": {},
+			        "oLanguage": {
+	                    "sLengthMenu": "Mostrando _MENU_ resultados por pagina",
+	                    "sZeroRecords": "No se encontraron resultados",
+	                    "sInfo": "Mostrando _START_ a _END_ de _TOTAL_ resultados",
+	                    "sInfoEmpty": "",
+	                    "sInfoFiltered": "",
+	                    "sSearch": "Buscar "
+			    	}
+			    });
+			});
+		});
+	</script>
+</body>
+</html>
