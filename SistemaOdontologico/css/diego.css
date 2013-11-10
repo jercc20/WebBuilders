@@ -17,10 +17,6 @@ h1 {text-align: center;}
 #clear {clear: both;}
 #options {position: relative; top: 100px; left: 350px;}
 
-#fl {float: left;}
-#fl table tr td input {margin: 5px;}
-#fr {float: left; border-left: solid #000 1px; padding: 0 0 0 10px}
-#fr a {text-align: right; text-decoration: none; color: #3f9dcc;}
 #clear {clear: both;}
 #options {position: relative; left: 400px; top: 10px;}
 #opciones {position: relative; left: 370px; top: 10px;}
