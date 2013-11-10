@@ -285,7 +285,7 @@ form section.ac {
 
 #popup-wrap {
 	display: none;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -304,6 +304,7 @@ form section.ac {
 	background: #fff;
 	box-shadow: 0 0 2px #000;
 	transition: all .8s;
+	background-size: cover;
 }
 
 #popup.hide {
