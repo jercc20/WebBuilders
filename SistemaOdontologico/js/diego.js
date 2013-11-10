@@ -8,6 +8,11 @@ jQuery(function($) {
 		SO.utils.showPopUp( $('#odontograma-popup').html() );
 	});
 
+	$('#advance-search').on('click', function(){
+		SO.utils.showPopUp( $('#popup-report-odontograma').html() );
+	});
+
+
 	$('.popup-process').on('click', function(){
 		SO.utils.showPopUp( $('#process-popup').html() );
 	});
