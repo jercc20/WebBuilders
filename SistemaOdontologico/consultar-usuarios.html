@@ -12,11 +12,11 @@
 </head>
 <body>
 	<div id="wrapper">
-		<div id="container">			
-				<div id="agregar-usuario">
-					<a href="crear-usuario.html"> + agregar usuario</a>
+		<div id="container">	
+				<div id="add-user">		
+					<a  href="crear-usuario.html">+ agregar usuario</a>
 				</div>
-					<table id="tb-dates" class"display">
+					<table id="tb-dates" class="display">
 						<thead>
 							<tr>
 								<th>Nombre de Usuario</th>
@@ -25,6 +25,7 @@
 								<th>Teléfono</th>
 								<th>Correo</th>
 								<th>Dirección</th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -129,11 +130,14 @@
 							</tr>
 						</tbody>
 					</table>
+						<div id="user-delete-popup" class="hide">
+						<p>Esta seguro que desea eliminar el usuario seleccionado?</p>
+						<div class="ac">
+							<button class="btn-accept">Aceptar</button>
+							<button class="close">Cancelar</button>
+						</div>
 		</div>
-	</div>
-	<footer id="footer">
-		<p>&copy; Derechos reservados 2013</p>
-	</footer>	
+	</div>	
 	<script src="js/vendor/jquery-2.0.3.min.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/global.js"></script>
