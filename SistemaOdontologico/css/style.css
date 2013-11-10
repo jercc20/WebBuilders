@@ -68,6 +68,7 @@ h6 {
 /* Header */
 #nav-top {
 	background: #aaa;
+	z-index: 10;
 }
 #nav-top ul {
 	margin: 0;
