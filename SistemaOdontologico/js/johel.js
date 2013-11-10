@@ -4,6 +4,8 @@ if ($("#tb-dates").length > 0) {
 		$('#tb-dates').dataTable();
 };
 //fullcalendar
+if ($("#calendar").length > 0) {
+		
 	var date = new Date();
 	var d = date.getDate();
 	var m = date.getMonth();
@@ -36,9 +38,9 @@ if ($("#tb-dates").length > 0) {
 		dayNames: ['Domingo', 'Lunes', 'Martes', 'Miercoles','Jueves', 'Viernes', 'Sabado'],
 		monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'], 
 		monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-
 		});
-		
+};		
+
 });
 
 
