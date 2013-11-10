@@ -16,6 +16,7 @@
 			<div id="container">
 				<h1 class="title">Reportes de odontogramas</h1>
 				<a href="#" id="print-link" class="edit-printer"><i class="icon-print"></i></a>
+				<input type="button" value="Búsqueda avanzada" id="advance-search" />
 				<table id="tb-dates" class="data-table display">
 					<thead>
 						<tr>
@@ -123,16 +124,24 @@
 				</table>
 				<div id="popup-report-odontograma" class="hide">
 					<form>
+						<div>
 						<label for="date-begin">Fecha de inicio:</label>
 						<input type="text" id="date-begin" />
-						<label for="date-end"></label>
+						</div>
+						<div>
+						<label for="date-end">Fecha de fin:</label>
 						<input type="text" id="date-end" />
+						</div>
+						<div>
 						<label for="id-odontologo">Identificación del odontologo:</label>
 						<input type="text" id="id-odontologo" />
+						</div>
+						<div>
 						<label for="id-paciente">Idetificación del paciente</label>
 						<input type="text" id="id-paciente" />
+						</div>
 						<input type="button" id="cancel" value="Cancelar" />
-						<input type="button" id="create" value="Crear" />
+						<input type="button" id="search" value="Buscar" />
 					</form>
 				</div>
 			</div>
