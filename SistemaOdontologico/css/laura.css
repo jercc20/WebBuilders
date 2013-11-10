@@ -84,13 +84,21 @@ h1{
     border:solid 1px #808080;
     float:left;
     margin:5px;
-   
 }
-h2{
-    text-align:center;
-    margin:10px;
-    font-size: 20px;
+#notes{
+    width: 390px;
+    height: 120px;
 }
+form input[type="reset"] {
+    width: auto;
+    padding: 0.7em 1.5em;
+    border-bottom-color: #919191;
+    background: linear-gradient(#fff, #ddd);
+}
+form input[type="reset"]:hover {
+    background: linear-gradient(#fff, #eaeaea);
+}
+
 
 
     
