@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="utf-8" />
-	<title>Editar Cita</title>
+	<title>Editar Citas</title>
 	<link rel="stylesheet" href="css/normalize.css" />
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Rokkitt" />
 	<link rel="stylesheet" href="css/icons.css" />
@@ -12,24 +12,57 @@
 <body>
 	<div id="wrapper">
 		<div id="container">
-			<h1 class="ac">Editar Cita</h1>
+			<h1 class="ac">Editar Citas</h1>
 			<form class="box-wrap clearfix" action="" method="post">
 				<section class="form-section fl">
 					<label for="user-id">Identificación</label>
-					<input id="user-id" name="txt-user-id" type="text" disabled="disabled" value="114260189" />
+					<input id="user-id" name="txt-user-id" type="text" required="required" />
 					<label for="date">Fecha</label>
-					<input id="date" name="txt-date" type="text" required="required" value="11/07/13"/>
+					<input id="date" name="txt-date" type="text" required="required" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" placeholder="12/07/2013" title="La fecha debe tener el siguiente formato: dd/mm/YYYYYY"/>
 					<label for="hour">Hora</label>
-					<input id="hour" name="txt-hour" type="text" required="required" value="07:00"/>
+					<select id="hour" required="required" title="Hora">
+						<option value="">Hora</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+					</select>
+					<select id="minute" required="required" title="Minuto">
+						<option value="">Minutos</option>
+						<option value="00">00</option>
+						<option value="10">10</option>
+						<option value="15">15</option>
+						<option value="20">20</option>
+						<option value="25">25</option>
+						<option value="30">30</option>
+						<option value="35">35</option>
+						<option value="40">40</option>
+						<option value="45">45</option>
+						<option value="50">50</option>
+						<option value="55">55</option>
+					</select>
+					<select id="ampm" required="required" title="am/pm">
+						<option value="">am/pm</option>
+						<option value="am">am</option>
+						<option value="pm">pm</option>
+					</select>
 					<label for="type">Tipo de cita</label>
 					<select id="type" required="required">
-						<option value="1">Seleccione el tipo de cita</option>
+						<option value="">Seleccione el tipo de cita</option>
 						<option value="2">Normal</option>
 						<option value="3">Emergencia</option>
 					</select>
 					<label for="odontologo">Odontologo</label>
 					<select id="odontologo" required="required">
-						<option value="1">Seleccione un odontologo</option>
+						<option value="">Seleccione un odontologo</option>
 						<option value="2">Johel Alvarez</option>
 						<option value="3">Jerson Chinchilla</option>
 						<option value="4">Mathias Muller</option>

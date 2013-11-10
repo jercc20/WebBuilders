@@ -1,7 +1,9 @@
+/*Seccion notas crear cita*/
 #notes{
 	width: 390px;
 	height: 120px;
 }
+/*Botones formularios*/
 form input[type="reset"] {
 	width: auto;
 	padding: 0.7em 1.5em;
@@ -11,10 +13,24 @@ form input[type="reset"] {
 form input[type="reset"]:hover {
 	background: linear-gradient(#fff, #eaeaea);
 }
+/*formularios procedimientos*/
 #proced-box{
 	width: 390px;
 	padding: 20px;
 	border: 1px solid #999;
 	border-radius: 10px;
 	margin: 0 auto;
+}
+/*seccion hora crear-cita*/
+#hour,
+#minute,
+#ampm{
+	width: auto;
+	padding: 2px;
+}
+#minute,
+#ampm{
+	width: auto;
+	padding: 2px;
+	
 }
