@@ -1,12 +1,9 @@
-/*Globales*/
-
-h1 {text-align: center;}
-
 /*Clases*/
 
 .input-short {width: 150px; margin: 5px 0 0 0;}
 .marcada {background-color: #3f9dcc;}
 .process {float: right; color: #3f9dcc; text-decoration: none;}
+.title{text-align: center;}
 
 /*Id*/
 
