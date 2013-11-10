@@ -16,9 +16,9 @@
 			<form id="proced-box" action="" method="post">
 				<section class="form-section">
 					<label for="name">Nombre del procedimiento</label>
-					<input id="name" name="txt-name" type="text" required="required" value=""/>
+					<input id="name" name="txt-name" type="text" required="required" pattern="[a-zA-Z0-9]+" />
 					<label for="cost">Costo del procedimiento</label>
-					<input id="cost" name="txt-cost" type="text" required="required" value=""/>
+					<input id="cost" name="txt-cost" type="text" required="required" pattern="[0-9]+" />
 					<label for="notes">Descripcion</label>
 					<textarea id="notes"></textarea>
 				</section>

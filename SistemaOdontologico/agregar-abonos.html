@@ -2,27 +2,32 @@
 <html lang="es">
 <head>
 	<meta charset="utf-8" />
-	<title>Editar procedimiento</title>
+	<title>Registrar Abono</title>
 	<link rel="stylesheet" href="css/normalize.css" />
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Rokkitt" />
 	<link rel="stylesheet" href="css/icons.css" />
 	<link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" href="css/johel.css" />
+	<link rel="stylesheet" href="css/laura.css" />
 </head>
 <body>
 	<div id="wrapper">
 		<div id="container">
-			<h1 class="ac">Editar procedimiento</h1>
-			<form id="proced-box" action="" method="post">
-				<section class="form-section">
-					<label for="name">Nombre del procedimiento</label>
-					<input id="name" name="txt-name" type="text" required="required" pattern="[a-zA-Z0-9]+" />
-					<label for="cost">Costo del procedimiento</label>
-					<input id="cost" name="txt-cost" type="text" required="required" pattern="[0-9]+" />
-					<label for="notes">Descripcion</label>
+			<h1 class="ac">Nuevo Abono</h1>
+			<form class="box-wrap clearfix" action="" method="post">
+				<section class="form-section fl">
+					<label for="user-id">Identificación</label>
+					<input id="user-id" name="txt-user-id" type="text" disabled="disabled" value="114260189"/>
+					<label for="number">Número de Factura</label>
+					<input id="number" name="txt-number" type="text" required="required" value="1122"/>
+					<label for="time">Fecha del Abono</label>
+					<input id="time" name="txt-time" type="text" required="required" value="11/07/2013"/>
+					<label for="type">Monto del Abono</label>
+					<input id="type" name="txt-type" type="text" required="required" value="110.000"/>
+				</section>
+				<section class="form-section fr">
+					<label for="notes">Notas</label>
 					<textarea id="notes"></textarea>
 				</section>
-
 				<section class="cb ac">
 					<input type="submit" value="Guardar" />
 					<input type="reset" value="Limpiar"/>
