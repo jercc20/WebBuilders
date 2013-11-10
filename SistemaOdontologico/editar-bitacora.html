@@ -15,24 +15,26 @@
 			<h1 class="ac">Bitácora nueva</h1>
 			<form class="box-wrap clearfix" action="" method="post">
 				<section class="form-section fl">
+					<label for="number-bitacora">Número de bitácora</label>
+					<input id="number-bitacora" name="number-bitacora" type="text" disabled="disabled" value="1" />
 					<label for="dentist-id">Identificación del odontólogo</label>
-					<input id="dentist-id" name="txt-dentist-id" type="text" title="Debe contener de 7 a 9 dígitos" value="268984877" pattern="|^\d{7-9}$|" required="required" />
+					<input id="dentist-id" name="txt-dentist-id" type="text" value="268984877" pattern="[a-zA-Z0-9]+" required="required" />
 					<label for="dentist-name">Nombre del odontólogo</label>
-					<input id="dentist-name" name="txt-dentist-name" type="text" value="Juan Porras" required="required" pattern="[A-Za-z]+" />
+					<input id="dentist-name" name="txt-dentist-name" type="text" value="Juan Porras" required="required" pattern="|^[a-zA-Z ñÑáéíóúüç]*$|" />
 					<label for="patient-id">Identificación del paciente</label>
-					<input id="patient-id" name="txt-patient-id" type="text" value="245786484" required="required" />
+					<input id="patient-id" name="txt-patient-id" type="text" value="245786484" pattern="[a-zA-Z0-9]+" required="required" />
 					<label for="patient-name">Nombre del paciente</label>
-					<input id="patient-name" name="txt-patient-name" type="text" value="Ándres Brenes" required="required" pattern="[A-Za-z]+" />
+					<input id="patient-name" name="txt-patient-name" type="text" value="Ándres Brenes" pattern="|^[a-zA-Z ñÑáéíóúüÁÉÍÓÚç]*$|" required="required" />
 					<label for="date">Fecha realizada</label>
-					<input id="date" name="txt-date" type="text" required="required" value="20/11/2013" placeholder="dd/mm/yyyy" />
+					<input id="date" name="txt-date" type="text" required="required" value="20/11/2013" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" />
 					<label for="asistentes">Asistentes que participaron</label>
 					<textarea id="asistentes" name="asistentes"></textarea>
 				</section>
 				<section class="form-section fr">
 					<label for="procedure">Procedimientos</label>
-					<input id="procedure" name="procedure" type="text" value="Resinas I" placeholder="Procedimiento" required="required" />
+					<input id="procedure" name="procedure" type="text" value="Resinas I" required="required" />
 					<label for="zone"></label>
-					<input id="zone" name="zone" type="text" placeholder="Zona" value="Oclusal" required="required" />
+					<input id="zone" name="zone" type="text" value="Oclusal" required="required" />
 					<label for="procedure-2"></label>
 					<input id="procedure-2" name="procedure-2" type="text" placeholder="Procedimiento" />
 					<label for="zone-2"></label>
@@ -43,7 +45,7 @@
 				</section>
 				<section class="cb ac">
 					<input type="submit" value ="Guardar" />
-					<input type="button" value="Limpiar" />
+					<input type="reset" value="Limpiar" />
 					<input type="button" value="Cancelar" />
 				</section>
 			</form>
