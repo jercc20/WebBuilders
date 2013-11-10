@@ -7,11 +7,47 @@
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Rokkitt" />
 	<link rel="stylesheet" href="css/icons.css" />
 	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/johel.css" />
 </head>
 <body>
 	<div id="wrapper">
 		<div id="container">
-
+			<h1 class="ac">Cita Nueva</h1>
+			<form class="box-wrap clearfix" action="" method="post">
+				<section class="form-section fl">
+					<label for="user-id">Identificación</label>
+					<input id="user-id" name="txt-user-id" type="text" disabled="disabled" value="114260189" />
+					<label for="date">Fecha</label>
+					<input id="date" name="txt-date" type="text" required="required" value="11/07/13"/>
+					<label for="hour">Hora</label>
+					<input id="hour" name="txt-hour" type="text" required="required" value="07:00"/>
+					<label for="type">Tipo de cita</label>
+					<select id="type" required="required">
+						<option value="1">Seleccione el tipo de cita</option>
+						<option value="2">Normal</option>
+						<option value="3">Emergencia</option>
+					</select>
+					<label for="odontologo">Odontologo</label>
+					<select id="odontologo" required="required">
+						<option value="1">Seleccione un odontologo</option>
+						<option value="2">Johel Alvarez</option>
+						<option value="3">Jerson Chinchilla</option>
+						<option value="4">Mathias Muller</option>
+						<option value="5">Diego Herrera</option>
+						<option value="6">Marco Duran</option>
+						<option value="7">Laura Salazar</option>
+					</select>
+				</section>
+				<section class="form-section fr">
+					<label for="notes">Notas</label>
+					<textarea id="notes"></textarea>
+				</section>
+				<section class="cb ac">
+					<input type="submit" value="Guardar" />
+					<input type="reset" value="Limpiar"/>
+					<input type="button" value="Cancelar"/>
+				</section>
+			</form>
 		</div>
 	</div>
 	<footer id="footer">
@@ -24,5 +60,6 @@
 	<!-- Prototype files -->
 	<script src="js/prototype.js"></script>
 	<script src="js/vendor/md5.js"></script>
+	<script src="js/johel.js"></script>
 </body>
 </html>
