@@ -16,6 +16,7 @@
 		<div id="container">
 			<h1 class="ac">Reporte Usuarios</h1>
 			<div>
+				<input type="button" class="btn-ba" value="Búsqueda Avanzada" />
 				<a href="#"><i id="item-print" class="icon-print fr"></i></a>
 			</div>
 			<table id="my-table" class="data-table display">
@@ -114,6 +115,34 @@
 			</table>
 		</div>
 	</div>
+	<div id="popup-ub" class="hide">
+			<form class="box-wrap clearfix" action="" method="post">
+				<section class="form-section ac">
+					<label for="user-id">Identifiación: </label>
+					<input id="user-id" name="user-id" type="text" />
+					<label for="user-name"> Nombre: </label>
+					<input id="user-name" name="txt-user-name" type="text" />
+					<label for="user-lastname">Primer apellido: </label>
+					<input id="user-lastname" name="txt-user-lastname" type="text"/>
+					<label for="user-phone">Teléfono: </label>
+					<input id="user-phone" name="user-phone" type="text" pattern="|^[0-9]*$|" />
+					<label for="user-email">Correo: </label>
+					<input id="user-email" name="user-email" type="text" />
+					<label>Rol: </label>
+					<select>
+						<option>--Select--</option>
+						<option>Administrador</option>
+						<option>Secretaria</option>
+						<option>Odontólogo</option>
+						<option>Administrador</option>
+					</select>
+				</section>
+				<section>
+					<input type="reset" value="Limpiar" class="fl cb" />
+					<input type="submit" value ="Buscar" class="fr" />
+				</section>
+			</form>
+		</div>
 	<script src="js/vendor/jquery-2.0.3.min.js"></script>
 	<script src="js/vendor/jquery.dataTables.min.js"></script>
 	<script src="js/main.js"></script>

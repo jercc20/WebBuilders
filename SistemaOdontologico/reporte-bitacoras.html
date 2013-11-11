@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="utf-8" />
-	<title>Reporte Bitacora</title>
+	<title>Reporte Bitacoras</title>
 	<link rel="stylesheet" href="css/normalize.css" />
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Rokkitt" />
 	<link rel="stylesheet" href="css/icons.css" />
@@ -14,8 +14,9 @@
 <body>
 	<div id="wrapper">
 		<div id="container">
-			<h1 class="ac">Reporte Bitácora</h1>
+			<h1 class="ac">Reporte Bitácoras</h1>
 			<div>
+				<input type="button" class="btn-ba" value="Búsqueda Avanzada" />
 				<a href="#"><i id="item-print" class="icon-print fr"></i></a>
 			</div>
 			<table id="my-table" class="data-table display">
@@ -113,6 +114,25 @@
 				</tbody>
 			</table>
 		</div>
+	</div>
+	<div id="popup-ub" class="hide">
+		<form class="box-wrap clearfix" action="" method="post">
+			<section class="form-section ac">
+				<label for="dentist-name">Nombre del odontólogo: </label>
+				<input id="dentist-name" name="txt-dentist-name" type="text" />
+				<label for="patient-name">Nombre del paciente: </label>
+				<input id="patient-name" name="txt-patient-name" type="text" />
+				<label for="start-date">Fecha inicio: </label>
+				<input id="start-date" name="txt-start-date" type="text" />
+				<label for="end-date">Fecha fin: </label>
+				<input id="end-date" name="txt-end-date" type="text" />
+				</select>
+			</section>
+			<section>
+				<input type="reset" value="Limpiar" class="fl cb" />
+				<input type="submit" value ="Buscar" class="fr" />
+			</section>
+		</form>
 	</div>
 	<script src="js/vendor/jquery-2.0.3.min.js"></script>
 	<script src="js/vendor/jquery.dataTables.min.js"></script>
