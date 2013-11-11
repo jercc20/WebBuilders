@@ -57,6 +57,12 @@
 					self.closePopUp();
 				}
 			});
+			$('body').keyup(function(e) {
+				if ( e.which == 27 && self.popupWrap.is(':visible') ) { //ESC
+					console.log('esc');
+					self.closePopUp();
+				}
+			});
 		},
 		closePopUp: function(){
 			var self = this;
