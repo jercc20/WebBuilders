@@ -39,7 +39,9 @@ jQuery(function($) {
 		if( $('.column-icons').index() > -1 ){
 			//Align right in icons column
 			$('.data-table').each(function(){
-				$(this).find('td').eq( $(this).find('.column-icons').index() ).addClass('ar');
+				$(this).find('tr').each(function(){
+					$(this).find('td').eq( $(this).find('.column-icons').index() ).addClass('ar');
+				});
 			});
 			dtOptions.aoColumnDefs = [{
 				bSortable: false,
