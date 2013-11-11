@@ -2,40 +2,54 @@
 <html lang="es">
 <head>
 	<meta charset="utf-8" />
-	<title>Cita Nueva</title>
+	<title>Crear Cita</title>
 	<link rel="stylesheet" href="css/normalize.css" />
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Rokkitt" />
 	<link rel="stylesheet" href="css/icons.css" />
 	<link rel="stylesheet" href="css/style.css" />
 	<link rel="stylesheet" href="css/johel.css" />
+	<link rel="stylesheet" href="css/jquery-ui-1.10.3.smoothness.custom.min.css" />
 </head>
 <body>
 	<div id="wrapper">
 		<div id="container">
-			<h1 class="ac">Cita Nueva</h1>
-			<form class="box-wrap clearfix" action="" method="post">
-				<section class="form-section fl">
+			<h1 class="ac">Crear Cita</h1>
+			<form id="proced-box" action="" method="post">
+				<section class="form-section">
 					<label for="user-id">Identificación</label>
 					<input id="user-id" name="txt-user-id" type="text" required="required" />
-					<label for="date">Fecha</label>
-					<input id="date" name="txt-date" type="text" required="required" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" placeholder="12/07/2013" title="La fecha debe tener el siguiente formato: dd/mm/YYYYYY"/>
+					<label for="date-apmt">Fecha</label>
+					<input id="date-apmt" name="txt-user-dob" type="text" required="required" placeholder="dd/mm/yyyy" class="datepicker" />
+					
 					<label for="hour">Hora</label>
-					<select id="hour" required="required" title="Hora">
+					<select id="hour" required="required">
 						<option value="">Hora</option>
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5</option>
-						<option value="6">6</option>
-						<option value="7">7</option>
-						<option value="8">8</option>
-						<option value="9">9</option>
+						<option value="1">01</option>
+						<option value="2">02</option>
+						<option value="3">03</option>
+						<option value="4">04</option>
+						<option value="5">05</option>
+						<option value="6">06</option>
+						<option value="7">07</option>
+						<option value="8">08</option>
+						<option value="9">09</option>
 						<option value="10">10</option>
 						<option value="11">11</option>
 						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+						<option value="21">21</option>
+						<option value="22">22</option>
+						<option value="23">24</option>
+						<option value="00">00</option>
 					</select>
-					<select id="minute" required="required" title="Minuto">
+					<select id="minute" required="required">
 						<option value="">Minutos</option>
 						<option value="00">00</option>
 						<option value="10">10</option>
@@ -48,11 +62,6 @@
 						<option value="45">45</option>
 						<option value="50">50</option>
 						<option value="55">55</option>
-					</select>
-					<select id="ampm" required="required" title="am/pm">
-						<option value="">am/pm</option>
-						<option value="am">am</option>
-						<option value="pm">pm</option>
 					</select>
 					<label for="type">Tipo de cita</label>
 					<select id="type" required="required">
@@ -70,11 +79,10 @@
 						<option value="6">Marco Duran</option>
 						<option value="7">Laura Salazar</option>
 					</select>
-				</section>
-				<section class="form-section fr">
 					<label for="notes">Notas</label>
 					<textarea id="notes"></textarea>
 				</section>
+
 				<section class="cb ac">
 					<input type="submit" value="Guardar" />
 					<input type="reset" value="Limpiar"/>
@@ -84,6 +92,7 @@
 		</div>
 	</div>
 	<script src="js/vendor/jquery-2.0.3.min.js"></script>
+	<script src="js/vendor/jquery-ui-1.10.3.datepicker.min.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/global.js"></script>
 	<script src="js/utils.js"></script>
