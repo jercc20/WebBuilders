@@ -9,6 +9,7 @@ body {
 	background: url('../imgs/bg-body.jpg'); /* PENDING TO CHANGE IT */
 }
 a {
+	color:  #3f9dcc;
 	text-decoration: none;
 }
 a:hover {
@@ -277,6 +278,9 @@ form section.ac {
 }
 
 /* Tables */
+.dataTables_wrapper {
+	padding-top: 10px;
+}
 .data-table a {
 	font-size: 1.2em;
 	line-height: 1.5em;
