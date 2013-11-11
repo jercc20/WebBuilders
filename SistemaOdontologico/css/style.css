@@ -87,6 +87,7 @@ h6 {
 	top: 50px;
 	min-width: 102%;
 	background: rgba(170, 170, 170, 0.5);
+	box-shadow: 0 3px 3px #aaa;
 	opacity: 0;
 	transform-origin: 50% 0;
 	transform: scale(1,0);
