@@ -47,19 +47,23 @@
 
 	var footer = {
 		init: function(){
+			var self = this;
 			Prototype.includeFooter();
-			this.closePopUp();
+			this.popupWrap = $('#popup-wrap');
+			this.popup = $('#popup');
+			this.popupWrap.on( 'click', function(e){
+				e.stopPropagation();
+				if( $(e.target).hasClass('close') || e.target == e.currentTarget ){
+					self.closePopUp();
+				}
+			});
 		},
 		closePopUp: function(){
-			$('#popup-wrap, #popup .close').on('click', function(){
-				$('#popup').addClass('hide');
-				setTimeout(function(){
-					$('#popup-wrap').hide();
-				}, 500 );
-			});
-			$('#popup').on('click', function(e){
-				e.stopPropagation();
-			});
+			var self = this;
+			self.popup.addClass('hide');
+			setTimeout(function(){
+				self.popupWrap.hide();
+			}, 500 );
 		}
 	};
 
