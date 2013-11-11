@@ -34,7 +34,7 @@
 			this.iconChange( $(e.target) );
 		},
 		iconActive: function(){
-			this.iconChange( $('> li.active', this.el) );
+			this.iconChange( $('> li.active > a', this.el) );
 		},
 		iconChange: function(item){
 			this.icon
