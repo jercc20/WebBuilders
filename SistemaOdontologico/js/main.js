@@ -37,6 +37,10 @@ jQuery(function($) {
 			aoColumnDefs: []
 		};
 		if( $('.column-icons').index() > -1 ){
+			//Align right in icons column
+			$('.data-table').each(function(){
+				$(this).find('td').eq( $(this).find('.column-icons').index() ).addClass('ar');
+			});
 			dtOptions.aoColumnDefs = [{
 				bSortable: false,
 				aTargets: [ $('.column-icons').index() ]
