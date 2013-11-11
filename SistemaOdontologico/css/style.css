@@ -322,5 +322,9 @@ form section.ac {
 	font-size: 24px;
 	color: #000;
 	text-decoration: none;
+}
+
+#popup .icon-close:hover {
+	color: #3f9dcc;
 	cursor: pointer;
 }
