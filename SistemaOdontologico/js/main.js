@@ -46,6 +46,11 @@ jQuery(function($) {
 
 	}
 
+	//Datepicker Init
+	if( $('.datepicker').length > 0 ){
+		$( ".datepicker" ).datepicker();
+	}
+
 	$('a[href="#"]').on('click', function(){ return false; });
 
 });
