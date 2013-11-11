@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Rokkitt" />
 	<link rel="stylesheet" href="css/icons.css" />
 	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/jquery-ui-1.10.3.smoothness.custom.min.css" />
 </head>
 <body>
 	<div id="wrapper">
@@ -29,7 +30,7 @@
 					<label for="user-email">Correo electrónico</label>
 					<input id="user-email" name="txt-user-email" type="text" value="jercc20@outlook.com" />
 					<label for="user-dob">Fecha de nacimiento</label>
-					<input id="user-dob" name="txt-user-dob" type="text" required="required" placeholder="dd/mm/yyyy" />
+					<input id="user-dob" name="txt-user-dob" type="text" required="required" placeholder="dd/mm/yyyy" class="datepicker" />
 				</section>
 				<section class="form-section fr">
 					<label for="user-psw">Contraseña actual</label>
@@ -48,6 +49,7 @@
 		</div>
 	</div>
 	<script src="js/vendor/jquery-2.0.3.min.js"></script>
+	<script src="js/vendor/jquery-ui-1.10.3.datepicker.min.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/global.js"></script>
 	<script src="js/utils.js"></script>
