@@ -40,6 +40,10 @@ jQuery(function($) {
 			SO.utils.showPopUp( $('#popup-remove').html() );
 		});
 
+		$('#popup').on( 'click', '.btn-accept', function(){
+			SO.utils.showPopUp('Ha sido eliminado correctamente.');
+		});
+
 	}
 
 	$('a[href="#"]').on('click', function(){ return false; });
