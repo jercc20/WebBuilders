@@ -6,7 +6,7 @@
 body {
 	font-size: 13px;
 	font-family: Arial, Helvetica, sans-serif;
-	background: url('../imgs/bg-body.jpg'); /* PENDING TO CHANGE IT */
+	background: url('../imgs/bg-body.jpg');
 }
 a {
 	color:  #3f9dcc;
@@ -281,7 +281,7 @@ form section.ac {
 	width: auto;
 }
 
-/* Tables */
+/* stuff */
 .dataTables_wrapper {
 	padding-top: 10px;
 }
@@ -294,6 +294,9 @@ form section.ac {
 .data-table a:hover {
 	color: #3f9dcc;
 	text-shadow: 1px #000;
+}
+#ui-datepicker-div {
+	width: 206px;
 }
 
 /* Footer */
