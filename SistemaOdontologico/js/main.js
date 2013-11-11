@@ -20,6 +20,7 @@ jQuery(function($) {
 
 	//DataTables Init
 	if( $('.data-table').length > 0 ){
+
 		$('.data-table').dataTable({
 			"bJQueryUI": true,
 			"bLengthChange": false,
@@ -34,6 +35,11 @@ jQuery(function($) {
 				"sSearch": "Buscar "
 			}
 		});
+
+		$('.item-remove').on( 'click', function(){
+			SO.utils.showPopUp( $('#popup-remove').html() );
+		});
+
 	}
 
 	$('a[href="#"]').on('click', function(){ return false; });
