@@ -21,7 +21,7 @@ jQuery(function($) {
 	//DataTables Init
 	if( $('.data-table').length > 0 ){
 
-		$('.data-table').dataTable({
+		var dtOptions = {
 			"bJQueryUI": true,
 			"bLengthChange": false,
 			"sPaginationType": "full_numbers",
@@ -34,11 +34,16 @@ jQuery(function($) {
 				"sInfoFiltered": "",
 				"sSearch": "Buscar "
 			},
-			aoColumnDefs: [{
+			aoColumnDefs: []
+		};
+		if( $('.column-icons').index() > -1 ){
+			dtOptions.aoColumnDefs = [{
 				bSortable: false,
 				aTargets: [ $('.column-icons').index() ]
-			}]
-		});
+			}];
+		}
+
+		$('.data-table').dataTable( dtOptions );
 
 		$('.item-remove').on( 'click', function(){
 			SO.utils.showPopUp( $('#popup-remove').html() );
