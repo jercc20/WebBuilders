@@ -15,7 +15,7 @@
 				<h1 class="ac">Editar Usuario</h1>
 				<form class="box-wrap clearfix" action="" method="post">
 					<section class="form-section fl">
-							<label for="user-name"> Nombre</label>
+						<label for="user-name"> Nombre</label>
 						<input id="user-name" name="txt-user-name" type="text" value="Carla" required="required" pattern="|^[a-zA-Z ñÑáéíóúüÁÉÍÓÚç]*$|" />	
 						<label for="user-lastname">Primer apellido</label>
 						<input id="user-lastname" name="txt-user-lastname" type="text" value="Azofeifa" required="required" pattern="|^[a-zA-Z ñÑáéíóúüÁÉÍÓÚç]*$|"/>
@@ -24,9 +24,9 @@
 						<label for="user-id"> Identificacion</label>
 						<input id="user-id" name="txt-id-user"  type="text" value="223244567" required="required" pattern="[a-zA-Z0-9]+" />
 						<label for="user-phone"> Telefono de la casa</label>
-						<input id="user-phone" name="txt-user-house-phone" type="text" value="22391829" pattern="[/d]{8,10}" />
+						<input id="user-phone" name="txt-user-house-phone" type="text" value="22391829" pattern="\d{8,10}" />
 						<label for="user-cellphone"> Telefono celular</label>
-						<input id="user-cellphone" name="txt-user-cellphone" type="text" value="83805228" pattern="[/d]{8,10}" />
+						<input id="user-cellphone" name="txt-user-cellphone" type="text" value="83805228" pattern="\d{8,10}" />
 						<label for="user-email"> Correo electronico</label>
 						<input id="user-email" name="txt-user-email" type="text" value="cazofeifa@gmail.com" required="required" />	
 						<label for="user-birthday"> Fecha de nacimiento</label>	
