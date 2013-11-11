@@ -139,6 +139,9 @@ h6 {
 	border-right: none;
 	background-color: #333;
 }
+#account > a {
+	display: none;
+}
 #account i {
 	font-size: 20px;
 	line-height: 50px;
