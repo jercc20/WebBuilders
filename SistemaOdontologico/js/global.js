@@ -14,6 +14,7 @@
 			Prototype.includeMenu();
 			this.el = $('#main-menu');
 			this.icon = $('#menu-icon');
+			this.activeMenu();
 			this.iconActive();
 			this.el.on({
 				mouseenter: $.proxy( this.iconOnHover, this ),
@@ -25,6 +26,9 @@
 			}, "#account");
 			$('#logout').on( 'click', Prototype.logout );
 			$('#username').text( SO.config.user );
+		},
+		activeMenu: function(){
+			this.el.find('a[href*="'+SO.utils.currentFile()+'"]').parents('li').addClass('active');
 		},
 		iconOnHover: function(e){
 			this.iconChange( $(e.target) );
