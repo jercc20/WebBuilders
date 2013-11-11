@@ -33,7 +33,11 @@ jQuery(function($) {
 				"sInfoEmpty": "",
 				"sInfoFiltered": "",
 				"sSearch": "Buscar "
-			}
+			},
+			aoColumnDefs: [{
+				bSortable: false,
+				aTargets: [ $('.column-icons').index() ]
+			}]
 		});
 
 		$('.item-remove').on( 'click', function(){
