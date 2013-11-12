@@ -23,9 +23,8 @@ form input[type="reset"]:hover {
 }
 /*seccion hora crear-cita*/
 #hour,
-#minute,
-#ampm{
-	width: auto;
+#minute{
+	width: 105px;
 	padding: 2px;
 }
 
