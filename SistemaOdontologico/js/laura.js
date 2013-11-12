@@ -12,6 +12,10 @@ jQuery(function($) {
 	$('#item-print').on('click', function(){
 		print('#my-table');
 });
+	
+	$('.btn-ba').on('click', function(){
+		SO.utils.showPopUp( $('#popup-ub').html() );
+});
 
 });
 
