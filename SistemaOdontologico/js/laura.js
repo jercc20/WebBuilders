@@ -9,6 +9,9 @@ jQuery(function($) {
 	$('.btn-accept').on('click', function(){
 		SO.utils.showPopUp('Ha sido eliminado');
 });
+	$('#item-print').on('click', function(){
+		print('#my-table');
+});
 
 });
 
