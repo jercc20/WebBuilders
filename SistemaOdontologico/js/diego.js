@@ -1,15 +1,11 @@
 jQuery(function($) {
 
-	if ($("#tb-dates").length > 0) {
-		$('#tb-dates').dataTable();
-	};
-
 	$('.item-remove').on('click', function(){
 		SO.utils.showPopUp( $('#odontograma-popup').html() );
 	});
 
 	$('#advance-search').on('click', function(){
-		SO.utils.showPopUp( $('#popup-report-odontograma').html() );
+		SO.utils.showPopUp( $('#popup-report-search').html() );
 	});
 
 
