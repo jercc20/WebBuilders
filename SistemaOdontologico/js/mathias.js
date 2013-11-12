@@ -4,4 +4,9 @@ jQuery(function($) {
 	SO.utils.showPopUp($('.popup-save');
 
 	});
+
+	if('#user-psw' != '#user-cpsw'){
+
+		
+	}
 });

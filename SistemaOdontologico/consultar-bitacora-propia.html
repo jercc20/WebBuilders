@@ -8,16 +8,14 @@
 	<link rel="stylesheet" href="css/icons.css" />
 	<link rel="stylesheet" href="css/style.css" />
 	<link rel="stylesheet" href="css/data-table.css" />
-	<link rel="stylesheet" type="text/css" href="css/marco.css" />
+	<link rel="stylesheet" href="css/jquery-ui-1.10.3.smoothness.custom.min.css" />
+	<link rel="stylesheet" href="css/marco.css" />
 </head>
 <body>
 	<div id="wrapper">
 		<div id="container">
 			<h1 class="ac">Consultar Bitácora</h1>
-			<div id="add-bitacora" class="fr">
-				<a href="#">+ Agregar bitácora</a>
-			</div>
-			<table id="tb-dates" class"display">
+			<table  class= "data-table display">
 				<thead>
 					<tr>
 						<th>Número de bitácora</th>
@@ -25,8 +23,7 @@
 						<th>Identificación</th>
 						<th>Nombre Odontólogo</th>
 						<th>Fecha realizada</th>
-						<th>Número de procedimientos</th>
-						<th></th>	
+						<th># de procedimientos</th>	
 					</tr>
 				</thead>
 				<tbody>
@@ -37,7 +34,6 @@
 						<td>Juan Porras</td>
 						<td>16/08/2013</td>
 						<td>1</td>
-						<td>
 						</td>
 					</tr>
 					<tr>
@@ -47,7 +43,6 @@
 						<td>Juan Porras</td>
 						<td>18/08/2013</td>
 						<td>1</td>
-						<td>
 						</td>
 					</tr>
 					<tr>
@@ -57,7 +52,6 @@
 						<td>Juan Porras</td>
 						<td>20/08/2013</td>
 						<td>1</td>
-						<td>
 						</td>
 					</tr>
 					<tr>
@@ -67,7 +61,6 @@
 						<td>Juan Porras</td>
 						<td>25/08/2013</td>
 						<td>2</td>
-						<td>
 						</td>
 					</tr>
 					<tr>
@@ -77,7 +70,6 @@
 						<td>Juan Porras</td>
 						<td>30/08/2013</td>
 						<td>1</td>
-						<td>
 						</td>
 					</tr>
 					<tr>
@@ -87,7 +79,6 @@
 						<td>Juan Porras</td>
 						<td>05/09/2013</td>
 						<td>1</td>
-						<td>
 						</td>
 					</tr>
 					<tr>
@@ -97,7 +88,6 @@
 						<td>Juan Porras</td>
 						<td>10/09/2013</td>
 						<td>2</td>
-						<td>
 						</td>
 					</tr>
 					<tr>
@@ -107,7 +97,6 @@
 						<td>Juan Porras</td>
 						<td>15/09/2013</td>
 						<td>1</td>
-						<td>
 						</td>
 					</tr>
 					<tr>
@@ -117,7 +106,6 @@
 						<td>Juan Porras</td>
 						<td>20/09/2013</td>
 						<td>2</td>
-						<td>
 						</td>
 					</tr>
 					<tr>
@@ -127,7 +115,6 @@
 						<td>Juan Porras</td>
 						<td>25/08/2013</td>
 						<td>1</td>
-						<td>
 						</td>
 					</tr>
 				</tbody>
@@ -135,6 +122,7 @@
 		</div>
 	</div>
 	<script src="js/vendor/jquery-2.0.3.min.js"></script>
+	<script src="js/vendor/jquery.dataTables.min.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/global.js"></script>
 	<script src="js/utils.js"></script>
@@ -142,7 +130,6 @@
 	<script src="js/prototype.js"></script>
 	<script src="js/vendor/md5.js"></script>
 	<!--Data Tables files-->
-	<script src="js/vendor/jquery.dataTables.min.js"></script>
 	<script src="js/marco.js"></script>
 </body>
 </html>
