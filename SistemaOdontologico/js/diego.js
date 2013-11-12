@@ -8,13 +8,16 @@ jQuery(function($) {
 		SO.utils.showPopUp( $('#popup-report-search').html() );
 	});
 
-
 	$('.popup-process').on('click', function(){
 		SO.utils.showPopUp( $('#process-popup').html() );
 	});
 
-	$('.printable').click(function (){
+	/*$('.printable').click(function (){
 		$('#print-this').printArea();
+	})*/
+
+	$('.printable').on('click', function(){
+		print('#print-this');
 	})
 
 });
