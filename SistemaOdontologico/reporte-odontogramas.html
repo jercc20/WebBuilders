@@ -124,38 +124,34 @@
 						</tbody>
 					</table>
 				</div>
-				<div id="popup-report-odontograma" class="hide">
-					<form>
-						<div>
-						<label for="date-begin">Fecha de inicio:</label>
-						<input type="text" id="date-begin" />
-						</div>
-						<div>
-						<label for="date-end">Fecha de fin:</label>
-						<input type="text" id="date-end" />
-						</div>
-						<div>
-						<label for="id-odontologo">Identificación del odontologo:</label>
-						<input type="text" id="id-odontologo" />
-						</div>
-						<div>
-						<label for="id-paciente">Idetificación del paciente</label>
-						<input type="text" id="id-paciente" />
-						</div>
-						<input type="button" id="cancel" value="Cancelar" />
-						<input type="button" id="search" value="Buscar" />
+				<div id="popup-report-search" class="hide">
+					<form id="proced-box" action="" method="post">
+						<section class="form-section">
+							<label for="date-begin">Fecha de inicio:</label>
+							<input type="text" id="date-begin" />
+							<label for="date-end">Fecha de fin:</label>
+							<input type="text" id="date-end" />
+							<label for="id-odontologo">Identificación del odontologo:</label>
+							<input type="text" id="id-odontologo" />
+							<label for="id-paciente">Identificación del paciente</label>
+							<input type="text" id="id-paciente" />
+							<button class="close">Aceptar</button>
+							<button class="close">Cancelar</button>
+						</section>
 					</form>
 				</div>
 			</div>
 		</div>
 		<script src="js/vendor/jquery-2.0.3.min.js"></script>
+		<script src="js/vendor/jquery.dataTables.min.js"></script>
 		<script src="js/vendor/jquery.PrintArea.js"></script>
 		<script src="js/main.js"></script>
 		<script src="js/global.js"></script>
 		<script src="js/utils.js"></script>
+		<!--Prototype files-->
 		<script src="js/prototype.js"></script>
 		<script src="js/vendor/md5.js"></script>
-		<script src="js/vendor/jquery.dataTables.min.js"></script>
+		<!--JS Personal-->
 		<script src="js/diego.js"></script>
 	</body>
 </html>
