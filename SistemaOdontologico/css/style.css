@@ -40,6 +40,9 @@ h6 {
 .ar {
 	text-align: right;
 }
+.mid-side {
+	width: 50%;
+}
 .hide {
 	display: none;
 }
