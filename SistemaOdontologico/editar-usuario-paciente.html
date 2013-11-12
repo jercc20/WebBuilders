@@ -2,18 +2,17 @@
 <html lang="es">
 <head>
 	<meta charset="utf-8" />
-	<title>Crear Usuario</title>
+	<title>Editar Usuario</title>
 	<link rel="stylesheet" href="css/normalize.css" />
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Rokkitt" />
 	<link rel="stylesheet" href="css/icons.css" />
 	<link rel="stylesheet" href="css/style.css" />
 	<link rel="stylesheet" href="css/mathias.css" />
-	<link rel="stylesheet" href="css/jquery-ui-1.10.3.smoothness.custom.min.css" />
 </head>
 <body>
 	<div id="wrapper">
 		<div id="container">
-				<h1 class="ac">Usuario Nuevo</h1>
+				<h1 class="ac">Editar Usuario</h1>
 				<form class="box-wrap clearfix" action="" method="post">
 					<section class="form-section fl">
 						<label for="user-name"> Nombre</label>
@@ -31,20 +30,15 @@
 						<label for="user-email"> Correo electronico</label>
 						<input id="user-email" name="txt-user-email" type="text"  required="required" />	
 						<label for="user-birthday"> Fecha de nacimiento</label>	
-						<input id="user-birthday" name="txt-user-birthday" type="text"  required="required" placeholder ="dd/mm/yyyy" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" class="datepicker" />
+						<input id="user-birthday" name="txt-user-birthday" type="text"  required="required" placeholder ="dd/mm/yyyy" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d"/>
 					</section>
 					<section class="form-section fr">
 					<label for="role">Rol</label>
-					<select>
-						<option value="admin">Administrador</option>
-						<option value="dentist">Odontólogo</option>
-						<option value="secretary">Secretaria</option>
+					<select> 
 						<option value="patient">Paciente</option>
 					</select>
 						<label for="user-psw">Contraseña</label>
 						<input id="user-psw" name="txt-user-psw" type="text" required="required" />
-						<label for="user-cpsw">Confirmar contraseña</label>
-						<input id="user-cpsw" name="psw-user-pnew" type="text" requierd="requierd"/>
 					<div id="div-impairment">
 						<p>Discapacidad</p>
 						<label for="yes-impairment">Si</label>
@@ -57,27 +51,18 @@
 						<label for="user-adress"> Domicilio</label>
 						<textarea cols='10' rows='10' id="user-adress" name="txt-user-adress" requiered="required">Alajuela, Costa Rica</textarea>	
 					</section>
-
 					<section class="cb ac">
-						<input class="btn-accept" type="submit" value="Guardar" />
+						<input type="submit" value="Guardar" />
 						<input type="reset" value="Limpiar" />
-						<a href="consultar-usuarios.html"><input type="button" value="Cancelar" /></a>
+						<input type="button" value="Cancelar" />
 					</section>
 
-				<div id="popup-save" class="hide">
-					<p>Se ha guardado correctamente</p>
-				<div class="ac">
-			<input class="btn-accept" type="submit" value="Guardar" />
-			<button class="btn-agregar">Agregar nuevo</button>
-				</div>
-
-			</div>
+					</div>
 				
-		</div>
+			</div>
 
 		</form>
 	<script src="js/vendor/jquery-2.0.3.min.js"></script>
-	<script src="js/vendor/jquery-ui-1.10.3.datepicker.min.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/global.js"></script>
 	<script src="js/utils.js"></script>

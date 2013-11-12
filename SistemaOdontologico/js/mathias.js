@@ -1,12 +1,7 @@
 jQuery(function($) {
 
-	$('.item-remove').on('click', function(){
-		SO.utils.showPopUp( $('#popup-remove').html() );
-});
+	$('.btn-accept').on( 'submit', function(){
+	SO.utils.showPopUp($('.popup-save');
 
-	$('.btn-accept').on('click', function(){
-		SO.utils.showPopUp('Ha sido eliminado');
+	});
 });
-
-});
-

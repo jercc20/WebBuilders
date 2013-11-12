@@ -9,8 +9,8 @@ form input[type="reset"]:hover {
 }
 #home-tables .dataTables_wrapper{
     float:left;
-    width:40%;
-    margin:5%;
+    width:48%;
+    margin:10px 2% 10px 0;
     clear:none;
 }
 #print{
