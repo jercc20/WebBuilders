@@ -17,5 +17,8 @@ jQuery(function($) {
 		SO.utils.showPopUp( $('#process-popup').html() );
 	});
 
+	$('.printable').click(function (){
+		$('#print-this').printArea();
+	})
 
 });
