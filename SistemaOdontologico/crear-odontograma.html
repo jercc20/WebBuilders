@@ -16,7 +16,7 @@
 				<form class="box-wrap clearfix" action="" method="post">
 					<section class="form-section fl">
 						<label for="odontologo-id">Identificación del odontólogo</label>
-						<input id="odontologo-id" name="txt-odontologo-id" type="text" />
+						<input id="odontologo-id" name="txt-odontologo-id" type="text" required="required"/>
 						<label for="odontologo-name">Nombre del odontólogo</label>
 						<input id="odontologo-name" name="txt-odontologo-name" type="text" required="required" pattern="[A-Za-z]+" />
 						<label for="odontologo-lastname">Primer apellido</label>
@@ -46,21 +46,21 @@
 								</tr>
 								<tr>
 									<td>Maxilectomía</td>
-									<td><input type="text" id="txt-process-1" required="required" /></td>
+									<td><input type="text" id="txt-process-1" /></td>
 									<td>2,000,000</td>
-									<td><input type="text" id="txt-zone-process-1" required="required" /></td>
+									<td><input type="text" id="txt-zone-process-1" /></td>
 								</tr>
 								<tr>
 									<td>Resinas 1</td>
-									<td><input type="text" id="txt-process-2" required="required" /></td>
+									<td><input type="text" id="txt-process-2" /></td>
 									<td>22,000</td>
-									<td><input type="text" id="txt-zone-process-2" required="required" /></td>
+									<td><input type="text" id="txt-zone-process-2" /></td>
 								</tr>
 								<tr>
 									<td>Aleación base</td>
-									<td><input type="text" id="txt-process-3" required="required" /></td>
+									<td><input type="text" id="txt-process-3" /></td>
 									<td>15/10/2013</td>
-									<td><input type="text" id="txt-zone-process-3" required="required" /></td>
+									<td><input type="text" id="txt-zone-process-3" /></td>
 								</tr>
 							</table>
 						</div>
@@ -92,7 +92,7 @@
 							<option value="resinas1">Resinas 1</option>
 							<option value="aleacion-base">Aleación base</option>
 						</select>
-						<input type="button" value="OK" class="close"/>
+						<button class="close">OK</button>
 					</div>
 				</form>
 			</div>
