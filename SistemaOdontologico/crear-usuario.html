@@ -19,7 +19,7 @@
 						<label for="user-name"> Nombre</label>
 						<input id="user-name" name="txt-user-name" type="text"  required="required" pattern="|^[a-zA-Z ñÑáéíóúüÁÉÍÓÚç]*$|" />	
 						<label for="user-lastname">Primer apellido</label>
-						<input id="user-lastname" name="txt-user-lastname" type="text"  pattern="|^[a-zA-Z ñÑáéíóúüÁÉÍÓÚç]*$|"/>
+						<input id="user-lastname" name="txt-user-lastname" required="required" type="text"  pattern="|^[a-zA-Z ñÑáéíóúüÁÉÍÓÚç]*$|"/>
 						<label for="user-lastname2"> Segundo apellido</label>
 						<input id="user-lastname2" name="txt-id-lastname2" type="text"  pattern=pattern="|^[a-zA-Z ñÑáéíóúüÁÉÍÓÚç]*$|" />
 						<label for="user-id"> Identificación</label>
@@ -38,10 +38,10 @@
 
 					<select id="user-role" name="slt-user-role" required="required">
 						<option value="">Seleccionar rol</option>
-						<option value="admin">Administrador</option>
-						<option value="dentist">Odontólogo</option>
-						<option value="secretary">Secretaria</option>
-						<option value="patient">Paciente</option>
+						<option value="Administrador">Administrador</option>
+						<option value="Odontólogo">Odontólogo</option>
+						<option value="Secretaria">Secretaria</option>
+						<option value="Paciente">Paciente</option>
 					</select>
 						<label for="user-psw">Contraseña</label>
 						<input id="user-psw" name="txt-user-psw" type="text" required="required" />
@@ -57,7 +57,7 @@
 						<label for="user-alergie"> Alergias</label>
 						<textarea cols='10' rows='10' id="user-alergie" name="txt-user-alergie"pattern="[A-Za-z]+"></textarea>
 						<label for="user-adress"> Domicilio</label>
-						<textarea cols='10' rows='10' id="user-adress" name="txt-user-adress" requiered="required"></textarea>	
+						<textarea cols='10' rows='10' id="user-adress" name="txt-user-adress" required="required"></textarea>	
 					</section>
 
 					<div class="ac cb">
