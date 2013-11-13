@@ -8,30 +8,31 @@
 		<link rel="stylesheet" href="css/icons.css" />
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/diego.css" />
+		<link rel="stylesheet" href="css/jquery-ui-1.10.3.smoothness.custom.min.css" />
 	</head>
 	<body>
 		<div id="wrapper">
 			<div id="container">
 				<h1 class="title">Editar odontograma</h1>
-				<form class="box-wrap clearfix" action="" method="post">
+				<form class="form-edit box-wrap clearfix" action="consultar-odontogramas.html" method="get">
 					<section class="form-section fl">
 						<label for="odontologo-id">Identificación del odontólogo</label>
-						<input id="odontologo-id" name="txt-odontologo-id" type="text"
+						<input id="odontologo-id" name="txt-dentist-id" type="text"
 						value="246847989" />
 						<label for="odontologo-name">Nombre del odontólogo</label>
-						<input id="odontologo-name" name="txt-odontologo-name" type="text" required="required" pattern="[A-Za-z]+" value="Juan" />
+						<input id="odontologo-name" name="txt-dentist-name" type="text" required="required" pattern="[A-Za-z]+" value="Juan" />
 						<label for="odontologo-lastname">Primer apellido</label>
-						<input id="odontologo-lastname" name="txt-odontologo-lastname" type="text" required="required" value="Porras" />
+						<input id="odontologo-lastname" name="txt-dentist-lastname" type="text" required="required" value="Porras" />
 						<label for="odontologo-lastname2">Segundo apellido</label>
 						<input id="odontologo-lastname2" name="txt-odontologo-lastname2" type="text" />
 						<label for="odontograma-date">Fecha de realización</label>
-						<input id="odontograma-date" name="txt-odontograma-date" type="text" required="required" placeholder="dd/mm/yyyy" value="15/08/2013" />
+						<input id="odontograma-date" name="txt-date-realized" type="text" required="required" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" class="datepicker" />
 						<label for="paciente-id">Identificación del paciente</label>
-						<input id="paciente-id" name="txt-paciente-id" type="text" value="356487878" />
+						<input id="paciente-id" name="txt-pacient-id" type="text" value="356487878" />
 						<label for="paciente-name">Nombre del paciente</label>
-						<input id="paciente-name" name="txt-paciente-name" type="text" required="required" pattern="[A-Za-z]+" value="Laura" />
+						<input id="paciente-name" name="txt-pacient-name" type="text" required="required" pattern="[A-Za-z]+" value="Laura" />
 						<label for="paciente-lastname">Primer apellido</label>
-						<input id="paciente-lastname" name="txt-paciente-lastname" type="text" required="required" value="Salazar" />
+						<input id="paciente-lastname" name="txt-pacient-lastname" type="text" required="required" value="Salazar" />
 						<label for="paciente-lastname2">Segundo apellido</label>
 						<input id="paciente-lastname2" name="txt-paciente-lastname2" type="text" />
 					</section>
@@ -47,29 +48,28 @@
 								</tr>
 								<tr>
 									<td>Maxilectomía</td>
-									<td><input type="text" id="txt-process-1" required="required" /></td>
+									<td><input type="text" id="txt-process-1" /></td>
 									<td>2,000,000</td>
-									<td><input type="text" id="txt-zone-process-1" required="required" /></td>
+									<td><input type="text" id="txt-zone-process-1" /></td>
 								</tr>
 								<tr>
 									<td>Resinas 1</td>
-									<td><input type="text" id="txt-process-2" required="required" /></td>
+									<td><input type="text" id="txt-process-2" /></td>
 									<td>22,000</td>
-									<td><input type="text" id="txt-zone-process-2" required="required" /></td>
+									<td><input type="text" id="txt-zone-process-2" /></td>
 								</tr>
 								<tr>
 									<td>Aleación base</td>
-									<td><input type="text" id="txt-process-3" required="required" /></td>
+									<td><input type="text" id="txt-process-3" /></td>
 									<td>15/10/2013</td>
-									<td><input type="text" id="txt-zone-process-3" required="required" /></td>
+									<td><input type="text" id="txt-zone-process-3" /></td>
 								</tr>
 							</table>
 						</div>
 					</section>
 					<section class="cb ac">
+						<button class="form-cancel">Cancelar</button>
 						<input type="submit" value="Guardar" />
-						<input type="button" value="Limpiar" />
-						<input type="button" value="Cancelar" />
 					</section>
 					<div class="hide" id="process-popup">
 						<p>Procedimientos</p>
@@ -93,6 +93,7 @@
 			</div>
 		</div>
 		<script src="js/vendor/jquery-2.0.3.min.js"></script>
+		<script src="js/vendor/jquery-ui-1.10.3.datepicker.min.js"></script>
 		<script src="js/main.js"></script>
 		<script src="js/global.js"></script>
 		<script src="js/utils.js"></script>
