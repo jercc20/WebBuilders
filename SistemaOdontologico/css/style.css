@@ -217,7 +217,8 @@ form textarea:focus {
 .form-section.fr {
 	padding-left: 3%;
 }
-form section.ac {
+form section.ac,
+form div.ac {
 	padding-top: 20px;
 }
 .form-section label {
@@ -254,6 +255,24 @@ form section.ac {
 .logo_preview img {
 	max-width: 100%;
 	max-height: 90px;
+}
+.chk-group-column {
+	float: left;
+	width: 19%;
+	margin-right: 1%;
+}
+.chk-group-column:nth-of-type(1),
+.chk-group-column:nth-of-type(6) {
+	clear: left;
+}
+.chk-group-column label {
+	float: right;
+	clear: left;
+	width: 80%;
+	padding: 0 0 10px;
+}
+.chk-group-column input {
+	width: auto;
 }
 
 /* stuff */
