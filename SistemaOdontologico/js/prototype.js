@@ -98,4 +98,17 @@
 		});
 	};
 
+	proto.addDataTableRow = function(){
+		$table = $('.data-table');
+		$row = $table.find('tbody tr:first').clone();
+		//Complete each column
+		$table.find('thead th').not('.column-icons').each(function(i) {
+			$field = $(this).data('field');
+			if( $field !== "" && $field !== undefined ){
+				$row.find('td').eq( i ).text( SO.utils.getUrlVar( $field ) );
+			}
+		});
+		$table.prepend( $row );
+	};
+
 })(Prototype = {});
