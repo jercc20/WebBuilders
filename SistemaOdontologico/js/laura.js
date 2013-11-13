@@ -1,7 +1,5 @@
 jQuery(function($) {
 
-	
-
 	$('.item-remove').on('click', function(){
 		SO.utils.showPopUp( $('#popup-remove').html() );
 });
