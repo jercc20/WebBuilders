@@ -12,119 +12,121 @@
 	<div id="wrapper">
 		<div id="container">
 			<h1 class="ac">Editar rol</h1>
-			<div id="nombre-rol">
-					<label>Administrador</label/>
-				</div>
-				<div id="chk-selection" class="ar">
-					<a href="#">Seleccionar todos</a>
-					<a href="#">Quitar todos</a>
-				</div>
-			<form class="box-wrap clearfix" action="" method="post" />
-				<div id="chk-citas">
-					<h3>Citas</h3>
-					<label>Registrar Cita</label>
-					<input type="checkbox" name="chk-permissions" value="crear-cita" />
-					<label>Editar Cita</label>
-					<input type="checkbox" name="chk-permissions" value="editar-cita" />
-					<label>Eliminar Cita</label>
-					<input type="checkbox" name="chk-permissions" value="borrar-cita" />
-					<label>Consultar Cita</label>
-					<input type="checkbox" name="chk-permissions" value="consultar-citas" />
-					<label>Ingresar a la Sección de citas</label>
-					<input type="checkbox" name="chk-permissions" value="consultar-citas" />
-				</div>
-				<div id="chk-bitacoras">
-					<h3>Bitácoras</h3>
-					<label>Registrar Cita</label>
-					<input type="checkbox" name="chk-permissions" value="crear-bitacora" />
-					<label>Editar bitácora</label>
-					<input type="checkbox" name="chk-permissions" value="editar-bitacora" />
-					<label>Eliminar Cita</label>
-					<input type="checkbox" name="chk-permissions" value="borrar-bitacora" />
-					<label>Consultar Cita</label>
-					<input type="checkbox" name="chk-permissions" value="consultar-bitacoras" />
-					<label>Ingresar a la Sección de bitacoras</label>
-					<input type="checkbox" name="chk-permissions" value="consultar-bitacoras" />
-				</div>
-				<div id="chk-users">
-					<h3>Usuarios</h3>
-					<label>Registrar usuario</label>
-					<input type="checkbox" name="chk-permissions" value="crear-usuario" />
-					<label>Editar usuario</label>
-					<input type="checkbox" name="chk-permissions" value="editar-usuario" />
-					<label>Eliminar usario</label>
-					<input type="checkbox" name="chk-permissions" value="borrar-usuario" />
-					<label>Consultar usuario</label>
-					<input type="checkbox" name="chk-permissions" value="consultar-usuarios" />
-					<label>Ingresar a la Sección de usuarios</label>
-					<input type="checkbox" name="chk-permissions" value="consultar-usuarios" />
-				</div>
-				<div id="chk-procedures">
-					<h3>Procedimientos</h3>
-					<label>Registrar procedimientos</label>
-					<input type="checkbox" name="chk-permissions" value="crear-procedimiento" />
-					<label>Editar procedimientos</label>
-					<input type="checkbox" name="chk-permissions" value="editar-procedimiento" />
-					<label>Eliminar usario</label>
-					<input type="checkbox" name="chk-permissions" value="borrar-procedimiento" />
-					<label>Consultar usuario</label>
-					<input type="checkbox" name="chk-permissions" value="consultar-procedimientos" />
-					<label>Ingresar a la Sección de procedimientos</label>
-					<input type="checkbox" name="chk-permissions" value="consultar-procedimientos" />
-				</div>
-				<div id="chk-odontograma">
-					<h3>Odontogramas</h3>
-					<label>Registrar odontograma</label>
-					<input type="checkbox" name="chk-permissions" value="crear-odontograma" />
-					<label>Editar odontograma</label>
-					<input type="checkbox" name="chk-permissions" value="editar-odontograma" />
-					<label>Eliminar odontograma</label>
-					<input type="checkbox" name="chk-permissions" value="borrar-odontograma" />
-					<label>Consultar odontogramas</label>
-					<input type="checkbox" name="chk-permissions" value="consultar-odontogramas" />
-					<label>Ingresar a la Sección de odontogramas</label>
-					<input type="checkbox" name="chk-permissions" value="consultar-odontogramas" />
-				</div>
-					<div id="chk-facturacion">
-					<h3>Facturación</h3>
-					<label>Registrar factura</label>
-					<input type="checkbox" name="chk-permissions" value="crear-factura" />
-					<label>Editar factura</label>
-					<input type="checkbox" name="chk-permissions" value="editar-factura" />
-					<label>Eliminar factura</label>
-					<input type="checkbox" name="chk-permissions" value="borrar-factura" />
-					<label>Consultar facturas</label>
-					<input type="checkbox" name="chk-permissions" value="consultar-facturas" />
-					<label>Ingresar a la Sección de odontogramas</label>
-					<input type="checkbox" name="chk-permissions" value="consultar-facturas" />
-				</div>
-					<div id="chk-reportes">
-					<h3>Reportes</h3>
-					<label>Registrar reportes</label>
-					<input type="checkbox" name="chk-permissions" value="crear-reporte" />
-					<label>Editar factura</label>
-					<input type="checkbox" name="chk-permissions" value="editar-reporte" />
-					<label>Eliminar factura</label>
-					<input type="checkbox" name="chk-permissions" value="borrar-reporte" />
-					<label>Consultar facturas</label>
-					<input type="checkbox" name="chk-permissions" value="consultar-reportes" />
-					<label>Ingresar a la Sección de odontogramas</label>
-					<input type="checkbox" name="chk-permissions" value="consultar-reportes" />
-				</div>
-				<div id="chk-configuración">
-					<h3>Configuración</h3>
-					<label>Ingresar logo</label>
-					<input type="checkbox" name="chk-permissions" value="ingresar-logo" />
-					<label>Editar información</label>
-					<input type="checkbox" name="chk-permissions" value="editar-configuración" />
-					<label>Ingresar a la configuración</label>
-					<input type="checkbox" name="chk-permissions" value="consultar-configuraciion" />
-				</div
-
-
-
-					<input type="submit" value="Guardar" />
+			<form class="form-edit box-wrap clearfix" method="get" action="consultar-roles.html">
+				<section class="form-section">
+					<div class="third-side fl">
+						<label>Nombre del Rol</label>
+						<input type="text" name="txt-role-name" required="required" value="Administrador" disabled="disabled" />
+					</div>
+					<div class="third-side fr ar">
+						<a href="#" id="select-all-rol">Seleccionar todos</a> |
+						<a href="#" id="unselect-all-rol">Quitar todos</a>
+					</div>
+					<section class="chk-group-column">
+						<h3>Citas</h3>
+						<label>Registrar Cita</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="crear-cita" />
+						<label>Editar Cita</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="editar-cita" />
+						<label>Eliminar Cita</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="borrar-cita" />
+						<label>Consultar Cita</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="consultar-citas" />
+						<label>Ingresar a la Sección de citas</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="consultar-citas" />
+					</section>
+					<section class="chk-group-column">
+						<h3>Bitácoras</h3>
+						<label>Registrar Cita</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="crear-bitacora" />
+						<label>Editar bitácora</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="editar-bitacora" />
+						<label>Eliminar Cita</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="borrar-bitacora" />
+						<label>Consultar Cita</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="consultar-bitacoras" />
+						<label>Ingresar a la Sección de bitacoras</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="consultar-bitacoras" />
+					</section>
+					<section class="chk-group-column">
+						<h3>Usuarios</h3>
+						<label>Registrar usuario</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="crear-usuario" />
+						<label>Editar usuario</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="editar-usuario" />
+						<label>Eliminar usario</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="borrar-usuario" />
+						<label>Consultar usuario</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="consultar-usuarios" />
+						<label>Ingresar a la Sección de usuarios</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="consultar-usuarios" />
+					</section>
+					<section class="chk-group-column">
+						<h3>Odontogramas</h3>
+						<label>Registrar odontograma</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="crear-odontograma" />
+						<label>Editar odontograma</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="editar-odontograma" />
+						<label>Eliminar odontograma</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="borrar-odontograma" />
+						<label>Consultar odontogramas</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="consultar-odontogramas" />
+						<label>Ingresar a la Sección de odontogramas</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="consultar-odontogramas" />
+					</section>
+					<section class="chk-group-column">
+						<h3>Facturación</h3>
+						<label>Registrar factura</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="crear-factura" />
+						<label>Editar factura</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="editar-factura" />
+						<label>Eliminar factura</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="borrar-factura" />
+						<label>Consultar facturas</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="consultar-facturas" />
+						<label>Ingresar a la Sección de odontogramas</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="consultar-facturas" />
+					</section>
+					<section class="chk-group-column">
+						<h3>Reportes</h3>
+						<label>Registrar reportes</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="crear-reporte" />
+						<label>Editar factura</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="editar-reporte" />
+						<label>Eliminar factura</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="borrar-reporte" />
+						<label>Consultar facturas</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="consultar-reportes" />
+						<label>Ingresar a la Sección de odontogramas</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="consultar-reportes" />
+					</section>
+					<section class="chk-group-column">
+						<h3>Procedimientos</h3>
+						<label>Registrar procedimientos</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="crear-procedimiento" />
+						<label>Editar procedimientos</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="editar-procedimiento" />
+						<label>Eliminar usario</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="borrar-procedimiento" />
+						<label>Consultar usuario</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="consultar-procedimientos" />
+						<label>Ingresar a la Sección de procedimientos</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="consultar-procedimientos" />
+					</section>
+					<section class="chk-group-column">
+						<h3>Configuración</h3>
+						<label>Ingresar logo</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="ingresar-logo" />
+						<label>Editar información</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="editar-configuración" />
+						<label>Ingresar a la configuración</label>
+						<input type="checkbox" checked="checked" name="chk-permissions" value="consultar-configuraciion" />
+					</section>
 				</section>
+				<div class="ac cb">
+					<button class="form-cancel">Cancelar</button>
+					<button type="submit">Guardar</button>
+				</div>
 			</form>
 		</div>
 	</div>
