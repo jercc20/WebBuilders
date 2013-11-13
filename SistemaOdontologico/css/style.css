@@ -43,6 +43,9 @@ h6 {
 .mid-side {
 	width: 50%;
 }
+.third-side {
+	width: 33.33%;
+}
 .hide {
 	display: none;
 }
@@ -239,6 +242,25 @@ form section.ac {
 	resize: none;
 }
 
+/* stuff */
+.dataTables_wrapper {
+	padding-top: 10px;
+}
+.data-table a {
+	padding: 0 1px;
+	font-size: 1.2em;
+	line-height: 1.5em;
+	color: #000;
+	text-decoration: none;
+}
+.data-table a:hover {
+	color: #3f9dcc;
+	text-shadow: 1px #000;
+}
+#ui-datepicker-div {
+	width: 206px;
+}
+
 /* Login */
 #logo {
 	position: absolute;
@@ -282,25 +304,6 @@ form section.ac {
 #login-form input[type="submit"] {
 	float: right;
 	width: auto;
-}
-
-/* stuff */
-.dataTables_wrapper {
-	padding-top: 10px;
-}
-.data-table a {
-	padding: 0 1px;
-	font-size: 1.2em;
-	line-height: 1.5em;
-	color: #000;
-	text-decoration: none;
-}
-.data-table a:hover {
-	color: #3f9dcc;
-	text-shadow: 1px #000;
-}
-#ui-datepicker-div {
-	width: 206px;
 }
 
 /* Footer */
