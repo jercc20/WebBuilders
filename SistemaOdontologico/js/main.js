@@ -88,13 +88,9 @@ jQuery(function($) {
 
 	//forms
 	$('.form-add-edit').on( 'submit', function(e){
-		e.preventDefault();
-		SO.utils.showPopUp('Ha sido guardado correctamente.');
-		var action = $(this).attr('action');
-		if( action !== "" ){
-			setTimeout(function(){
-				SO.utils.localRedirect( action );
-			}, 2000 );
+		if( $(this).attr('action') === "" ){
+			e.preventDefault();
+			SO.utils.showPopUp('Ha sido guardado correctamente.');
 		}
 	});
 	$('.form-cancel').on( 'click', function(e){
