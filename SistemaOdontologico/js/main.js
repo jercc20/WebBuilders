@@ -93,11 +93,9 @@ jQuery(function($) {
 	}
 
 	//Forms
-	$('.form-add-edit').on( 'submit', function(e){
-		if( $(this).attr('action') === "" ){
-			e.preventDefault();
-			SO.utils.showPopUp('Ha sido guardado correctamente.');
-		}
+	$('.form-edit').on( 'submit', function(e){
+		e.preventDefault();
+		SO.utils.showPopUp('Ha sido guardado correctamente.');
 	});
 	$('.form-cancel').on( 'click', function(e){
 		e.preventDefault();
