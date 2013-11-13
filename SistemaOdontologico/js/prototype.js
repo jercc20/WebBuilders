@@ -104,7 +104,11 @@
 		$table.find('thead th').not('.column-icons').each(function(i) {
 			$field = $(this).data('field');
 			if( $field !== "" && $field !== undefined ){
-				$row.find('td').eq( i ).text( unescape( SO.utils.getUrlVar( $field ) ) );
+				val = unescape( SO.utils.getUrlVar( $field ) ).replace( '+', ' ' );
+				if( val == "undefined" ){
+					val = "";
+				}
+				$row.find('td').eq( i ).text( val );
 			}
 		});
 		$table.prepend( $row );
