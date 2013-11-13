@@ -13,24 +13,25 @@
 	<div id="wrapper">
 		<div id="container">
 			<h1 class="ac">Configuración</h1>
-			<form class="box-wrap clearfix" action="" method="post">
+			<form class="form-edit box-wrap clearfix" action="#" method="get">
 				<section class="form-section fl">
 					<label for="system-name">Nombre sistema</label>
-					<input id="system-name" name="txt-system-name" type="text" value="Sistema Odontológico" pattern="[A-Za-z]+" />
+					<input id="system-name" name="txt-system-name" type="text" value="Sistema Odontológico" required="required" />
 					<label for="system-logo">Logo</label>
-					<input id="system-logo" name="txt-system-logo" type="text" />	
-					<label for="img-logo" />	
-					<input id="img-logo" name="file-img-logo" type="file"/>		
+					<input id="system-logo" name="txt-system-logo" type="file" value="imgs/logo.png" />
+					<div class="logo_preview">
+						<img src="imgs/logo.png" alt="Logo Preview" />
+					</div>
 				</section>
 				<section class="form-section fr">
 					<label for="system-phone">Teléfono</label>
-					<input id="system-phone" name="txt-system-phone" type="text" value="22222222" pattern="[/d]{8,10}"/>
+					<input id="system-phone" name="txt-system-phone" type="text" value="22222222" pattern="[\d]{8,10}" required="required" />
 					<label for="system-email">Correo electrónico</label>
-					<input id="system-email" name="txt-system-email" type="text" value="clinica@odontologica.com" />
+					<input id="system-email" name="txt-system-email" type="text" value="clinica@odontologica.com" required="required" />
 					<label for="system-schedule">Horario</label>
-					<input id="system-schedule" name="txt-system-schedule" value="L-V 8:00am-5:00pm" type="text"  />
+					<input id="system-schedule" name="txt-system-schedule" value="L-V 8:00am-5:00pm" type="text"  required="required" />
 					<label for="system-address">Dirección</label>
-					<textarea id="system-address" name="txt-system-address">San José, Costa Rica.</textarea>
+					<textarea id="system-address" name="txt-system-address" required="required">San José, Costa Rica.</textarea>
 				</section>
 				<section class="cb ac">
 					<input type="submit" value="Guardar" />
