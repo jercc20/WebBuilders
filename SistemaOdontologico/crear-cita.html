@@ -14,15 +14,15 @@
 	<div id="wrapper">
 		<div id="container">
 			<h1 class="ac">Crear Cita</h1>
-			<form id="proced-box" action="" method="post">
+			<form id="proced-box" class="form-add-edit box-wrap" action="consultar-citas.html" method="get">
 				<section class="form-section">
 					<label for="user-id">Identificación</label>
 					<input id="user-id" name="txt-user-id" type="text" required="required" />
 					<label for="date-apmt">Fecha</label>
 					<input id="date-apmt" name="txt-user-dob" type="text" required="required" placeholder="dd/mm/yyyy" class="datepicker" />
-					
+
 					<label for="hour">Hora</label>
-					<select id="hour" required="required">
+					<select id="hour" name="slt-hour" required="required">
 						<option value="">Hora</option>
 						<option value="1">01</option>
 						<option value="2">02</option>
@@ -71,9 +71,9 @@
 						<option value="3">Emergencia</option>
 					</select>
 					<label for="odontologo">Odontologo</label>
-					<select id="odontologo" required="required">
+					<select id="odontologo" name="slt-odontologo-name" required="required">
 						<option value="">Seleccione un odontologo</option>
-						<option value="2">Johel Alvarez</option>
+						<option value="Johel+Alvarez">Johel Alvarez</option>
 						<option value="3">Jerson Chinchilla</option>
 						<option value="4">Mathias Muller</option>
 						<option value="5">Diego Herrera</option>
@@ -81,13 +81,14 @@
 						<option value="7">Laura Salazar</option>
 					</select>
 					<label for="notes">Notas</label>
-					<textarea id="notes"></textarea>
+					<textarea id="notes" name="txt-notes"></textarea>
 				</section>
 
 				<section class="cb ac">
+					<input type="hidden" name="added" value="1" />
 					<input type="submit" value="Guardar" />
 					<input type="reset" value="Limpiar"/>
-					<a href="consultar-citas.html"><input type="button" value="Cancelar"/></a>
+					<button class="form-cancel">Cancelar</button>
 				</section>
 			</form>
 		</div>
