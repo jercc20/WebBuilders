@@ -7,46 +7,49 @@
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Rokkitt" />
 	<link rel="stylesheet" href="css/icons.css" />
 	<link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" href="css/jquery-ui-1.10.3.smoothness.custom.min.css" />
 	<link rel="stylesheet" href="css/laura.css" />
+	<link rel="stylesheet" href="css/jquery-ui-1.10.3.smoothness.custom.min.css" />
 </head>
 <body>
 	<div id="wrapper">
 		<div id="container">
 			<h1 class="ac">Crear Abono</h1>
-					
-			<form class="box-wrap clearfix" action="" method="post">
+			<form id="proced-box" class="form-add-edit box-wrap" action="consultar-facturas.html" method="get">
 				<section class="form-section fl">
-					<label for="user-id">Identificación</label>
-					<input id="user-id" name="txt-user-id" type="text"  pattern="|^[a-zA-Z0-9]*$|" required="required" value="">
+
+					<label for="user-name">Identificación</label>
+					<input id="user-name" name="txt-user-id" type="text" required="required" />
+
 					<label for="number">Número de Factura</label>
 					<input id="number" name="txt-number" type="text" required="required" value=""/>
-					<label for="date">Fecha del Abono</label>
-					<input id="date" class="datepicker" name="txt-date" type="text" required="required" placeholder="DD/MM/YYYY" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" />
+
+					<label for="date-apmt">Fecha</label>
+					<input id="date-apmt" name="txt-user-dob" type="text" required="required" placeholder="dd/mm/yyyy" class="datepicker" />
+
 					<label for="type">Monto del Abono</label>
 					<input id="type" name="txt-type" type="text" required="required" value=""/>
-				</section>
-				<section class="form-section fr">
-					<label for="notes">Notas</label>
-					<textarea id="notes"></textarea>
-				</section>
-				<section class="cb ac">
-					<input type="submit" value="Guardar" />
-					<input type="reset" value="Limpiar"/>
-					<input type="button" value="Cancelar"/>
-				</section>
-			</form>
+					</section>
+					<section class="form-section fr">
+						<label for="notes">Notas</label>
+						<textarea id="notes"></textarea>
+					</section>
+					<div class="ac cb">
+						<input type="hidden" name="added" value="1" />
+						<button class="form-cancel">Cancelar</button>
+						<input type="reset" value="Limpiar" />
+						<button type="submit">Guardar</button>
+					</div>
+				</form>
+			</div>
 		</div>
-	</div>
-<script src="js/vendor/jquery-2.0.3.min.js"></script>
-	<script src="js/vendor/jquery.dataTables.min.js"></script>
-	<script src="js/main.js"></script>
-	<script src="js/global.js"></script>
-	<script src="js/utils.js"></script>
-	<script src="js/laura.js"></script>
-	<!-- Prototype files -->
-	<script src="js/prototype.js"></script>
-	<script src="js/vendor/md5.js"></script>
-	<!--Data Tables files-->
-</body>
-</html>
+		<script src="js/vendor/jquery-2.0.3.min.js"></script>
+		<script src="js/vendor/jquery-ui-1.10.3.datepicker.min.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/global.js"></script>
+		<script src="js/utils.js"></script>
+		<!-- Prototype files -->
+		<script src="js/prototype.js"></script>
+		<script src="js/vendor/md5.js"></script>
+		<script src="js/laura.js"></script>
+	</body>
+	</html>
