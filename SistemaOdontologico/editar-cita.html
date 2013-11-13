@@ -14,15 +14,16 @@
 	<div id="wrapper">
 		<div id="container">
 			<h1 class="ac">Editar Cita</h1>
-			<form id="proced-box" action="" method="post">
+			<form id="proced-box" class="form-edit box-wrap" action="consultar-citas.html" method="get">
 				<section class="form-section">
-					<label for="user-id">Identificación</label>
-					<input id="user-id" name="txt-user-id" type="text" required="required" />
+					<label for="user-id">Nombre del paciente</label>
+					<input id="user-id" name="txt-user-name" type="text" required="required" value="Johel Alvarez" />
+					<label for="user-name">Identificación</label>
+					<input id="user-name" name="txt-user-id" type="text" required="required" value="112840532" />
 					<label for="date-apmt">Fecha</label>
 					<input id="date-apmt" name="txt-user-dob" type="text" required="required" placeholder="dd/mm/yyyy" class="datepicker" />
-					
 					<label for="hour">Hora</label>
-					<select id="hour" required="required">
+					<select id="hour" name="slt-hour" required="required">
 						<option value="">Hora</option>
 						<option value="1">01</option>
 						<option value="2">02</option>
@@ -46,12 +47,13 @@
 						<option value="20">20</option>
 						<option value="21">21</option>
 						<option value="22">22</option>
-						<option value="23">24</option>
+						<option value="23">23</option>
 						<option value="00">00</option>
 					</select>
-					<select id="minute" required="required">
+					<select id="minute" name="slt-minute" required="required">
 						<option value="">Minutos</option>
 						<option value="00">00</option>
+						<option value="05">05</option>
 						<option value="10">10</option>
 						<option value="15">15</option>
 						<option value="20">20</option>
@@ -64,30 +66,29 @@
 						<option value="55">55</option>
 					</select>
 					<label for="type">Tipo de cita</label>
-					<select id="type" required="required">
+					<select id="type" name="slt-cita" required="required">
 						<option value="">Seleccione el tipo de cita</option>
-						<option value="2">Normal</option>
-						<option value="3">Emergencia</option>
+						<option value="Normal">Normal</option>
+						<option value="Emergencia">Emergencia</option>
 					</select>
 					<label for="odontologo">Odontologo</label>
-					<select id="odontologo" required="required">
+					<select id="odontologo" name="slt-odontologo-name" required="required">
 						<option value="">Seleccione un odontologo</option>
-						<option value="2">Johel Alvarez</option>
-						<option value="3">Jerson Chinchilla</option>
-						<option value="4">Mathias Muller</option>
-						<option value="5">Diego Herrera</option>
-						<option value="6">Marco Duran</option>
-						<option value="7">Laura Salazar</option>
+						<option value="Johel+Alvarez">Johel Alvarez</option>
+						<option value="Jerson+Chinchilla">Jerson Chinchilla</option>
+						<option value="Mathias+Muller">Mathias Muller</option>
+						<option value="Diego+Herrera">Diego Herrera</option>
+						<option value="Marco+Duran">Marco Duran</option>
+						<option value="Laura+Salazar">Laura Salazar</option>
 					</select>
 					<label for="notes">Notas</label>
-					<textarea id="notes"></textarea>
+					<textarea id="notes" name="txt-notes"></textarea>
 				</section>
 
-				<section class="cb ac">
-					<input type="submit" value="Guardar" />
-					<input type="reset" value="Limpiar"/>
-					<a href="consultar-citas.html"><input type="button" value="Cancelar"/></a>
-				</section>
+				<div class="ac cb">
+					<button class="form-cancel">Cancelar</button>
+					<button type="submit">Guardar</button>
+				</div>
 			</form>
 		</div>
 	</div>
