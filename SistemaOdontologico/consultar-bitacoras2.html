@@ -2,33 +2,34 @@
 <html lang="es">
 <head>
 	<meta charset="utf-8" />
-	<title>Consultar Bitácora</title>
+	<title>Consultar Bitácoras</title>
 	<link rel="stylesheet" href="css/normalize.css" />
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Rokkitt" />
 	<link rel="stylesheet" href="css/icons.css" />
 	<link rel="stylesheet" href="css/style.css" />
 	<link rel="stylesheet" href="css/data-table.css" />
-	<link rel="stylesheet" type="text/css" href="css/marco.css">
+	<link rel="stylesheet" href="css/jquery-ui-1.10.3.smoothness.custom.min.css" />
+	<link rel="stylesheet" href="css/marco.css">
 </head>
 <body>
 	<div id="wrapper">
 		<div id="container">
-			<h1 class="ac">Consultar Bitácora</h1>
+			<h1 class="ac">Consultar Bitácoras</h1>
 			<div id="add-bitacora" class="fr">
-				<a href="#">+ Agregar bitácora</a>
+				<a href="crear-bitacora.html">+ Agregar bitácora</a>
 			</div>
-			<table id="tb-dates" class"display">
+			<table class="data-table display">
 				<thead>
-					<tr>
+			        <tr>
 						<th>Número de bitácora</th>
 						<th>Nombre Usuario</th>
 						<th>Identificación</th>
 						<th>Nombre Odontólogo</th>
 						<th>Fecha realizada</th>
 						<th>Número de procedimientos</th>
-						<th></th>	
-					</tr>
-				</thead>
+						<th class="column-icons"></th>
+			        </tr>
+			    </thead>
 				<tbody>
 					<tr>
 						<td>1</td>
@@ -37,11 +38,7 @@
 						<td>Juan Porras</td>
 						<td>16/08/2013</td>
 						<td>1</td>
-						<td>
-							<a href="#"><i class="icon-view item-view"></i></a>
-							<a href="#"><i class="icon-edit"></i></a> 
-							<a href="#"><i class="icon-remove"></i></a>
-						</td>
+						<td><a href="#"><i class="icon-view item-view"></i></a><a href="editar-bitacora.html"><i class="icon-edit"></i></a><a href="#"><i class="icon-remove item-remove"></i></a></td>
 					</tr>
 					<tr>
 						<td>2</td>
@@ -50,11 +47,7 @@
 						<td>Marco Durán</td>
 						<td>05/08/2013</td>
 						<td>1</td>
-						<td>
-							<a href="#"><i class="icon-view item-view"></i></a>
-							<a href="#"><i class="icon-edit"></i></a> 
-							<a href="#"><i class="icon-remove"></i></a>
-						</td>
+						<td><a href="#"><i class="icon-view item-view"></i></a><a href="editar-bitacora.html"><i class="icon-edit"></i></a><a href="#"><i class="icon-remove item-remove"></i></a></td>
 					</tr>
 					<tr>
 						<td>3</td>
@@ -63,11 +56,7 @@
 						<td>Johel Álvarez</td>
 						<td>05/08/2013</td>
 						<td>1</td>
-						<td>
-							<a href="#"><i class="icon-view item-view"></i></a>
-							<a href="#"><i class="icon-edit"></i></a> 
-							<a href="#"><i class="icon-remove"></i></a>
-						</td>
+						<td><a href="#"><i class="icon-view item-view"></i></a><a href="editar-bitacora.html"><i class="icon-edit"></i></a><a href="#"><i class="icon-remove item-remove"></i></a></td>
 					</tr>
 					<tr>
 						<td>4</td>
@@ -76,11 +65,7 @@
 						<td>Juan Porras</td>
 						<td>15/08/2013</td>
 						<td>2</td>
-						<td>
-							<a href="#"><i class="icon-view item-view"></i></a>
-							<a href="#"><i class="icon-edit"></i></a> 
-							<a href="#"><i class="icon-remove"></i></a>
-						</td>
+						<td><a href="#"><i class="icon-view item-view"></i></a><a href="editar-bitacora.html"><i class="icon-edit"></i></a><a href="#"><i class="icon-remove item-remove"></i></a></td>
 					</tr>
 					<tr>
 						<td>5</td>
@@ -89,11 +74,7 @@
 						<td>Fernanda Vargas</td>
 						<td>06/08/2013</td>
 						<td>1</td>
-						<td>
-							<a href="#"><i class="icon-view item-view"></i></a>
-							<a href="#"><i class="icon-edit"></i></a> 
-							<a href="#"><i class="icon-remove"></i></a>
-						</td>
+						<td><a href="#"><i class="icon-view item-view"></i></a><a href="editar-bitacora.html"><i class="icon-edit"></i></a><a href="#"><i class="icon-remove item-remove"></i></a></td>
 					</tr>
 					<tr>
 						<td>6</td>
@@ -102,11 +83,7 @@
 						<td>Juan Porras</td>
 						<td>15/08/2013</td>
 						<td>1</td>
-						<td>
-							<a href="#"><i class="icon-view item-view"></i></a>
-							<a href="#"><i class="icon-edit"></i></a> 
-							<a href="#"><i class="icon-remove"></i></a>
-						</td>
+						<td><a href="#"><i class="icon-view item-view"></i></a><a href="editar-bitacora.html"><i class="icon-edit"></i></a><a href="#"><i class="icon-remove item-remove"></i></a></td>
 					</tr>
 					<tr>
 						<td>7</td>
@@ -115,11 +92,7 @@
 						<td>Fernanda Vargas</td>
 						<td>25/06/2013</td>
 						<td>2</td>
-						<td>
-							<a href="#"><i class="icon-view item-view"></i></a>
-							<a href="#"><i class="icon-edit"></i></a> 
-							<a href="#"><i class="icon-remove"></i></a>
-						</td>
+						<td><a href="#"><i class="icon-view item-view"></i></a><a href="editar-bitacora.html"><i class="icon-edit"></i></a><a href="#"><i class="icon-remove item-remove"></i></a></td>
 					</tr>
 					<tr>
 						<td>8</td>
@@ -128,11 +101,7 @@
 						<td>Marco Durán</td>
 						<td>07/08/2013</td>
 						<td>1</td>
-						<td>
-							<a href="#"><i class="icon-view item-view"></i></a>
-							<a href="#"><i class="icon-edit"></i></a> 
-							<a href="#"><i class="icon-remove"></i></a>
-						</td>
+						<td><a href="#"><i class="icon-view item-view"></i></a><a href="editar-bitacora.html"><i class="icon-edit"></i></a><a href="#"><i class="icon-remove item-remove"></i></a></td>
 					</tr>
 					<tr>
 						<td>9</td>
@@ -141,42 +110,50 @@
 						<td>Fernanda Vargas</td>
 						<td>06/08/2013</td>
 						<td>2</td>
-						<td>
-							<a href="#"><i class="icon-view item-view"></i></a>
-							<a href="#"><i class="icon-edit"></i></a> 
-							<a href="#"><i class="icon-remove"></i></a>
-						</td>
+						<td><a href="#"><i class="icon-view item-view"></i></a><a href="editar-bitacora.html"><i class="icon-edit"></i></a><a href="#"><i class="icon-remove item-remove"></i></a></td>
 					</tr>
 					<tr>
 						<td>10</td>
 						<td>Paola Mora</td>
 						<td>123154688</td>
 						<td>Johel Álvarez</td>
-						<td>16/06/2013</td>
+						<td>16/08/2013</td>
 						<td>1</td>
-						<td>
-							<a href="#"><i class="icon-view item-view"></i></a>
-							<a href="#"><i class="icon-edit"></i></a> 
-							<a href="#"><i class="icon-remove"></i></a>
-						</td>
+						<td><a href="#"><i class="icon-view item-view"></i></a><a href="editar-bitacora.html"><i class="icon-edit"></i></a><a href="#"><i class="icon-remove item-remove"></i></a></td>
+					</tr>
+					<tr>
+						<td>11</td>
+						<td>Juan Vindas</td>
+						<td>115678899</td>
+						<td>Johel Álvarez</td>
+						<td>17/08/2013</td>
+						<td>1</td>
+						<td><a href="#"><i class="icon-view item-view"></i></a><a href="editar-bitacora.html"><i class="icon-edit"></i></a><a href="#"><i class="icon-remove item-remove"></i></a></td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 	</div>
-	<div id="bitacora-patient-popup" class="hide">
+	<div id="popup-remove" class="hide">
+		<p>¿Está seguro que desea eliminar la bitácora seleccionada?</p>
 		<div>
-			<a href="#"><i id="print" class="icon-print"></i></a>
+			<button class="btn-accept">Aceptar</button>
+			<button class="close">Cancelar</button>
+		</div>
+	</div>
+	<div id="popup-view" class="hide">
+		<div>
+			<a href="#"><i id="item-print" class="icon-print print"></i></a>
 		</div>
 		<div>
-			<table id="table-popup">
+			<table id="my-table" class="al">
 				<tr class="row-color">
 					<th>Número de bitácora</th>
 					<td>1</td>
 				</tr>
 				<tr>
-				<th>Nombre del Odontólogo</th>
-				<td>Marco Durán</td>
+					<th>Nombre del Odontólogo</th>
+					<td>Marco Durán</td>
 				</tr>
 				<tr class="row-color">
 					<th>Identificación del Odontólogo</th>
@@ -218,14 +195,14 @@
 		</div>
 	</div>
 	<script src="js/vendor/jquery-2.0.3.min.js"></script>
+	<script src="js/vendor/jquery.dataTables.min.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/global.js"></script>
 	<script src="js/utils.js"></script>
-	<script src="js/marco.js"></script>
 	<!-- Prototype files -->
 	<script src="js/prototype.js"></script>
 	<script src="js/vendor/md5.js"></script>
 	<!--Data Tables files-->
-	<script src="js/vendor/jquery.dataTables.min.js"></script>
+	<script src="js/marco.js"></script>
 </body>
 </html>

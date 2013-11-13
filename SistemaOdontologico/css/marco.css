@@ -1,20 +1,19 @@
-#bitacora-popup{
-	width: 480px;
-	margin: 0 auto;
-	padding: 20px;
-	background: #fff;
-	border: 1px solid #000;
-	border-radius: 13px;
-}
-
-#table-popup{
-	margin: 0 auto;
-}
-
 .print{
 	margin-left: 385px;
 }
 
 .row-color{
 	background: #3f9dcc;
+}
+
+.al{
+	text-align: left;
+}
+
+.zone{
+	margin-left: 15px;
+}
+
+.btn-ac{
+	margin: 20px 10px;
 }

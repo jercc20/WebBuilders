@@ -38,7 +38,7 @@
 					<input id="procedure-2" name="procedure-2" type="text" placeholder="Procedimiento" />
 					<label for="zone-2"></label>
 					<input id="zone-2" name="zone-2" type="text" placeholder="Zona" />
-					<label><a href="#">+Agregar procedimiento</a></label>
+					<label><a href="#" class="add-procedure">+Agregar procedimiento</a></label>
 					<label for="notes">Notas</label>
 					<textarea id="notes" name="notes" required="required"></textarea>
 				</section>
@@ -50,13 +50,17 @@
 			</form>
 		</div>
 	</div>
-	<div id="popup-bitacora" class="hide">
-		<label for="procedure-2"></label>
-		<input id="procedure-2" name="procedure-2" type="text" placeholder="Procedimiento" />
-		<label for="zone-2"></label>
-		<input id="zone-2" name="zone-2" type="text" placeholder="Zona" />
-		<label><a href="#">+Agregar procedimiento</a></label>
-		<label for="notes">Notas</label>
+	<div id="popup-procedure" class="hide">
+		<section>
+			<label for="procedure-3">Procedimiento </label>
+			<input id="procedure-3" name="procedure-3" type="text" placeholder="Procedimiento" required="required" />
+			<label for="zone-3" class="zone">Zona </label>
+			<input id="zone-3" name="zone-3" type="text" placeholder="Zona" required="required" />
+		</section>
+		<div>
+			<button class="btn-aceptar btn-ac">Aceptar</button>
+			<button class="close btn-ac">Cancelar</button>
+		</div>
 	</div>
 	<script src="js/vendor/jquery-2.0.3.min.js"></script>
 	<script src="js/vendor/jquery-ui-1.10.3.datepicker.min.js"></script>
