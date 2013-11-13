@@ -97,6 +97,13 @@ jQuery(function($) {
 			}, 2000 );
 		}
 	});
+	$('.form-cancel').on( 'click', function(e){
+		e.preventDefault();
+		var action = $(this).parents('form').attr('action');
+		if( action !== "" ){
+			SO.utils.localRedirect( action );
+		}
+	});
 
 	$('a[href="#"]').on('click', function(){ return false; });
 
