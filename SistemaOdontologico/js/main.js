@@ -58,10 +58,12 @@ jQuery(function($) {
 		$table.dataTable( dtOptions );
 
 		$table.on( 'click', '.item-remove', function(){
+			Prototype.rowToDelete = $(this).parents('tr');
 			SO.utils.showPopUp( $('#popup-remove').html() );
 		});
 
 		$('#popup').on( 'click', '.btn-accept', function(){
+			Prototype.rowToDelete.remove();
 			SO.utils.showPopUp('Ha sido eliminado correctamente.');
 		});
 
