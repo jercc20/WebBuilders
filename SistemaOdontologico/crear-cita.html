@@ -16,11 +16,12 @@
 			<h1 class="ac">Crear Cita</h1>
 			<form id="proced-box" class="form-add-edit box-wrap" action="consultar-citas.html" method="get">
 				<section class="form-section">
-					<label for="user-id">Identificación</label>
-					<input id="user-id" name="txt-user-id" type="text" required="required" />
+					<label for="user-id">Nombre del paciente</label>
+					<input id="user-id" name="txt-user-name" type="text" required="required" />
+					<label for="user-name">Identificación</label>
+					<input id="user-name" name="txt-user-id" type="text" required="required" />
 					<label for="date-apmt">Fecha</label>
 					<input id="date-apmt" name="txt-user-dob" type="text" required="required" placeholder="dd/mm/yyyy" class="datepicker" />
-
 					<label for="hour">Hora</label>
 					<select id="hour" name="slt-hour" required="required">
 						<option value="">Hora</option>
@@ -74,22 +75,22 @@
 					<select id="odontologo" name="slt-odontologo-name" required="required">
 						<option value="">Seleccione un odontologo</option>
 						<option value="Johel+Alvarez">Johel Alvarez</option>
-						<option value="3">Jerson Chinchilla</option>
-						<option value="4">Mathias Muller</option>
-						<option value="5">Diego Herrera</option>
-						<option value="6">Marco Duran</option>
-						<option value="7">Laura Salazar</option>
+						<option value="Jerson+Chinchilla">Jerson Chinchilla</option>
+						<option value="Mathias+Muller">Mathias Muller</option>
+						<option value="Diego+Herrera">Diego Herrera</option>
+						<option value="Marco+Duran">Marco Duran</option>
+						<option value="Laura+Salazar">Laura Salazar</option>
 					</select>
 					<label for="notes">Notas</label>
 					<textarea id="notes" name="txt-notes"></textarea>
 				</section>
 
-				<section class="cb ac">
+				<div class="ac cb">
 					<input type="hidden" name="added" value="1" />
-					<input type="submit" value="Guardar" />
-					<input type="reset" value="Limpiar"/>
 					<button class="form-cancel">Cancelar</button>
-				</section>
+					<input type="reset" value="Limpiar" />
+					<button type="submit">Guardar</button>
+				</div>
 			</form>
 		</div>
 	</div>
