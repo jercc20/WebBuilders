@@ -12,15 +12,16 @@
 	<div id="wrapper">
 		<div id="container">
 			<h1 class="ac">Rol nuevo</h1>
-			<div id="nombre-rol">
-					<label>Nombre del Rol</label><input type="text" name="txt-role-name" />
+			<form class="form-add-edit box-wrap clearfix" method="get" action="consultar-roles.html">
+				<div class="mid-side fl">
+					<label>Nombre del Rol</label>
+					<input type="text" name="txt-role-name" required="required" />
 				</div>
-				<div id="chk-selection" class="ar">
-					<a href="#">Seleccionar todos</a>
-					<a href="#">Quitar todos</a>
+				<div class="mid-side fr ar">
+					<a href="#" id="select-all-rol">Seleccionar todos</a>
+					<a href="#" id="unselect-all-rol">Quitar todos</a>
 				</div>
-			<form class="box-wrap clearfix" action="" method="post" />
-				<div id="chk-citas">
+				<div class="chk-group-column cb">
 					<h3>Citas</h3>
 					<label>Registrar Cita</label>
 					<input type="checkbox" name="chk-permissions" value="crear-cita" />
@@ -33,7 +34,7 @@
 					<label>Ingresar a la Sección de citas</label>
 					<input type="checkbox" name="chk-permissions" value="consultar-citas" />
 				</div>
-				<div id="chk-bitacoras">
+				<div class="chk-group-column">
 					<h3>Bitácoras</h3>
 					<label>Registrar Cita</label>
 					<input type="checkbox" name="chk-permissions" value="crear-bitacora" />
@@ -46,7 +47,7 @@
 					<label>Ingresar a la Sección de bitacoras</label>
 					<input type="checkbox" name="chk-permissions" value="consultar-bitacoras" />
 				</div>
-				<div id="chk-users">
+				<div class="chk-group-column">
 					<h3>Usuarios</h3>
 					<label>Registrar usuario</label>
 					<input type="checkbox" name="chk-permissions" value="crear-usuario" />
@@ -59,7 +60,7 @@
 					<label>Ingresar a la Sección de usuarios</label>
 					<input type="checkbox" name="chk-permissions" value="consultar-usuarios" />
 				</div>
-				<div id="chk-procedures">
+				<div class="chk-group-column">
 					<h3>Procedimientos</h3>
 					<label>Registrar procedimientos</label>
 					<input type="checkbox" name="chk-permissions" value="crear-procedimiento" />
@@ -72,7 +73,7 @@
 					<label>Ingresar a la Sección de procedimientos</label>
 					<input type="checkbox" name="chk-permissions" value="consultar-procedimientos" />
 				</div>
-				<div id="chk-odontograma">
+				<div class="chk-group-column">
 					<h3>Odontogramas</h3>
 					<label>Registrar odontograma</label>
 					<input type="checkbox" name="chk-permissions" value="crear-odontograma" />
@@ -85,7 +86,7 @@
 					<label>Ingresar a la Sección de odontogramas</label>
 					<input type="checkbox" name="chk-permissions" value="consultar-odontogramas" />
 				</div>
-					<div id="chk-facturacion">
+					<div class="chk-group-column">
 					<h3>Facturación</h3>
 					<label>Registrar factura</label>
 					<input type="checkbox" name="chk-permissions" value="crear-factura" />
@@ -98,7 +99,7 @@
 					<label>Ingresar a la Sección de odontogramas</label>
 					<input type="checkbox" name="chk-permissions" value="consultar-facturas" />
 				</div>
-					<div id="chk-reportes">
+					<div class="chk-group-column">
 					<h3>Reportes</h3>
 					<label>Registrar reportes</label>
 					<input type="checkbox" name="chk-permissions" value="crear-reporte" />
@@ -111,7 +112,7 @@
 					<label>Ingresar a la Sección de odontogramas</label>
 					<input type="checkbox" name="chk-permissions" value="consultar-reportes" />
 				</div>
-				<div id="chk-configuración">
+				<div class="chk-group-column">
 					<h3>Configuración</h3>
 					<label>Ingresar logo</label>
 					<input type="checkbox" name="chk-permissions" value="ingresar-logo" />
@@ -119,12 +120,11 @@
 					<input type="checkbox" name="chk-permissions" value="editar-configuración" />
 					<label>Ingresar a la configuración</label>
 					<input type="checkbox" name="chk-permissions" value="consultar-configuraciion" />
-				</div
-
-
-
-					<input type="submit" value="Guardar" />
-				</section>
+				</div>
+				<div class="ac cb">
+					<button class="form-cancel">Cancelar</button>
+					<button type="submit" class="form-save">Guardar</button>
+				</div>
 			</form>
 		</div>
 	</div>
