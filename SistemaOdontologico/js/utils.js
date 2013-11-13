@@ -25,4 +25,20 @@
 		}, 500 );
 	};
 
+	util.getUrlVars = function(){
+      var vars = [], hash,
+			url = window.location.href;
+      var hashes = url.slice(url.indexOf('?') + 1).split('&');
+      for(var i = 0; i < hashes.length; i++){
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+      }
+      return vars;
+    };
+
+    util.getUrlVar = function(name){
+      return util.getUrlVars()[name];
+    };
+
 })(SO.utils = {});
