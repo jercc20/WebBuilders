@@ -102,13 +102,18 @@
 		$row = $table.find('tbody tr:first').clone();
 		//Complete each column
 		$table.find('thead th').not('.column-icons').each(function(i) {
-			$field = $(this).data('field');
-			if( $field !== "" && $field !== undefined ){
-				val = unescape( SO.utils.getUrlVar( $field ) ).replace( '+', ' ' );
-				if( val == "undefined" ){
-					val = "";
-				}
-				$row.find('td').eq( i ).text( val );
+			$fields = $(this).data('field');
+			if( $fields !== "" && $fields !== undefined ){
+				txt = "";
+				$fieldsArr = $fields.split( ' ' );
+				$.each( $fieldsArr, function( key, val ) {
+					if( key > 0 ){
+						txt += " ";
+					}
+					txt += unescape( SO.utils.getUrlVar( val ) );
+				});
+				txt = txt.replace( '+', ' ' ).replace( 'undefined', '' );
+				$row.find('td').eq( i ).text( txt );
 			}
 		});
 		$table.prepend( $row );
