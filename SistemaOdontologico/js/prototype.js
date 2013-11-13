@@ -16,7 +16,12 @@
 				psw = $('#user-psw').val();
 			if( this.checkUser( user ) && this.checkPsw( psw ) ){
 				localStorage.setItem( 'user', user );
-				SO.utils.localRedirect('inicio');
+				if( user == "paciente" ){
+					SO.utils.localRedirect('inicio-paciente');
+				}
+				else {
+					SO.utils.localRedirect('inicio');
+				}
 			}
 			else {
 				SO.utils.showPopUp( 'Hubo un error' ); //MSG TMP
@@ -63,7 +68,12 @@
 
 	proto.checkLoginSession = function(){
 		if( user !== null && user !== '' ){
-			SO.utils.localRedirect('inicio');
+			if( user == "paciente" ){
+				SO.utils.localRedirect('inicio-paciente');
+			}
+			else {
+				SO.utils.localRedirect('inicio');
+			}
 		}
 	};
 
