@@ -104,6 +104,12 @@ jQuery(function($) {
 			SO.utils.localRedirect( action );
 		}
 	});
+	$('#select-all-rol').on( 'click', function(){
+		$(this).parents('form').find('input:checkbox').prop( 'checked', true );
+	});
+	$('#unselect-all-rol').on( 'click', function(){
+		$(this).parents('form').find('input:checkbox').prop( 'checked', false );
+	});
 
 	$('a[href="#"]').on('click', function(){ return false; });
 
