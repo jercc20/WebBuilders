@@ -306,6 +306,11 @@ form section.ac {
 	width: auto;
 }
 
+/* Pages */
+#home-tables .dataTables_filter {
+	width: 60%;
+}
+
 /* Footer */
 #footer {
 	position: relative;
