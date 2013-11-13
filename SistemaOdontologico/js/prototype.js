@@ -98,8 +98,7 @@
 		});
 	};
 
-	proto.addDataTableRow = function(){
-		$table = $('.data-table');
+	proto.addDataTableRow = function($table){
 		$row = $table.find('tbody tr:first').clone();
 		//Complete each column
 		$table.find('thead th').not('.column-icons').each(function(i) {

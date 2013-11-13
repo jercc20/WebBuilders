@@ -18,13 +18,14 @@ jQuery(function($) {
 		SO.global.init();
 	}
 
-	//Add dynamic row
-	if( SO.utils.getUrlVar('added') == 1 ){
-		Prototype.addDataTableRow();
-	}
-
 	//DataTables Init
 	if( $('.data-table').length > 0 ){
+
+		$table = $('.data-table');
+		//Add dynamic row
+		if( SO.utils.getUrlVar('added') == 1 ){
+			Prototype.addDataTableRow($table);
+		}
 
 		var dtOptions = {
 			"bJQueryUI": true,
