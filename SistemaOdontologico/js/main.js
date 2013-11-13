@@ -86,6 +86,18 @@ jQuery(function($) {
 
 	}
 
+	//forms
+	$('.form-add-edit').on( 'submit', function(e){
+		e.preventDefault();
+		SO.utils.showPopUp('Ha sido guardado correctamente.');
+		var action = $(this).attr('action');
+		if( action !== "" ){
+			setTimeout(function(){
+				SO.utils.localRedirect( action );
+			}, 2000 );
+		}
+	});
+
 	$('a[href="#"]').on('click', function(){ return false; });
 
 });
