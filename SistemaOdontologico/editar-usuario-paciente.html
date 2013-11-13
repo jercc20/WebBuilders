@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="css/icons.css" />
 	<link rel="stylesheet" href="css/style.css" />
 	<link rel="stylesheet" href="css/mathias.css" />
+	<link rel="stylesheet" href="css/jquery-ui-1.10.3.smoothness.custom.min.css" />
 </head>
 <body>
 	<div id="wrapper">
@@ -30,7 +31,7 @@
 						<label for="user-email"> Correo electronico</label>
 						<input id="user-email" name="txt-user-email" type="text"  required="required" />	
 						<label for="user-birthday"> Fecha de nacimiento</label>	
-						<input id="user-birthday" name="txt-user-birthday" type="text"  required="required" placeholder ="dd/mm/yyyy" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d"/>
+						<input id="user-birthday" name="txt-user-birthday" type="text"  required="required" placeholder ="dd/mm/yyyy" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" class="datepicker" />
 					</section>
 					<section class="form-section fr">
 					<label for="role">Rol</label>
@@ -57,12 +58,15 @@
 						<input type="button" value="Cancelar" />
 					</section>
 
-					</div>
-				
-			</div>
+				</form>
 
-		</form>
+			</div>
+				
+		</div>
+
+		
 	<script src="js/vendor/jquery-2.0.3.min.js"></script>
+	<script src="js/vendor/jquery-ui-1.10.3.datepicker.min.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/global.js"></script>
 	<script src="js/utils.js"></script>
