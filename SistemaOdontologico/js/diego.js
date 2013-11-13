@@ -18,6 +18,6 @@ jQuery(function($) {
 
 	$('.printable').on('click', function(){
 		print('#print-this');
-	})
+	});
 
 });
