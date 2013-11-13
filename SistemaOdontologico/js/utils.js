@@ -14,7 +14,7 @@
 	};
 
 	util.localRedirect = function(to){
-		window.location = window.location.href.replace( SO.utils.currentFile(), to );
+		window.location = window.location.href.replace( SO.utils.currentFile(), to.split('.')[0] );
 	};
 
 	util.showPopUp = function(msg){
