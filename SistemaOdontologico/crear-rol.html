@@ -12,7 +12,7 @@
 	<div id="wrapper">
 		<div id="container">
 			<h1 class="ac">Rol nuevo</h1>
-			<form class="form-add-edit box-wrap clearfix" method="get" action="consultar-roles">
+			<form class="form-add-edit box-wrap clearfix" method="get" action="consultar-roles.html">
 				<div class="mid-side fl">
 					<label>Nombre del Rol</label>
 					<input type="text" name="txt-role-name" required="required" />
@@ -122,6 +122,7 @@
 					<input type="checkbox" name="chk-permissions" value="consultar-configuraciion" />
 				</div>
 				<div class="ac cb">
+					<input type="hidden" name="added" value="1" />
 					<button class="form-cancel">Cancelar</button>
 					<button type="submit">Guardar</button>
 				</div>
