@@ -42,14 +42,11 @@
 
 					<input id="txt-procedure-number" name="txt-procedure-number" type="hidden" vale="1" />
 
-					<label for="procedure">Procedimientos</label>
-					<input id="procedure" name="procedure" type="text" value="Resinas I" required="required" />
+					<label><a href="#" class="add-procedure">+Agregar procedimiento</a></label>
 
-					<label for="zone"></label>
+					<label for="zone">Zona</label>
 					<input id="zone" name="zone" type="text" value="Oclusal" required="required" />
 
-
-					<label><a href="#" class="add-procedure">+Agregar procedimiento</a></label>
 					<label for="notes">Notas</label>
 					<textarea id="notes" name="notes">Se realizó la Resinas I en el Oclusal en el tercer molar</textarea>
 
@@ -63,12 +60,71 @@
 		</div>
 	</div>
 	<div id="popup-procedure" class="hide">
-		<section>
-			<label for="procedure-3">Procedimiento </label>
-			<input id="procedure-3" name="procedure-3" type="text" placeholder="Procedimiento" required="required" />
-			<label for="zone-3" class="zone">Zona </label>
-			<input id="zone-3" name="zone-3" type="text" placeholder="Zona" required="required" />
-		</section>
+		<h2 class="ac">Procedimientos</h2>
+		<div class="div-table">
+			<table>
+				<tr>
+					<td><input type="checkbox" name="procedure" checked /></td>
+					<td class="al">Amalgamas</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="procedure" checked /></td>
+					<td class="al">Resinas</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="procedure" /></td>
+					<td class="al">Aleación base</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="procedure" /></td>
+					<td class="al">Cerómeros</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="procedure" /></td>
+					<td class="al">Maxiletomía</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="procedure" /></td>
+					<td class="al">Blanqueado dental</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="procedure" /></td>
+					<td class="al">Limpieza dental</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="procedure" /></td>
+					<td class="al">Coronas dental</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="procedure" /></td>
+					<td class="al">Tratamiento de encías</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="procedure" /></td>
+					<td class="al">Ortodoncia</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="procedure" /></td>
+					<td class="al">Endodoncia</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="procedure" /></td>
+					<td class="al">Exodoncia</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="procedure" /></td>
+					<td class="al">Puente dental</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="procedure" /></td>
+					<td class="al">Carillas de porcelana</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="procedure" /></td>
+					<td class="al">Cirugía oral e implantes dentales</td>
+				</tr>
+			</table>
+		</div>
 		<div>
 			<button class="close btn-ac">Aceptar</button>
 			<button class="close btn-ac">Cancelar</button>

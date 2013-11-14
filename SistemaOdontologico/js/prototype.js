@@ -24,7 +24,7 @@
 				}
 			}
 			else {
-				SO.utils.showPopUp( 'Hubo un error' ); //MSG TMP
+				SO.utils.showPopUp( 'Ocurrió un error' ); //MSG TMP
 			}
 		},
 		checkUser: function(user){
