@@ -32,7 +32,7 @@
 					<input id="patient-name" name="txt-patient-name" type="text" pattern="|^[a-zA-Z ñÑáéíóúüÁÉÍÓÚç]*$|" required="required" />
 
 					<label for="txt-user-dob">Fecha realizada</label>
-					<input id="txt-user-dob" class="datepicker" name="txt-user-dob" type="text" required="required" placeholder="DD/MM/YYYY" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" />
+					<input id="txt-user-dob" class="datepicker" name="txt-user-dob" type="text" required="required" placeholder="dd/mm/yyyy" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" />
 
 					<label for="asistentes">Asistentes que participaron</label>
 					<textarea id="asistentes" name="asistentes"></textarea>
@@ -40,8 +40,8 @@
 				</section>
 				<section class="form-section fr">
 
-					<label for="txt-procedure-number">Número de procedimientos</label>
-					<input id="txt-procedure-number" name="txt-procedure-number" type="text" pattern="|^[0-99]*$|" required="required" />
+					
+					<input name="txt-procedure-number" type="hidden" value="1" />
 
 					<label for="procedure">Procedimientos</label>
 					<input id="procedure" name="procedure" type="text" placeholder="Procedimiento" required="required" />
@@ -49,15 +49,10 @@
 					<label for="zone"></label>
 					<input id="zone" name="zone" type="text" placeholder="Zona" required="required" />
 
-					<label for="procedure-2"></label>
-					<input id="procedure-2" name="procedure-2" type="text" placeholder="Procedimiento" />
-
-					<label for="zone-2"></label>
-					<input id="zone-2" name="zone-2" type="text" placeholder="Zona" />
 
 					<label><a href="#" class="add-procedure">+Agregar procedimiento</a></label>
 					<label for="notes">Notas</label>
-					<textarea id="notes" name="notes" required="required"></textarea>
+					<textarea id="notes" name="notes"></textarea>
 				</section>
 					<div class="ac cb">
 						<input type="hidden" name="added" value="1" />
