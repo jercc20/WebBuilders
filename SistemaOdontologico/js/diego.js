@@ -20,7 +20,4 @@ jQuery(function($) {
 		print('#print-this');
 	});
 
-	$('#botonpruebafade').click(function(evento) {
-		$('#divquesemuestra').fadeIn(2000);
-	});
 });
