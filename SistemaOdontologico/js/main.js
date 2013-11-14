@@ -63,7 +63,7 @@ jQuery(function($) {
 		});
 
 		$('#popup').on( 'click', '.btn-accept', function(){
-			Prototype.rowToDelete.remove();
+			$('.data-table').dataTable().fnDeleteRow( Prototype.rowToDelete[0]._DT_RowIndex );
 			SO.utils.showPopUp('Ha sido eliminado correctamente.');
 		});
 
