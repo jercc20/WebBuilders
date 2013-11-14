@@ -4,7 +4,7 @@ jQuery(function($) {
 		SO.utils.showPopUp( $('#odontograma-popup').html() );
 	});
 
-	$('#advance-search').on('click', function(){
+	$('.btn-ba').on('click', function(){
 		SO.utils.showPopUp( $('#popup-report-search').html() );
 	});
 
@@ -20,4 +20,7 @@ jQuery(function($) {
 		print('#print-this');
 	});
 
+	$('#botonpruebafade').click(function(evento) {
+		$('#divquesemuestra').fadeIn(2000);
+	});
 });
