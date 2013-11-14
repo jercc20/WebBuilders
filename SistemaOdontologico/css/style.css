@@ -244,6 +244,10 @@ form div.ac {
 	height: 100px;
 	resize: none;
 }
+.form-section input[type="checkbox"] {
+	width: auto;
+	margin: 5px 0 0;
+}
 .logo_preview {
 	float: right;
 	width: 54%;
