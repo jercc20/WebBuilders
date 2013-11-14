@@ -1,3 +1,14 @@
+.div-table{
+	overflow-x: hidden;
+	overflow-y: scroll;
+	height: 200px;
+	border-collapse: collapse;
+}
+
+.procedure{
+	margin: 10px 0 0 10px;
+}
+
 .print{
 	margin-left: 385px;
 }
