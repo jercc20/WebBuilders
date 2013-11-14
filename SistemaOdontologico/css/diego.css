@@ -6,6 +6,8 @@
 .title{text-align: center;}
 .edit-printer {float: right;}
 .table-center {margin: 0 0 0 80px;}
+.al{text-align: left;}
+.div-table{overflow-x: hidden; overflow-y: scroll; height: 200px; border-collapse: collapse;}
 
 /*Id*/
 
