@@ -90,7 +90,7 @@ h6 {
 #main-menu ul {
 	position: absolute;
 	left: -1px;
-	top: 50px;
+	top: -500px;
 	min-width: 102%;
 	background: rgba(170, 170, 170, 0.5);
 	box-shadow: 0 3px 3px #aaa;
@@ -113,6 +113,7 @@ h6 {
 	padding: 10px 15px;
 }
 #main-menu > li:hover ul {
+	top: 50px;
 	opacity: 1;
 	transform: none;
 }
