@@ -18,11 +18,18 @@
 	};
 
 	util.showPopUp = function(msg){
+		var self = this;
 		$('#popup-content').html(msg);
 		$('#popup-wrap').show();
 		setTimeout(function(){
 			$('#popup').removeClass('hide');
+			self.popUpCenter();
 		}, 500 );
+	};
+
+	util.popUpCenter = function(){
+		var h = ( $(window).height() - $('#popup').outerHeight() ) / 2;
+		$('#popup').css( 'top', h );
 	};
 
 	util.getUrlVars = function(){
