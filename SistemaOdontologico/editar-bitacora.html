@@ -44,11 +44,22 @@
 
 					<label><a href="#" class="add-procedure">+Agregar procedimiento</a></label>
 
+					<div class="fl cb">
+						<table class="display">
+							<tr>
+								<td>Resinas</td>
+							</tr>
+							<tr>
+								<td>Amalgamas</td>
+							</tr>
+						</table>
+					</div>
+
 					<label for="zone">Zona</label>
 					<input id="zone" name="zone" type="text" value="Oclusal" required="required" />
 					
 					<label for="notes">Notas</label>
-					<textarea id="notes" name="notes">Se realizó la Resinas I en el Oclusal en el tercer molar</textarea>
+					<textarea id="notes" name="notes">Se realizó la resinas y amalgamas en el Oclusal.</textarea>
 
 				</section>
 				<section class="cb ac">
@@ -64,11 +75,11 @@
 		<div class="div-table">
 			<table>
 				<tr>
-					<td><input type="checkbox" name="procedure" value="amalgamas" /></td>
+					<td><input type="checkbox" name="procedure" value="amalgamas" checked /></td>
 					<td class="al procedure">Amalgamas</td>
 				</tr>
 				<tr>
-					<td><input type="checkbox" name="procedure" value="resinas" /></td>
+					<td><input type="checkbox" name="procedure" value="resinas" checked /></td>
 					<td class="al procedure">Resinas</td>
 				</tr>
 				<tr>
