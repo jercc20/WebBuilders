@@ -112,6 +112,18 @@ jQuery(function($) {
 	$('#unselect-all-rol').on( 'click', function(){
 		$(this).parents('form').find('input:checkbox').prop( 'checked', false );
 	});
+	$('#popup').on( 'click', '.btn-add', function(){
+		$('#delete-procedures').show();
+		$items = $(this).parents('#popup').find('.table-procedures input:checked').parents('tr');
+		$items.each( function(){
+			$(this).append('<td><input type="text" placeholder="Zona" required="required">');
+		});
+		$('#table-procedures-added').prepend( $items );
+		$('#procedure-number').val( $('#table-procedures-added tr').size() );
+	});
+	$('#delete-procedures').on( 'click', function(){
+		$('#table-procedures-added').find('input:checked').parents('tr').remove();
+	});
 
 	$('a[href="#"]').on('click', function(){ return false; });
 
