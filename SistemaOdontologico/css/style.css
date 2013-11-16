@@ -286,15 +286,20 @@ form div.ac {
 	width: 115px;
 	padding: 0 20px;
 }
+#table-procedures-added.odonto-table td:nth-of-type(3){
+	padding-right: 10px;
+}
 #table-procedures-added input {
 	width: 100%;
 }
 #delete-procedures {
-	display: block;
 	width: 100%;
 	padding: 10px 0;
 }
-
+.add-procedure,
+#delete-procedures {
+	padding-right: 13px;
+}
 /* stuff */
 .dataTables_wrapper {
 	padding-top: 10px;
