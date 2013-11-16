@@ -126,6 +126,9 @@ jQuery(function($) {
 	});
 	$('#delete-procedures').on( 'click', function(){
 		$('#table-procedures-added').find('input:checked').parents('tr').remove();
+		if( $('#table-procedures-added tr').size() == 0 ){
+			$('#delete-procedures').hide();
+		}
 	});
 
 	$('a[href="#"]').on('click', function(){ return false; });
