@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<title>Crear Abono</title>
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Rokkitt" />
+	<link rel="stylesheet" href="css/icons.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/laura.css" />
+	<link rel="stylesheet" href="css/jquery-ui-1.10.3.smoothness.custom.min.css" />
+</head>
+<body>
+	<div id="wrapper">
+		<div id="container">
+			<h1 class="ac">Agregar Abono</h1>
+			<form id="proced-box" class="form-add-edit box-wrap" action="consultar-abonos.html" method="get">
+				<section class="form-section fl">
+
+					<input type="hidden" name="abono" value="1" />
+
+					<label for="user-name">Nombre del Usuario</label>
+					<input id="user-name" name="txt-name-id" type="text" required="required" />
+
+					<label for="user-name">Identificación</label>
+					<input id="user-name" name="txt-user-id" type="text" required="required" />
+
+					<label for="number">Número de Factura</label>
+					<input id="number" name="txt-number" type="text" required="required" value=""/>
+
+					<label for="date-apmt">Fecha</label>
+					<input id="date-apmt" name="txt-user-dob" type="text" required="required" placeholder="dd/mm/yyyy" class="datepicker" />
+
+					<label for="type">Monto del Abono</label>
+					<input id="type" name="txt-type" type="text" required="required" value=""/>
+					</section>
+					<section class="form-section fr">
+						<label for="notes">Notas</label>
+						<textarea id="notes"></textarea>
+					</section>
+					<div class="ac cb">
+						<input type="hidden" name="added" value="1" />
+						<button class="form-cancel">Cancelar</button>
+						<input type="reset" value="Limpiar" />
+						<button type="submit">Guardar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<script src="js/vendor/jquery-2.0.3.min.js"></script>
+		<script src="js/vendor/jquery-ui-1.10.3.datepicker.min.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/global.js"></script>
+		<script src="js/utils.js"></script>
+		<!-- Prototype files -->
+		<script src="js/prototype.js"></script>
+		<script src="js/vendor/md5.js"></script>
+		<script src="js/laura.js"></script>
+	</body>
+	</html>

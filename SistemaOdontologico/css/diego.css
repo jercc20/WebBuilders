@@ -1,0 +1,14 @@
+/*Clases*/
+
+.input-short {width: 150px; margin: 5px 0 0 0;}
+.marcada {background-color: #3f9dcc;}
+.process {float: right; color: #3f9dcc; text-decoration: none;}
+.title{text-align: center;}
+.edit-printer {float: right;}
+.table-center {margin: 0 0 0 80px;}
+.al{text-align: left;}
+.div-table{overflow-x: hidden; overflow-y: scroll; height: 200px; border-collapse: collapse;}
+.btn-ac{margin: 20px 10px;}
+/*Id*/
+
+#odontograma {border-radius: 15px; border: 1px solid gray;}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<title>Consultar Roles</title>
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Rokkitt" />
+	<link rel="stylesheet" href="css/icons.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/data-table.css" />
+	<link rel="stylesheet" href="css/jquery-ui-1.10.3.smoothness.custom.min.css" />
+</head>
+<body>
+	<div id="wrapper">
+		<div id="container">
+			<h1 class="ac">Consultar Roles</h1>
+			<a href="crear-rol.html" class="fr">+ Agregar Rol</a>
+			<table class="data-table display">
+			    <thead>
+			        <tr>
+			            <th data-field="txt-role-name">Rol</th>
+			            <th class="column-icons"></th>
+			        </tr>
+			    </thead>
+			    <tbody>
+			        <tr>
+			            <td>Administrador</td>
+			            <td>
+			            	<a href="editar-rol.html"><i class="icon-edit"></i></a>
+							<a href="#!"><i class="icon-remove item-remove"></i></a>
+						</td>
+			        </tr>
+			        <tr>
+			            <td>Odontólgo</td>
+			            <td>
+			            	<a href="editar-rol.html"><i class="icon-edit"></i></a>
+							<a href="#!"><i class="icon-remove item-remove"></i></a>
+						</td>
+			        </tr>
+			        <tr>
+			            <td>Secretaria</td>
+			            <td>
+			            	<a href="editar-rol.html"><i class="icon-edit"></i></a>
+							<a href="#!"><i class="icon-remove item-remove"></i></a>
+						</td>
+			        </tr>
+			        <tr>
+			            <td>Paciente</td>
+			            <td>
+			            	<a href="editar-rol.html"><i class="icon-edit"></i></a>
+			            	<a href="#!"><i class="icon-remove item-remove"></i></a>
+						</td>
+			        </tr>
+			    </tbody>
+			</table>
+		</div>
+	</div>
+	<div id="popup-remove" class="hide">
+		<p>¿Está seguro que desea eliminar la cita seleccionada?</p>
+		<div class="ac">
+			<button class="btn-accept">Aceptar</button>
+			<button class="close">Cancelar</button>
+		</div>
+	</div>
+	<script src="js/vendor/jquery-2.0.3.min.js"></script>
+	<script src="js/vendor/jquery.dataTables.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/global.js"></script>
+	<script src="js/utils.js"></script>
+	<!-- Prototype files -->
+	<script src="js/prototype.js"></script>
+	<script src="js/vendor/md5.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<title>Editar Usuario</title>
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Rokkitt" />
+	<link rel="stylesheet" href="css/icons.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/mathias.css" />
+	<link rel="stylesheet" href="css/jquery-ui-1.10.3.smoothness.custom.min.css" />
+</head>
+<body>
+	<div id="wrapper">
+		<div id="container">
+			<h1 class="ac">Editar Usuario</h1>
+			<form class="box-wrap clearfix form-edit" action="consultar-usuarios-secretaria.html" method="get">
+				<section class="form-section fl">
+					<label for="user-name"> Nombre</label>
+					<input id="user-name" name="txt-user-name" type="text"  required="required" pattern="|^[a-zA-Z ñÑáéíóúüÁÉÍÓÚç]*$|" />
+					<label for="user-lastname">Primer apellido</label>
+					<input id="user-lastname" name="txt-user-lastname" type="text"  required="required" pattern="|^[a-zA-Z ñÑáéíóúüÁÉÍÓÚç]*$|"/>
+					<label for="user-lastname2"> Segundo apellido</label>
+					<input id="user-lastname2" name="txt-id-lastname2" type="text"  pattern=pattern="|^[a-zA-Z ñÑáéíóúüÁÉÍÓÚç]*$|" />
+					<label for="user-id"> Identificación</label>
+					<input id="user-id" name="txt-id-user"  type="text"  required="required" pattern="[a-zA-Z0-9]+" disabled="disabled"/>
+					<label for="user-phone"> Teléfono de la casa</label>
+					<input id="user-phone" name="txt-user-house-phone" type="text" pattern="\d{8,10}" />
+					<label for="user-cellphone"> Teléfono celular</label>
+					<input id="user-cellphone" name="txt-user-cellphone" type="text"  pattern="\d{8,10}" />
+					<label for="user-email"> Correo electrónico</label>
+					<input id="user-email" name="txt-user-email" type="text"  required="required" />
+					<label for="user-birthday"> Fecha de nacimiento</label>
+					<input id="user-birthday" name="txt-user-birthday" type="text"  required="required" placeholder ="dd/mm/yyyy" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" class="datepicker" />
+				</section>
+				<section class="form-section fr">
+					<label for="user-impairment">Discapacidad</label>
+					<input type="checkbox" id="user-impairment"  name="txt-user-impairment" />
+					<label for="role">Rol</label>
+					<select required="required">
+						<option value="patient">Paciente</option>
+					</select>
+					<label for="user-psw">Contraseña</label>
+					<input id="user-psw" name="txt-user-psw" type="password" required="required" />
+					<label for="user-psw">Confirmar Contraseña</label>
+					<input id="user-npsw" name="txt-user-npsw" type="password" required="required" />
+					<label for="user-alergie"> Alergias</label>
+					<textarea cols='10' rows='10' id="user-alergie" name="txt-user-alergie"pattern="[A-Za-z]+"></textarea>
+					<label for="user-adress"> Domicilio</label>
+					<textarea cols='10' rows='10' id="user-adress" name="txt-user-adress" requiered="required"></textarea>
+				</section>
+				<div class="ac cb">
+					<input type="hidden" name="added" value="1" />
+					<button class="form-cancel">Cancelar</button>
+					<button type="reset">Limpiar</button>
+					<button type="submit">Guardar</button>
+				</div>
+
+			</form>
+
+		</div>
+
+	</div>
+
+
+	<script src="js/vendor/jquery-2.0.3.min.js"></script>
+	<script src="js/vendor/jquery-ui-1.10.3.datepicker.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/global.js"></script>
+	<script src="js/utils.js"></script>
+	<!-- Prototype files -->
+	<script src="js/prototype.js"></script>
+	<script src="js/vendor/md5.js"></script>
+	<script src="js/mathias.js"></script>
+</body>
+</html>

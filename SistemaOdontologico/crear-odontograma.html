@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<title>Crear odontograma</title>
+		<link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Rokkitt" />
+		<link rel="stylesheet" href="css/icons.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/diego.css" />
+		<link rel="stylesheet" href="css/jquery-ui-1.10.3.smoothness.custom.min.css" />
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="container">
+				<h1 class="title">Crear Odontograma</h1>
+				<form class="form-add box-wrap clearfix" method="get" action="consultar-odontogramas.html">
+					<section class="form-section fl">
+						<label for="odontologo-id">Identificación del odontólogo</label>
+						<input id="odontologo-id" name="txt-dentist-id" type="text" required="required"/>
+						<label for="odontologo-name">Nombre del odontólogo</label>
+						<input id="odontologo-name" name="txt-dentist-name" type="text" required="required" pattern="[A-Za-z]+" />
+						<label for="odontologo-lastname">Primer apellido</label>
+						<input id="odontologo-lastname" name="txt-dentist-lastname" type="text" required="required" />
+						<label for="odontologo-lastname2">Segundo apellido</label>
+						<input id="odontologo-lastname2" name="txt-odontologo-lastname2" type="text" />
+						<label for="odontograma-date">Fecha de realización</label>
+						<input id="odontograma-date" name="txt-date-realized" type="text" required="required" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" class="datepicker" />
+						<label for="paciente-id">Identificación del paciente</label>
+						<input id="paciente-id" name="txt-pacient-id" type="text" required="required"/>
+						<label for="paciente-name">Nombre del paciente</label>
+						<input id="paciente-name" name="txt-pacient-name" type="text" required="required" pattern="[A-Za-z]+" />
+						<label for="paciente-lastname">Primer apellido</label>
+						<input id="paciente-lastname" name="txt-pacient-lastname" type="text" required="required" />
+						<label for="paciente-lastname2">Segundo apellido</label>
+						<input id="paciente-lastname2" name="txt-paciente-lastname2" type="text" />
+					</section>
+					<section class="form-section fr">
+						<label>Procedimientos</label><a href="#" class="add-procedure fr ar">+Agregar procedimiento</a>
+
+						<table id="table-procedures-added" class="cb odonto-table"></table>
+						<a href="#" id="delete-procedures" class="fr ar hide">-Borrar procedimiento</a>
+					</section>
+					<section class="cb ac">
+						<input type="hidden" name="added" value="11" />
+						<button class="form-cancel">Cancelar</button>
+						<input type="reset" value="Limpiar" />
+						<button type="submit">Guardar</button>
+					</section>
+					<div id="popup-procedure" class="hide">
+						<p>Procedimientos</p>
+						<div class="div-table">
+							<table class="table-procedures">
+								<tr>
+									<td><input type="checkbox" name="procedure" value="amalgamas" /></td>
+									<td class="al procedure">Amalgamas</td>
+									<td class="al procedure">₡15.000</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="procedure" value="resinas" /></td>
+									<td class="al procedure">Resinas</td>
+									<td class="al procedure">₡22.000</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="procedure" value="aleacion-base" /></td>
+									<td class="al procedure">Aleación base</td>
+									<td class="al procedure">₡90.000</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="procedure" value="ceromeros" /></td>
+									<td class="al procedure">Cerómeros</td>
+									<td class="al procedure">₡110.000</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="procedure" value="maxiletomia" /></td>
+									<td class="al procedure">Apicetomías</td>
+									<td class="al procedure">₡74.000</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="procedure" value="" /></td>
+									<td class="al procedure">Apicetomía</td>
+									<td class="al procedure">₡74.000</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="procedure" value="" /></td>
+									<td class="al procedure">Frenectomía</td>
+									<td class="al procedure">₡60.000</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="procedure" value="" /></td>
+									<td class="al procedure">Coronas dental</td>
+									<td class="al procedure">₡103.000</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="procedure" value="" /></td>
+									<td class="al procedure">Profilaxis</td>
+									<td class="al procedure">₡25.000</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="procedure" value="" /></td>
+									<td class="al procedure">Ortodoncia</td>
+									<td class="al procedure">₡285.000</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="procedure" value="" /></td>
+									<td class="al procedure">Endodoncia</td>
+									<td class="al procedure">₡85.000</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="procedure" value="" /></td>
+									<td class="al procedure">Exodoncia</td>
+									<td class="al procedure">₡287.000</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="procedure" value="" /></td>
+									<td class="al procedure">Odontepediatría</td>
+									<td class="al procedure">₡30.000</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="procedure" value="" /></td>
+									<td class="al procedure">Enucleaciones</td>
+									<td class="al procedure">₡34.000</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="procedure" value="" /></td>
+									<td class="al procedure">Arco lingual</td>
+									<td class="al procedure">₡70.000</td>
+								</tr>
+							</table>
+						</div>
+						<div>
+							<button class="close btn-add btn-ac">Aceptar</button>
+							<button class="close btn-ac">Cancelar</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<script src="js/vendor/jquery-2.0.3.min.js"></script>
+		<script src="js/vendor/jquery-ui-1.10.3.datepicker.min.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/global.js"></script>
+		<script src="js/utils.js"></script>
+		<!--prototipo-->
+		<script src="js/prototype.js"></script>
+		<script src="js/vendor/md5.js"></script>
+	</body>
+</html>

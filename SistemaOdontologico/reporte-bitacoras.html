@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<title>Reporte de Bitacoras</title>
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Rokkitt" />
+	<link rel="stylesheet" href="css/icons.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/data-table.css" />
+	<link rel="stylesheet" href="css/jquery-ui-1.10.3.smoothness.custom.min.css" />
+	<link rel="stylesheet" href="css/marco.css">
+</head>
+<body>
+	<div id="wrapper">
+		<div id="container">
+			<h1 class="ac">Reportes de Bitácoras</h1>
+			<div>
+				<button class="btn-ba">Búsqueda Avanzada</button>
+				<a href="#"><i id="item-print" class="icon-print fr"></i></a>
+			</div>
+			<table id="my-table" class="data-table display">
+				<thead>
+					<tr>
+						<th>Número de bitácora</th>
+						<th>Nombre Usuario</th>
+						<th>Identificación</th>
+						<th>Nombre Odontólogo</th>
+						<th>Fecha realizada</th>
+						<th>Número de procedimientos</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>Marianela Castillo</td>
+						<td>115811465</td>
+						<td>Juan Porras</td>
+						<td>16/08/2013</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>Esteban Rodríguez</td>
+						<td>115498799</td>
+						<td>Marco Durán</td>
+						<td>05/08/2013</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>Andrés Brenes</td>
+						<td>245796494</td>
+						<td>Johel Álvarez</td>
+						<td>05/08/2013</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>Pablo Bermúdez</td>
+						<td>2466847989</td>
+						<td>Juan Porras</td>
+						<td>15/08/2013</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>Felipe Chinchilla</td>
+						<td>354697879</td>
+						<td>Fernanda Vargas</td>
+						<td>06/08/2013</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>Laura Salazar</td>
+						<td>356487879</td>
+						<td>Juan Porras</td>
+						<td>15/08/2013</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>7</td>
+						<td>Carla Asofeifa</td>
+						<td>413546548</td>
+						<td>Fernanda Vargas</td>
+						<td>25/06/2013</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>8</td>
+						<td>Federico Ugarte</td>
+						<td>321545644</td>
+						<td>Marco Durán</td>
+						<td>07/08/2013</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>9</td>
+						<td>Gabriel Mora</td>
+						<td>241654889</td>
+						<td>Fernanda Vargas</td>
+						<td>06/08/2013</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>Paola Mora</td>
+						<td>123154688</td>
+						<td>Johel Álvarez</td>
+						<td>16/06/2013</td>
+						<td>1</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div id="popup-ub" class="hide">
+		<form class="clearfix" action="" method="post">
+			<section class="form-section">
+				<label for="dentist-name">Nombre del odontólogo: </label>
+				<input id="dentist-name" name="txt-dentist-name" type="text" />
+				<label for="patient-name">Nombre del paciente: </label>
+				<input id="patient-name" name="txt-patient-name" type="text" />
+				<label for="start-date">Fecha inicio: </label>
+				<input id="start-date" name="txt-start-date" type="text" />
+				<label for="end-date">Fecha fin: </label>
+				<input id="end-date" name="txt-end-date" type="text" />
+				<div class="ac cb">
+					<button class="item-accept">Aceptar</button>
+					<button class="close">Cancelar</button>
+				</div>
+			</section>
+		</form>
+	</div>
+	<script src="js/vendor/jquery-2.0.3.min.js"></script>
+	<script src="js/vendor/jquery.dataTables.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/global.js"></script>
+	<script src="js/utils.js"></script>
+	<!-- Prototype files -->
+	<script src="js/prototype.js"></script>
+	<script src="js/vendor/md5.js"></script>
+	<!--Data Tables files-->
+	<script src="js/marco.js"></script>
+</body>
+</html>
