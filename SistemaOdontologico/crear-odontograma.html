@@ -36,7 +36,10 @@
 						<input id="paciente-lastname2" name="txt-paciente-lastname2" type="text" />
 					</section>
 					<section class="form-section fr">
-						<a href="#" class="popup-process">+Agregar procedimiento</a>
+						<label>Procedimientos</label><a href="#" class="add-procedure fr ar">+Agregar procedimiento</a>
+
+						<table id="table-procedures-added" class="cb"></table>
+						<a href="#" id="delete-procedures" class="fr ar hide">-Borrar procedimiento</a>
 					</section>
 					<section class="cb ac">
 						<input type="hidden" name="added" value="11" />
@@ -44,88 +47,91 @@
 						<input type="reset" value="Limpiar" />
 						<button type="submit">Guardar</button>
 					</section>
-					<div class="hide" id="process-popup">
+					<div id="popup-procedure" class="hide">
 						<p>Procedimientos</p>
 						<div class="div-table">
-							<table>
+							<table class="table-procedures">
 								<tr>
-					<td><input type="checkbox" name="procedure" value="amalgamas" /></td>
-					<td class="al procedure">Amalgamas</td>
-					<td class="al procedure">₡15.000</td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="procedure" value="resinas" /></td>
-					<td class="al procedure">Resinas</td>
-					<td class="al procedure">₡22.000</td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="procedure" value="aleacion-base" /></td>
-					<td class="al procedure">Aleación base</td>
-					<td class="al procedure">₡90.000</td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="procedure" value="ceromeros" /></td>
-					<td class="al procedure">Cerómeros</td>
-					<td class="al procedure">₡110.000</td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="procedure" value="maxiletomia" /></td>
-					<td class="al procedure">Apicetomías</td>
-					<td class="al procedure">₡74.000</td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="procedure" value="" /></td>
-					<td class="al procedure">Apicetomía</td>
-					<td class="al procedure">₡74.000</td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="procedure" value="" /></td>
-					<td class="al procedure">Frenectomía</td>
-					<td class="al procedure">₡60.000</td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="procedure" value="" /></td>
-					<td class="al procedure">Coronas dental</td>
-					<td class="al procedure">₡103.000</td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="procedure" value="" /></td>
-					<td class="al procedure">Profilaxis</td>
-					<td class="al procedure">₡25.000</td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="procedure" value="" /></td>
-					<td class="al procedure">Ortodoncia</td>
-					<td class="al procedure">₡285.000</td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="procedure" value="" /></td>
-					<td class="al procedure">Endodoncia</td>
-					<td class="al procedure">₡85.000</td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="procedure" value="" /></td>
-					<td class="al procedure">Exodoncia</td>
-					<td class="al procedure">₡287.000</td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="procedure" value="" /></td>
-					<td class="al procedure">Odontepediatría</td>
-					<td class="al procedure">₡30.000</td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="procedure" value="" /></td>
-					<td class="al procedure">Enucleaciones</td>
-					<td class="al procedure">₡34.000</td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" name="procedure" value="" /></td>
-					<td class="al procedure">Arco lingual</td>
-					<td class="al procedure">₡70.000</td>
-				</tr>
+									<td><input type="checkbox" name="procedure" value="amalgamas" /></td>
+									<td class="al procedure">Amalgamas</td>
+									<td class="al procedure">₡15.000</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="procedure" value="resinas" /></td>
+									<td class="al procedure">Resinas</td>
+									<td class="al procedure">₡22.000</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="procedure" value="aleacion-base" /></td>
+									<td class="al procedure">Aleación base</td>
+									<td class="al procedure">₡90.000</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="procedure" value="ceromeros" /></td>
+									<td class="al procedure">Cerómeros</td>
+									<td class="al procedure">₡110.000</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="procedure" value="maxiletomia" /></td>
+									<td class="al procedure">Apicetomías</td>
+									<td class="al procedure">₡74.000</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="procedure" value="" /></td>
+									<td class="al procedure">Apicetomía</td>
+									<td class="al procedure">₡74.000</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="procedure" value="" /></td>
+									<td class="al procedure">Frenectomía</td>
+									<td class="al procedure">₡60.000</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="procedure" value="" /></td>
+									<td class="al procedure">Coronas dental</td>
+									<td class="al procedure">₡103.000</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="procedure" value="" /></td>
+									<td class="al procedure">Profilaxis</td>
+									<td class="al procedure">₡25.000</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="procedure" value="" /></td>
+									<td class="al procedure">Ortodoncia</td>
+									<td class="al procedure">₡285.000</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="procedure" value="" /></td>
+									<td class="al procedure">Endodoncia</td>
+									<td class="al procedure">₡85.000</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="procedure" value="" /></td>
+									<td class="al procedure">Exodoncia</td>
+									<td class="al procedure">₡287.000</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="procedure" value="" /></td>
+									<td class="al procedure">Odontepediatría</td>
+									<td class="al procedure">₡30.000</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="procedure" value="" /></td>
+									<td class="al procedure">Enucleaciones</td>
+									<td class="al procedure">₡34.000</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox" name="procedure" value="" /></td>
+									<td class="al procedure">Arco lingual</td>
+									<td class="al procedure">₡70.000</td>
+								</tr>
 							</table>
 						</div>
-						<button class="close" id="show-process">OK</button>
+						<div>
+							<button class="close btn-add btn-ac">Aceptar</button>
+							<button class="close btn-ac">Cancelar</button>
+						</div>
 					</div>
 				</form>
 			</div>
@@ -138,6 +144,5 @@
 		<!--prototipo-->
 		<script src="js/prototype.js"></script>
 		<script src="js/vendor/md5.js"></script>
-		<script src="js/diego.js"></script>
 	</body>
 </html>
