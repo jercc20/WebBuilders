@@ -112,6 +112,9 @@ jQuery(function($) {
 	$('#unselect-all-rol').on( 'click', function(){
 		$(this).parents('form').find('input:checkbox').prop( 'checked', false );
 	});
+	$('.add-procedure').on( 'click', function(){
+		SO.utils.showPopUp( $('#popup-procedure').html() );
+	});
 	$('#popup').on( 'click', '.btn-add', function(){
 		$('#delete-procedures').show();
 		$items = $(this).parents('#popup').find('.table-procedures input:checked').parents('tr');
