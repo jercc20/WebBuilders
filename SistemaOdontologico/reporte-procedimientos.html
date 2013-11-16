@@ -102,7 +102,7 @@
 				</tbody>
 			</table>
 			<div id="popup-ub" class="hide">
-				<form class="box-wrap clearfix" action="" method="post">
+				<form class="clearfix" action="" method="post">
 					<section class="form-section ac">
 						<label for="dentist-name">Nombre del paciente: </label>
 						<input id="dentist-name" name="txt-dentist-name" type="text" />
@@ -115,8 +115,10 @@
 					</select>
 					</section>
 					<section>
-						<input type="reset" value="Limpiar" class="fl cb" />
-						<input type="submit" value ="Buscar" class="fr" />
+						<div class="ac cb">
+							<button class="item-accept">Aceptar</button>
+							<button class="close">Cancelar</button>
+						</div>
 					</section>
 				</form>
 			</div>
