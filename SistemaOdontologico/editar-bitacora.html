@@ -44,25 +44,21 @@
 
 					<label>Procedimientos</label><a href="#" class="add-procedure fr ar">+Agregar procedimiento</a>
 
-					<div class="fl cb">
-						<table class="display">
-							<tr>
-								<td>Resinas </td>
-								<td><input type="text" value="Oclusal"><td>
-							</tr>
-							<tr>
-								<td>Amalgamas</td>
-								<td><input type="text" value="Oclusal"><td>
-							</tr>
-						</table>
-					</div>
-					
+					<table class="cb" id="table-procedures-added">
+						<tr>
+							<td><input type="checkbox" value="amalgamas" name="procedure"></td>
+							<td class="al procedure">Amalgamas</td>
+							<td><input type="text" required="required" placeholder="Zona"></td>
+						</tr>
+					</table>
+
+					<a href="#" id="delete-procedures" class="fr ar">-Borrar procedimiento</a>
+
 					<label for="notes">Notas</label>
 					<textarea id="notes" name="notes">Se realizó la resinas y amalgamas en el Oclusal.</textarea>
 
 				</section>
 				<section class="cb ac">
-					<section class="cb ac">
 					<button class="form-cancel">Cancelar</button>
 					<button type="submit">Guardar</button>
 				</section>
