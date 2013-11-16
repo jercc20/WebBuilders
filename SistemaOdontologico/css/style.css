@@ -279,6 +279,21 @@ form div.ac {
 .chk-group-column input {
 	width: auto;
 }
+#table-procedures-added {
+	width: 97%;
+}
+#table-procedures-added td:nth-of-type(2) {
+	width: 115px;
+	padding: 0 20px;
+}
+#table-procedures-added input {
+	width: 100%;
+}
+#delete-procedures {
+	display: block;
+	width: 100%;
+	padding: 10px 0;
+}
 
 /* stuff */
 .dataTables_wrapper {
