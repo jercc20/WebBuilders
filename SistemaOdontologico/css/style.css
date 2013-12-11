@@ -6,7 +6,7 @@
 body {
 	font-size: 13px;
 	font-family: Arial, Helvetica, sans-serif;
-	background: url('../imgs/bg-body.jpg');
+	background: #F3F5F4;
 }
 a {
 	color:  #3f9dcc;
@@ -24,7 +24,8 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Rokkitt', serif;
+	font-family: 'Nixie One', cursive;
+	font-weight: normal;
 }
 
 /* Global - Clases */
@@ -74,7 +75,7 @@ h6 {
 
 /* Header */
 #nav-top {
-	background: #aaa;
+	background: #F57B70;
 }
 #nav-top ul {
 	margin: 0;
@@ -92,7 +93,7 @@ h6 {
 	left: -1px;
 	top: -500px;
 	min-width: 102%;
-	background: rgba(170, 170, 170, 0.5);
+	background: rgba(180, 79, 74, 0.5);
 	box-shadow: 0 3px 3px #aaa;
 	opacity: 0;
 	transform-origin: 50% 0;
@@ -118,12 +119,12 @@ h6 {
 	transform: none;
 }
 #main-menu li a:hover {
-	color: #3f9dcc;
-	background-color: #333;
+	color: #EBEDEC;
+	background-color: #B44F4A;
 	text-decoration: none;
 }
 #main-menu li.active > a {
-	color: #3f9dcc;
+	color: #001D2D;
 	background-color: #fff;
 }
 #menu-icon {
@@ -145,7 +146,7 @@ h6 {
 	height: 50px;
 	text-align: center;
 	border-right: none;
-	background-color: #333;
+	background-color: #B44F4A;
 	cursor: default;
 }
 #account > a {
@@ -162,6 +163,7 @@ h6 {
 	min-width: 150%;
 }
 #username {
+	color: #fff;
 	padding: 0 15px;
 	line-height: 50px;
 }
@@ -185,6 +187,12 @@ form textarea {
     border-radius: 3px;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
+}
+form textarea,
+form input[type="text"],
+form input[type="file"] {
+	background: #F3F5F4;
+	border-color: #DCDEDD;
 }
 button,
 form input[type="submit"],
@@ -304,6 +312,14 @@ form div.ac {
 .dataTables_wrapper {
 	padding-top: 10px;
 }
+.dataTables_wrapper .ui-widget-header,
+.dataTables_wrapper .ui-state-default {
+	background: none;
+}
+.data-table.display thead tr th {
+	background: #F3F5F4;
+	border-top: 1px solid #DCDEDD;
+}
 .data-table a {
 	padding: 0 1px;
 	font-size: 1.2em;
@@ -314,6 +330,9 @@ form div.ac {
 .data-table a:hover {
 	color: #3f9dcc;
 	text-shadow: 1px #000;
+}
+.dataTables_filter {
+	padding-bottom: 10px;
 }
 #ui-datepicker-div {
 	width: 206px;
@@ -347,7 +366,7 @@ form div.ac {
 	width: 320px;
 	padding: 30px;
 	margin: 200px auto 0;
-	background: #aaa;
+	background: #F57B70;
 	border-radius: 10px;
 }
 #login-wrap h1 {
@@ -374,7 +393,8 @@ form div.ac {
 	position: relative;
 	margin-top: 12px;
 	padding: 5px 0;
-	background: #aaa;
+	background: #001D2D;
+	color: #fff;
 	text-align: center;
 	box-shadow: 0 0 3px #000;
 }
