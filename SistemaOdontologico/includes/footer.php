@@ -10,6 +10,23 @@
 		</section>
 	</div>
 	<script src="js/vendor/jquery-2.0.3.min.js"></script>
+	<?php
+		if( in_array( 'datatable', $pageConfig['plugins'] ) ):
+			?>
+			<script src="js/vendor/jquery.dataTables.min.js"></script>
+			<?php
+		endif;
+		if( in_array( 'datepicker', $pageConfig['plugins'] ) ):
+			?>
+			<script src="js/vendor/jquery-ui-1.10.3.datepicker.min.js"></script>
+			<?php
+		endif;
+		if( in_array( 'calendar', $pageConfig['plugins'] ) ):
+			?>
+			<script src="js/vendor/fullcalendar.min.js"></script>
+			<?php
+		endif;
+	?>
 	<script src="js/main.js"></script>
 	<script src="js/global.js"></script>
 	<script src="js/utils.js"></script>
