@@ -11,7 +11,6 @@
 
 	var menu = {
 		init: function(){
-			Prototype.includeMenu();
 			this.el = $('#main-menu');
 			this.icon = $('#menu-icon');
 			this.activeMenu();

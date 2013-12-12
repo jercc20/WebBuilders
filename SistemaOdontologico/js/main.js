@@ -6,15 +6,9 @@ var SO = {
 jQuery(function($) {
 
 	if( SO.utils.currentFile() == "login" ){
-		Prototype.checkLoginSession();
-		Prototype.init();
-
 		SO.global.loginInit();
 	}
 	else {
-		Prototype.checkSession();
-		SO.config.user = Prototype.getUser();
-
 		SO.global.init();
 	}
 
@@ -22,10 +16,6 @@ jQuery(function($) {
 	if( $('.data-table').length > 0 ){
 
 		$table = $('.data-table');
-		//Add dynamic row
-		if( SO.utils.getUrlVar('added') == 1 ){
-			Prototype.addDataTableRow($table);
-		}
 
 		var dtOptions = {
 			"bJQueryUI": true,
@@ -58,12 +48,10 @@ jQuery(function($) {
 		$table.dataTable( dtOptions );
 
 		$table.on( 'click', '.item-remove', function(){
-			Prototype.rowToDelete = $(this).parents('tr');
 			SO.utils.showPopUp( $('#popup-remove').html() );
 		});
 
 		$('#popup').on( 'click', '.btn-accept', function(){
-			$('.data-table').dataTable().fnDeleteRow( Prototype.rowToDelete[0]._DT_RowIndex );
 			SO.utils.showPopUp('Ha sido eliminado correctamente.');
 		});
 
