@@ -13,8 +13,15 @@
 		return window.location.href.split('.')[0].split('/').pop();
 	};
 
-	util.localRedirect = function(to){
-		window.location = window.location.href.replace( SO.utils.currentFile(), to.split('.')[0] );
+	util.redirect = function(to, delay){
+		if( delay > 0 ){
+			setTimeout(function(){
+				window.location = to;
+			}, delay );
+		}
+		else {
+			window.location = to;
+		}
 	};
 
 	util.showPopUp = function(msg){
