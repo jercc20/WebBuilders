@@ -12,6 +12,8 @@ require_once 'marco.php';
 /* Init */
 $db_server = db_init(); //Verifica e inicia la conexion a la db
 check_user();
+$_POST = sanitize( $_POST ); //Clean POST
+$_GET  = sanitize( $_GET ); //Clean GET
 //$_SESSION['userinfo'] = get_user_info();
 
 /* Functions */
@@ -47,6 +49,35 @@ function debug_query( $query_result ){
 		var_dump( $row );
 	}
 	echo '</pre>';
+}
+
+function cleanInput( $input ) {
+	$search = array(
+		'@<script[^>]*?>.*?</script>@si',   // Strip out javascript
+		'@<[\/\!]*?[^<>]*?>@si',            // Strip out HTML tags
+		'@<style[^>]*?>.*?</style>@siU',    // Strip style tags properly
+		'@<![\s\S]*?--[ \t\n\r]*>@'         // Strip multi-line comments
+	);
+	$output = preg_replace($search, '', $input);
+
+	return $output;
+}
+
+function sanitize( $input ) {
+	if (is_array($input)) {
+		foreach($input as $var=>$val) {
+			$output[$var] = sanitize($val);
+		}
+	}
+	else {
+		if (get_magic_quotes_gpc()) {
+			$input = stripslashes($input);
+		}
+		$input  = cleanInput($input);
+	$output = mysql_real_escape_string($input);
+	}
+
+	return $output;
 }
 
 function check_user(){
