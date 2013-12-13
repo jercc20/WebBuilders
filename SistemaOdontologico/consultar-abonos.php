@@ -8,7 +8,7 @@
 	require_once 'includes/functions.php';
 	require_once 'includes/header.php';
 ?>
-	<h1 class="ac"> Consultar Abonos </h1>
+	<h1 class="ac">Consultar Abonos</h1>
 	<table class="data-table display">
 		<thead>
 			<tr>
