@@ -94,6 +94,25 @@ jQuery(function($) {
 			SO.utils.localRedirect( action );
 		}
 	});*/
+	$('form').on( 'submit', function(e){
+		e.preventDefault();
+		$form = $(this);
+		//SO.utils.showPopUp('Ha sido guardado correctamente.');
+		$.ajax({
+			type: "POST",
+			url: $form.attr('action'),
+			data: $form.serialize(),
+			cache: false,
+			success: function( data ){
+				if( data == "1" ){
+					SO.utils.showPopUp('Ha sido guardado correctamente.');
+				}
+				else {
+					SO.utils.showPopUp( data );
+				}
+			}
+		});
+	});
 	$('#select-all-rol').on( 'click', function(){
 		$(this).parents('form').find('input:checkbox').prop( 'checked', true );
 	});
