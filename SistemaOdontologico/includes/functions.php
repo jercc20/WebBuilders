@@ -110,6 +110,12 @@ if( isset( $_POST['ajax-call'] ) && isset( $_POST['var'] ) ){
 			echo do_query( $query );
 			break;
 
+		case 'idFactura': //Eliminar factura
+			$factura = ( isset( $_POST['idFactura'] ) ) ? $_POST['idFactura'] : '';
+			$query = "DELETE FROM tbfacturas WHERE idFactura = '$factura'";
+			echo do_query( $query );
+			break;
+
 	}
 }
 
