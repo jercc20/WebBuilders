@@ -18,7 +18,7 @@
 				<th>Identificación</th>
 				<th>Fecha del Abono</th>
 				<th>Monto del Abono</th>
-				<th></th>
+				<th class="column-icons"></th>
 			</tr>
 		</thead>
 		<tbody>
