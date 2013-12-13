@@ -12,8 +12,6 @@ require_once 'marco.php';
 /* Init */
 $db_server = db_init(); //Verifica e inicia la conexion a la db
 check_user();
-$_POST = sanitize( $_POST ); //Clean POST
-$_GET  = sanitize( $_GET ); //Clean GET
 //$_SESSION['userinfo'] = get_user_info();
 
 /* Functions */
@@ -68,6 +66,8 @@ function cleanInput( $input ) {
 }
 
 function sanitize( $input ) {
+	$output = array();
+
 	if (is_array($input)) {
 		foreach($input as $var=>$val) {
 			$output[$var] = sanitize($val);
@@ -78,7 +78,7 @@ function sanitize( $input ) {
 			$input = stripslashes($input);
 		}
 		$input  = cleanInput($input);
-	$output = mysql_real_escape_string($input);
+		$output = mysql_real_escape_string($input);
 	}
 
 	return $output;
@@ -91,6 +91,24 @@ function check_user(){
 
 function get_user_info(){
 	//return user info in array
+}
+
+/* ---------------------- */
+
+if( isset( $_POST ) )
+	$_POST = sanitize( $_POST ); //Clean POST
+
+if( isset( $_GET ) )
+	$_GET = sanitize( $_GET ); //Clean GET
+
+if( isset( $_POST['ajax-call'] ) && isset( $_POST['var'] ) ){
+	switch ( $_POST['var'] ) {
+		case 'idAbono': //Eliminar abono
+			$abono = ( isset( $_POST['idAbono'] ) ) ? $_POST['idAbono'] : '';
+			$query = "DELETE FROM tbabonos WHERE idAbono = '$abono'";
+			echo do_query( $query );
+			break;
+	}
 }
 
 
@@ -126,17 +144,6 @@ function get_user_factura( $idFactura ){
 		AND o.idPaciente = u.idUsuario";
 	$result = do_query( $query );
 	return $result;
-}
-
-
-if( isset( $_POST['ajax-call'] ) && isset( $_POST['var'] ) ){
-	switch ( $_POST['var'] ) {
-		case 'idAbono': //Eliminar abono
-			$abono = ( isset( $_POST['idAbono'] ) ) ? $_POST['idAbono'] : '';
-			$query = "DELETE FROM tbabonos WHERE idAbono = '$abono'";
-			echo do_query( $query );
-			break;
-	}
 }
 
 
