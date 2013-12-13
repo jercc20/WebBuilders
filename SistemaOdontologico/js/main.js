@@ -48,11 +48,30 @@ jQuery(function($) {
 		$table.dataTable( dtOptions );
 
 		$table.on( 'click', '.item-remove', function(){
+			SO.config.rowToDelete = $(this).parents('tr');
 			SO.utils.showPopUp( $('#popup-remove').html() );
 		});
 
 		$('#popup').on( 'click', '.btn-accept', function(){
-			SO.utils.showPopUp('Ha sido eliminado correctamente.');
+			urlVars = SO.utils.getUrlVars();
+			vars = "ajax-call=1&var="+urlVars[0]+
+					"&"+urlVars[0]+"="+SO.utils.getUrlVar(urlVars[0]);
+			$.ajax({
+				type: "POST",
+				url: 'includes/functions.php',
+				data: vars,
+				cache: false,
+				success: function( data ){
+					if( data == "1" ){
+						$('.data-table').dataTable().fnDeleteRow( SO.config.rowToDelete[0]._DT_RowIndex );
+						SO.utils.showPopUp('Ha sido eliminado correctamente.');
+					}
+					else {
+						SO.utils.showPopUp( data );
+					}
+				}
+			});
+			window.location.hash = "";
 		});
 
 	}
