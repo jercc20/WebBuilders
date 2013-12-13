@@ -9,6 +9,19 @@
 			<div id="popup-content"></div>
 		</section>
 	</div>
+	<?php
+		if( in_array( 'datatable', $pageConfig['plugins'] ) ):
+		?>
+		<div id="popup-remove" class="hide">
+			<p>¿Está seguro que desea eliminar el abono seleccionado?</p>
+			<div class="ac">
+				<button class="btn-accept">Aceptar</button>
+				<button class="close">Cancelar</button>
+			</div>
+		</div>
+		<?php
+		endif;
+	?>
 	<script src="js/vendor/jquery-2.0.3.min.js"></script>
 	<?php
 		if( in_array( 'datatable', $pageConfig['plugins'] ) ):
