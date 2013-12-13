@@ -94,5 +94,50 @@ function get_user_info(){
 }
 
 
+/* ---------------------- */
+
+function display_abonos_rows(){
+	$abonos = get_abonos();
+	while( $row = mysql_fetch_assoc( $abonos ) ){
+		$user = mysql_fetch_assoc( get_user_factura( $row['idFactura'] ) );
+		echo '<tr>'.
+				'<td>'.$row['idFactura'].'</td>'.
+				'<td>'.$row['idAbono'].'</td>'.
+				'<td>'.$user['nombre'].'</td>'.
+				'<td>'.$user['idusuario'].'</td>'.
+				'<td>'.$row['fecha'].'</td>'.
+				'<td>'.$row['monto'].'</td>'.
+				'<td><a href="#!?idAbono='.$row['idAbono'].'"><i class="icon-remove item-remove"></i></a></td>'.
+			'</tr>';
+	}
+}
+
+function get_abonos(){
+	$query = "SELECT * FROM tbabonos";
+	$result = do_query( $query );
+	return $result;
+}
+
+function get_user_factura( $idFactura ){
+	$query = "SELECT idusuario, nombre
+	FROM tbusuarios AS u, tbodontogramas AS o, tbfacturas AS f
+	WHERE f.idFactura = '$idFactura'
+		AND f.idOdontograma = o.idOdontograma
+		AND o.idPaciente = u.idUsuario";
+	$result = do_query( $query );
+	return $result;
+}
+
+
+if( isset( $_POST['ajax-call'] ) && isset( $_POST['var'] ) ){
+	switch ( $_POST['var'] ) {
+		case 'idAbono': //Eliminar abono
+			$abono = ( isset( $_POST['idAbono'] ) ) ? $_POST['idAbono'] : '';
+			$query = "DELETE FROM tbabonos WHERE idAbono = '$abono'";
+			echo do_query( $query );
+			break;
+	}
+}
+
 
 ?>
