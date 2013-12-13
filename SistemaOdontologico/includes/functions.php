@@ -119,13 +119,13 @@ function display_abonos_rows(){
 	while( $row = mysql_fetch_assoc( $abonos ) ){
 		$user = mysql_fetch_assoc( get_user_factura( $row['idFactura'] ) );
 		echo '<tr>'.
-				'<td>'.$row['idFactura'].'</td>'.
-				'<td>'.$row['idAbono'].'</td>'.
-				'<td>'.$user['nombre'].'</td>'.
-				'<td>'.$user['identificacion'].'</td>'.
-				'<td>'.$row['fecha'].'</td>'.
-				'<td>'.$row['monto'].'</td>'.
-				'<td><a href="#!?idAbono='.$row['idAbono'].'"><i class="icon-remove item-remove"></i></a></td>'.
+				'<td>' . $row['idFactura'] . '</td>'.
+				'<td>' . $row['idAbono'] . '</td>'.
+				'<td>' . get_full_user_name( $user ) . '</td>'.
+				'<td>' . $user['identificacion'] . '</td>'.
+				'<td>' . $row['fecha'] . '</td>'.
+				'<td>' . $row['monto'] . '</td>'.
+				'<td><a href="#!?idAbono=' . $row['idAbono'] . '"><i class="icon-remove item-remove"></i></a></td>'.
 			'</tr>';
 	}
 }
@@ -137,13 +137,23 @@ function get_abonos(){
 }
 
 function get_user_factura( $idFactura ){
-	$query = "SELECT identificacion, nombre
+	$query = "SELECT identificacion, nombre, primerApellido, segundoApellido
 	FROM tbusuarios AS u, tbodontogramas AS o, tbfacturas AS f
 	WHERE f.idFactura = '$idFactura'
 		AND f.idOdontograma = o.idOdontograma
 		AND o.idPaciente = u.idUsuario";
 	$result = do_query( $query );
 	return $result;
+}
+
+function get_full_user_name( $result_user ){
+	$user = $result_user['nombre'];
+	if( $result_user['primerApellido'] )
+		$user .= ' ' . $result_user['primerApellido'];
+	if( $result_user['segundoApellido'] )
+		$user .= ' ' . $result_user['segundoApellido'];
+
+	return $user;
 }
 
 
