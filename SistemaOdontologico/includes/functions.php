@@ -123,7 +123,7 @@ function display_abonos_rows(){
 				'<td>' . $row['idAbono'] . '</td>'.
 				'<td>' . get_full_user_name( $user ) . '</td>'.
 				'<td>' . $user['identificacion'] . '</td>'.
-				'<td>' . $row['fecha'] . '</td>'.
+				'<td>' . do_date_format( $row['fecha'] ) . '</td>'.
 				'<td>' . $row['monto'] . '</td>'.
 				'<td><a href="#!?idAbono=' . $row['idAbono'] . '"><i class="icon-remove item-remove"></i></a></td>'.
 			'</tr>';
@@ -156,5 +156,14 @@ function get_full_user_name( $result_user ){
 	return $user;
 }
 
+function do_date_format( $date ){
+	$result = date( "d/m/Y", strtotime( $date ) );
+	return $result;
+}
+
+function do_sql_date_format( $date ){
+	$result = date( 'Y-m-d', strtotime( $date ) );
+	return $result;
+}
 
 ?>

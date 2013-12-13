@@ -10,7 +10,7 @@
 			echo "El id de la factura es requerido";
 			exit();
 		}
-		$date = ( isset( $_POST['txt-user-dob'] ) ) ? date( 'Y-m-d', strtotime( $_POST['txt-user-dob'] ) ) : '';
+		$date = ( isset( $_POST['txt-user-dob'] ) ) ? do_sql_date_format( $_POST['txt-user-dob'] ) : '';
 		$amount = ( isset( $_POST['txt-amount'] ) ) ? $_POST['txt-amount'] : '';
 		$notes = ( isset( $_POST['notes'] ) ) ? $_POST['notes'] : '';
 
