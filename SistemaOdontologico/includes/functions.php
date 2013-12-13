@@ -103,11 +103,13 @@ if( isset( $_GET ) )
 
 if( isset( $_POST['ajax-call'] ) && isset( $_POST['var'] ) ){
 	switch ( $_POST['var'] ) {
+
 		case 'idAbono': //Eliminar abono
 			$abono = ( isset( $_POST['idAbono'] ) ) ? $_POST['idAbono'] : '';
 			$query = "DELETE FROM tbabonos WHERE idAbono = '$abono'";
 			echo do_query( $query );
 			break;
+
 	}
 }
 
@@ -165,5 +167,64 @@ function do_sql_date_format( $date ){
 	$result = date( 'Y-m-d', strtotime( $date ) );
 	return $result;
 }
+
+function display_facturas_rows(){
+	$facturas = get_facturas();
+	while( $row = mysql_fetch_assoc( $facturas ) ){
+		$user = mysql_fetch_assoc( get_user_factura( $row['idFactura'] ) );
+		$total = mysql_fetch_array( get_amount_odontograma( $row['idOdontograma'] ) )['total'];
+		$numAbonos = mysql_num_rows( get_abonos_factura( $row['idFactura'] ) );
+		$totalAbonos = mysql_fetch_array( get_total_abonos_factura( $row['idFactura'] ) )['total'];
+		echo '<tr>'.
+				'<td>' . $row['idFactura'] . '</td>'.
+				'<td>' . get_full_user_name( $user ) . '</td>'.
+				'<td>' . $user['identificacion'] . '</td>'.
+				'<td>' . $total . '</td>'.
+				'<td>' . $numAbonos . '</td>'.
+				'<td>' . do_minus( $total, $totalAbonos ) . '</td>'.
+				'<td>'.
+					'<a href="crear-abono.php?id-factura=' . $row['idFactura'] . '"><i class="icon-coin"></i></a>'.
+					'<a href="#!?idFactura=' . $row['idFactura'] . '"><i class="icon-remove item-remove"></i></a>'.
+				'</td>'.
+			'</tr>';
+	}
+}
+
+function get_facturas(){
+	$query = "SELECT * FROM tbfacturas";
+	$result = do_query( $query );
+	return $result;
+}
+
+function get_amount_odontograma( $idOdontograma ){
+	$query = "SELECT SUM(Costo) AS total
+			FROM tbprocedimientosporodontograma AS po,
+				tbprocedimientos AS p
+			WHERE po.idOdontograma = '$idOdontograma'
+				AND p.idProcedimiento = po.idProcedimiento";
+	$result = do_query( $query );
+	return $result;
+}
+
+function get_abonos_factura( $idFactura ){
+	$query = "SELECT monto FROM tbabonos WHERE idFactura = '$idFactura'";
+	$result = do_query( $query );
+	return $result;
+}
+
+function get_total_abonos_factura( $idFactura ){
+	$query = "SELECT SUM(monto) AS total FROM tbabonos WHERE idFactura = '$idFactura'";
+	$result = do_query( $query );
+	return $result;
+}
+
+function do_minus( $val1, $val2, $negative = false ){
+	$result = $val1 - $val2;
+	if( ! $negative && $result < 0 )
+		$result = 0;
+
+	return $result;
+}
+
 
 ?>
