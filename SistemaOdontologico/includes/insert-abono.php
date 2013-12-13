@@ -3,7 +3,13 @@
 		define('PAGE','crear-abono');
 		require_once 'functions.php';
 
-		$idBill = ( isset( $_POST['txt-bill-num'] ) ) ? $_POST['txt-bill-num'] : '';
+		if( isset( $_POST['txt-bill-num'] ) && ! empty( $_POST['txt-bill-num'] )  ){
+			$idBill = $_POST['txt-bill-num'];
+		}
+		else {
+			echo "El id de la factura es requerido";
+			exit();
+		}
 		$date = ( isset( $_POST['txt-user-dob'] ) ) ? date( 'Y-m-d', strtotime( $_POST['txt-user-dob'] ) ) : '';
 		$amount = ( isset( $_POST['txt-amount'] ) ) ? $_POST['txt-amount'] : '';
 		$notes = ( isset( $_POST['notes'] ) ) ? $_POST['notes'] : '';
