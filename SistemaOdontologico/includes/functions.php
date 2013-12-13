@@ -104,7 +104,7 @@ function display_abonos_rows(){
 				'<td>'.$row['idFactura'].'</td>'.
 				'<td>'.$row['idAbono'].'</td>'.
 				'<td>'.$user['nombre'].'</td>'.
-				'<td>'.$user['idusuario'].'</td>'.
+				'<td>'.$user['identificacion'].'</td>'.
 				'<td>'.$row['fecha'].'</td>'.
 				'<td>'.$row['monto'].'</td>'.
 				'<td><a href="#!?idAbono='.$row['idAbono'].'"><i class="icon-remove item-remove"></i></a></td>'.
@@ -119,7 +119,7 @@ function get_abonos(){
 }
 
 function get_user_factura( $idFactura ){
-	$query = "SELECT idusuario, nombre
+	$query = "SELECT identificacion, nombre
 	FROM tbusuarios AS u, tbodontogramas AS o, tbfacturas AS f
 	WHERE f.idFactura = '$idFactura'
 		AND f.idOdontograma = o.idOdontograma
