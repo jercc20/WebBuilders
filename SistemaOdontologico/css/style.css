@@ -194,6 +194,9 @@ form input[type="file"] {
 	background: #F3F5F4;
 	border-color: #DCDEDD;
 }
+form [readonly] {
+	color: #999;
+}
 button,
 form input[type="submit"],
 form input[type="button"],
