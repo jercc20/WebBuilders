@@ -23,7 +23,7 @@
 				mouseenter: this.accountEnter,
 				mouseleave: this.accountLeave
 			}, "#account");
-			$('#logout').on( 'click', Prototype.logout );
+			//$('#logout').on( 'click',  );
 			$('#username').text( SO.config.user );
 		},
 		activeMenu: function(){
@@ -51,7 +51,6 @@
 	var footer = {
 		init: function(){
 			var self = this;
-			Prototype.includeFooter();
 			this.popupWrap = $('#popup-wrap');
 			this.popup = $('#popup');
 			this.popupWrap.on( 'click', function(e){

@@ -83,17 +83,17 @@ jQuery(function($) {
 	}
 
 	//Forms
-	$('.form-edit').on( 'submit', function(e){
+	/*$('.form-edit').on( 'submit', function(e){
 		e.preventDefault();
 		SO.utils.showPopUp('Ha sido guardado correctamente.');
-	});
-	$('.form-cancel').on( 'click', function(e){
+	});*/
+	/*$('.form-cancel').on( 'click', function(e){
 		e.preventDefault();
 		var action = $(this).parents('form').attr('action');
 		if( action !== "" ){
 			SO.utils.localRedirect( action );
 		}
-	});
+	});*/
 	$('#select-all-rol').on( 'click', function(){
 		$(this).parents('form').find('input:checkbox').prop( 'checked', true );
 	});
