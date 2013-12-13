@@ -12,13 +12,13 @@
 	<table class="data-table display">
 		<thead>
 			<tr>
-				<th data-field="txt-number">Número de Factura</th>
-				<th data-field="txt-abono">Número de abono</th>
-				<th data-field="txt-name-id">Nombre del Usuario</th>
-				<th data-field="txt-user-id">Identificación</th>
-				<th data-field="txt-user-dob">Fecha del Abono</th>
-				<th data-field="txt-type">Monto del Abono</th>
-				<th class="column-icons"></th>
+				<th>Número de Factura</th>
+				<th>Número de abono</th>
+				<th>Nombre del Usuario</th>
+				<th>Identificación</th>
+				<th>Fecha del Abono</th>
+				<th>Monto del Abono</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
