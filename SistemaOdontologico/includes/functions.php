@@ -3,16 +3,16 @@
 require_once 'config.php'; //config vars
 
 //TEMP!!! para las funciones de cada uno
-require_once 'includes/diego.php';
-require_once 'includes/mathias.php';
-require_once 'includes/johel.php';
-require_once 'includes/laura.php';
-require_once 'includes/marco.php';
+require_once 'diego.php';
+require_once 'mathias.php';
+require_once 'johel.php';
+require_once 'laura.php';
+require_once 'marco.php';
 
 /* Init */
 $db_server = db_init(); //Verifica e inicia la conexion a la db
 check_user();
-$_SESSION['userinfo'] = get_user_info();
+//$_SESSION['userinfo'] = get_user_info();
 
 /* Functions */
 function db_init(){
