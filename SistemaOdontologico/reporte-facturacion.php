@@ -7,7 +7,6 @@
 	);
 	require_once 'includes/functions.php';
 	require_once 'includes/header.php';
-	var_dump($_POST);
 ?>
 	<h1 class="ac">Reporte de Facturación</h1>
 	<button id="btn-adv-search">Búsqueda Avanzada</button>

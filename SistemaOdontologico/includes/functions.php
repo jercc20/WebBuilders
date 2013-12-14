@@ -352,7 +352,6 @@ function get_facturas_custom(){
 		elseif( ! empty( $_POST['txt-end-date'] ) )
 			$query .= " AND fecha <= '" . do_sql_date_format( $_POST['txt-end-date'] ) . "'";
 	}
-echo $query;
 	$result = do_query( $query );
 
 	return $result;
