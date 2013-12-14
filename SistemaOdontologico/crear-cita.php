@@ -7,16 +7,15 @@
 	require_once 'includes/functions.php';
 	require_once 'includes/header.php';
 
-	$idCita = ( isset( $_GET['id'] ) ) ? $_GET['id'] : '';
 ?>
 	<h1 class="ac">Crear Cita</h1>
 	<form id='proced-box' class='form-add box-wrap' action='includes/insert-cita.php' method='post'>
 		<section class="form-section">
-			<input type="hidden" name="id_pacient" value="<?php echo $idCita; ?>"/>
+			<input type="hidden" name="id_pacient" value="<?php echo 3; ?>"/>
 			<label>Nombre del paciente</label>
-			<input type='text' disabled='disabled' />
+			<input type='text' name="txt-user-name" />
 			<label>Identificación</label>
-			<input type='text' disabled='disabled' />
+			<input type='text' name="txt-user-id" />
 			
 			<label for="txt-date">Fecha</label>
 			<input id="txt-date" class="datepicker" name="txt_date" type="text" required="required" placeholder="dd/mm/yyyy" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" />

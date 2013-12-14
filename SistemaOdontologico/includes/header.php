@@ -78,7 +78,7 @@
 				</li>
 				<li><a href="configuracion.php">Configuración</a>
 					<ul>
-						<li><a href="consultar-procedimiento.php">Procedimientos</a></li>
+						<li><a href="consultar-procedimientos.php">Procedimientos</a></li>
 						<li class="hide"><a href="crear-procedimiento.php">Crear procedimiento</a></li>
 						<li class="hide"><a href="editar-procedimiento.php">Editar procedimiento</a></li>
 					</ul>
