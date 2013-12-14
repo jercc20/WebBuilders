@@ -5,6 +5,7 @@
 
 		/* Ejemplo */
 		print_r( $_POST ); //Para ver que lleva el POST, luego se quita
+		$id = ( isset( $_POST['id_patient'] ) ) ? $_POST['id_patient'] : '';
 		$date = ( isset( $_POST['txt_date'] ) ) ? $_POST['txt_date'] : '';
 		$hour = ( isset( $_POST['slt-hour'] ) ) ? $_POST['slt-hour'] : '';
 		$minute = ( isset( $_POST['slt-minute'] ) ) ? $_POST['slt-minute'] : '';
