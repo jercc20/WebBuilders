@@ -126,6 +126,12 @@ if( isset( $_POST['ajax-call'] ) && isset( $_POST['var'] ) ){
 			echo do_query( $query );
 			break;
 
+		case 'idRol': //Eliminar rol
+			$rol = ( isset( $_POST['idRol'] ) ) ? $_POST['idRol'] : '';
+			$query = "DELETE FROM tbroles WHERE idRol = '$rol'";
+			echo do_query( $query );
+			break;
+
 	}
 }
 
