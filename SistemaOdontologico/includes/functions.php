@@ -95,10 +95,10 @@ function get_user_info(){
 
 /* ---------------------- */
 
-if( isset( $_POST ) )
+if( ! empty( $_POST ) && ! empty( $_POST ) )
 	$_POST = sanitize( $_POST ); //Clean POST
 
-if( isset( $_GET ) )
+if( isset( $_GET ) && ! empty( $_GET ) )
 	$_GET = sanitize( $_GET ); //Clean GET
 
 if( isset( $_POST['ajax-call'] ) && isset( $_POST['var'] ) ){
@@ -306,6 +306,53 @@ function get_pending_proce_odonto( $idOdontograma ){
 				WHERE po.idOdontograma = '$idOdontograma'
 					AND po.realizado = '0'
 					AND p.idProcedimiento = po.idProcedimiento";
+	$result = do_query( $query );
+
+	return $result;
+}
+
+function display_reporte_facturas_rows(){
+	$facturas = ( ! empty( $_POST ) ) ? get_facturas_custom() : get_facturas();
+	while( $row = mysql_fetch_assoc( $facturas ) ){
+		$user = mysql_fetch_assoc( get_user_factura( $row['idFactura'] ) );
+		$total = array_shift( mysql_fetch_array( get_amount_odontograma( $row['idOdontograma'] ) ) );
+		$numAbonos = mysql_num_rows( get_abonos_factura( $row['idFactura'] ) );
+		$totalAbonos = array_shift( mysql_fetch_array( get_total_abonos_factura( $row['idFactura'] ) ) );
+		echo '<tr>'.
+				'<td>' . $row['idFactura'] . '</td>'.
+				'<td>' . get_full_user_name( $user ) . '</td>'.
+				'<td>' . $user['identificacion'] . '</td>'.
+				'<td>' . $total . '</td>'.
+				'<td>' . $numAbonos . '</td>'.
+				'<td>' . do_minus( $total, $totalAbonos ) . '</td>'.
+			'</tr>';
+	}
+}
+
+function get_facturas_custom(){
+	$query = "SELECT * FROM tbfacturas";
+	if( ! empty( $_POST ) ){
+		if( ! empty( $_POST['txt-patient-id'] ) ||
+			! empty( $_POST['txt-patient-name'] ) ||
+			! empty( $_POST['txt-patient-lastname'] ) ){
+			$query .= " JOIN tbodontogramas USING(idOdontograma)";
+			$query .= " JOIN tbusuarios ON idPaciente = idUsuario";
+		}
+		$query .= " WHERE 1";
+		if( ! empty( $_POST['txt-patient-id'] ) )
+			$query .= " AND identificacion LIKE ('%" . $_POST['txt-patient-id'] . "%')";
+		if( ! empty( $_POST['txt-patient-name'] ) )
+			$query .= " AND nombre LIKE ('%" . $_POST['txt-patient-name'] . "%')";
+		if( ! empty( $_POST['txt-patient-lastname'] ) )
+			$query .= " AND primerApellido LIKE ('%" . $_POST['txt-patient-lastname'] . "%')";
+		if( ! empty( $_POST['txt-start-date'] ) && ! empty( $_POST['txt-end-date'] ) )
+			$query .= " AND fecha BETWEEN '" . do_sql_date_format( $_POST['txt-start-date'] ) . "' AND '" . do_sql_date_format( $_POST['txt-end-date'] ) . "'";
+		elseif( ! empty( $_POST['txt-start-date'] ) )
+			$query .= " AND fecha >= '" . do_sql_date_format( $_POST['txt-start-date'] ) . "'";
+		elseif( ! empty( $_POST['txt-end-date'] ) )
+			$query .= " AND fecha <= '" . do_sql_date_format( $_POST['txt-end-date'] ) . "'";
+	}
+echo $query;
 	$result = do_query( $query );
 
 	return $result;

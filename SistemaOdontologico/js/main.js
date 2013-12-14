@@ -133,6 +133,9 @@ jQuery(function($) {
 	$('.add-procedure').on( 'click', function(){
 		SO.utils.showPopUp( $('#popup-procedure').html() );
 	});
+	$('#btn-adv-search').on( 'click', function(){
+		SO.utils.showPopUp( $('#popup-adv-search').html() );
+	});
 	$('#popup').on( 'click', '.btn-add', function(){
 		$('#delete-procedures').show();
 		$items = $(this).parents('#popup').find('.table-procedures input:checked').parents('tr');
@@ -141,6 +144,9 @@ jQuery(function($) {
 		});
 		$('#table-procedures-added').prepend( $items );
 		$('#procedure-number').val( $('#table-procedures-added tr').size() );
+	});
+	$('#popup').on( 'click', 'form .close', function(e){
+		e.preventDefault();
 	});
 	$('#delete-procedures').on( 'click', function(){
 		$('#table-procedures-added').find('input:checked').parents('tr').remove();
