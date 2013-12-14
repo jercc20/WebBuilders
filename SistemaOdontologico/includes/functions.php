@@ -151,6 +151,7 @@ function get_user_factura( $idFactura ){
 		AND f.idOdontograma = o.idOdontograma
 		AND o.idPaciente = u.idUsuario";
 	$result = do_query( $query );
+
 	return $result;
 }
 
@@ -209,6 +210,7 @@ function get_amount_odontograma( $idOdontograma ){
 			WHERE po.idOdontograma = '$idOdontograma'
 				AND p.idProcedimiento = po.idProcedimiento";
 	$result = do_query( $query );
+
 	return $result;
 }
 
@@ -228,6 +230,83 @@ function do_minus( $val1, $val2, $negative = false ){
 	$result = $val1 - $val2;
 	if( ! $negative && $result < 0 )
 		$result = 0;
+
+	return $result;
+}
+
+function display_home_citas(){
+	$citas = get_next_citas();
+	while( $row = mysql_fetch_assoc( $citas ) ){
+		$user = mysql_fetch_assoc( get_user_by_id( $row['idPaciente'] ) );
+		echo '<tr>'.
+				'<td>' . $row['idCita'] . '</td>'.
+				'<td>' . get_full_user_name( $user ) . '</td>'.
+				'<td>' . do_date_format( $row['fecha'] ) . '</td>'.
+				'<td>' . do_time_format( $row['hora'] ) . '</td>'.
+			'</tr>';
+	}
+}
+
+function get_next_citas(){
+	$query = "SELECT idCita, idPaciente, fecha, hora
+				FROM tbcitas
+				WHERE fecha BETWEEN curdate() and curdate() + interval 2 day
+				ORDER BY fecha";
+	$result = do_query( $query );
+
+	return $result;
+}
+
+function get_user_by_id( $id ){
+	$query = "SELECT identificacion, nombre, primerApellido, segundoApellido
+	FROM tbusuarios AS u
+	WHERE u.idUsuario = '$id'";
+	$result = do_query( $query );
+
+	return $result;
+}
+
+function do_time_format( $time ){
+	$result = date('h:i a', strtotime( $time ) );
+	return $result;
+}
+
+function display_home_procedimientos(){
+	$odontogramas = get_old_odontogramas();
+	while( $row = mysql_fetch_assoc( $odontogramas ) ){
+		$items = get_pending_proce_odonto( $row['idOdontograma'] );
+		if( mysql_num_rows( $items ) > 0 ){
+			$user = mysql_fetch_assoc( get_user_by_id( $row['idPaciente'] ) );
+			while( $item = mysql_fetch_assoc( $items ) ){
+				echo '<tr>'.
+						'<td>' . $row['idOdontograma'] . '</td>'.
+						'<td>' . get_full_user_name( $user ) . '</td>'.
+						'<td>' . do_date_format( $row['fecha'] ) . '</td>'.
+						'<td>' . $item['nombre'] . '</td>'.
+					'</tr>';
+			}
+		}
+	}
+}
+
+function get_old_odontogramas(){
+	$query = "SELECT idOdontograma, idPaciente, fecha
+				FROM tbodontogramas
+				WHERE fecha <= ( curdate() - interval 6 month )
+				ORDER BY fecha";
+	$result = do_query( $query );
+
+	return $result;
+}
+
+function get_pending_proce_odonto( $idOdontograma ){
+	$query = "SELECT nombre
+				FROM tbprocedimientosporodontograma AS po,
+					tbprocedimientos AS p
+				WHERE po.idOdontograma = '$idOdontograma'
+					AND po.realizado = '0'
+					AND p.idProcedimiento = po.idProcedimiento";
+	$result = do_query( $query );
 
 	return $result;
 }
