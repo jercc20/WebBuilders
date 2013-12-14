@@ -1,28 +1,30 @@
 <?php
-	define('PAGE','consultar-procedimientos');
-	define('TITLE','consultar-procedimientos');
+	define('PAGE','consultar-citas');
+	define('TITLE','Consultar Citas');
 	$pageConfig = array(
-		'actions' => array(),
 		'plugins'=> array('datatable')
 	);
 	require_once 'includes/functions.php';
 	require_once 'includes/header.php';
 ?>
-	<h1 class="ac">Consultar Procedimientos</h1>
+	<h1 class="ac">Consultar Citas</h1>
 	<div id="add-bitacora" class="fr">
-		<a href="crear-procedimiento.php">+ Agregar procedimiento</a>
+		<a href="select-patient.php">+ Agregar cita</a>
 	</div>
 	<table class="data-table display">
 		<thead>
 			<tr>
-				<th>Nombre del procedimiento</th>
-				<th>Costo del procedimiento</th>
-				<th>Descripción</th>
+				<th>Nombre del paciente</th>
+				<th>Identificación</th>
+				<th>Nombre del odontólogo</th>
+				<th>Cita</th>
+				<th>Fecha / Hora</th>
+				<th>Notas</th>
 				<th class="column-icons"></th>
 			</tr>
 		</thead>
 		<tbody>
-			<?php display_procedimientos_rows(); ?>
+			<?php display_citas_rows(); ?>
 		</tbody>
 	</table>
 <?php

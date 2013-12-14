@@ -1,8 +1,8 @@
 <?php
-	define('PAGE','crear-procedimiento'); //nombre de la pagina
-	define('TITLE','Crear Procedimineto'); //titulo de la pagina
+	define('PAGE','crear-procedimiento');
+	define('TITLE','Crear Procedimineto');
 	$pageConfig = array(
-		'plugins'=> array() //para incluir archivos de plugins (datatable, calendar, datepicker, print, etc)
+		'plugins'=> array()
 	);
 	require_once 'includes/functions.php';
 	require_once 'includes/header.php';
