@@ -4,7 +4,7 @@
 $db_hostname = 'localhost';
 $db_database = 'bdsistemaodontologico';
 $db_username = 'root';
-$db_password = '';
+$db_password = 'root';
 
 //TEMP!!! para las funciones de cada uno
 require_once 'diego.php';
@@ -117,6 +117,12 @@ if( isset( $_POST['ajax-call'] ) && isset( $_POST['var'] ) ){
 		case 'idFactura': //Eliminar factura
 			$factura = ( isset( $_POST['idFactura'] ) ) ? $_POST['idFactura'] : '';
 			$query = "DELETE FROM tbfacturas WHERE idFactura = '$factura'";
+			echo do_query( $query );
+			break;
+
+		case 'idUsuario': //Eliminar Usuario
+			$usuario = ( isset( $_POST['idUsuario'] ) ) ? $_POST['idUsuario'] : '';
+			$query = "DELETE FROM tbusuarios WHERE idUsuario = '$usuario'";
 			echo do_query( $query );
 			break;
 
