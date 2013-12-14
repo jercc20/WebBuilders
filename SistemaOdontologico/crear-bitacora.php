@@ -9,18 +9,18 @@
 	require_once 'includes/header.php';
 ?>
 	<h1 class="ac">Crear Bitácora</h1>
-			<form class="form-add box-wrap clearfix" action="insert-bitacora.php" method="post">
+			<form class="form-add box-wrap clearfix" action="includes/insert-bitacora.php" method="post">
 				<section class="form-section fl">
 
 					<input name="number-bitacora" type="hidden" />
 
 					<label for="user-name">Seleccione el paciente</label>
 					<?php
-						//menu_desplegable_usuarios(2,1,'slt-paciente');
+						menu_desplegable_usuarios(2,1,'slt-paciente');
 					?>
 					<label for="dentist-name">Seleccione el odontologo</label>
 					<?php
-						//menu_desplegable_usuarios(3,1,'slt-odontologo');
+						menu_desplegable_usuarios(3,1,'slt-odontologo');
 					?>
 					
 					<label for="txt-date">Fecha realizada</label>
@@ -36,7 +36,7 @@
 					<label for="procedimientos">Seleccionar Procedimiento</label>
 					
 					<?php
-					//	saca_menu_desplegable($prueba3,1,'slt-procedimiento');
+						//menu_desplegable($prueba3,1,'slt-procedimiento');
 					?>
 
 					<label for="notes">Notas</label>
