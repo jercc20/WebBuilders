@@ -1,5 +1,5 @@
 <?php
-/*---------Procedimientos----------------- */
+/*---------Consultar Procedimientos----------------- */
 function display_procedimientos_rows(){
 	$procedimientos = get_procedimientos();
 	while ($fila = mysql_fetch_assoc($procedimientos)) {
@@ -18,7 +18,7 @@ function get_procedimientos(){
 	return $result;
 }
 
-/*-------------------Citas------------------ */
+/*-------------------Consultar Citas------------------ */
 
 function display_citas_rows(){
 	$citas = get_citas();
@@ -68,7 +68,7 @@ function get_slt_patient(){
 	return $result;
 }
 
-/*---------Ingresar comentario de funcion----------------- */
+/*-----------Mostrar datos usuario - identificación crear cita----------------- */
 
 function display_crear_cita_rows(){
 	$crearCita = get_crear_cita();
@@ -90,6 +90,34 @@ function display_crear_cita_rows(){
 function get_crear_cita(){
 	$id = ( isset( $_GET['id'] ) ) ? $_GET['id'] : '';
 	$query = "SELECT * FROM tbusuarios WHERE idUsuario = $id";
+
+	$result = do_query( $query );
+	return $result;
+}
+
+/*------------Crear cita----------------- */
+
+function display_edit_procedure_rows(){
+	$procedure = get_procedure();
+
+	$fila = mysql_fetch_array($procedure);
+	$nombre = $fila['nombre'];
+	$costo = $fila['Costo'];
+	$descripcion = $fila['descripcion']; 
+	$idProcedimiento = $fila['idProcedimiento'];
+
+	echo "<input type='hidden' name='idProcedimiento' value='$idProcedimiento' />";
+	echo "<label for='name'>Nombre del procedimiento</label>";
+	echo "<input id='name' name='txt_name' type='text' required='required' pattern='[a-z A-Z 0-9]+' value='$nombre' />";
+	echo "<label for='cost'>Costo del procedimiento</label>";
+	echo "<input id='cost' name='txt_cost' type='text' required='required' pattern='[0-9]+' value='$costo' />";
+	echo "<label for='notes'>Descripción</label>";
+	echo "<textarea id='notes' name='txt_description'>$descripcion</textarea>";
+}
+
+function get_procedure(){
+	$id = ( isset( $_GET['idProcedimiento'] ) ) ? $_GET['idProcedimiento'] : '';
+	$query = "SELECT * FROM tbprocedimientos WHERE idProcedimiento = $id";
 
 	$result = do_query( $query );
 	return $result;
