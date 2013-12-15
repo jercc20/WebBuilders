@@ -7,10 +7,10 @@
 	);
 	require_once 'includes/functions.php';
 	require_once 'includes/header.php';
+	$tabla = datos_configuracion();
 ?>
 	<h1 class="ac">Configuración</h1>
 	<form class="form-edit box-wrap clearfix" action="includes/update-configuracion.php" method="post">
-		<?php $tabla = datos_configuracion(); ?>
 		<section class="form-section fl">
 	 		<label for="system-name">Nombre sistema</label>
 	 		<input id="system-name" name="txt-system-name" type="text" value="<?php echo ( isset( $tabla['nombreSistema'] ) ) ? $tabla['nombreSistema'] : ''; ?>" required="required" />
