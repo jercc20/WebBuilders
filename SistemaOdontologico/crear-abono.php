@@ -15,8 +15,8 @@
 		<section class="form-section fl">
 			<label for="bill">Número de Factura</label>
 			<input id="bill" name="txt-bill-num" type="text" required="required" readonly="readonly" value="<?php echo $idFactura; ?>" />
-			<label for="date-apmt">Fecha</label>
-			<input id="date-apmt" name="txt-user-dob" type="text" required="required" placeholder="dd-mm-yyyy" class="datepicker" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" />
+			<label for="date">Fecha</label>
+			<input id="date" name="txt-date" type="text" required="required" placeholder="dd-mm-yyyy" class="datepicker" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" />
 			<label for="amount">Monto del Abono</label>
 			<input id="amount" name="txt-amount" type="text" pattern="\d+" required="required" />
 		</section>

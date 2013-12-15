@@ -1,25 +1,19 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta charset="utf-8" />
-	<title>Reporte de Bitacoras</title>
-	<link rel="stylesheet" href="css/normalize.css" />
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nixie+One" />
-	<link rel="stylesheet" href="css/icons.css" />
-	<link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" href="css/data-table.css" />
-	<link rel="stylesheet" href="css/jquery-ui-1.10.3.smoothness.custom.min.css" />
-	<link rel="stylesheet" href="css/marco.css">
-</head>
-<body>
-	<div id="wrapper">
-		<div id="container">
+<?php
+	define('PAGE','reporte-bitacoras');
+	define('TITLE','Reporte bitacoras');
+	$pageConfig = array(
+		'actions' => array(),
+		'plugins'=> array('datatable', 'datepicker')
+	);
+	require_once 'includes/functions.php';
+	require_once 'includes/header.php';
+?>
 			<h1 class="ac">Reportes de Bitácoras</h1>
 			<div>
 				<button class="btn-ba">Búsqueda Avanzada</button>
 				<a href="#"><i id="item-print" class="icon-print fr"></i></a>
 			</div>
-			<table id="my-table" class="data-table display">
+			<table class="data-table display">
 				<thead>
 					<tr>
 						<th>Número de bitácora</th>
@@ -31,12 +25,12 @@
 					</tr>
 				</thead>
 				<tbody>
-				 <?php display_reporte_bitacoras_rows(); ?>
+					 <?php display_reporte_bitacoras_rows(); ?>
 				</tbody>
 			</table>
 		</div>
 	</div>
-	<div id="popup-ub" class="hide">
+	<div id="popup-up" class="hide">
 		<form class="clearfix" action="" method="post">
 			<section class="form-section">
 				<label for="dentist-name">Nombre del odontólogo: </label>
@@ -53,16 +47,6 @@
 				</div>
 			</section>
 		</form>
-	</div>
-	<script src="js/vendor/jquery-2.0.3.min.js"></script>
-	<script src="js/vendor/jquery.dataTables.min.js"></script>
-	<script src="js/main.js"></script>
-	<script src="js/global.js"></script>
-	<script src="js/utils.js"></script>
-	<!-- Prototype files -->
-	<script src="js/prototype.js"></script>
-	<script src="js/vendor/md5.js"></script>
-	<!--Data Tables files-->
-	<script src="js/marco.js"></script>
-</body>
-</html>
+<?php
+	require_once 'includes/footer.php';
+?>

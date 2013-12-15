@@ -20,6 +20,7 @@
 						<th>Identificación</th>
 						<th>Nombre Odontólogo</th>
 						<th>Fecha realizada</th>
+						<th>Cantidad procedimientos</th>
 						<th class="column-icons"></th>
 			        </tr>
 			    </thead>

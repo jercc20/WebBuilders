@@ -20,19 +20,19 @@ function get_bitacoras(){
 	return $result;
 }
 
-function menu_desplegable_usuarios($id,$valor,$nombre){
-	$query ="SELECT idUsuario, nombre, primerApellido, identificacion FROM tbusuarios WHERE idRol = $id";
-	$result = do_query( $query );
-	   echo "<select name='$nombre'>";
-	   while ($fila=mysql_fetch_row($result)){
-	     if ($fila[0]==$valor){
-	       echo "<option selected value='$fila[0]'>$fila[1] $fila[2] $fila[3]</option>";
-	     }
-	     else{
-	       echo "<option value='$fila[0]'>$fila[1] $fila[2] $fila[3]</option>";
-	     }
-	  }
-	   echo "</select>";
-	};
+function display_reporte_bitacoras_rows(){
+	$bitacoras = get_bitacoras();
+	while ($fila = mysql_fetch_assoc($bitacoras)) {
+					echo '<tr>';  
+						echo '<td>' . $fila["id_bitacora"] . '</td>';
+						echo '<td>' . $fila["u_nombre"] . " ".$fila["u_apellido"] . '</td>';
+						echo '<td>' . $fila["u_id"] . '</td>';
+						echo '<td>' . $fila["o_nombre"] . " ". $fila["o_apellido"] . '</td>';
+						echo '<td>' . $fila["fecha"] . '</td>';
+						$id = $fila['idBitacora'];
+					echo '</tr>';
+						
+		}
+	}
 ?> 
 
