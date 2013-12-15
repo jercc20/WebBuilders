@@ -1,6 +1,6 @@
 <?php
 	define('PAGE','consultar-procedimientos');
-	define('TITLE','consultar-procedimientos');
+	define('TITLE','Consultar Procedimientos');
 	$pageConfig = array(
 		'actions' => array(),
 		'plugins'=> array('datatable')
