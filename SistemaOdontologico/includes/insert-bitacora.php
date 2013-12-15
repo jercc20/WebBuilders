@@ -9,18 +9,18 @@
 		
 		//echo $query; //Para ver como queda el query, luego se quita
 		
-		$dentistId = ( isset( $_POST['txt-dentist-id'] ) ) ? $_POST['txt-dentist-id'] : '';
-		$patientId = (isset( $_POST['txt-patient-id'] ) ) ? $_POST['txt-patient-id'] : '';
+		$dentistId = ( isset( $_POST['slt-odontologo'] ) ) ? $_POST['slt-odontologo'] : '';
+		$patientId = (isset( $_POST['id_patient'] ) ) ? $_POST['id_patient'] : '';
 		$date = ( isset( $_POST['txt-user-dob'] ) ) ? do_sql_date_format( $_POST['txt-user-dob'] ) : '';
 		$asistentes = ( isset( $_POST['txt-asistentes'] ) ) ? $_POST['txt-asistentes'] : '';
 		$notes = ( isset( $_POST['txt-notes'] ) ) ? $_POST['txt-notes'] : '';
 
-		$query = "INSERT INTO tbbitacoras VALUES (NULL, '$dentistId', '$patientId', '$date', '$asistentes', '$notes')";
+		$query = "INSERT INTO tbbitacoras VALUES" . "(NULL, '$dentistId', '$patientId', '$date', '$asistentes', '$notes')";
 
 		$result = do_query( $query );
 		if( $result == 1 ){
-			echo 'El abono a sido guardado correctamente.';
-			js_redirect('consultar-abonos.php', 2500);
+			echo 'La bitacora se ha guardado correctamente.';
+			js_redirect('consultar-bitacoras.php', 2500);
 		}
 
 		//Opcion 1

@@ -1,8 +1,7 @@
 <?php
 	define('PAGE','consultar-bitacoras'); 
-	define('TITLE','consultar-bitacoras'); 
+	define('TITLE','Consultar Bitacoras'); 
 	$pageConfig = array(
-		'actions' => array(),
 		'plugins'=> array('datatable') 
 	);
 	require_once 'includes/functions.php';
@@ -10,7 +9,7 @@
 ?>
 	<h1 class="ac">Consultar Bitácoras</h1>
 			<div id="add-bitacora" class="fr">
-				<a href="crear-bitacora.php">+ Agregar Bitacora</a>
+				<a href="select-usuario.php?url=crear-bitacora.php">+ Agregar Bitacora</a>
 			</div>
 			<table class="data-table display">
 				<thead>
@@ -20,7 +19,7 @@
 						<th>Identificación</th>
 						<th>Nombre Odontólogo</th>
 						<th>Fecha realizada</th>
-						<th>Cantidad procedimientos</th>
+						<th>Numero Procedimientos</th>
 						<th class="column-icons"></th>
 			        </tr>
 			    </thead>

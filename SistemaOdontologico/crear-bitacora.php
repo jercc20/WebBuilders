@@ -14,17 +14,13 @@
 					<form class='form-add box-wrap clearfix' method='post' action='includes/insert-bitacora.php'>
 						<section class='form-section fl'>
 
-					<label for='txt-dentist-id'>Identificación del odontólogo</label>
-					<input id='txt-dentist-id' name='txt-dentist-id' type='text'  pattern='|^[a-zA-Z0-9]*$|' required='required' />
-
-					<label for='txt-dentist-name'>Nombre del odontólogo</label>
-					<input id='txt-dentist-name' name='txt-dentist-name' type='text' required='required' pattern='|^[a-zA-Z ñÑáéíóúüÁÉÍÓÚç]*$|' />
-
-					<label for='txt-patient-id'>Identificación del paciente</label>
-					<input id='txt-patient-id' name='txt-patient-id' type='text' pattern='|^[a-zA-Z0-9]*$|' required='required' />
-
-					<label for='patient-name'>Nombre del paciente</label>
-					<input id='patient-name' name='txt-patient-name' type='text' pattern='|^[a-zA-Z ñÑáéíóúüÁÉÍÓÚç]*$|' required='required' />
+					<label for="slt-odontologo">Seleccione el odontologo</label>
+					<?php
+						menu_desplegable_usuarios(3,1,'slt-odontologo');
+					?>
+					<?php
+						display_crear_bitacora_rows();
+					?>
 
 					<label for='txt-user-dob'>Fecha realizada</label>
 					<input id='txt-user-dob' class='datepicker' name='txt-user-dob' type='text' required='required' placeholder='dd/mm/yyyy' pattern='(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d' />
