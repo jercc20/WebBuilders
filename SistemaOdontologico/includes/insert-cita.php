@@ -3,8 +3,7 @@
 		define('PAGE','crear-cita');
 		require_once 'functions.php';
 
-		print_r( $_POST ); //Para ver que lleva el POST, luego se quita
-		$id = ( isset( $_POST['id_patient'] ) ) ? $_POST['id_patient'] : '';
+		$paciente = ( isset( $_POST['id_patient'] ) ) ? $_POST['id_patient'] : '';
 		$date = ( isset( $_POST['txt_date'] ) ) ? $_POST['txt_date'] : '';
 		$hour = ( isset( $_POST['slt-hour'] ) ) ? $_POST['slt-hour'] : '';
 		$minute = ( isset( $_POST['slt-minute'] ) ) ? $_POST['slt-minute'] : '';
@@ -14,8 +13,7 @@
 		$date = str_replace('/', '-', $date);
 		$date = date("Y-m-d",strtotime($date));
 
-		$query = "INSERT INTO tbcitas VALUES" . "('NULL','$id', '$date', '$hour', '$minute', '$cita', '$odontologo', '$notes')";
-		echo $query; //Para ver como queda el query, luego se quita
+		$query = "INSERT INTO tbcitas VALUES" . "('NULL','$paciente', '$date', '$hour', '$minute', '$cita', '$odontologo', '$notes')";
 		
 		$result = do_query( $query );
 		if( $result == 1 ){

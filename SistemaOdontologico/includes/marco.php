@@ -49,16 +49,15 @@ function get_citas(){
 	return $result;
 }
 
-/*---------Fuera de servicio----------------- */
+/*---------Seleccionar usuarios paciente----------------- */
 
-/*function display_slt_patient_rows(){
+function display_slt_patient_rows(){
 	$slt_patient = get_slt_patient();
 	while ($fila = mysql_fetch_assoc($slt_patient)) {
 		echo '<tr>';  
 			echo '<td>' . $fila["nombre"] . " " . $fila["primerApellido"] . '</td>';
 			echo '<td>' . $fila["identificacion"] . '</td>';
-			$id = $fila["idUsuario"];
-			echo '<td><a href="crear-cita.php?id='.$id.'"><i class="icon-edit"></i></a></td>';
+			echo '<td><a href="crear-cita.php?id='. $fila["idUsuario"] .'"><i class="icon-edit"></i></a></td>';
 		echo '</tr>';
 	}
 }
@@ -67,9 +66,33 @@ function get_slt_patient(){
 	$query = "SELECT * FROM tbusuarios WHERE idRol = 2";
 	$result = do_query( $query );
 	return $result;
-}*/
+}
 
-/*---------Ingresar comentario----------------- */
+/*---------Ingresar comentario de funcion----------------- */
 
+function display_crear_cita_rows(){
+	$crearCita = get_crear_cita();
+
+	$fila = mysql_fetch_array($crearCita);
+	$nombre = $fila['nombre'];
+	$apellido = $fila['primerApellido'];
+	$na = $nombre . " " . $apellido;
+	$identificacion = $fila['identificacion'];
+	$id_patient = $fila['idUsuario']; 
+
+	echo "<input type='hidden' name='id_patient' value='$id_patient' />";
+	echo "<label>Nombre del paciente</label>";
+	echo "<input type='text' name='txt-user-name' readonly value='$na' />";
+	echo "<label>Identificación</label>";
+	echo "<input type='text' name='txt-user-id' readonly value='$identificacion' />";
+}
+
+function get_crear_cita(){
+	$id = ( isset( $_GET['id'] ) ) ? $_GET['id'] : '';
+	$query = "SELECT * FROM tbusuarios WHERE idUsuario = $id";
+
+	$result = do_query( $query );
+	return $result;
+}
 
 ?>
