@@ -13,7 +13,7 @@
 		if( in_array( 'datatable', $pageConfig['plugins'] ) ):
 		?>
 		<div id="popup-remove" class="hide">
-			<p>¿Está seguro que desea eliminar el abono seleccionado?</p>
+			<p>¿Está seguro que desea eliminarlo?</p>
 			<div class="ac">
 				<button class="btn-accept">Aceptar</button>
 				<button class="close">Cancelar</button>
