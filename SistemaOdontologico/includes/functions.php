@@ -1,10 +1,6 @@
 <?php
 
-//require_once 'config.php'; //config vars
-$db_hostname = 'localhost';
-$db_database = 'bdsistemaodontologico';
-$db_username = 'root';
-$db_password = '';
+require_once 'config.php'; //config vars
 
 //TEMP!!! para las funciones de cada uno
 require_once 'diego.php';
