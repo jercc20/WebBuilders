@@ -1,0 +1,77 @@
+<?php
+	if( $_POST ){
+		define('PAGE','crear-rol');
+		require_once 'functions.php';
+
+		/* Ejemplo */
+		$nombreRol = ( isset( $_POST['txt-role-name'] ) ) ? $_POST['txt-role-name'] : '';
+		$permisos = ( isset($_POST['chk-permissions'])) ? $_POST['chk-permissions'] : array();
+
+		/*--Inicio--*/
+		/*--Citas--*/
+		$registrarCita = ( in_array( 'registrarCita' , $permisos ) ) ? 1 : 0;
+		$editarCita = ( in_array( 'editarCita' , $permisos ) ) ? 1 : 0;
+		$eliminarCita = ( in_array( 'eliminarCita' , $permisos ) ) ? 1 : 0;
+		$consultarCitas = ( in_array( 'consultarCitas' , $permisos ) ) ? 1 : 0;
+		$ingresarSeccionCitas = ( in_array( 'ingresarSeccionCitas' , $permisos ) ) ? 1 : 0;
+		/*--Bitácoras--*/
+		$registrarBitacora = ( in_array( 'registrarBitacora' , $permisos ) ) ? 1 : 0;
+		$editarBitacora = ( in_array( 'editarBitacora' , $permisos ) ) ? 1 : 0;
+		$eliminarBitacora = ( in_array( 'eliminarBitacora' , $permisos ) ) ? 1 : 0;
+		$consultarBitacoras = ( in_array( 'consultarBitacoras' , $permisos ) ) ? 1 : 0;
+		$consultarBitacoraPropia = ( in_array( 'consultarBitacoraPropia' , $permisos ) ) ? 1 : 0;
+		$ingresarSeccionBitacoras = ( in_array( 'ingresarSeccionBitacoras' , $permisos ) ) ? 1 : 0;
+		/*--Usuarios--*/
+		$registrarUsuario = ( in_array( 'registrarUsuario' , $permisos ) ) ? 1 : 0;
+		$editarUsuario = ( in_array( 'editarUsuario' , $permisos ) ) ? 1 : 0;
+		$eliminarUsuario = ( in_array( 'eliminarUsuario' , $permisos ) ) ? 1 : 0;
+		$consultarUsuario = ( in_array( 'consultarUsuario' , $permisos ) ) ? 1 : 0;
+		$consultarUsuarioPaciente = ( in_array( 'consultarUsuarioPaciente' , $permisos ) ) ? 1 : 0;
+		$crearUsuarioPaciente = ( in_array( 'crearUsuarioPaciente' , $permisos ) ) ? 1 : 0;
+		$editarUsuarioPaciente = ( in_array( 'editarUsuarioPaciente' , $permisos ) ) ? 1 : 0;
+		$ingresarSeccionUsuarios = ( in_array( 'ingresarSeccionUsuarios' , $permisos ) ) ? 1 : 0;
+		/*--Odontograma--*/
+		$registrarOdontograma = ( in_array( 'registrarOdontograma' , $permisos ) ) ? 1 : 0;
+		$editarOdontograma = ( in_array( 'editarOdontograma' , $permisos ) ) ? 1 : 0;
+		$eliminarOdontograma = ( in_array( 'eliminarOdontograma' , $permisos ) ) ? 1 : 0;
+		$consultarOdontogramas = ( in_array( 'consultarOdontogramas' , $permisos ) ) ? 1 : 0;
+		$ingresarSeccionOdontogramas = ( in_array( 'ingresarSeccionOdontogramas' , $permisos ) ) ? 1 : 0;
+		/*--Facturas--*/
+		$registrarFactura = ( in_array( 'registrarFactura' , $permisos ) ) ? 1 : 0;
+		$editarFactura = ( in_array( 'editarFactura' , $permisos ) ) ? 1 : 0;
+		$eliminarFactura = ( in_array( 'eliminarFactura' , $permisos ) ) ? 1 : 0;
+		$consultarFacturas = ( in_array( 'consultarFacturas' , $permisos ) ) ? 1 : 0;
+		$ingresarSeccionFacturas = ( in_array( 'ingresarSeccionFacturas' , $permisos ) ) ? 1 : 0;
+		/*--Procedimientos--*/
+		$registrarProcedimiento = ( in_array( 'registrarProcedimiento' , $permisos ) ) ? 1 : 0;
+		$editarProcedimiento = ( in_array( 'editarProcedimiento' , $permisos ) ) ? 1 : 0;
+		$eliminarProcedimiento = ( in_array( 'eliminarProcedimiento' , $permisos ) ) ? 1 : 0;
+		$consultarProcedimiento = ( in_array( 'consultarProcedimiento' , $permisos ) ) ? 1 : 0;
+		$ingresarSeccionProcedimientos = ( in_array( 'ingresarSeccionProcedimientos' , $permisos ) ) ? 1 : 0;
+		/*--Reportes--*/
+		$reporteCitas = ( in_array( 'reporteCitas' , $permisos ) ) ? 1 : 0;
+		$reporteOdontogramas = ( in_array( 'reporteOdontogramas' , $permisos ) ) ? 1 : 0;
+		$reporteBitacora = ( in_array( 'reporteBi​tacora' , $permisos ) ) ? 1 : 0;
+		$reporteFacturacion = ( in_array( 'reporteFacturacion' , $permisos ) ) ? 1 : 0;
+		$reporteUsuarios = ( in_array( 'reporteUsuarios' , $permisos ) ) ? 1 : 0;
+		$reporteProcedimientos = ( in_array( 'reporteProcedimientos' , $permisos ) ) ? 1 : 0;
+		/*--Sistema--*/
+		$editarInformacion = ( in_array( 'editarInformacion' , $permisos ) ) ? 1 : 0;
+		$ingresarSeccionConfiguracion = ( in_array( 'ingresarSeccionConfiguracion' , $permisos ) ) ? 1 : 0;
+
+		$query = "INSERT INTO tbroles VALUES (NULL, '$nombreRol', $registrarCita, $editarCita, $eliminarCita, $consultarCitas, $ingresarSeccionCitas, $registrarBitacora, $editarBitacora, $eliminarBitacora, $consultarBitacoras, $consultarBitacoraPropia, $ingresarSeccionBitacoras, $registrarUsuario, $editarUsuario, $eliminarUsuario, $consultarUsuario, $consultarUsuarioPaciente, $crearUsuarioPaciente, $editarUsuarioPaciente, $ingresarSeccionUsuarios, $registrarOdontograma, $editarOdontograma, $eliminarOdontograma, $consultarOdontogramas, $ingresarSeccionOdontogramas, $registrarFactura, $editarFactura, $eliminarFactura, $consultarFacturas, $ingresarSeccionFacturas, $registrarProcedimiento, $editarProcedimiento, $eliminarProcedimiento, $consultarProcedimiento, $ingresarSeccionProcedimientos, $reporteCitas, $reporteOdontogramas, $reporteBitacora, $reporteFacturacion, $reporteUsuarios, $reporteProcedimientos, $editarInformacion, $ingresarSeccionConfiguracion)";
+
+		$result = do_query( $query );
+		if( $result == 1 ){
+			echo 'Rol creado con exito';
+			js_redirect('consultar-roles.php', 4000);
+		}
+
+		/* ---- */
+
+		global $db_server;
+		mysql_close( $db_server );
+	}
+?>
+
+
