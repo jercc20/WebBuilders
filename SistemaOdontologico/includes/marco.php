@@ -123,4 +123,19 @@ function get_procedure(){
 	return $result;
 }
 
+function menu_desplegable_usuarios($id,$valor,$nombre){
+	$query ="SELECT idUsuario, nombre, primerApellido, identificacion FROM tbusuarios WHERE idRol = $id";
+	$result = do_query( $query );
+	echo "<select name='$nombre'>";
+	while ($fila=mysql_fetch_row($result)){
+	if ($fila[0]==$valor){
+		echo "<option selected value='$fila[0]'>$fila[1] $fila[2] $fila[3]</option>";
+	}
+	else{
+		echo "<option value='$fila[0]'>$fila[1] $fila[2] $fila[3]</option>";
+	}
+  }
+   echo "</select>";
+};
+
 ?>
