@@ -1,9 +1,9 @@
 <?php
-	define('PAGE','consultar-roles'); //nombre de la pagina
-	define('TITLE','Consultar Roles'); //titulo de la pagina
+	define('PAGE','consultar-roles');
+	define('TITLE','Consultar Roles');
 	$pageConfig = array(
-		'actions' => array(), //array con las acciones adicionales de la pagina (editar, borrar, etc)php
-		'plugins'=> array('datatable') //para incluir archivos de plugins (datatable, calendar, datepicker, print, etc)
+		'actions' => array(),
+		'plugins'=> array('datatable')
 	);
 	require_once 'includes/functions.php';
 	require_once 'includes/header.php';
