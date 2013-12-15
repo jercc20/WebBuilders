@@ -9,7 +9,7 @@
 ?>
 	<h1 class="ac">Consultar Citas</h1>
 	<div id="add-bitacora" class="fr">
-		<a href="select-patient.php">+ Agregar cita</a>
+		<a href="select-usuario.php">+ Agregar cita</a>
 	</div>
 	<table class="data-table display">
 		<thead>
@@ -18,7 +18,8 @@
 				<th>Identificación</th>
 				<th>Nombre del odontólogo</th>
 				<th>Cita</th>
-				<th>Fecha / Hora</th>
+				<th>Fecha</th>
+				<th>Hora</th>
 				<th>Notas</th>
 				<th class="column-icons"></th>
 			</tr>

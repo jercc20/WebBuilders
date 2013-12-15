@@ -1,4 +1,5 @@
 <?php
+/*---------Procedimientos----------------- */
 function display_procedimientos_rows(){
 	$procedimientos = get_procedimientos();
 	while ($fila = mysql_fetch_assoc($procedimientos)) {
@@ -6,8 +7,7 @@ function display_procedimientos_rows(){
 			echo '<td>' . $fila["nombre"] . '</td>';
 			echo '<td>' . $fila["Costo"]  . '</td>';
 			echo '<td>' . $fila["descripcion"] . '</td>';
-			$id = $fila['idProcedimiento'];
-			echo '<td><a href="editar-procedimiento.php?id='. $id .'"><i class="icon-edit"></i></a> <a href="#!?idProcedimiento=' . $id . '"><i class="icon-remove item-remove"></i></a></td>';
+			echo '<td><a href="editar-procedimiento.php?idProcedimiento=' . $fila['idProcedimiento'] . '"><i class="icon-edit"></i></a><a href="#!?idProcedimiento=' . $fila['idProcedimiento'] . '"><i class="icon-remove item-remove"></i></a></td>';
 		echo '</tr>';
 	}
 }
@@ -17,6 +17,8 @@ function get_procedimientos(){
 	$result = do_query( $query );
 	return $result;
 }
+
+/*-------------------Citas------------------ */
 
 function display_citas_rows(){
 	$citas = get_citas();
@@ -29,9 +31,7 @@ function display_citas_rows(){
 			echo '<td>' . $fila["fecha"] . '</td>';
 			echo '<td>' . $fila["hora"] . ':' . $fila["minutos"] . '</td>';
 			echo '<td>' . $fila["notas"] . '</td>';
-			$id = $fila['idPaciente'];
-			$id_cita = $fila['idCita'];
-			echo '<td><a href="editar-cita.php?id='. $id .'&id_cita='. $id_cita .'"><i class="icon-edit"></i></a> <a href="delete-citas.php?id='. $id_cita .'"><i class="icon-remove"></i></a></td>';
+			echo '<td><a href="editar-cita.php?idPaciente=' . $fila['idPaciente'] . '&idCita=' . $fila['idCita'] . '"><i class="icon-edit"></i></a><a href="#!?idCita=' . $fila['idCita'] . '"><i class="icon-remove item-remove"></i></a></td>';
 		echo '</tr>';
 	}
 }
@@ -49,20 +49,48 @@ function get_citas(){
 	return $result;
 }
 
+/*---------Seleccionar usuarios paciente----------------- */
+
 function display_slt_patient_rows(){
 	$slt_patient = get_slt_patient();
 	while ($fila = mysql_fetch_assoc($slt_patient)) {
 		echo '<tr>';  
 			echo '<td>' . $fila["nombre"] . " " . $fila["primerApellido"] . '</td>';
 			echo '<td>' . $fila["identificacion"] . '</td>';
-			$id = $fila["idUsuario"];
-			echo '<td><a href="crear-cita.php?id='.$id.'"><i class="icon-edit"></i></a></td>';
+			echo '<td><a href="crear-cita.php?id='. $fila["idUsuario"] .'"><i class="icon-edit"></i></a></td>';
 		echo '</tr>';
 	}
 }
 
 function get_slt_patient(){
 	$query = "SELECT * FROM tbusuarios WHERE idRol = 2";
+	$result = do_query( $query );
+	return $result;
+}
+
+/*---------Ingresar comentario de funcion----------------- */
+
+function display_crear_cita_rows(){
+	$crearCita = get_crear_cita();
+
+	$fila = mysql_fetch_array($crearCita);
+	$nombre = $fila['nombre'];
+	$apellido = $fila['primerApellido'];
+	$na = $nombre . " " . $apellido;
+	$identificacion = $fila['identificacion'];
+	$id_patient = $fila['idUsuario']; 
+
+	echo "<input type='hidden' name='id_patient' value='$id_patient' />";
+	echo "<label>Nombre del paciente</label>";
+	echo "<input type='text' name='txt-user-name' readonly value='$na' />";
+	echo "<label>Identificación</label>";
+	echo "<input type='text' name='txt-user-id' readonly value='$identificacion' />";
+}
+
+function get_crear_cita(){
+	$id = ( isset( $_GET['id'] ) ) ? $_GET['id'] : '';
+	$query = "SELECT * FROM tbusuarios WHERE idUsuario = $id";
+
 	$result = do_query( $query );
 	return $result;
 }
