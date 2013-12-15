@@ -1,5 +1,5 @@
 <?php
-	define('PAGE','consultar-usuarios');
+	define('PAGE','consultar-usuarios-odontologo');
 	define('TITLE','Consultar Usuarios');
 	$pageConfig = array(
 		'actions' => array(),
@@ -9,9 +9,6 @@
 	require_once 'includes/header.php';
 ?>
 	<h1 class="ac">Consultar Usuarios</h1>
-	<div id="add-user">
-		<a  class="fr" href="crear-usuario.php">+ agregar usuario</a>
-	</div>
 	<table class="data-table display">
 		<thead>
 			<tr>
@@ -25,7 +22,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<?php display_usuarios_rows(); ?>
+			<?php display_usuarios_odontologo_rows(); ?>
 		</tbody>
 	</table>
 <?php

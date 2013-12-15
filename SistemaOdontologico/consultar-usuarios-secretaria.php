@@ -9,6 +9,9 @@
 	require_once 'includes/header.php';
 ?>
 	<h1 class="ac">Consultar Usuarios</h1>
+	<div id="add-user">
+		<a class="fr" href="crear-usuario-paciente.php">+ agregar usuario</a>
+	</div>
 	<table class="data-table display">
 		<thead>
 			<tr>
@@ -22,7 +25,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<?php display_usuarios_pacientes_rows(); ?>
+			<?php display_usuarios_secretaria_rows(); ?>
 		</tbody>
 	</table>
 <?php
