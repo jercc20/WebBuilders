@@ -16,7 +16,6 @@ require_once 'marco.php';
 /* Init */
 $db_server = db_init(); //Verifica e inicia la conexion a la db
 check_user();
-//$_SESSION['userinfo'] = get_user_info();
 
 /* Functions */
 function db_init(){
@@ -53,6 +52,24 @@ function debug_query( $query_result ){
 	echo '</pre>';
 }
 
+function check_user(){
+	session_start();
+	if( PAGE == 'login' ){
+		if( isset( $_SESSION['idUsuario'] ) && ! empty( $_SESSION['idUsuario'] ) ){
+			header('Location: inicio.php');
+			exit();
+		}
+	}
+	else {
+		if( ! isset( $_SESSION['idUsuario'] ) || empty( $_SESSION['idUsuario'] ) ){
+			header('Location: login.php');
+			exit();
+		}
+		$_SESSION['userinfo'] = mysql_fetch_assoc( get_user_by_id( $_SESSION['idUsuario'] ) );
+	}
+	//verifica si el usuario tiene permisos para ver la pagina, sino lo envia a 404
+}
+
 function js_redirect( $url, $delay = 0 ){
 	echo "<script>SO.utils.redirect('$url', '$delay');</script>";
 }
@@ -86,15 +103,6 @@ function sanitize( $input ) {
 	}
 
 	return $output;
-}
-
-function check_user(){
-	//verifica si el usuario esta logueado, sino lo envia a login
-	//verifica si el usuario tiene permisos para ver la pagina, sino lo envia a 404
-}
-
-function get_user_info(){
-	//return user info in array
 }
 
 /* ---------------------- */
@@ -138,17 +146,17 @@ if( isset( $_POST['ajax-call'] ) && isset( $_POST['var'] ) ){
 			echo do_query( $query );
 			break;
 
-			case 'idCita': //Eliminar cita
-				$cita = ( isset( $_POST['idCita'] ) ) ? $_POST['idCita'] : '';
-				$query = "DELETE FROM tbcitas WHERE idCita = '$cita'";
-				echo do_query( $query );
-				break;
+		case 'idCita': //Eliminar cita
+			$cita = ( isset( $_POST['idCita'] ) ) ? $_POST['idCita'] : '';
+			$query = "DELETE FROM tbcitas WHERE idCita = '$cita'";
+			echo do_query( $query );
+			break;
 
-			case 'idBitacora': //Eliminar Bitacora
-				$bitacora = ( isset( $_POST['idBitacora'] ) ) ? $_POST['idBitacora'] : '';
-				$query = "DELETE FROM tbbitacoras WHERE idBitacora = '$bitacora'";
-				echo do_query( $query );
-				break;
+		case 'idBitacora': //Eliminar Bitacora
+			$bitacora = ( isset( $_POST['idBitacora'] ) ) ? $_POST['idBitacora'] : '';
+			$query = "DELETE FROM tbbitacoras WHERE idBitacora = '$bitacora'";
+			echo do_query( $query );
+			break;
 	}
 }
 
@@ -291,9 +299,7 @@ function get_next_citas(){
 }
 
 function get_user_by_id( $id ){
-	$query = "SELECT identificacion, nombre, primerApellido, segundoApellido
-	FROM tbusuarios AS u
-	WHERE u.idUsuario = '$id'";
+	$query = "SELECT * FROM tbusuarios WHERE idUsuario = '$id'";
 	$result = do_query( $query );
 
 	return $result;

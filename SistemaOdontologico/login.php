@@ -16,7 +16,7 @@
 	<div id="login-wrap">
 		<h1>Iniciar sesión</h1>
 		<form id="login-form" action="includes/check-login.php" method="post" class="clearfix">
-			<input id="user-name" name="txt-user" type="text" placeholder="Número de identificación o nick" required="required" />
+			<input id="user-name" name="txt-user" type="text" placeholder="Número de identificación o Alias" required="required" />
 			<input id="user-psw" name="psw-login" type="password" placeholder="Contraseña" required="required" />
 			<input type="submit" value="Iniciar" />
 		</form>

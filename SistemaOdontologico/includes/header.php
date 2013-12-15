@@ -89,7 +89,7 @@
 					<i class="icon-arrow-down"></i>
 					<ul>
 						<li><a href="editar-perfil-usuario.php">Editar perfil</a></li>
-						<li><a id="logout" href="#">Cerrar sesión</a></li>
+						<li><a id="logout" href="cerrar-sesion.php">Cerrar sesión</a></li>
 					</ul>
 				</li>
 				<li id="username">MENU TMP</li>
