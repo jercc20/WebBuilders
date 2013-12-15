@@ -7,6 +7,7 @@
 	);
 	require_once 'includes/functions.php';
 	require_once 'includes/header.php';
+
 ?>
 	<h1 class="ac">Citas Próximas</h1>
 	<table class="data-table display">
