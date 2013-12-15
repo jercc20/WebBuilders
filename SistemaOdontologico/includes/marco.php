@@ -3,7 +3,7 @@
 function display_procedimientos_rows(){
 	$procedimientos = get_procedimientos();
 	while ($fila = mysql_fetch_assoc($procedimientos)) {
-		echo '<tr>';  
+		echo '<tr>';
 			echo '<td>' . $fila["nombre"] . '</td>';
 			echo '<td>' . $fila["Costo"]  . '</td>';
 			echo '<td>' . $fila["descripcion"] . '</td>';
@@ -23,7 +23,7 @@ function get_procedimientos(){
 function display_citas_rows(){
 	$citas = get_citas();
 	while ($fila = mysql_fetch_assoc($citas)) {
-		echo '<tr>';  
+		echo '<tr>';
 			echo '<td>' . $fila["p_nombre"] . " " . $fila["p_apellido"] . '</td>';
 			echo '<td>' . $fila["p_id"] . '</td>';
 			echo '<td>' . $fila["o_nombre"] . " " . $fila["o_apellido"] . '</td>';
@@ -37,10 +37,10 @@ function display_citas_rows(){
 }
 
 function get_citas(){
-	$query = "SELECT c.*, p.nombre AS p_nombre, 
-				o.nombre AS o_nombre, 
-				p.primerApellido AS p_apellido, 
-				o.primerApellido AS o_apellido, 
+	$query = "SELECT c.*, p.nombre AS p_nombre,
+				o.nombre AS o_nombre,
+				p.primerApellido AS p_apellido,
+				o.primerApellido AS o_apellido,
 				p.identificacion AS p_id
 			FROM tbcitas AS c
 			LEFT JOIN tbusuarios AS p ON (p.idUsuario = c.idPaciente)
@@ -52,12 +52,13 @@ function get_citas(){
 /*---------Seleccionar usuarios paciente----------------- */
 
 function display_slt_patient_rows(){
+	$redirect = ( isset( $_GET['url'] ) ) ? $_GET['url'] : '';
 	$slt_patient = get_slt_patient();
 	while ($fila = mysql_fetch_assoc($slt_patient)) {
-		echo '<tr>';  
+		echo '<tr>';
 			echo '<td>' . $fila["nombre"] . " " . $fila["primerApellido"] . '</td>';
 			echo '<td>' . $fila["identificacion"] . '</td>';
-			echo '<td><a href="crear-cita.php?id='. $fila["idUsuario"] .'"><i class="icon-edit"></i></a></td>';
+			echo '<td><a href="' . $redirect . '?id='. $fila["idUsuario"] .'"><i class="icon-correct"></i></a></td>';
 		echo '</tr>';
 	}
 }
@@ -78,7 +79,7 @@ function display_crear_cita_rows(){
 	$apellido = $fila['primerApellido'];
 	$na = $nombre . " " . $apellido;
 	$identificacion = $fila['identificacion'];
-	$id_patient = $fila['idUsuario']; 
+	$id_patient = $fila['idUsuario'];
 
 	echo "<input type='hidden' name='id_patient' value='$id_patient' />";
 	echo "<label>Nombre del paciente</label>";
@@ -103,7 +104,7 @@ function display_edit_procedure_rows(){
 	$fila = mysql_fetch_array($procedure);
 	$nombre = $fila['nombre'];
 	$costo = $fila['Costo'];
-	$descripcion = $fila['descripcion']; 
+	$descripcion = $fila['descripcion'];
 	$idProcedimiento = $fila['idProcedimiento'];
 
 	echo "<input type='hidden' name='idProcedimiento' value='$idProcedimiento' />";
