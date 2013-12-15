@@ -3,7 +3,6 @@
 		define('PAGE','');
 		require_once 'functions.php';
 
-		print_r( $_POST );
 		$id = ( isset( $_POST['id_cita'] ) ) ? $_POST['id_cita'] : '';
 		$date = ( isset( $_POST['txt_date'] ) ) ? $_POST['txt_date'] : '';
 		$hour = ( isset( $_POST['slt-hour'] ) ) ? $_POST['slt-hour'] : '';

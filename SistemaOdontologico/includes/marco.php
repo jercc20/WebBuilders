@@ -134,48 +134,18 @@ function display_editar_cita_2_rows(){
 	echo "<input type='hidden' name='id_cita' value='$id_cita' />";
 	echo "<label for='txt-date'>Fecha</label>";
 	echo "<input id='txt-date' class='datepicker' name='txt_date' type='text' required='required' placeholder='dd-mm-yyyy' pattern='(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d' value='$date' />";
-			echo "<label for='hour'>Hora</label>";
+	echo "<label for='hour'>Hora</label>";
 		echo "<select id='hour' name='slt-hour' required='required' value='$hour'>";
 			echo "<option value=''>--Seleccione la hora--</option>";
-			echo "<option value='01'>01</option>";
-			echo "<option value='02'>02</option>";
-			echo "<option value='03'>03</option>";
-			echo "<option value='04'>04</option>";
-			echo "<option value='05'>05</option>";
-			echo "<option value='06'>06</option>";
-			echo "<option value='07'>07</option>";
-			echo "<option value='08'>08</option>";
-			echo "<option value='09'>09</option>";
-			echo "<option value='10'>10</option>";
-			echo "<option value='11'>11</option>";
-			echo "<option value='12'>12</option>";
-			echo "<option value='13'>13</option>";
-			echo "<option value='14'>14</option>";
-			echo "<option value='15'>15</option>";
-			echo "<option value='16'>16</option>";
-			echo "<option value='17'>17</option>";
-			echo "<option value='18'>18</option>";
-			echo "<option value='19'>19</option>";
-			echo "<option value='20'>20</option>";
-			echo "<option value='21'>21</option>";
-			echo "<option value='22'>22</option>";
-			echo "<option value='23'>23</option>";
-			echo "<option value='00'>00</option>";
+			for($i=0; $i<24; $i++ ){
+				echo "<option value='$i'>$i</option>";
+			}
 		echo "</select>";
 		echo "<select id='minute' name='slt-minute' required='required'>";
 			echo "<option value=''>--Seleccione los minutos--</option>";
-			echo "<option value='00'>00</option>";
-			echo "<option value='05'>05</option>";
-			echo "<option value='10'>10</option>";
-			echo "<option value='15'>15</option>";
-			echo "<option value='20'>20</option>";
-			echo "<option value='25'>25</option>";
-			echo "<option value='30'>30</option>";
-			echo "<option value='35'>35</option>";
-			echo "<option value='40'>40</option>";
-			echo "<option value='45'>45</option>";
-			echo "<option value='50'>50</option>";
-			echo "<option value='55'>55</option>";
+			for($i=0; $i<60; $i=$i+5 ){
+				echo "<option value='$i'>$i</option>";
+			}
 		echo "</select>";
 			echo "<label for='type'>Tipo de cita</label>";
 			echo "<select id='type' name='slt-cita' required='required'>";
