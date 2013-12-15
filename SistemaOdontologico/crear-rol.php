@@ -27,8 +27,8 @@
 				<input type="checkbox" name="chk-permissions[]" value="editarCita" id="editarCita" />
 				<label for="eliminarCita">Eliminar cita</label>
 				<input type="checkbox" name="chk-permissions[]" value="eliminarCita" id="eliminarCita" />
-				<label for="consultarCitas">Consultar cita</label>
-				<input type="checkbox" name="chk-permissions[]" value="consultarCitas" id="consultarCitas" />
+				<label for="consultarCita">Consultar cita</label>
+				<input type="checkbox" name="chk-permissions[]" value="consultarCita" id="consultarCita" />
 				<label for="ingresarSeccionCitas">Ingresar a la Sección de citas</label>
 				<input type="checkbox" name="chk-permissions[]" value="ingresarSeccionCitas" id="ingresarSeccionCitas" />
 			</section>
@@ -40,11 +40,11 @@
 				<input type="checkbox" name="chk-permissions[]" value="editarBitacora" id="editarBitacora" />
 				<label for="eliminarBitacora">Eliminar bitácora</label>
 				<input type="checkbox" name="chk-permissions[]" value="eliminarBitacora" id="eliminarBitacora" />
-				<label for="consultarBitacoras">Consultar bitácora</label>
-				<input type="checkbox" name="chk-permissions[]" value="consultarBitacoras" id="consultarBitacoras" />
+				<label for="consultarBitacora">Consultar bitácora</label>
+				<input type="checkbox" name="chk-permissions[]" value="consultarBitacora" id="consultarBitacora" />
 				<label for="consultarBitacoraPropia">Consultar bitácora propia</label>
 				<input type="checkbox" name="chk-permissions[]" value="consultarBitacoraPropia" id="consultarBitacoraPropia" />
-				<label for="ingresarSeccionBitacoras">Ingresar a la Sección de bitacoras</label>
+				<label for="ingresarSeccionBitacoras">Ingresar a la Sección de bitácoras</label>
 				<input type="checkbox" name="chk-permissions[]" value="ingresarSeccionBitacoras" id="ingresarSeccionBitacoras" />
 			</section>
 			<section class="chk-group-column">

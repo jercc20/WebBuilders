@@ -1,6 +1,6 @@
 <?php
 	if( $_POST ){
-		define('PAGE','crear-rol');
+		define('PAGE','editar-rol');
 		require_once 'functions.php';
 
 		$nombreRol = ( isset( $_POST['txt-role-name'] ) ) ? $_POST['txt-role-name'] : '';
@@ -58,7 +58,7 @@
 		$editarInformacion = ( in_array( 'editarInformacion' , $permisos ) ) ? 1 : 0;
 		$ingresarSeccionConfiguracion = ( in_array( 'ingresarSeccionConfiguracion' , $permisos ) ) ? 1 : 0;
 
-		$query = "INSERT INTO tbroles VALUES (NULL, '$nombreRol', $registrarCita, $editarCita, $eliminarCita, $consultarCita, $ingresarSeccionCitas, $registrarBitacora, $editarBitacora, $eliminarBitacora, $consultarBitacora, $consultarBitacoraPropia, $ingresarSeccionBitacoras, $registrarUsuario, $editarUsuario, $eliminarUsuario, $consultarUsuario, $consultarUsuarioPaciente, $crearUsuarioPaciente, $editarUsuarioPaciente, $ingresarSeccionUsuarios, $registrarOdontograma, $editarOdontograma, $eliminarOdontograma, $consultarOdontogramas, $ingresarSeccionOdontogramas, $registrarFactura, $editarFactura, $eliminarFactura, $consultarFacturas, $ingresarSeccionFacturas, $registrarProcedimiento, $editarProcedimiento, $eliminarProcedimiento, $consultarProcedimiento, $ingresarSeccionProcedimientos, $reporteCitas, $reporteOdontogramas, $reporteBitacoras, $reporteFacturacion, $reporteUsuarios, $reporteProcedimientos, $editarInformacion, $ingresarSeccionConfiguracion)";
+		$query = "UPDATE tbroles SET registrarCita = $registrarCita, editarCita = $editarCita, eliminarCita = $eliminarCita, consultarCita = $consultarCita, ingresarSeccionCitas = $ingresarSeccionCitas, registrarBitacora = $registrarBitacora, editarBitacora = $editarBitacora, eliminarBitacora = $eliminarBitacora, consultarBitacora = $consultarBitacora, consultarBitacoraPropia = $consultarBitacoraPropia, ingresarSeccionBitacoras = $ingresarSeccionBitacoras, registrarUsuario = $registrarUsuario, editarUsuario = $editarUsuario, eliminarUsuario = $eliminarUsuario, consultarUsuario = $consultarUsuario, consultarUsuarioPaciente = $consultarUsuarioPaciente, crearUsuarioPaciente = $crearUsuarioPaciente, editarUsuarioPaciente = $editarUsuarioPaciente, ingresarSeccionUsuarios = $ingresarSeccionUsuarios, registrarOdontograma = $registrarOdontograma, editarOdontograma = $editarOdontograma, eliminarOdontograma = $eliminarOdontograma, consultarOdontogramas = $consultarOdontogramas, ingresarSeccionOdontogramas = $ingresarSeccionOdontogramas, registrarFactura = $registrarFactura, editarFactura = $editarFactura, eliminarFactura = $eliminarFactura, consultarFacturas = $consultarFacturas, ingresarSeccionFacturas = $ingresarSeccionFacturas, registrarProcedimiento = $registrarProcedimiento, editarProcedimiento = $editarProcedimiento, eliminarProcedimiento = $eliminarProcedimiento, consultarProcedimiento = $consultarProcedimiento, ingresarSeccionProcedimientos = $ingresarSeccionProcedimientos, reporteCitas = $reporteCitas, reporteOdontogramas = $reporteOdontogramas, reporteBitacoras = $reporteBitacoras, reporteFacturacion = $reporteFacturacion, reporteUsuarios = $reporteUsuarios, reporteProcedimientos = $reporteProcedimientos, editarInformacion = $editarInformacion, ingresarSeccionConfiguracion = $ingresarSeccionConfiguracion WHERE nombreRol = '$nombreRol'";
 
 		$result = do_query( $query );
 		if( $result == 1 ){
@@ -72,3 +72,5 @@
 		mysql_close( $db_server );
 	}
 ?>
+
+
