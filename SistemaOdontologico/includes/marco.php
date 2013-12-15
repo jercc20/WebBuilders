@@ -75,9 +75,7 @@ function display_crear_cita_rows(){
 	$crearCita = get_crear_cita();
 
 	$fila = mysql_fetch_array($crearCita);
-	$nombre = $fila['nombre'];
-	$apellido = $fila['primerApellido'];
-	$na = $nombre . " " . $apellido;
+	$na = $fila['nombre'] . " " . $fila['primerApellido'];
 	$identificacion = $fila['identificacion'];
 	$id_patient = $fila['idUsuario'];
 
@@ -91,6 +89,111 @@ function display_crear_cita_rows(){
 function get_crear_cita(){
 	$id = ( isset( $_GET['id'] ) ) ? $_GET['id'] : '';
 	$query = "SELECT * FROM tbusuarios WHERE idUsuario = $id";
+
+	$result = do_query( $query );
+	return $result;
+}
+
+/*-----------Mostrar datos usuario - identificación editar cita----------------- */
+
+function display_editar_cita_rows(){
+	$editarCita = get_editar_cita();
+
+	$fila = mysql_fetch_array($editarCita);
+	$na = $fila['nombre'] . " " . $fila['primerApellido'];
+	$identificacion = $fila['identificacion'];
+
+	echo "<label>Nombre del paciente</label>";
+	echo "<input type='text' name='txt-user-name' readonly value='$na' />";
+	echo "<label>Identificación</label>";
+	echo "<input type='text' name='txt-user-id' readonly value='$identificacion' />";
+}
+
+function get_editar_cita(){
+	$id = ( isset( $_GET['idPaciente'] ) ) ? $_GET['idPaciente'] : '';
+	$query = "SELECT * FROM tbusuarios WHERE idUsuario = $id";
+
+	$result = do_query( $query );
+	return $result;
+}
+
+/*-----------Mostrar datos editar cita----------------- */
+
+function display_editar_cita_2_rows(){
+	$editarCita_2 = get_editar_cita_2();
+
+	$fila = mysql_fetch_array($editarCita_2);
+	$date = $fila['fecha'];
+	$hour = $fila['hora'];
+	$minute = $fila['minutos'];
+	$tipoCita = $fila['tipoCita'];
+	$odontologo = $fila['idOdontologo'];
+	$notes = $fila['notas'];
+	$id_cita = $fila['idCita'];
+
+	echo "<input type='hidden' name='id_cita' value='$id_cita' />";
+	echo "<label for='txt-date'>Fecha</label>";
+	echo "<input id='txt-date' class='datepicker' name='txt_date' type='text' required='required' placeholder='dd-mm-yyyy' pattern='(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d' value='$date' />";
+			echo "<label for='hour'>Hora</label>";
+		echo "<select id='hour' name='slt-hour' required='required' value='$hour'>";
+			echo "<option value=''>--Seleccione la hora--</option>";
+			echo "<option value='01'>01</option>";
+			echo "<option value='02'>02</option>";
+			echo "<option value='03'>03</option>";
+			echo "<option value='04'>04</option>";
+			echo "<option value='05'>05</option>";
+			echo "<option value='06'>06</option>";
+			echo "<option value='07'>07</option>";
+			echo "<option value='08'>08</option>";
+			echo "<option value='09'>09</option>";
+			echo "<option value='10'>10</option>";
+			echo "<option value='11'>11</option>";
+			echo "<option value='12'>12</option>";
+			echo "<option value='13'>13</option>";
+			echo "<option value='14'>14</option>";
+			echo "<option value='15'>15</option>";
+			echo "<option value='16'>16</option>";
+			echo "<option value='17'>17</option>";
+			echo "<option value='18'>18</option>";
+			echo "<option value='19'>19</option>";
+			echo "<option value='20'>20</option>";
+			echo "<option value='21'>21</option>";
+			echo "<option value='22'>22</option>";
+			echo "<option value='23'>23</option>";
+			echo "<option value='00'>00</option>";
+		echo "</select>";
+		echo "<select id='minute' name='slt-minute' required='required'>";
+			echo "<option value=''>--Seleccione los minutos--</option>";
+			echo "<option value='00'>00</option>";
+			echo "<option value='05'>05</option>";
+			echo "<option value='10'>10</option>";
+			echo "<option value='15'>15</option>";
+			echo "<option value='20'>20</option>";
+			echo "<option value='25'>25</option>";
+			echo "<option value='30'>30</option>";
+			echo "<option value='35'>35</option>";
+			echo "<option value='40'>40</option>";
+			echo "<option value='45'>45</option>";
+			echo "<option value='50'>50</option>";
+			echo "<option value='55'>55</option>";
+		echo "</select>";
+			echo "<label for='type'>Tipo de cita</label>";
+			echo "<select id='type' name='slt-cita' required='required'>";
+				echo "<option value=''>--Seleccione el tipo de cita--</option>";
+				echo "<option value='Normal'>Normal</option>";
+				echo "<option value='Emergencia'>Emergencia</option>";
+				echo "</select>";
+			echo "<label for='dentist-name'>Seleccione el odontologo</label>";
+			
+			menu_desplegable_usuarios(3,1,'slt-odontologo');
+			
+			echo "<label for='notes'>Notas</label>";
+			echo "<textarea id='notes' name='txt-notes'>$notes</textarea>";
+}
+
+function get_editar_cita_2(){
+	$idCita = ( isset( $_GET['idCita'] ) ) ? $_GET['idCita'] : '';
+	$query = "SELECT * FROM tbcitas WHERE idCita = $idCita";
 
 	$result = do_query( $query );
 	return $result;
@@ -123,6 +226,8 @@ function get_procedure(){
 	$result = do_query( $query );
 	return $result;
 }
+
+/*------------Menu desplegable odontologo----------------- */
 
 function menu_desplegable_usuarios($id,$valor,$nombre){
 	$query ="SELECT idUsuario, nombre, primerApellido, identificacion FROM tbusuarios WHERE idRol = $id";

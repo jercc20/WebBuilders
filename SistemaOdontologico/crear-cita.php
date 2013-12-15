@@ -16,20 +16,20 @@
 			 ?>
 			
 			<label for="txt-date">Fecha</label>
-			<input id="txt-date" class="datepicker" name="txt_date" type="text" required="required" placeholder="dd/mm/yyyy" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" />
+			<input id="txt-date" class="datepicker" name="txt_date" type="text" required="required" placeholder="dd-mm-yyyy" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" />
 
 			<label for="hour">Hora</label>
 			<select id="hour" name="slt-hour" required="required">
 				<option value="">Hora</option>
-				<option value="1">01</option>
-				<option value="2">02</option>
-				<option value="3">03</option>
-				<option value="4">04</option>
-				<option value="5">05</option>
-				<option value="6">06</option>
-				<option value="7">07</option>
-				<option value="8">08</option>
-				<option value="9">09</option>
+				<option value="01">01</option>
+				<option value="02">02</option>
+				<option value="03">03</option>
+				<option value="04">04</option>
+				<option value="05">05</option>
+				<option value="06">06</option>
+				<option value="07">07</option>
+				<option value="08">08</option>
+				<option value="09">09</option>
 				<option value="10">10</option>
 				<option value="11">11</option>
 				<option value="12">12</option>
@@ -71,8 +71,6 @@
 			<?php
 				menu_desplegable_usuarios(3,1,'slt-odontologo');
 			?>
-			<label for="notes">Notas</label>
-			<textarea id="notes" name="txt-notes"></textarea>
 		</section>
 		<div class="ac cb">
 			<button class="form-cancel">Cancelar</button>

@@ -1,14 +1,26 @@
 <?php
-	define('PAGE',''); //nombre de la pagina
-	define('TITLE',''); //titulo de la pagina
+	define('PAGE','editar-cita');
+	define('TITLE','Editar Cita');
 	$pageConfig = array(
-		'actions' => array(), //array con las acciones adicionales de la pagina (editar, borrar, etc)php
-		'plugins'=> array() //para incluir archivos de plugins (datatable, calendar, datepicker, print, etc)
+		'plugins'=> array('datepicker')
 	);
 	require_once 'includes/functions.php';
 	require_once 'includes/header.php';
 ?>
-<!-- html content -->
+	<h1 class="ac">Editar Cita</h1>
+	<form id="proced-box" class="form-edit box-wrap" action="includes/update-cita.php" method="post">
+		<section class="form-section">
+			<?php 
+				display_editar_cita_rows();
+				display_editar_cita_2_rows();
+			 ?>
+		</section>
+		<div class="ac cb">
+			<button class="form-cancel">Cancelar</button>
+			<input type="reset" value="Limpiar" />
+			<input type="submit" value = "Guardar"/>
+		</div>
+	</form>
 <?php
 	require_once 'includes/footer.php';
 ?>

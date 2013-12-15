@@ -1,28 +1,23 @@
 <?php
 	if( $_POST ){
-		define('PAGE',''); //mismo nombre de la pagina del formulario
+		define('PAGE','');
 		require_once 'functions.php';
 
-		/* Ejemplo */
-		print_r( $_POST ); //Para ver que lleva el POST, luego se quita
-		$idBill = ( isset( $_POST['id'] ) ) ? $_POST['id'] : '';
+		print_r( $_POST );
+		$id = ( isset( $_POST['id_cita'] ) ) ? $_POST['id_cita'] : '';
+		$date = ( isset( $_POST['txt_date'] ) ) ? $_POST['txt_date'] : '';
+		$hour = ( isset( $_POST['slt-hour'] ) ) ? $_POST['slt-hour'] : '';
+		$minute = ( isset( $_POST['slt-minute'] ) ) ? $_POST['slt-minute'] : '';
+		$cita = ( isset( $_POST['slt-cita'] ) ) ? $_POST['slt-cita'] : '';
+		$id_dentist = ( isset( $_POST['slt-odontologo'] ) ) ? $_POST['slt-odontologo'] : '';
+		$notes = ( isset( $_POST['txt-notes'] ) ) ? $_POST['txt-notes'] : '';
+		$date = str_replace('/', '-', $date);
+		$date = date("Y-m-d",strtotime($date));
 
-		$query = "INSERT INTO tabla VALUES (NULL, '$id')";
-		echo $query; //Para ver como queda el query, luego se quita
+		$query = "UPDATE tbcitas SET fecha = '$date', hora = '$hour', minutos = '$minute', tipoCita = '$cita', idOdontologo = '$id_dentist', notas = '$notes'
+					WHERE idCita = '$id'";
 
-		//Opcion 1
-		//echo do_query( $query );
-
-		//Opcion 2, con redirect
-		/*
-		$result = do_query( $query );
-		if( $result == 1 ){
-			echo 'Mensaje!';
-			js_redirect('login.html', 800);
-		}
-		*/
-
-		/* ---- */
+		echo do_query( $query );
 
 		global $db_server;
 		mysql_close( $db_server );
