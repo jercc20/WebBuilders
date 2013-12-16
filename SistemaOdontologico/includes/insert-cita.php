@@ -13,7 +13,7 @@
 		$date = str_replace('/', '-', $date);
 		$date = date("Y-m-d",strtotime($date));
 
-		$query = "INSERT INTO tbcitas VALUES" . "('NULL','$paciente', '$date', '$hour', '$minute', '$cita', '$odontologo', '$notes')";
+		$query = "INSERT INTO tbcitas VALUES ('NULL','$paciente', '$date', '$hour', '$minute', '$cita', '$odontologo', '$notes')";
 		
 		$result = do_query( $query );
 		if( $result == 1 ){

@@ -1,11 +1,23 @@
-<!DOCTYPE html>
+<?php
+	define('PAGE','consultar-calendario');
+	define('TITLE','Consultar Calendario');
+	$pageConfig = array(
+		'plugins'=> array('calendar') //para incluir archivos de plugins (datatable, calendar, datepicker, print, etc)
+	);
+	require_once 'includes/functions.php';
+	require_once 'includes/header.php';
+?>
+	<div id='calendar'></div>
+<?php
+	require_once 'includes/footer.php';
+?>
 <html>
 <head>
-<link href='css/fullcalendar.css' rel='stylesheet' />
-<link href='css/fullcalendar.print.css' rel='stylesheet' media='print' />
+</head>
+<body>
 <script src='js/vendor/jquery.min.js'></script>
 <script src='js/vendor/jquery-ui.custom.min.js'></script>
-<script src='js/vendor/fullcalendar.min.js'></script>
+<!--<script src='js/vendor/fullcalendar.min.js'></script>-->
 <script>
 
 	$(document).ready(function() {
@@ -75,23 +87,5 @@
 	});
 
 </script>
-<style>
-
-	body {
-		margin-top: 40px;
-		text-align: center;
-		font-size: 14px;
-		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
-		}
-
-	#calendar {
-		width: 900px;
-		margin: 0 auto;
-		}
-
-</style>
-</head>
-<body>
-<div id='calendar'></div>
 </body>
 </html>
