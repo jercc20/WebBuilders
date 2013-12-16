@@ -3,11 +3,11 @@
 	if( $_POST ){
 		define('PAGE','crear-bitacora'); 
 		require_once 'functions.php';
-
-		/* Ejemplo */
-		//print_r( $_POST ); //Para ver que lleva el POST, luego se quita
 		
-		//echo $query; //Para ver como queda el query, luego se quita
+		if(empty($_POST['procedimientos'])){ 
+			echo "Debe agregar almenos un procedimiento"; 
+			exit();
+		}
 		
 		$dentistId = ( isset( $_POST['slt-odontologo'] ) ) ? $_POST['slt-odontologo'] : '';
 		$patientId = (isset( $_POST['id_patient'] ) ) ? $_POST['id_patient'] : '';
@@ -18,17 +18,20 @@
 		$query = "INSERT INTO tbbitacoras VALUES" . "(NULL, '$dentistId', '$patientId', '$date', '$asistentes', '$notes')";
 
 		$result = do_query( $query );
+
 		if( $result == 1 ){
+			$idBitacora = mysql_insert_id();
+			$idOdontograma = $_POST['idOdontograma'];
+			foreach ($_POST['procedimientos'] as $key => $procedimiento) {
+				
+				$insertProcedimiento = "INSERT INTO tbprocedimientosporbitacora VALUES('$idBitacora', '$procedimiento')";
+				$updateProcedimiento = "UPDATE tbprocedimientosporodontograma SET realizado = '1' WHERE idOdontograma = '$idOdontograma[$key]' AND idProcedimiento = '$procedimiento'";
+				do_query( $insertProcedimiento );
+				do_query( $updateProcedimiento );
+			}
 			echo 'La bitacora se ha guardado correctamente.';
 			js_redirect('consultar-bitacoras.php', 2500);
 		}
-
-		//Opcion 1
-		//echo do_query( $query );
-
-		//Opcion 2, con redirect
-
-		/* ---- */
 
 		global $db_server;
 		mysql_close( $db_server );

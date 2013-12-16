@@ -11,7 +11,7 @@ function display_bitacoras_rows(){
 						echo '<td>' . $fila["o_nombre"] . " ". $fila["o_apellido"] . '</td>';
 						echo '<td>' . $fila["fecha"] . '</td>';
 						echo '<td>' . $fila["procedimiento"] . '</td>';
-						echo '<td><a href="editar-bitacora.php?idBitacora=' . $fila['idBitacora'] . '"><i class="icon-edit"></i></a><a href="#!?idCita=' . $fila['idCita'] . '"> <i class="icon-remove item-remove"></i></a></td>';
+						echo '<td><a href="editar-bitacora.php?idBitacora=' . $fila['idBitacora'] . '"><i class="icon-edit"></i></a><a href="#!?idBitacora=' . $fila['idBitacora'] . '"> <i class="icon-remove item-remove"></i></a></td>';
 					echo '</tr>';
 	}				
 }
@@ -30,7 +30,7 @@ function get_bitacoras(){
 	$result=do_query($query);
 	return $result;
 }
-function display_crear_bitacora_rows(){
+function display_crear_bitacora_(){
 	$crearBitacora = get_crear_bitacora();
 
 	$fila = mysql_fetch_array($crearBitacora);
@@ -116,5 +116,36 @@ function get_bitacoras_custom(){
 }
 */
 
- 
+function display_procedimientos_popup( $id ){
+
+	$procedimientos = get_procedimientos_popup( $id );
+	if(mysql_num_rows($procedimientos) > 0){
+		$i = 0;
+		while ($fila = mysql_fetch_assoc($procedimientos)) {
+			echo '<tr>';  
+				echo '<td>' . '<input type="checkbox" name="procedure" />' . '<input type="hidden" name="procedimientos['. $i .']" value="'. $fila["idProcedimiento"] .'" />' . '<input type="hidden" name="idOdontograma['. $i .']" value="'. $fila["idOdontograma"] .'" />' . '</td>';
+				echo '<td>' . $fila["nombre"] .'</td>';
+			echo '</tr>';
+			$i++;
+		}				
+		
+	}else{
+		echo "El usuario no tiene procedimientos pendientes";
+	}
+}
+
+function get_procedimientos_popup( $id ){
+
+	$query = "SELECT * FROM tbodontogramas AS o,
+ 	tbprocedimientosporodontograma AS po,
+ 	tbprocedimientos AS p
+		WHERE o.idPaciente = '$id'
+ 			AND po.idOdontograma = o.idOdontograma
+ 			AND p.idProcedimiento = po.idProcedimiento
+ 			AND po.realizado = '0'";
+
+	$result = do_query( $query );
+
+	return $result;
+}
 ?>
