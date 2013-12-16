@@ -29,7 +29,7 @@ function display_citas_rows(){
 			echo '<td>' . $fila["o_nombre"] . " " . $fila["o_apellido"] . '</td>';
 			echo '<td>' . $fila["tipoCita"] . '</td>';
 			echo '<td>' . $fila["fecha"] . '</td>';
-			echo '<td>' . $fila["hora"] . ':' . $fila["minutos"] . '</td>';
+			echo '<td>' . do_time_format( $fila["hora"] ) . '</td>';
 			echo '<td>' . $fila["notas"] . '</td>';
 			echo '<td><a href="editar-cita.php?idPaciente=' . $fila['idPaciente'] . '&idCita=' . $fila['idCita'] . '"><i class="icon-edit"></i></a><a href="#!?idCita=' . $fila['idCita'] . '"><i class="icon-remove item-remove"></i></a></td>';
 		echo '</tr>';
@@ -124,8 +124,7 @@ function display_editar_cita_2_rows(){
 
 	$fila = mysql_fetch_array($editarCita_2);
 	$date = $fila['fecha'];
-	$hour = $fila['hora'];
-	$minute = $fila['minutos'];
+	$hour = split_time( $fila['hora'] );
 	$tipoCita = $fila['tipoCita'];
 	$odontologo = $fila['idOdontologo'];
 	$notes = $fila['notas'];
@@ -135,15 +134,18 @@ function display_editar_cita_2_rows(){
 	echo "<label for='txt-date'>Fecha</label>";
 	echo "<input id='txt-date' class='datepicker' name='txt_date' type='text' required='required' placeholder='dd-mm-yyyy' pattern='(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d' value='$date' />";
 	echo "<label for='hour'>Hora</label>";
-		echo "<select id='hour' name='slt-hour' required='required' value='$hour'>";
+		echo "<select id='hour' name='slt-hour' required='required'>";
 			echo "<option value=''>--Seleccione la hora--</option>";
-			for($i=0; $i<24; $i++ ){
-				echo "<option value='$i'>$i</option>";
+			for($i=00; $i<24; $i++ ){
+				$selected = "";
+				if($i == $hour[0])
+					$selected = ' selected="selected"';
+				echo "<option value='$i'".$selected.">$i</option>";
 			}
 		echo "</select>";
 		echo "<select id='minute' name='slt-minute' required='required'>";
 			echo "<option value=''>--Seleccione los minutos--</option>";
-			for($i=0; $i<60; $i=$i+5 ){
+			for($i=00; $i<60; $i=$i+5 ){
 				echo "<option value='$i'>$i</option>";
 			}
 		echo "</select>";
