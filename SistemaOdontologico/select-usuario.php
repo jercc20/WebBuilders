@@ -1,6 +1,6 @@
 <?php
-	define('PAGE','consultar-citas');
-	define('TITLE','Consultar Citas');
+	define('PAGE','select');
+	define('TITLE','Seleccionar Usuario');
 	$pageConfig = array(
 		'plugins'=> array('datatable')
 	);

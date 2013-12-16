@@ -1,5 +1,5 @@
 <?php
-	define('PAGE','crear-abono');
+	define('PAGE','crearAbono');
 	define('TITLE','Crear Abono');
 	$pageConfig = array(
 		'actions' => array(),

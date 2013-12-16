@@ -1,5 +1,5 @@
 <?php
-	define('PAGE','consultar-facturas');
+	define('PAGE','consultarFacturas');
 	define('TITLE','Consultar Facturas');
 	$pageConfig = array(
 		'actions' => array(),

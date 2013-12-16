@@ -1,6 +1,6 @@
 <?php
-	define('PAGE','reporte-facturas');
-	define('TITLE','Reporte Facturas');
+	define('PAGE','reporteFacturacion');
+	define('TITLE','Reporte Facturación');
 	$pageConfig = array(
 		'actions' => array(),
 		'plugins'=> array('datatable', 'datepicker', 'print')

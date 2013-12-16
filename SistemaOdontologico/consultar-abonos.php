@@ -1,5 +1,5 @@
 <?php
-	define('PAGE','consultar-abonos');
+	define('PAGE','consultarAbonos');
 	define('TITLE','Consultar Abonos');
 	$pageConfig = array(
 		'actions' => array(),
