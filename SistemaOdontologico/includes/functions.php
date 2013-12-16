@@ -317,7 +317,11 @@ function do_sql_time_format( $hour, $minutes ){
 }
 
 function split_time( $time ){
+	$time = date('G:i', strtotime( $time ) );
 	$sec = explode(":", $time);
+	if( $sec['1'] < 10 )
+		$sec['1'] = substr($sec['1'], -1);
+
 	return $sec;
 }
 
