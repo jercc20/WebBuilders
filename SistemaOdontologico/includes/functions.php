@@ -169,6 +169,12 @@ if( isset( $_POST['ajax-call'] ) && isset( $_POST['var'] ) ){
 			$query = "DELETE FROM tbbitacoras WHERE idBitacora = '$bitacora'";
 			echo do_query( $query );
 			break;
+
+		case 'idOdontograma': //Eliminar Odontograma
+			$odontograma = ( isset( $_POST['idOdontograma'] ) ) ? $_POST['idOdontograma'] : '';
+			$query = "DELETE FROM tbodontogramas WHERE idOdontograma = '$odontograma'";
+			echo do_query( $query );
+			break;
 	}
 }
 
