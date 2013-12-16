@@ -66,8 +66,20 @@ function check_user(){
 			exit();
 		}
 		$_SESSION['userinfo'] = mysql_fetch_assoc( get_user_by_id( $_SESSION['idUsuario'] ) );
+		$_SESSION['roleinfo'] = get_array_roles( $_SESSION['userinfo']['idRol'] );
+		if( ! defined('PAGE') && ! isset( $_POST['ajax-call'] ) ){
+			echo "Falta definir el PAGE"; //TMP!!!
+			//header('Location: inicio.php');
+			//exit();
+		}
+		if( ( ( defined('PAGE') && PAGE != 'inicio' && PAGE != 'select' ) && ! isset( $_POST['ajax-call'] )  )
+			&& ( ! isset( $_SESSION["roleinfo"][PAGE] ) || ! $_SESSION["roleinfo"][PAGE] ) ){
+			echo "Revisar el PAGE con los permisos del rol actual<br />"; //TMP!!!
+			echo "Page actual: " . PAGE; //TMP!!!
+			//header('Location: 404.php');
+			//exit();
+		}
 	}
-	//verifica si el usuario tiene permisos para ver la pagina, sino lo envia a 404
 }
 
 function js_redirect( $url, $delay = 0 ){
