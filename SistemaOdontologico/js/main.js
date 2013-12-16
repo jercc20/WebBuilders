@@ -81,6 +81,15 @@ jQuery(function($) {
 		SO.global.datepickerInit();
 	}
 
+	//Print
+	$("#print").on( 'click', function(e){
+		e.preventDefault();
+		$('#popup-wrap').show();
+		$('#container').addClass('printing').printArea();
+		$('#container').removeClass('printing');
+		$('#popup-wrap').hide();
+	});
+
 	//Forms
 	$('form').on( 'submit', function(e){
 		e.preventDefault();

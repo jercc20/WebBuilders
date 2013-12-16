@@ -24,6 +24,11 @@
 			<link href="css/fullcalendar-print.css"rel="stylesheet" media="print" />
 			<?php
 		endif;
+		if( in_array( 'print', $pageConfig['plugins'] ) ):
+			?>
+			<link rel="stylesheet" href="css/print.css" />
+			<?php
+		endif;
 	?>
 </head>
 <body>

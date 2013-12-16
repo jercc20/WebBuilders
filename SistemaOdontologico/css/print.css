@@ -1,0 +1,5 @@
+.printing button,
+.printing #print,
+.printing .ui-toolbar {
+	display: none !important;
+}

@@ -39,6 +39,11 @@
 			<script src="js/vendor/fullcalendar.min.js"></script>
 			<?php
 		endif;
+		if( in_array( 'print', $pageConfig['plugins'] ) ):
+			?>
+			<script src="js/vendor/jquery.PrintArea.js"></script>
+			<?php
+		endif;
 	?>
 	<script src="js/main.js"></script>
 	<script src="js/global.js"></script>
