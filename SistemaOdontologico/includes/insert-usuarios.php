@@ -15,7 +15,7 @@
 		$role = ( isset( $_POST['slt-user-role'] ) ) ? $_POST['slt-user-role'] : '';
 		$userPsw = ( isset( $_POST['txt-user-psw'] ) ) ? md5( $_POST['txt-user-psw'] ) : '';
 		$alergie = ( isset( $_POST['txt-user-alergie'] ) ) ? $_POST['txt-user-alergie'] : '';
-		$UserAdrs = ( isset( $_POST['txt-user-alergie'] ) ) ? $_POST['txt-user-alergie'] : '';
+		$UserAdrs = ( isset( $_POST['txt-user-adress'] ) ) ? $_POST['txt-user-adress'] : '';
 		
 		$query = "INSERT INTO tbusuarios VALUES" . "('NULL','$name', '$lastname', '$lastname2', '$userId ', '$housePhn', 
 			      '$CellPhn', '$email', '$birth', '$impmt', '$role', '$userPsw', '$alergie', '$UserAdrs')";
