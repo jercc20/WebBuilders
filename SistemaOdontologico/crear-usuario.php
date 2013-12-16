@@ -25,7 +25,7 @@
 				<label for="user-email"> Correo electrónico</label>
 				<input id="user-email" name="txt-user-email" type="text"  required="required" />
 				<label for="user-birthday"> Fecha de nacimiento</label>
-				<input id="user-birthday" name="txt-user-birthday" type="text"  required="required" placeholder ="dd-mm-yyyy" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" class="datepicker" />
+				<input id="user-birthday" name="txt-user-birthday" type="text"  required="required" placeholder ="dd-mm-yyyy" class="datepicker" />
 			</section>
 			<section class="form-section fr">
 				<label for="user-impairment">Discapacidad</label>

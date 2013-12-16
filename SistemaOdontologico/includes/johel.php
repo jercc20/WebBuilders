@@ -35,7 +35,7 @@ function display_usuarios_secretaria_rows(){
 			echo '<td>' . $fila["correoElectronico"] . '</td>';
 			echo '<td>' . $fila["domicilio"] . '</td>';
 			$id = $fila['idUsuario'];
-			echo '<td><a href="#!?idUsuario=' . $fila['idUsuario'] . '"><i class="icon-remove item-remove"></i></a></td>';
+			echo '<td><a href="editar-usuario-paciente.php?idUsuario=' . $fila['idUsuario'] . '"><i class="icon-edit"></i></a><a href="#!?idUsuario=' . $fila['idUsuario'] . '"><i class="icon-remove item-remove"></i></a></td>';
 		echo '</tr>';
 	}
 }
@@ -45,7 +45,7 @@ function get_usuarios_secretaria(){
 						u.telefonoCelular, u.correoElectronico, u.domicilio
 				FROM tbusuarios AS u
 				LEFT JOIN tbroles AS r ON (r.idRol = u.idRol)
-				WHERE r.idRol = 2 OR r.idRol = 3";
+				WHERE r.idRol = 2";
 	$result = do_query( $query );
 	return $result;
 }
@@ -61,7 +61,7 @@ function display_usuarios_odontologo_rows(){
 			echo '<td>' . $fila["correoElectronico"] . '</td>';
 			echo '<td>' . $fila["domicilio"] . '</td>';
 			$id = $fila['idUsuario'];
-			echo '<td><a href="#!?idUsuario=' . $fila['idUsuario'] . '"><i class="icon-remove item-remove"></i></a></td>';
+			echo '<td> </td>';
 		echo '</tr>';
 	}
 }
@@ -102,6 +102,7 @@ function display_select_paciente($nombre){
 
 function get_roles_paciente_select(){
 	$query ="SELECT idRol, nombreRol FROM tbroles WHERE idRol = 2";
+	$result = do_query($query); 
 	return $result;
 };
 
@@ -109,6 +110,7 @@ function display_edit_usuarios_rows(){
 	$usuarios = get_usuarios_update();
 
 	$fila = mysql_fetch_assoc($usuarios);
+	$idUsuario = $fila['idUsuario'];
 	$name = $fila['nombre'];
 	$lastname = $fila['primerApellido'];
 	$lastname2 = $fila['segundoApellido'];
@@ -117,6 +119,7 @@ function display_edit_usuarios_rows(){
 	$CellPhn = $fila['telefonoCelular'];
 	$email = $fila['correoElectronico'];
 	$birth = $fila['fechaNacimiento'];
+	$datepickerBirth = do_date_format($birth);
 	$impmt = $fila['discapacidad'];
 	$role = $fila['idRol'];
 	$userPsw = $fila['contrasenna'];
@@ -124,6 +127,7 @@ function display_edit_usuarios_rows(){
 	$UserAdrs = $fila['domicilio'];
 
 		echo "<section class='form-section fl'>";
+		echo "<input type='hidden' name='idUsuario' value='$idUsuario' />";
 		echo "<label for='user-name'> Nombre</label>";
 		echo "<input id='user-name' name='txt_name' type='text'  required='required' pattern='|^[a-zA-Z ñÑáéíóúüÁÉÍÓÚç]*$|' value='$name' />" ;
 		echo "<label for='user-lastname'>Primer apellido</label>";
@@ -131,15 +135,15 @@ function display_edit_usuarios_rows(){
 		echo "<label for='user-lastname2'> Segundo apellido</label>";
 		echo "<input id='user-lastname2' name='txt_lastname2' type='text'  pattern='|^[a-zA-Z ñÑáéíóúüÁÉÍÓÚç]*$|' value='$lastname2'/>";
 		echo "<label for='user-id'> Identificación</label>";
-		echo "<input id='user-id' name='txt_user'  type='text'  required='required' pattern='[a-zA-Z0-9]+' value='$userId'/>";
+		echo "<input id='user-id' name='txt_user'  type='text' value='$userId'/>";
 		echo "<label for='user-phone'> Teléfono de la casa</label>";
 		echo "<input id='user-phone' name='txt_phone' type='text' pattern='\d{8,10}' required='required' value='$housePhn'/>";
 		echo "<label for='user-cellphone'> Teléfono celular</label>";
-		echo "<input id='user-cellphone' name='txt_cellphone' type='text'  pattern='\d{8,10}' value='$CellPhn'/>";
+		echo "<input id='user-cellphone' name='txt_cellphone' type='text' value='$CellPhn'/>";
 		echo "<label for='user-email'> Correo electrónico</label>";
 		echo "<input id='user-email' name='txt_email' type='text'  required='required' value='$email'/>"; 
 		echo "<label for='user-birthday'> Fecha de nacimiento</label>";
-		echo "<input id='user-birthday' name='txt_birthday' type='text'  required='required' placeholder ='dd/mm/yyyy' pattern='(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d' class='datepicker' value='$birth'/>"; 
+		echo "<input id='user-birthday' name='txt_birthday' type='text'  required='required' placeholder ='dd/mm/yyyy' class='datepicker' value='$datepickerBirth' />"; 
 		echo "</section>";
 		echo "<section class='form-section fr'>";
 		echo "<label for='user-impairment'>Discapacidad</label>";
@@ -147,9 +151,64 @@ function display_edit_usuarios_rows(){
 		echo "<label for='user-role'>Rol</label>";
 		display_select_roles('slt-user-role');
 		echo "<label for='user-psw'>Contraseña</label>";
-		echo "<input id='user-psw' name='txt-user-psw' type='password' required='required' value='$userPsw'/>"; 
+		echo "<input id='user-psw' name='txt-user-psw' type='password' />"; 
 		echo "<label for='user-cpsw'>Confirmar contraseña</label>";
-		echo "<input id='user-cpsw' name='psw-user-pnew' type='password' required='required'/>";
+		echo "<input id='user-cpsw' name='psw-user-pnew' type='password' />";
+		echo "<label for='user-alergie'> Alergias</label>";
+		echo "<textarea cols='10' rows='10' id='user-alergie' name='txt-user-alergie' pattern='[A-Za-z]+ '>$alergie</textarea>"; 
+		echo "<label for='user-adress'> Domicilio</label>";
+		echo "<textarea cols='10' rows='10' id='user-adress' name='txt-user-adress' required='required'>$UserAdrs</textarea>";
+		echo "</section>";
+};
+
+function display_edit_usuarios_paciente_rows(){
+	$usuarios = get_usuarios_update();
+
+	$fila = mysql_fetch_assoc($usuarios);
+	$idUsuario = $fila['idUsuario'];
+	$name = $fila['nombre'];
+	$lastname = $fila['primerApellido'];
+	$lastname2 = $fila['segundoApellido'];
+	$userId = $fila['identificacion'];
+	$housePhn = $fila['telefonoCasa'];
+	$CellPhn = $fila['telefonoCelular'];
+	$email = $fila['correoElectronico'];
+	$birth = $fila['fechaNacimiento'];
+	$datepickerBirth = do_date_format($birth);
+	$impmt = $fila['discapacidad'];
+	$role = $fila['idRol'];
+	$userPsw = $fila['contrasenna'];
+	$alergie = $fila['alergias'];
+	$UserAdrs = $fila['domicilio'];
+
+		echo "<section class='form-section fl'>";
+		echo "<input type='hidden' name='idUsuario' value='$idUsuario' />";
+		echo "<label for='user-name'> Nombre</label>";
+		echo "<input id='user-name' name='txt_name' type='text'  required='required' pattern='|^[a-zA-Z ñÑáéíóúüÁÉÍÓÚç]*$|' value='$name' />" ;
+		echo "<label for='user-lastname'>Primer apellido</label>";
+		echo "<input id='user-lastname' name='txt_lastname' required='required' type='text' pattern='|^[a-zA-Z ñÑáéíóúüÁÉÍÓÚç]*$|' value='$lastname'/>"; 
+		echo "<label for='user-lastname2'> Segundo apellido</label>";
+		echo "<input id='user-lastname2' name='txt_lastname2' type='text'  pattern='|^[a-zA-Z ñÑáéíóúüÁÉÍÓÚç]*$|' value='$lastname2'/>";
+		echo "<label for='user-id'> Identificación</label>";
+		echo "<input id='user-id' name='txt_user'  type='text' value='$userId'/>";
+		echo "<label for='user-phone'> Teléfono de la casa</label>";
+		echo "<input id='user-phone' name='txt_phone' type='text' pattern='\d{8,10}' required='required' value='$housePhn'/>";
+		echo "<label for='user-cellphone'> Teléfono celular</label>";
+		echo "<input id='user-cellphone' name='txt_cellphone' type='text' value='$CellPhn'/>";
+		echo "<label for='user-email'> Correo electrónico</label>";
+		echo "<input id='user-email' name='txt_email' type='text'  required='required' value='$email'/>"; 
+		echo "<label for='user-birthday'> Fecha de nacimiento</label>";
+		echo "<input id='user-birthday' name='txt_birthday' type='text'  required='required' placeholder ='dd/mm/yyyy' class='datepicker' value='$datepickerBirth' />"; 
+		echo "</section>";
+		echo "<section class='form-section fr'>";
+		echo "<label for='user-impairment'>Discapacidad</label>";
+		echo "<input type='checkbox' id='user-impairment'  name='txt_impairment' value='$impmt'/>"; 
+		echo "<label for='user-role'>Rol</label>";
+		display_select_paciente('slt-user-role');
+		echo "<label for='user-psw'>Contraseña</label>";
+		echo "<input id='user-psw' name='txt-user-psw' type='password' />"; 
+		echo "<label for='user-cpsw'>Confirmar contraseña</label>";
+		echo "<input id='user-cpsw' name='psw-user-pnew' type='password' />";
 		echo "<label for='user-alergie'> Alergias</label>";
 		echo "<textarea cols='10' rows='10' id='user-alergie' name='txt-user-alergie' pattern='[A-Za-z]+ '>$alergie</textarea>"; 
 		echo "<label for='user-adress'> Domicilio</label>";
@@ -160,6 +219,9 @@ function display_edit_usuarios_rows(){
 function get_usuarios_update(){
 	$id = ( isset( $_GET['idUsuario'] ) ) ? $_GET['idUsuario'] : '';
 	$query = "SELECT * FROM tbusuarios WHERE idUsuario = $id";
+	$result= do_query($query);
 	return $result;
-};
+}
+
+?>
 

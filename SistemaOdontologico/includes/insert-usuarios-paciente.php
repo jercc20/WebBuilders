@@ -23,7 +23,7 @@
 		$result = do_query( $query );
 		if( $result == 1 ){
 			echo 'El usuario se ha creado exitosamente.';
-			js_redirect('consultar-usuarios.php', 2500);
+			js_redirect('consultar-usuarios-secretaria.php', 2500);
 		}
 
 		global $db_server;
