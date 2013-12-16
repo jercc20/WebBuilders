@@ -310,6 +310,17 @@ function do_time_format( $time ){
 	return $result;
 }
 
+function do_sql_time_format( $hour, $minutes ){
+	$time = $hour . ':' . $minutes;
+	$result = date('H:i', strtotime( $time ) );
+	return $result;
+}
+
+function split_time( $time ){
+	$sec = explode(":", $time);
+	return $sec;
+}
+
 function display_home_procedimientos(){
 	$odontogramas = get_old_odontogramas();
 	while( $row = mysql_fetch_assoc( $odontogramas ) ){
