@@ -3,7 +3,7 @@
 	define('TITLE','Reporte Facturas');
 	$pageConfig = array(
 		'actions' => array(),
-		'plugins'=> array('datatable', 'datepicker')
+		'plugins'=> array('datatable', 'datepicker', 'print')
 	);
 	require_once 'includes/functions.php';
 	require_once 'includes/header.php';
