@@ -54,7 +54,7 @@ function debug_query( $query_result ){
 
 function check_user(){
 	session_start();
-	if( PAGE == 'login' ){
+	if( defined('PAGE') && PAGE == 'login' ){
 		if( isset( $_SESSION['idUsuario'] ) && ! empty( $_SESSION['idUsuario'] ) ){
 			header('Location: inicio.php');
 			exit();
