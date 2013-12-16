@@ -207,7 +207,7 @@ function get_full_user_name( $result_user ){
 }
 
 function do_date_format( $date ){
-	$result = date( "d/m/Y", strtotime( $date ) );
+	$result = date( "d-m-Y", strtotime( $date ) );
 	return $result;
 }
 
