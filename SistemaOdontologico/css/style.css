@@ -190,12 +190,16 @@ form textarea {
 }
 form textarea,
 form input[type="text"],
+form input[type="email"],
 form input[type="file"] {
 	background: #F3F5F4;
 	border-color: #DCDEDD;
 }
 form [readonly] {
 	color: #999;
+}
+form progress {
+	width: 100%;
 }
 button,
 form input[type="submit"],
