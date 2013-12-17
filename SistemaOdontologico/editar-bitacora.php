@@ -1,62 +1,73 @@
 <?php
-	define('PAGE','editar-bitacora.php'); //nombre de la pagina
-	define('TITLE','Editar Bitacora'); //titulo de la pagina
-	$pageConfig = array(
-		'actions' => array(), //array con las acciones adicionales de la pagina (editar, borrar, etc)php
-		'plugins'=> array('datepicker') //para incluir archivos de plugins (datatable, calendar, datepicker, print, etc)
-	);
-	require_once 'includes/functions.php';
-	require_once 'includes/header.php';
+    define('PAGE','editar-bitacora');
+    define('TITLE','Editar Bitacora');
+    $pageConfig = array(
+        'plugins'=> array('datepicker')
+    );
+    require_once 'includes/functions.php';
+    require_once 'includes/header.php';
+
+    $idBitacora = ( isset( $_GET['idBitacora'] ) ) ? $_GET['idBitacora'] : '';
+    $query =  "SELECT * FROM tbbitacoras WHERE idBitacora = $idBitacora ";
+
+    $result = mysql_query($query);
+    if(!$result)die("Acceso a la BD falló: ". mysql_error());
+
+    $fila = mysql_fetch_array($result);
+    $id_bitacora = $fila['idBitacora'];
+    $birth = $fila['fecha'];
+    $asistentes = $fila['asistentes'];
+    $notas = $fila['notas'];
 ?>
+        <h1 class="ac">Editar Bitácora</h1>
+      <form class="form-add box-wrap clearfix" method="post" action="includes/update-bitacora.php">
+        <section class="form-section fl">
 
-<!-- html content -->
-	<h1 class="ac">Editar Bitácora</h1>
+          <label for="id-bitacora">Numero de bitacora</label>
+          <input id="bitacora" name="txt-num-bitacora" type="text" readonly="readonly" value="<?php echo $idBitacora; ?>" />
 
-			<form class="form-edit box-wrap clearfix" action="includes/update-bitacora.php" method="post">
-				<section class="form-section fl">
+        <label for="slt-odontologo">Seleccione el odontologo</label>
+            <?php
+              menu_desplegable_usuarios(3,1,'slt-odontologo');
 
-					<label for="id-bitacora">Número de bitácora</label>
-					<input id="id-bitacora" name="id-bitacora" type="text" <?php "value='$id'" ?> readonly = "readonly" requiered="required" />
-					
-					<label for="slt-odontologo">Seleccionar Odontologo</label>
-					<?php
-						menu_desplegable_usuarios(3,1,'slt-odontologo');
-					?>
-					<?php
-						display_editar_bitacora_rows();
-					?>
-					<label for="date">Fecha realizada</label>
-					<input id="date" class="datepicker" name="txt-date" type="text" required="required"  pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" />
+              display_editar_bitacora();          
+            ?>
+        <label for="txt-user-dob">Fecha realizada</label>
+       <input id="txt-user-dob" class="datepicker" value="<?php echo $birth; ?>" name="txt-user-dob" type="text" required="required" placeholder="dd-mm-yyyy" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" />
 
-					<label for="txt-asistentes">Asistentes que participaron</label>
-					<textarea id="txt-asistentes" name="txt-asistentes" ></textarea>
+         <label for="txt-asistentes">Asistentes que participaron</label>
+         <textarea id="txt-asistentes" name="txt-asistentes"><?php echo $asistentes;?></textarea>
 
-				</section>
-				<section class="form-section fr">
+       </section>  
 
-					<input id="txt-procedure-number" name="txt-procedure-number" type="hidden" value="1" />
+        <section class='form-section fr'>
+        <input id='procedure-number' name='txt-procedure-number' type='hidden' value="1" />
 
-					<label>Procedimientos</label><a href="#" class="add-procedure fr ar">+Agregar procedimiento</a>
+          <label>Procedimientos</label><a href="#" class="add-procedure fr ar">Ver procedimientos</a>
 
-					<table class="cb" id="table-procedures-added">
-						<tr>
-							<td><input type="checkbox" value="amalgamas" name="procedure"></td>
-							<td class="al procedure">Amalgamas</td>
-							<td><input type="text" required="required" placeholder="Zona" value="Oclusal"></td>
-						</tr>
-					</table>
+          <table id='table-procedures-added' class='cb'></table>
+          <a href='#' id='delete-procedures' class='fr ar hide'>-Borrar procedimiento</a>
 
-					<a href="#" id="delete-procedures" class="fr ar">-Borrar procedimiento</a>
+          <label for='txt-notes'>Notas</label> 
+          <textarea id="txt-notes" name="txt-notes"><?php echo $notas;?></textarea>
 
-					<label for="txt-notes">Notas</label>
-					<textarea id="txt-notes" name="txt-notes"></textarea>
-
-				</section>
-				<section class="cb ac">
-					<button class="form-cancel">Cancelar</button>
-					<button type="submit">Guardar</button>
-				</section>
-			</form>
-<?php
-	require_once 'includes/footer.php';
+        </section>
+          <div class="ac cb">
+            <input type="hidden" name="idProcedimiento" />
+            <button class="form-cancel">Cancelar</button>
+            <input type="reset" value="Limpiar" />
+            <button type="submit">Guardar</button>
+          </div>
+      </form>
+          <div id="popup-procedure" class="hide">
+            <h2 class="ac">Procedimientos</h2>
+            <div class="div-table ">
+                 <table class="table-procedures">
+                 <?php display_procedimientos_popup($idUsuario); ?>
+                </table>
+             </div>
+        </div>
+<?php        
+  require_once 'includes/footer.php';
 ?>
+ 

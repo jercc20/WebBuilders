@@ -20,7 +20,7 @@
 						menu_desplegable_usuarios(3,1,'slt-odontologo');
 					?>
 					<?php
-						display_crear_bitacora_();
+						display_crear_bitacora();
 					?>
 
 					<label for='txt-user-dob'>Fecha realizada</label>
@@ -29,7 +29,7 @@
 					<label for='txt-asistentes'>Asistentes que participaron</label>
 					<textarea id='txt-asistentes' name='txt-asistentes'></textarea>
 
-				</section>
+				</section>	
 				<section class='form-section fr'>
 
 					<input id='procedure-number' name='txt-procedure-number' type='hidden' value="1" />
