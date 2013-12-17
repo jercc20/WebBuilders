@@ -74,7 +74,7 @@
 
         xhr.addEventListener("load", function(e) {
 			if( e.target.response == "0" )
-				util.showPopUp("Hubo un problema subiendo el archivo.");
+				util.showPopUp("El archivo no está en un formato permitido o es muy grande.");
 			else if( e.target.response == "2" )
 				util.showPopUp("El archivo ya existe.");
 			else {
