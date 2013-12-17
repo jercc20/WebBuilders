@@ -122,9 +122,9 @@
 			</section>
 			<section class="chk-group-column">
 				<h3>Configuración</h3>
-				<label for="editarInformacion">Editar información</label>
+				<label for="editarInformacion">Editar información del perfil</label>
 				<input type="checkbox" name="chk-permissions[]" value="editarInformacion" id="editarInformacion" />
-				<label for="ingresarSeccionConfiguracion">Ingresar a la configuración</label>
+				<label for="ingresarSeccionConfiguracion">Editar la configuración del sistema</label>
 				<input type="checkbox" name="chk-permissions[]" value="ingresarSeccionConfiguracion" id="ingresarSeccionConfiguracion" />
 			</section>
 		</section>
