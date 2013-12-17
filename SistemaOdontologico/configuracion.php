@@ -12,17 +12,6 @@
 	<h1 class="ac">Configuración</h1>
 	<form class="form-edit box-wrap clearfix" action="includes/update-configuracion.php" method="post">
 		<section class="form-section fl">
-	 		<label for="system-name">Nombre sistema</label>
-	 		<input id="system-name" name="txt-system-name" type="text" value="<?php echo ( isset( $tabla['nombreSistema'] ) ) ? $tabla['nombreSistema'] : ''; ?>" required="required" />
-	 		<label for="file">Logo</label>
-	 		<input id="file" name="txt-system-logo" type="file" />
-	 		<input id="txt-file" name="txt-file" type="hidden" value="<?php echo ( isset( $tabla['logo'] ) ) ? $tabla['logo'] : ''; ?>" />
-	 		<div class="logo_preview">
-	 			<img id="img-preview" src="<?php echo ( isset( $tabla['logo'] ) ) ? $tabla['logo'] : ''; ?>" alt="Logo Preview" />
-	 			<progress id="file-progress" class="hide"></progress>
-	 		</div>
-	 	</section>
-	 	<section class="form-section fr">
 	 		<label for="system-phone">Teléfono</label>
 	 		<input id="system-phone" name="txt-system-phone" type="text" placeholder="22222222" value="<?php echo ( isset( $tabla['telefonos'] ) ) ? $tabla['telefonos'] : ''; ?>" pattern="[\d]{8,10}" required="required" />
 	 		<label for="system-email">Correo electrónico</label>
@@ -33,6 +22,26 @@
 	 		<textarea id="system-address" name="txt-system-address" required="required"><?php echo ( isset( $tabla['direccion'] ) ) ? $tabla['direccion'] : ''; ?></textarea>
 	 		<label for="numero-asientos">Número de asientos</label>
 	 		<input type="text" id ="numero-asientos" name="numero-asientos" placeholder="999" required="required" value="<?php echo ( isset( $tabla['numeroAsientos'] ) ) ? $tabla['numeroAsientos'] : ''; ?>" />
+	 	</section>
+		<section class="form-section fr">
+	 		<div class="cb">
+	 			<label for="txt-system-logo">Logo</label>
+	 			<input id="txt-system-logo" name="txt-system-logo" type="file" class="file" />
+	 			<input id="txt-system-logo" name="txt-system-logo" type="hidden" value="<?php echo ( isset( $tabla['logo'] ) ) ? $tabla['logo'] : ''; ?>" />
+	 			<div class="file-upload">
+	 				<img class="img-preview" src="<?php echo ( isset( $tabla['logo'] ) ) ? $tabla['logo'] : ''; ?>" alt="Logo Preview" />
+	 				<progress class="file-progress hide"></progress>
+	 			</div>
+	 		</div>
+	 		<div class="cb">
+	 			<label for="txt-system-banner">Baner inicio</label>
+	 			<input id="txt-system-banner" name="txt-system-banner" type="file" class="file" />
+	 			<input id="txt-system-logo" name="txt-system-banner" type="hidden" value="<?php echo ( isset( $tabla['banner'] ) ) ? $tabla['banner'] : ''; ?>" />
+	 			<div class="file-upload">
+	 				<img class="img-preview" src="<?php echo ( isset( $tabla['banner'] ) ) ? $tabla['banner'] : ''; ?>" alt="Banner Preview" />
+	 				<progress class="file-progress hide"></progress>
+	 			</div>
+	 		</div>
 	 	</section>
 		<section class="cb ac">
 			<input type="submit" value="Guardar" />
