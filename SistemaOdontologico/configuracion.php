@@ -14,10 +14,12 @@
 		<section class="form-section fl">
 	 		<label for="system-name">Nombre sistema</label>
 	 		<input id="system-name" name="txt-system-name" type="text" value="<?php echo ( isset( $tabla['nombreSistema'] ) ) ? $tabla['nombreSistema'] : ''; ?>" required="required" />
-	 		<label for="system-logo">Logo</label>
-	 		<input id="system-logo" name="txt-system-logo" type="file" value="imgs/logo.png" />
+	 		<label for="file">Logo</label>
+	 		<input id="file" name="txt-system-logo" type="file" />
+	 		<input id="txt-file" name="txt-file" type="hidden" value="imgs/logo.png" />
 	 		<div class="logo_preview">
-	 			<img src="imgs/logo.png" alt="Logo Preview" />
+	 			<img id="img-preview" src="imgs/logo.png" alt="Logo Preview" />
+	 			<progress id="file-progress" class="hide"></progress>
 	 		</div>
 	 	</section>
 	 	<section class="form-section fr">
