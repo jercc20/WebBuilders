@@ -1,5 +1,5 @@
 <?php
-	define('PAGE','configuracion');
+	define('PAGE','editarConfiguracion');
 	define('TITLE','Configuracion del sistema');
 	$pageConfig = array(
 		'actions' => array(),
@@ -16,9 +16,9 @@
 	 		<input id="system-name" name="txt-system-name" type="text" value="<?php echo ( isset( $tabla['nombreSistema'] ) ) ? $tabla['nombreSistema'] : ''; ?>" required="required" />
 	 		<label for="file">Logo</label>
 	 		<input id="file" name="txt-system-logo" type="file" />
-	 		<input id="txt-file" name="txt-file" type="hidden" value="imgs/logo.png" />
+	 		<input id="txt-file" name="txt-file" type="hidden" value="<?php echo ( isset( $tabla['logo'] ) ) ? $tabla['logo'] : ''; ?>" />
 	 		<div class="logo_preview">
-	 			<img id="img-preview" src="imgs/logo.png" alt="Logo Preview" />
+	 			<img id="img-preview" src="<?php echo ( isset( $tabla['logo'] ) ) ? $tabla['logo'] : ''; ?>" alt="Logo Preview" />
 	 			<progress id="file-progress" class="hide"></progress>
 	 		</div>
 	 	</section>
