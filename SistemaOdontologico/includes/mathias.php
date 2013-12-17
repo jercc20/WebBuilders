@@ -11,7 +11,7 @@ function display_bitacoras_rows(){
 						echo '<td>' . $fila["o_nombre"] . " ". $fila["o_apellido"] . '</td>';
 						echo '<td>' . $fila["fecha"] . '</td>';
 						echo '<td>' . $fila["procedimiento"] . '</td>';
-						echo '<td><a href="editar-bitacora.php?idBitacora=' . $fila['idBitacora'] . '"><i class="icon-edit"></i></a><a href="#!?idBitacora=' . $fila['idBitacora'] . '"> <i class="icon-remove item-remove"></i></a></td>';
+						echo '<td><a href="editar-bitacora.php?idPaciente='  . $fila['idPaciente'] . '&idBitacora=' . $fila['idBitacora'] . '"><i class="icon-edit"></i></a><a href="#!?idBitacora=' . $fila['idBitacora'] . '"> <i class="icon-remove item-remove"></i></a></td>';
 					echo '</tr>';
 	}				
 }
@@ -30,7 +30,9 @@ function get_bitacoras(){
 	$result=do_query($query);
 	return $result;
 }
-function display_crear_bitacora_(){
+########################Crear Bitacora#############################################################################
+
+function display_crear_bitacora(){
 	$crearBitacora = get_crear_bitacora();
 
 	$fila = mysql_fetch_array($crearBitacora);
@@ -53,7 +55,9 @@ function get_crear_bitacora(){
 	$result = do_query( $query );
 	return $result;
 }
-function display_editar_bitacora_rows(){
+########################Editar Bitacoras#############################################################################
+
+function display_editar_bitacora(){
 	$editarBitacora = get_editar_bitacora();
 
 	$fila = mysql_fetch_array($editarBitacora);
@@ -61,21 +65,30 @@ function display_editar_bitacora_rows(){
 	$identificacion = $fila['identificacion'];
 
 	echo "<label>Nombre del paciente</label>";
-	echo "<input type='text' name='txt-user-name' readonly value='$na' />";
+	echo "<input type='text'  readonly='readonly' value='$na' />";
 	echo "<label>Identificación</label>";
-	echo "<input type='text' name='txt-user-id' readonly value='$identificacion' />";
+	echo "<input type='text'  readonly='readonly' value='$identificacion' />";
 }
 
 function get_editar_bitacora(){
-	$id = ( isset( $_GET['idBitacora'] ) ) ? $_GET['idBitacora'] : '';
-	$query = "SELECT * FROM tbbitacoras WHERE idBitacora = $id";
+	$id = ( isset( $_GET['idPaciente'] ) ) ? $_GET['idPaciente'] : '';
+	$query = "SELECT * FROM tbusuarios WHERE idUsuario = $id";
 
 	$result = do_query( $query );
 	return $result;
 }
+
+#######################################################################################################################
+
+
+
+########################Reporte Bitacoras#############################################################################
+
 function display_reporte_bitacoras_rows(){
-	$bitacoras = get_bitacoras();
+
+	$bitacoras = ( ! empty( $_POST ) ) ? get_bitacoras_custom() : get_bitacoras();
 	while( $fila = mysql_fetch_assoc($bitacoras) ){
+
 		echo '<tr>';  
 			echo '<td>' . $fila["idBitacora"] . '</td>';
 			echo '<td>' . $fila["u_nombre"] . " ".$fila["u_apellido"] . '</td>';
@@ -84,25 +97,30 @@ function display_reporte_bitacoras_rows(){
 			echo '<td>' . $fila["fecha"] . '</td>';
 			echo '<td>' . $fila["procedimiento"] . '</td>';
 		echo '</tr>';
+
 	}
 }
-/*
+
 function get_bitacoras_custom(){
-	$query = "SELECT * FROM tbbitacoras";
+	$query = "SELECT b.*, 
+					u.nombre AS u_nombre, 
+					o.nombre AS o_nombre, 
+					o.primerApellido AS o_apellido,
+					u.primerApellido AS u_apellido,
+					u.identificacion AS u_id
+							FROM tbbitacoras AS b
+							LEFT JOIN tbusuarios AS u ON (u.idUsuario = b.idPaciente)
+							LEFT JOIN tbusuarios AS o ON (o.idUsuario = b.idOdontologo)";
 	if( ! empty( $_POST ) ){
 		if( ! empty( $_POST['txt-patient-id'] ) ||
-			! empty( $_POST['txt-patient-name'] ) ||
-			! empty( $_POST['txt-patient-lastname'] ) ){
-			$query .= " JOIN tbodontogramas USING(idOdontograma)";
-			$query .= " JOIN tbusuarios ON idPaciente = idUsuario";
+			! empty( $_POST['txt-patient-name'] ) ){
+					
 		}
 		$query .= " WHERE 1";
 		if( ! empty( $_POST['txt-patient-id'] ) )
-			$query .= " AND identificacion LIKE ('%" . $_POST['txt-patient-id'] . "%')";
+			$query .= " AND u.identificacion LIKE ('%" . $_POST['txt-patient-id'] . "%')";
 		if( ! empty( $_POST['txt-patient-name'] ) )
-			$query .= " AND nombre LIKE ('%" . $_POST['txt-patient-name'] . "%')";
-		if( ! empty( $_POST['txt-patient-lastname'] ) )
-			$query .= " AND primerApellido LIKE ('%" . $_POST['txt-patient-lastname'] . "%')";
+			$query .= " AND u.nombre LIKE ('%" . $_POST['txt-patient-name'] . "%')";
 		if( ! empty( $_POST['txt-start-date'] ) && ! empty( $_POST['txt-end-date'] ) )
 			$query .= " AND fecha BETWEEN '" . do_sql_date_format( $_POST['txt-start-date'] ) . "' AND '" . do_sql_date_format( $_POST['txt-end-date'] ) . "'";
 		elseif( ! empty( $_POST['txt-start-date'] ) )
@@ -114,7 +132,11 @@ function get_bitacoras_custom(){
 
 	return $result;
 }
-*/
+
+
+#######################################
+########popup procedimientos###########
+#######################################
 
 function display_procedimientos_popup( $id ){
 
@@ -148,4 +170,4 @@ function get_procedimientos_popup( $id ){
 
 	return $result;
 }
-?>
+#############################################
