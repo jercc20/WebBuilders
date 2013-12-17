@@ -5,16 +5,15 @@
 
 		$paciente = ( isset( $_POST['id_patient'] ) ) ? $_POST['id_patient'] : '';
 		$date = ( isset( $_POST['txt_date'] ) ) ? $_POST['txt_date'] : '';
+		$dateSql = do_sql_date_format($date);
 		$hour = ( isset( $_POST['slt-hour'] ) ) ? $_POST['slt-hour'] : '';
 		$minutes = ( isset( $_POST['slt-minute'] ) ) ? $_POST['slt-minute'] : '';
 		$time = do_sql_time_format( $hour, $minutes );
 		$cita = ( isset( $_POST['slt-cita'] ) ) ? $_POST['slt-cita'] : '';
 		$odontologo = ( isset( $_POST['slt-odontologo'] ) ) ? $_POST['slt-odontologo'] : '';
 		$notes = ( isset( $_POST['txt-notes'] ) ) ? $_POST['txt-notes'] : '';
-		$date = str_replace('/', '-', $date);
-		$date = date("Y-m-d",strtotime($date));
 
-		$query = "INSERT INTO tbcitas VALUES ('NULL','$paciente', '$date', '$time', '$cita', '$odontologo', '$notes')";
+		$query = "INSERT INTO tbcitas VALUES ('NULL','$paciente', '$dateSql', '$time', '$cita', '$odontologo', '$notes')";
 		
 		$result = do_query( $query );
 		if( $result == 1 ){

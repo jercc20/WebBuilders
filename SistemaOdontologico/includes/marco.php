@@ -146,7 +146,10 @@ function display_editar_cita_2_rows(){
 		echo "<select id='minute' name='slt-minute' required='required'>";
 			echo "<option value=''>--Seleccione los minutos--</option>";
 			for($i=00; $i<60; $i=$i+5 ){
-				echo "<option value='$i'>$i</option>";
+				$selected = "";
+				if($i == $hour[1])
+					$selected = ' selected="selected"';
+				echo "<option value='$i'".$selected.">$i</option>";
 			}
 		echo "</select>";
 			echo "<label for='type'>Tipo de cita</label>";
