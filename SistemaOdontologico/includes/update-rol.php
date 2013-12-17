@@ -58,12 +58,32 @@
 		$editarInformacion = ( in_array( 'editarInformacion' , $permisos ) ) ? 1 : 0;
 		$ingresarSeccionConfiguracion = ( in_array( 'ingresarSeccionConfiguracion' , $permisos ) ) ? 1 : 0;
 
-		$query = "UPDATE tbroles SET registrarCita = $registrarCita, editarCita = $editarCita, eliminarCita = $eliminarCita, consultarCita = $consultarCita, ingresarSeccionCitas = $ingresarSeccionCitas, registrarBitacora = $registrarBitacora, editarBitacora = $editarBitacora, eliminarBitacora = $eliminarBitacora, consultarBitacora = $consultarBitacora, consultarBitacoraPropia = $consultarBitacoraPropia, ingresarSeccionBitacoras = $ingresarSeccionBitacoras, registrarUsuario = $registrarUsuario, editarUsuario = $editarUsuario, eliminarUsuario = $eliminarUsuario, consultarUsuario = $consultarUsuario, consultarUsuarioPaciente = $consultarUsuarioPaciente, crearUsuarioPaciente = $crearUsuarioPaciente, editarUsuarioPaciente = $editarUsuarioPaciente, ingresarSeccionUsuarios = $ingresarSeccionUsuarios, registrarOdontograma = $registrarOdontograma, editarOdontograma = $editarOdontograma, eliminarOdontograma = $eliminarOdontograma, consultarOdontogramas = $consultarOdontogramas, ingresarSeccionOdontogramas = $ingresarSeccionOdontogramas, registrarFactura = $registrarFactura, editarFactura = $editarFactura, eliminarFactura = $eliminarFactura, consultarFacturas = $consultarFacturas, ingresarSeccionFacturas = $ingresarSeccionFacturas, registrarProcedimiento = $registrarProcedimiento, editarProcedimiento = $editarProcedimiento, eliminarProcedimiento = $eliminarProcedimiento, consultarProcedimiento = $consultarProcedimiento, ingresarSeccionProcedimientos = $ingresarSeccionProcedimientos, reporteCitas = $reporteCitas, reporteOdontogramas = $reporteOdontogramas, reporteBitacoras = $reporteBitacoras, reporteFacturacion = $reporteFacturacion, reporteUsuarios = $reporteUsuarios, reporteProcedimientos = $reporteProcedimientos, editarInformacion = $editarInformacion, ingresarSeccionConfiguracion = $ingresarSeccionConfiguracion WHERE nombreRol = '$nombreRol'";
+		$query = "SELECT nombreRol FROM tbroles";
 
 		$result = do_query( $query );
-		if( $result == 1 ){
-			echo 'Rol creado con exito';
-			js_redirect('consultar-roles.php', 4000);
+
+		$encontro = false;
+
+		while ($fila = mysql_fetch_row($result)) {
+
+			$nombreRolCom = $fila['0'];
+
+			if ( ! strcmp($nombreRol, $nombreRolCom) ) {
+				$encontro = true;
+			}
+		}
+
+		if ( ! $encontro ) {
+			$query = "UPDATE tbroles SET registrarCita = $registrarCita, editarCita = $editarCita, eliminarCita = $eliminarCita, consultarCita = $consultarCita, ingresarSeccionCitas = $ingresarSeccionCitas, registrarBitacora = $registrarBitacora, editarBitacora = $editarBitacora, eliminarBitacora = $eliminarBitacora, consultarBitacora = $consultarBitacora, consultarBitacoraPropia = $consultarBitacoraPropia, ingresarSeccionBitacoras = $ingresarSeccionBitacoras, registrarUsuario = $registrarUsuario, editarUsuario = $editarUsuario, eliminarUsuario = $eliminarUsuario, consultarUsuario = $consultarUsuario, consultarUsuarioPaciente = $consultarUsuarioPaciente, crearUsuarioPaciente = $crearUsuarioPaciente, editarUsuarioPaciente = $editarUsuarioPaciente, ingresarSeccionUsuarios = $ingresarSeccionUsuarios, registrarOdontograma = $registrarOdontograma, editarOdontograma = $editarOdontograma, eliminarOdontograma = $eliminarOdontograma, consultarOdontogramas = $consultarOdontogramas, ingresarSeccionOdontogramas = $ingresarSeccionOdontogramas, registrarFactura = $registrarFactura, editarFactura = $editarFactura, eliminarFactura = $eliminarFactura, consultarFacturas = $consultarFacturas, ingresarSeccionFacturas = $ingresarSeccionFacturas, registrarProcedimiento = $registrarProcedimiento, editarProcedimiento = $editarProcedimiento, eliminarProcedimiento = $eliminarProcedimiento, consultarProcedimiento = $consultarProcedimiento, ingresarSeccionProcedimientos = $ingresarSeccionProcedimientos, reporteCitas = $reporteCitas, reporteOdontogramas = $reporteOdontogramas, reporteBitacoras = $reporteBitacoras, reporteFacturacion = $reporteFacturacion, reporteUsuarios = $reporteUsuarios, reporteProcedimientos = $reporteProcedimientos, editarInformacion = $editarInformacion, ingresarSeccionConfiguracion = $ingresarSeccionConfiguracion WHERE nombreRol = '$nombreRol'";
+
+			$result = do_query( $query );
+			if( $result == 1 ){
+				echo 'Rol creado con exito';
+				js_redirect('consultar-roles.php', 4000);
+			}
+		}else{
+			echo "El nombre ingresado para el rol ya está en uso";
+			exit();
 		}
 
 		/* ---- */

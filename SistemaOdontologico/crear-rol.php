@@ -1,6 +1,6 @@
 <?php
-	define('PAGE','consultar-roles');
-	define('TITLE','Consultar Roles');
+	define('PAGE','crear-roles');
+	define('TITLE','Crear Rol');
 	$pageConfig = array(
 		'actions' => array(),
 		'plugins'=> array()

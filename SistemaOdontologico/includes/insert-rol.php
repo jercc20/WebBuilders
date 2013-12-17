@@ -58,12 +58,32 @@
 		$editarInformacion = ( in_array( 'editarInformacion' , $permisos ) ) ? 1 : 0;
 		$ingresarSeccionConfiguracion = ( in_array( 'ingresarSeccionConfiguracion' , $permisos ) ) ? 1 : 0;
 
-		$query = "INSERT INTO tbroles VALUES (NULL, '$nombreRol', $registrarCita, $editarCita, $eliminarCita, $consultarCita, $ingresarSeccionCitas, $registrarBitacora, $editarBitacora, $eliminarBitacora, $consultarBitacora, $consultarBitacoraPropia, $ingresarSeccionBitacoras, $registrarUsuario, $editarUsuario, $eliminarUsuario, $consultarUsuario, $consultarUsuarioPaciente, $crearUsuarioPaciente, $editarUsuarioPaciente, $ingresarSeccionUsuarios, $registrarOdontograma, $editarOdontograma, $eliminarOdontograma, $consultarOdontogramas, $ingresarSeccionOdontogramas, $registrarFactura, $editarFactura, $eliminarFactura, $consultarFacturas, $ingresarSeccionFacturas, $registrarProcedimiento, $editarProcedimiento, $eliminarProcedimiento, $consultarProcedimiento, $ingresarSeccionProcedimientos, $reporteCitas, $reporteOdontogramas, $reporteBitacoras, $reporteFacturacion, $reporteUsuarios, $reporteProcedimientos, $editarInformacion, $ingresarSeccionConfiguracion)";
+		$query = "SELECT nombreRol FROM tbroles";
 
 		$result = do_query( $query );
-		if( $result == 1 ){
-			echo 'Rol creado con exito';
-			js_redirect('consultar-roles.php', 4000);
+
+		$encontro = false;
+
+		while ($fila = mysql_fetch_row($result)) {
+
+			$nombreRolCom = $fila['0'];
+
+			if ( ! strcmp($nombreRol, $nombreRolCom) ) {
+				$encontro = true;
+			}
+		}
+
+		if ( ! $encontro ) {
+			$query = "INSERT INTO tbroles VALUES (NULL, '$nombreRol', $registrarCita, $editarCita, $eliminarCita, $consultarCita, $ingresarSeccionCitas, $registrarBitacora, $editarBitacora, $eliminarBitacora, $consultarBitacora, $consultarBitacoraPropia, $ingresarSeccionBitacoras, $registrarUsuario, $editarUsuario, $eliminarUsuario, $consultarUsuario, $consultarUsuarioPaciente, $crearUsuarioPaciente, $editarUsuarioPaciente, $ingresarSeccionUsuarios, $registrarOdontograma, $editarOdontograma, $eliminarOdontograma, $consultarOdontogramas, $ingresarSeccionOdontogramas, $registrarFactura, $editarFactura, $eliminarFactura, $consultarFacturas, $ingresarSeccionFacturas, $registrarProcedimiento, $editarProcedimiento, $eliminarProcedimiento, $consultarProcedimiento, $ingresarSeccionProcedimientos, $reporteCitas, $reporteOdontogramas, $reporteBitacoras, $reporteFacturacion, $reporteUsuarios, $reporteProcedimientos, $editarInformacion, $ingresarSeccionConfiguracion)";
+
+			$result = do_query( $query );
+			if( $result == 1 ){
+				echo 'Rol creado con exito';
+				js_redirect('consultar-roles.php', 4000);
+			}
+		}else{
+			echo "El nombre ingresado para el rol ya está en uso";
+			exit();
 		}
 
 		/* ---- */
