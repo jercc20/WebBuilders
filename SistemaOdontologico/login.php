@@ -10,13 +10,28 @@
 	$datos = datos_configuracion();
 
 ?>
-	<img id="logo" src="<?php echo ( isset( $datos['logo'] ) ) ? $datos['logo'] : ''; ?>" alt="Logo" />
+	<?php if( ! empty( $datos['logo'] ) ) : ?>
+		<img id="logo" src="<?php echo $datos['logo']; ?>" alt="Logo" />
+	<?php endif; ?>
+	<?php if( ! empty( $datos['direccion'] )
+				|| ! empty( $datos['telefonos'] )
+				|| ! empty( $datos['correoElectronico'] )
+				|| ! empty( $datos['horario'] ) ) : ?>
 	<div id="contact-box">
-		<p><i class="icon-inicio"></i><?php echo ( isset( $datos['direccion'] ) ) ? $datos['direccion'] : ''; ?></p>
-		<p><i class="icon-phone"></i><?php echo ( isset( $datos['telefonos'] ) ) ? $datos['telefonos'] : ''; ?></p>
-		<p><i class="icon-mail"></i><?php echo ( isset( $datos['correoElectronico'] ) ) ? $datos['correoElectronico'] : ''; ?></p>
-		<p><i class="icon-citas"></i><?php echo ( isset( $datos['horario'] ) ) ? $datos['horario'] : ''; ?></p>
+		<?php if( ! empty( $datos['direccion'] ) ) : ?>
+			<p><i class="icon-inicio"></i><?php echo $datos['direccion']; ?></p>
+		<?php endif; ?>
+		<?php if( ! empty( $datos['telefonos'] ) ) : ?>
+			<p><i class="icon-phone"></i><?php echo $datos['telefonos']; ?></p>
+		<?php endif; ?>
+		<?php if( ! empty( $datos['correoElectronico'] ) ) : ?>
+			<p><i class="icon-mail"></i><?php echo $datos['correoElectronico']; ?></p>
+		<?php endif; ?>
+		<?php if( ! empty( $datos['horario'] ) ) : ?>
+			<p><i class="icon-citas"></i><?php echo $datos['horario']; ?></p>
+		<?php endif; ?>
 	</div>
+	<?php endif; ?>
 	<div id="login-wrap">
 		<h1>Iniciar sesión</h1>
 		<form id="login-form" action="includes/check-login.php" method="post" class="clearfix">
