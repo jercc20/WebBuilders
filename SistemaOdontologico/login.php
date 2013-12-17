@@ -7,11 +7,15 @@
 	);
 	require_once 'includes/functions.php';
 	require_once 'includes/header.php';
+	$datos = datos_configuracion();
 
 ?>
-	<img id="logo" src="imgs/logo.png" alt="Logo" />
+	<img id="logo" src="<?php echo ( isset( $datos['logo'] ) ) ? $datos['logo'] : ''; ?>" alt="Logo" />
 	<div id="contact-box">
-		<?php configuracion_basica();?>
+		<p><i class="icon-inicio"></i><?php echo ( isset( $datos['direccion'] ) ) ? $datos['direccion'] : ''; ?></p>
+		<p><i class="icon-phone"></i><?php echo ( isset( $datos['telefonos'] ) ) ? $datos['telefonos'] : ''; ?></p>
+		<p><i class="icon-mail"></i><?php echo ( isset( $datos['correoElectronico'] ) ) ? $datos['correoElectronico'] : ''; ?></p>
+		<p><i class="icon-citas"></i><?php echo ( isset( $datos['horario'] ) ) ? $datos['horario'] : ''; ?></p>
 	</div>
 	<div id="login-wrap">
 		<h1>Iniciar sesión</h1>
