@@ -200,6 +200,7 @@ form [readonly] {
 }
 form progress {
 	width: 100%;
+	margin: 5px 0;
 }
 button,
 form input[type="submit"],
@@ -264,17 +265,19 @@ form div.ac {
 	width: auto;
 	margin: 5px 0 0;
 }
-.logo_preview {
+.file-upload {
 	float: right;
 	width: 54%;
 	margin-right: 3%;
-	padding: 5px 2%;
+	padding: 0 2%;
 	box-sizing: border-box;
     -moz-box-sizing: border-box;
 }
-.logo_preview img {
+.file-upload img {
 	max-width: 100%;
 	max-height: 90px;
+	margin: 5px 0;
+	font-size: 0;
 }
 .chk-group-column {
 	float: left;

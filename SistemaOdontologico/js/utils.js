@@ -56,10 +56,11 @@
     };
 
     util.uploadFile = function(e) {
+		$parent = $(e.target).parent();
 		this.file = e.target.files[0];
-		this.input = $('#txt-file');
-		this.img = $('#img-preview');
-		this.prog = $('#file-progress');
+		this.input = $('input[type="hidden"]', $parent);
+		this.img = $('.img-preview', $parent);
+		this.prog = $('.file-progress', $parent);
 		var self = this;
 
 		var xhr = new XMLHttpRequest();

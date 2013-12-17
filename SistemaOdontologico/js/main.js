@@ -109,7 +109,7 @@ jQuery(function($) {
 			}
 		});
 	});
-	$('#file').on( 'change', SO.utils.uploadFile );
+	$('.file').on( 'change', SO.utils.uploadFile );
 	$('.form-cancel').on( 'click', function(e){
 		e.preventDefault();
 		window.back(1);
