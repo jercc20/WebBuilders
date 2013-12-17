@@ -1,9 +1,9 @@
 <?php
-	define('PAGE','reporte-usuarios'); //nombre de la pagina
-	define('TITLE','Reporte de usuarios'); //titulo de la pagina
+	define('PAGE','reporte-usuarios');
+	define('TITLE','Reporte de usuarios');
 	$pageConfig = array(
-		'actions' => array(), //array con las acciones adicionales de la pagina (editar, borrar, etc)php
-		'plugins'=> array('datatable') //para incluir archivos de plugins (datatable, calendar, datepicker, print, etc)
+		'actions' => array(),
+		'plugins'=> array('datatable', 'print')
 	);
 	require_once 'includes/functions.php';
 	require_once 'includes/header.php';
