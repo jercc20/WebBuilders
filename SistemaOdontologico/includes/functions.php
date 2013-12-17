@@ -73,13 +73,25 @@ function check_user(){
 			//exit();
 		}
 		if( ( ( defined('PAGE') && PAGE != 'inicio' && PAGE != 'select' ) && ! isset( $_POST['ajax-call'] )  )
-			&& ( ! isset( $_SESSION["roleinfo"][PAGE] ) || ! $_SESSION["roleinfo"][PAGE] ) ){
+			&& ! check_permission( PAGE ) ){
 			echo "Revisar el PAGE con los permisos del rol actual<br />"; //TMP!!!
 			echo "Page actual: " . PAGE; //TMP!!!
 			//header('Location: 404.php');
 			//exit();
 		}
 	}
+}
+
+function check_permission( $permissions ){
+	if( ! is_array( $permissions ) ){
+		$permissions = array( $permissions );
+	}
+	foreach ($permissions as $permission) {
+		if( isset( $_SESSION["roleinfo"][$permission] ) && $_SESSION["roleinfo"][$permission] ){
+			return true;
+		}
+	}
+	return false;
 }
 
 function js_redirect( $url, $delay = 0 ){
