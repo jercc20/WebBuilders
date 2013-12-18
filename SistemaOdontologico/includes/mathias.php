@@ -169,7 +169,7 @@ function get_procedimientos_popup( $id ){
 ##################################################################################################################################
 function display_bitacoras_rows_paciente(){
 
-	$bitacoras = get_bitacoras();
+	$bitacoras = get_bitacoras_paciente();
 
 	while ($fila = mysql_fetch_assoc($bitacoras)) {
 					echo '<tr>';  
@@ -182,6 +182,23 @@ function display_bitacoras_rows_paciente(){
 						echo '<td><a href="#"><i class="icon-view item-view"></i></a></td>';
 					echo '</tr>';
 	}				
+}
+function get_bitacoras_paciente(  ){
+
+	$query = "SELECT b.*, 
+			u.nombre AS u_nombre, 
+			o.nombre AS o_nombre, 
+			o.primerApellido AS o_apellido,
+			u.primerApellido AS u_apellido,
+			u.identificacion AS u_id
+					FROM tbbitacoras AS b
+					LEFT JOIN tbusuarios AS u ON (u.idUsuario = b.idPaciente)
+					LEFT JOIN tbusuarios AS o ON (o.idUsuario = b.idOdontologo)
+					WHERE idPaciente = 5";
+
+
+	$result=do_query($query);
+	return $result;
 }
 ##################################################################################################################################
 function display_procedimientos_editar( $id ){

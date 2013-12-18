@@ -1,5 +1,5 @@
 <?php
-	define('PAGE','consultar-procedimientos');
+	define('PAGE','consultarProcedimientos');
 	define('TITLE','Consultar Procedimientos');
 	$pageConfig = array(
 		'actions' => array(),

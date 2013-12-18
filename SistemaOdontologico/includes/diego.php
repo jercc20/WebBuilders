@@ -103,4 +103,14 @@ function datos_configuracion(){
 
  	return $tabla;
 }
+
+function get_perfil_user($pidUsuario){
+	$query = "SELECT * FROM tbusuarios WHERE idUsuario = '$pidUsuario'";
+
+	$result = do_query($query);
+
+	$tabla = mysql_fetch_assoc($result);
+
+	return $tabla;
+}
 ?>

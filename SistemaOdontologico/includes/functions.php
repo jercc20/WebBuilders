@@ -37,7 +37,7 @@ function db_init(){
 function do_query( $query ){
 	global $db_server;
 
-	$result = mysql_query( $query, $db_server );
+	$result = mysql_query( null_replace( $query ), $db_server );
 	if( !$result )
 		die("Falló el acceso a la BD: " . mysql_error());
 
@@ -72,7 +72,7 @@ function check_user(){
 			//header('Location: inicio.php');
 			//exit();
 		}
-		if( ( ( defined('PAGE') && PAGE != 'inicio' && PAGE != 'select' ) && ! isset( $_POST['ajax-call'] )  )
+		if( ( ( defined('PAGE') && PAGE != 'inicio' && PAGE != 'select' && PAGE != 'perfil' ) && ! isset( $_POST['ajax-call'] )  )
 			&& ! check_permission( PAGE ) ){
 			echo "Revisar el PAGE con los permisos del rol actual<br />"; //TMP!!!
 			echo "Page actual: " . PAGE; //TMP!!!
@@ -96,6 +96,11 @@ function check_permission( $permissions ){
 
 function js_redirect( $url, $delay = 0 ){
 	echo "<script>SO.utils.redirect('$url', '$delay');</script>";
+}
+
+function null_replace( $text ){
+	$result = str_replace("'NULL'", "NULL", $text);
+	return $result;
 }
 
 function cleanInput( $input ) {

@@ -1,5 +1,5 @@
 <?php
-	define('PAGE','crear-cita');
+	define('PAGE','registrarCita');
 	define('TITLE','crear-cita');
 	$pageConfig = array(
 		'plugins'=> array('datepicker')

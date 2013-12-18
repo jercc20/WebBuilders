@@ -1,5 +1,5 @@
 <?php
-	define('PAGE','editar-perfil-usuario');
+	define('PAGE','perfil');
 	define('TITLE','Editar el perfil del usuario');
 	$pageConfig = array(
 		'actions' => array(),
@@ -13,7 +13,7 @@
 	$tabla = get_perfil_user($idUsuario);
 ?>
 	<h1 class="ac">Editar Perfil</h1>
-	<form class="form-edit box-wrap clearfix" action="includes/update-perfil-usuario.php" method="get">
+	<form class="form-edit box-wrap clearfix" action="includes/update-perfil-usuario.php" method="post">
 		<section class="form-section fl">
 			<label for="user-id">Identificación</label>
 			<input id="user-id" name="txt-user-id" type="text" readonly="readonly" <?php echo 'value="'. $tabla["identificacion"] .'"' ?> />
@@ -50,20 +50,24 @@
 	require_once 'includes/footer.php';
 ?>
 <script type="text/javascript">
-	document.getElementById('btnEnviar').addEventListener('click', validar);
+document.getElementById('btnEnviar').addEventListener('click', validar);
 
 	function validar (e){
-		var txtContrasennaActual = document.getElementById('user-psw'),
-		txtContrasennaNueva = document.getElementById('user-pnew'),
-		txtContrasennaNueva2 = document.getElementById('user-pnew2');
+		var txtContrasennaActual = document.getElementById('user-psw').value,
+		txtContrasennaNueva = document.getElementById('user-pnew').value,
+		txtContrasennaNueva2 = document.getElementById('user-pnew2').value;
 
 		if (txtContrasennaNueva.length > 0) {
+			alert('Entró a contraseña nueva');
 			if (txtContrasennaActual.length > 0) {
-				if (! (txtContrasennaNueva.value === txtContrasennaNueva2.value)) {
+				alert('Entró a contraseña actual');
+				if (! (txtContrasennaNueva === txtContrasennaNueva2)) {
+					alert('Entró a contraseña nueva 2 y no son iguales');
 					SO.utils.showPopUp('Las contraseñas no son iguales');
 					e.preventDefault();
 				}
 			}else{
+				alert('Entró a contraseña actual, y no estaba');
 				SO.utils.showPopUp('Debe ingresar la contraseña actual');
 				e.preventDefault();
 			}

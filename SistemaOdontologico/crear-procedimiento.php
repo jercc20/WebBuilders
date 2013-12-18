@@ -1,5 +1,5 @@
 <?php
-	define('PAGE','crear-procedimiento');
+	define('PAGE','registrarProcedimiento');
 	define('TITLE','Crear Procedimineto');
 	$pageConfig = array(
 		'plugins'=> array()
