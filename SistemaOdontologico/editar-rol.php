@@ -121,11 +121,6 @@
 				<input type="checkbox" name="chk-permissions[]" value="reporteProcedimientos" id="reporteProcedimientos" <?php if ($tabla['reporteProcedimientos']) echo 'checked="checked"';?> />
 			</section>
 			<section class="chk-group-column">
-				<h3>Configuración</h3>
-				<label for="editarInformacion">Editar la configuración del sistema</label>
-				<input type="checkbox" name="chk-permissions[]" value="editarInformacion" id="editarInformacion" <?php if ($tabla['editarInformacion']) echo 'checked="checked"';?> />
-			</section>
-			<section class="chk-group-column">
 				<h3>Procedimientos</h3>
 				<label for="registrarProcedimiento">Registrar procedimiento</label>
 				<input type="checkbox" name="chk-permissions[]" value="registrarProcedimiento" id="registrarProcedimiento" <?php if ($tabla['registrarProcedimiento']) echo 'checked="checked"';?> />
@@ -135,6 +130,11 @@
 				<input type="checkbox" name="chk-permissions[]" value="eliminarProcedimiento" id="eliminarProcedimiento" <?php if ($tabla['eliminarProcedimiento']) echo 'checked="checked"';?> />
 				<label for="consultarProcedimientos">Consultar procedimientos</label>
 				<input type="checkbox" name="chk-permissions[]" value="consultarProcedimientos" id="consultarProcedimientos" <?php if ($tabla['consultarProcedimientos']) echo 'checked="checked"';?> />
+			</section>
+			<section class="chk-group-column">
+				<h3>Configuración</h3>
+				<label for="editarInformacion">Editar la configuración del sistema</label>
+				<input type="checkbox" name="chk-permissions[]" value="editarInformacion" id="editarInformacion" <?php if ($tabla['editarInformacion']) echo 'checked="checked"';?> />
 			</section>
 		</section>
 		<div class="ac cb">
