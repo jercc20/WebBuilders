@@ -100,7 +100,7 @@ function display_reporte_bitacoras_rows(){
 
 	}
 }
-
+##################################################################################################################################
 function get_bitacoras_custom(){
 	$query = "SELECT b.*, 
 					u.nombre AS u_nombre, 
@@ -133,11 +133,7 @@ function get_bitacoras_custom(){
 	return $result;
 }
 
-
-#######################################
-########popup procedimientos###########
-#######################################
-
+##################################################################################################################################
 function display_procedimientos_popup( $id ){
 
 	$procedimientos = get_procedimientos_popup( $id );
@@ -155,7 +151,7 @@ function display_procedimientos_popup( $id ){
 		echo "El usuario no tiene procedimientos pendientes";
 	}
 }
-
+##################################################################################################################################
 function get_procedimientos_popup( $id ){
 
 	$query = "SELECT * FROM tbodontogramas AS o,
@@ -170,4 +166,45 @@ function get_procedimientos_popup( $id ){
 
 	return $result;
 }
-#############################################
+##################################################################################################################################
+function display_bitacoras_rows_paciente(){
+
+	$bitacoras = get_bitacoras();
+
+	while ($fila = mysql_fetch_assoc($bitacoras)) {
+					echo '<tr>';  
+						echo '<td>' . $fila["idBitacora"] . '</td>';
+						echo '<td>' . $fila["u_nombre"] . " ".$fila["u_apellido"] . '</td>';
+						echo '<td>' . $fila["u_id"] . '</td>';
+						echo '<td>' . $fila["o_nombre"] . " ". $fila["o_apellido"] . '</td>';
+						echo '<td>' . $fila["fecha"] . '</td>';
+						echo '<td>' . $fila["procedimiento"] . '</td>';
+						echo '<td><a href="#"><i class="icon-view item-view"></i></a></td>';
+					echo '</tr>';
+	}				
+}
+##################################################################################################################################
+function display_procedimientos_editar( $id ){
+
+	$procedimientos = get_procedimientos_editar( $id );
+	
+		while ($fila = mysql_fetch_assoc($procedimientos)) {
+			echo '<tr>';  
+				echo '<td>' . '<input type="hidden" name="procedimientos['. $i .']" value="'. $fila["idProcedimiento"] .'" />' . '<input type="hidden" name="idOdontograma['. $i .']" value="'. $fila["idOdontograma"] .'" />' . '</td>';
+				echo '<td>' . $fila["nombre"] .'</td>';
+			echo '</tr>';
+		}						
+}
+##################################################################################################################################
+function get_procedimientos_editar( $id ){
+
+	$query = "SELECT * FROM tbprocedimientosporbitacora AS pb,
+ 				tbprocedimientos AS p 
+ 				WHERE idBitacora = '$id'";
+
+	$result = do_query( $query );
+
+	return $result;
+}
+
+##################################################################################################################################

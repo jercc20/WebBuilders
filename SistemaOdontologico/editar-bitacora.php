@@ -7,6 +7,7 @@
     require_once 'includes/functions.php';
     require_once 'includes/header.php';
 
+    $idUsuario = ( isset( $_GET['id'] ) ) ? $_GET['id'] : '';
     $idBitacora = ( isset( $_GET['idBitacora'] ) ) ? $_GET['idBitacora'] : '';
     $query =  "SELECT * FROM tbbitacoras WHERE idBitacora = $idBitacora ";
 
@@ -40,14 +41,9 @@
 
        </section>  
 
-        <section class='form-section fr'>
-        <input id='procedure-number' name='txt-procedure-number' type='hidden' value="1" />
-
+          <section class='form-section fr'>
+          <input id='procedure-number' name='txt-procedure-number' type='hidden' value="1" />
           <label>Procedimientos</label><a href="#" class="add-procedure fr ar">Ver procedimientos</a>
-
-          <table id='table-procedures-added' class='cb'></table>
-          <a href='#' id='delete-procedures' class='fr ar hide'>-Borrar procedimiento</a>
-
           <label for='txt-notes'>Notas</label> 
           <textarea id="txt-notes" name="txt-notes"><?php echo $notas;?></textarea>
 
@@ -62,11 +58,15 @@
           <div id="popup-procedure" class="hide">
             <h2 class="ac">Procedimientos</h2>
             <div class="div-table ">
-                 <table class="table-procedures">
-                 <?php display_procedimientos_popup($idUsuario); ?>
+                <table class="table-procedures">
+                      <?php display_procedimientos_editar($idBitacora); ?>
                 </table>
              </div>
-        </div>
+             <div>
+              <button class="close btn-add btn-ac">Aceptar</button>
+            </div>
+          </div>
+
 <?php        
   require_once 'includes/footer.php';
 ?>
