@@ -13,7 +13,7 @@ $citas = array();
 $k = 0;
 
 while( $row = mysql_fetch_assoc( $result ) ){
-	$citas[$k]['title'] = $row['hora'] . ' ' . $row['p_nombre'];
+	$citas[$k]['title'] = $row['hora'] . ' ' . $row['p_nombre'] . ' ' . $row['p_apellido'] . ' ' . $row['p_id'];
 	$citas[$k]['start'] = $row['fecha'];
 	$citas[$k]['end'] = $row['fecha'];
 	$k++;
