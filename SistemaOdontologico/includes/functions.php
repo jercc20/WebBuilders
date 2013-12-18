@@ -255,9 +255,11 @@ function display_facturas_rows(){
 	$facturas = get_facturas();
 	while( $row = mysql_fetch_assoc( $facturas ) ){
 		$user = mysql_fetch_assoc( get_user_factura( $row['idFactura'] ) );
-		$total = array_shift( mysql_fetch_array( get_amount_odontograma( $row['idOdontograma'] ) ) );
+		$total = mysql_fetch_array( get_amount_odontograma( $row['idOdontograma'] ) );
+		$total = array_shift( $total );
 		$numAbonos = mysql_num_rows( get_abonos_factura( $row['idFactura'] ) );
-		$totalAbonos = array_shift( mysql_fetch_array( get_total_abonos_factura( $row['idFactura'] ) ) );
+		$totalAbonos = mysql_fetch_array( get_total_abonos_factura( $row['idFactura'] ) );
+		$totalAbonos = array_shift( $totalAbonos );
 		echo '<tr>'.
 				'<td>' . $row['idFactura'] . '</td>'.
 				'<td>' . get_full_user_name( $user ) . '</td>'.
