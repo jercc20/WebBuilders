@@ -179,7 +179,7 @@ function display_bitacoras_rows_paciente(){
 						echo '<td>' . $fila["o_nombre"] . " ". $fila["o_apellido"] . '</td>';
 						echo '<td>' . $fila["fecha"] . '</td>';
 						echo '<td>' . $fila["procedimiento"] . '</td>';
-						echo '<td><a href="#"><i class="icon-view item-view"></i></a></td>';
+						echo '<td><a class="item-view" href="#!"><i class="icon-view"></i></a></td>';
 					echo '</tr>';
 	}				
 }
@@ -208,7 +208,6 @@ function display_procedimientos_editar( $id ){
 	
 		while ($fila = mysql_fetch_assoc($procedimientos)) {
 			echo '<tr>';  
-				echo '<td>' . '<input type="hidden" name="procedimientos['. $i .']" value="'. $fila["idProcedimiento"] .'" />' . '<input type="hidden" name="idOdontograma['. $i .']" value="'. $fila["idOdontograma"] .'" />' . '</td>';
 				echo '<td>' . $fila["nombre"] .'</td>';
 			echo '</tr>';
 		}						
@@ -217,14 +216,13 @@ function display_procedimientos_editar( $id ){
 ##################################################################################################################################
 function get_procedimientos_editar( $id ){
 
-	$query = "SELECT * FROM tbprocedimientosporbitacora AS pb,
- 				tbprocedimientos AS p 
- 				WHERE idBitacora = '$id'";
+	$query = "SELECT nombre
+		FROM tbprocedimientosporbitacora AS pb,
+		tbprocedimientos AS p
+			WHERE pb.idBitacora = '$idBitacora'
+			AND p.idProcedimiento = pb.idProcedimiento";
 
 	$result = do_query( $query );
 	return $result;
 }
-
 ###################################################################################################################################
-
-####################################################################################################################################

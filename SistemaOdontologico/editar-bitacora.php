@@ -9,7 +9,7 @@
 
     $idUsuario = ( isset( $_GET['id'] ) ) ? $_GET['id'] : '';
     $idBitacora = ( isset( $_GET['idBitacora'] ) ) ? $_GET['idBitacora'] : '';
-    $query =  "SELECT * FROM tbbitacoras WHERE idBitacora = $idBitacora ";
+    $query =  "SELECT * FROM tbbitacoras WHERE idBitacora = $idBitacora";
 
     $result = mysql_query($query);
     if(!$result)die("Acceso a la BD falló: ". mysql_error());

@@ -26,6 +26,15 @@
 					<?php display_bitacoras_rows_paciente(); ?>
 				</tbody>
 			</table>
+	<div id="popup-view" class="hide">
+		<div>
+			<table id="my-table" class="al">
+				<?php
+					display_procedimientos_editar($idBitacora);
+				?>
+			</table>
+		</div>
+	</div>
 <?php
 	require_once 'includes/footer.php';
 ?>
