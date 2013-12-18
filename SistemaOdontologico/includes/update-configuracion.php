@@ -1,6 +1,6 @@
 <?php
 if( $_POST ){
-	define('PAGE','editarConfiguracion');
+	define('PAGE','editarInformacion');
 	require_once 'functions.php';
 
 	$logo = ( isset( $_POST['txt-system-logo'] ) ) ? $_POST['txt-system-logo'] : '';
