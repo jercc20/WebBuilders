@@ -1,8 +1,8 @@
 <?php
-	define('PAGE','consultar-calendario');
+	define('PAGE','consultarCalendario');
 	define('TITLE','Consultar Calendario');
 	$pageConfig = array(
-		'plugins'=> array('calendar') //para incluir archivos de plugins (datatable, calendar, datepicker, print, etc)
+		'plugins'=> array('calendar')
 	);
 	require_once 'includes/functions.php';
 	require_once 'includes/header.php';
@@ -17,7 +17,6 @@
 <body>
 <script src='js/vendor/jquery.min.js'></script>
 <script src='js/vendor/jquery-ui.custom.min.js'></script>
-<!--<script src='js/vendor/fullcalendar.min.js'></script>-->
 <script>
 
 	$(document).ready(function() {
@@ -56,36 +55,9 @@
 			 );
 			 }
 			 calendar.fullCalendar('unselect');
-			},
-			editable: true,
-			eventDrop: function(event, delta) {
-			 start = $.fullCalendar.formatDate(event.start, "yyyy-MM-dd HH:mm:ss");
-			 end = $.fullCalendar.formatDate(event.end, "yyyy-MM-dd HH:mm:ss");
-			 $.ajax({
-			 url: 'http://localhost/WebBuilders/SistemaOdontologico/update_events.php',
-			 data: 'title='+ event.title+'&start='+ start +'&end='+ end +'&id='+ event.id ,
-			 type: "POST",
-			 success: function(json) {
-
-			 }
-			 });
-			},
-			eventResize: function(event) {
-			 start = $.fullCalendar.formatDate(event.start, "yyyy-MM-dd HH:mm:ss");
-			 end = $.fullCalendar.formatDate(event.end, "yyyy-MM-dd HH:mm:ss");
-			 $.ajax({
-			 url: 'http://localhost/WebBuilders/SistemaOdontologico/update_events.php',
-			 data: 'title='+ event.title+'&start='+ start +'&end='+ end +'&id='+ event.id ,
-			 type: "POST",
-			 success: function(json) {
-
-			 }
-			 });
 			}
-		});
-		
+		});	
 	});
-
 </script>
 </body>
 </html>

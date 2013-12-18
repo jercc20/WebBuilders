@@ -8,7 +8,7 @@
 	require_once 'includes/header.php';
 ?>
 	<h1 class="ac">Editar Cita</h1>
-	<form id="proced-box" class="form-edit box-wrap" action="includes/update-cita.php" method="post">
+	<form id="proced-box" class="form-edit box-wrap clearfix" action="includes/update-cita.php" method="post">
 		<section class="form-section">
 			<?php 
 				display_editar_cita_rows();
