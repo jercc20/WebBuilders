@@ -98,6 +98,11 @@ function js_redirect( $url, $delay = 0 ){
 	echo "<script>SO.utils.redirect('$url', '$delay');</script>";
 }
 
+function null_replace( $text ){
+	$result = str_replace("'NULL'", "NULL", $text);
+	return $result;
+}
+
 function cleanInput( $input ) {
 	$search = array(
 		'@<script[^>]*?>.*?</script>@si',   // Strip out javascript
