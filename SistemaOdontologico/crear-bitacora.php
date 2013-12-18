@@ -1,5 +1,5 @@
 <?php
-	define('PAGE','crear-bitacora'); //nombre de la pagina
+	define('PAGE','registrarBitacora'); //nombre de la pagina
 	define('TITLE','Crear Bitacora'); //titulo de la pagina
 	$pageConfig = array(
 		'actions' => array(), //array con las acciones adicionales de la pagina (editar, borrar, etc)php
