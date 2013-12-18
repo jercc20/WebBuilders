@@ -37,7 +37,7 @@ function db_init(){
 function do_query( $query ){
 	global $db_server;
 
-	$result = mysql_query( $query, $db_server );
+	$result = mysql_query( null_replace( $query ), $db_server );
 	if( !$result )
 		die("Falló el acceso a la BD: " . mysql_error());
 
