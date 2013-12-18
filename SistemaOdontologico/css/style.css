@@ -397,6 +397,9 @@ form div.ac {
 #home-tables .dataTables_filter {
 	width: 60%;
 }
+#banner {
+	max-width: 100%;
+}
 
 /* Footer */
 #footer {

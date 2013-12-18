@@ -9,6 +9,9 @@
 	require_once 'includes/header.php';
 
 ?>
+	<?php
+		if( check_permission('consultarRecordatorios') ) :
+	?>
 	<h1 class="ac">Citas Próximas</h1>
 	<table class="data-table display">
 		<thead>
@@ -37,6 +40,16 @@
 			<?php display_home_procedimientos(); ?>
 		</tbody>
 	</table>
+	<?php else :
+		$banner = mysql_fetch_assoc( get_banner() );
+	?>
+		<h1 class="ac">Bienvenido, <?php echo $_SESSION['userinfo']['nombre']; ?></h1>
+		<?php if( ! empty( $banner ) ) : ?>
+			<div class="ac">
+				<img id="banner" src="<?php echo $banner['banner']; ?>" alt="Baner" />
+			</div>
+		<?php endif; ?>
+	<?php endif; ?>
 <?php
 	require_once 'includes/footer.php';
 ?>

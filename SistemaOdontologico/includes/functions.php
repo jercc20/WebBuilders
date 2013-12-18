@@ -446,5 +446,10 @@ function get_facturas_custom(){
 	return $result;
 }
 
+function get_banner(){
+	$query = "SELECT banner FROM tbconfiguracion WHERE idConfiguracion = '1'";
+	$result = do_query( $query );
 
+	return $result;
+}
 ?>
