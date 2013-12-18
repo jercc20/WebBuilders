@@ -1,5 +1,5 @@
 <?php
-	define('PAGE','editar-usuario'); //nombre de la pagina
+	define('PAGE','editarUsuarioPaciente'); //nombre de la pagina
 	define('TITLE','Editar Usuario'); //titulo de la pagina
 	$pageConfig = array(
 		'plugins'=> array('datepicker') //para incluir archivos de plugins (datatable, calendar, datepicker, print, etc)

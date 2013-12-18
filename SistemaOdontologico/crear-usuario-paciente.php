@@ -1,5 +1,5 @@
 <?php
-	define('PAGE','crear-usuario');
+	define('PAGE','crearUsuarioPaciente');
 	define('TITLE','Crear Usuario');
 	$pageConfig = array(
 		'plugins'=> array('datepicker')
