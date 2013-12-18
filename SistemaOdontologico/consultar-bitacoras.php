@@ -1,5 +1,5 @@
 <?php
-	define('PAGE','consultar-bitacoras'); 
+	define('PAGE','consultarBitacoras'); 
 	define('TITLE','Consultar Bitacoras'); 
 	$pageConfig = array(
 		'plugins'=> array('datatable') 

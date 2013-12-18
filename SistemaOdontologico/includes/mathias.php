@@ -3,7 +3,7 @@ function display_bitacoras_rows(){
 
 	$bitacoras = get_bitacoras();
 
-	while ($fila = mysql_fetch_assoc($bitacoras)) {
+	while ($fila = mysql_fetch_assoc($bitacoras)){
 					echo '<tr>';  
 						echo '<td>' . $fila["idBitacora"] . '</td>';
 						echo '<td>' . $fila["u_nombre"] . " ".$fila["u_apellido"] . '</td>';
@@ -183,7 +183,7 @@ function display_bitacoras_rows_paciente(){
 					echo '</tr>';
 	}				
 }
-function get_bitacoras_paciente(  ){
+function get_bitacoras_paciente(){
 
 	$query = "SELECT b.*, 
 			u.nombre AS u_nombre, 
@@ -194,13 +194,14 @@ function get_bitacoras_paciente(  ){
 					FROM tbbitacoras AS b
 					LEFT JOIN tbusuarios AS u ON (u.idUsuario = b.idPaciente)
 					LEFT JOIN tbusuarios AS o ON (o.idUsuario = b.idOdontologo)
-					WHERE idPaciente = 5";
+					WHERE idPaciente = $_SESSION[idUsuario];";
 
 
 	$result=do_query($query);
 	return $result;
 }
-##################################################################################################################################
+
+#################################################################################################################################
 function display_procedimientos_editar( $id ){
 
 	$procedimientos = get_procedimientos_editar( $id );
@@ -212,6 +213,7 @@ function display_procedimientos_editar( $id ){
 			echo '</tr>';
 		}						
 }
+
 ##################################################################################################################################
 function get_procedimientos_editar( $id ){
 
@@ -220,8 +222,9 @@ function get_procedimientos_editar( $id ){
  				WHERE idBitacora = '$id'";
 
 	$result = do_query( $query );
-
 	return $result;
 }
 
-##################################################################################################################################
+###################################################################################################################################
+
+####################################################################################################################################

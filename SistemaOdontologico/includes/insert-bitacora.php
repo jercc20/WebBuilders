@@ -1,7 +1,7 @@
 <?php
 
 	if( $_POST ){
-		define('PAGE','crear-bitacora'); 
+		define('PAGE','crearBitacora'); 
 		require_once 'functions.php';
 		
 		if(empty($_POST['procedimientos'])){ 

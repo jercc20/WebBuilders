@@ -1,5 +1,5 @@
 <?php
-    define('PAGE','editar-bitacora');
+    define('PAGE','editarBitacora');
     define('TITLE','Editar Bitacora');
     $pageConfig = array(
         'plugins'=> array('datepicker')
