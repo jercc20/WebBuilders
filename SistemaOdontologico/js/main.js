@@ -88,7 +88,7 @@ jQuery(function($) {
 		var m = date.getMonth();
 		var y = date.getFullYear();
 		var calendar = $('#calendar').fullCalendar({
-			events: "events.php",
+			events: "includes/events.php",
 			dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie','Jue', 'Vie', 'Sab'],
 			dayNames: ['Domingo', 'Lunes', 'Martes', 'Miercoles','Jueves', 'Viernes', 'Sabado'],
 			monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
