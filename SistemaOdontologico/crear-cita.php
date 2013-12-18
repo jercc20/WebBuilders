@@ -71,6 +71,8 @@
 			<?php
 				menu_desplegable_usuarios(3,1,'slt-odontologo');
 			?>
+			<label for="notes">Notas</label>
+			<textarea id="notes" name="txt-notes"></textarea>
 		</section>
 		<div class="ac cb">
 			<button class="form-cancel">Cancelar</button>

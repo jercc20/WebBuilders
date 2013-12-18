@@ -132,7 +132,7 @@ function display_editar_cita_2_rows(){
 
 	echo "<input type='hidden' name='id_cita' value='$id_cita' />";
 	echo "<label for='txt-date'>Fecha</label>";
-	echo "<input id='txt-date' class='datepicker' name='txt_date' type='text' required='required' placeholder='dd-mm-yyyy' pattern='(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d' value='$date' />";
+	echo "<input id='txt-date' class='datepicker' name='txt_date' type='text' required='required' placeholder='dd-mm-yyyy' value='$date' />";
 	echo "<label for='hour'>Hora</label>";
 		echo "<select id='hour' name='slt-hour' required='required'>";
 			echo "<option value=''>--Seleccione la hora--</option>";

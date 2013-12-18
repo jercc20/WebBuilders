@@ -15,6 +15,15 @@
 
 		$query = "INSERT INTO tbcitas VALUES ('NULL','$paciente', '$dateSql', '$time', '$cita', '$odontologo', '$notes')";
 		
+	/*	$querySLT = "SELECT COUNT($hora) FROM tbcitas WHERE hora = '$hora'";
+		$querySillas = "SELECT numeroAsientos FROM tbconfiguracion";
+		if($querySLT<=$querySillas){
+			echo 'Los campos están llenos';
+			exit();
+		}else{
+
+		}*/
+
 		$result = do_query( $query );
 		if( $result == 1 ){
 			echo 'La cita se ha creado exitosamente.';
