@@ -1,6 +1,6 @@
 <?php
 	if( $_POST ){
-		define('PAGE','');
+		define('PAGE','editarCita');
 		require_once 'functions.php';
 
 		$id = ( isset( $_POST['id_cita'] ) ) ? $_POST['id_cita'] : '';

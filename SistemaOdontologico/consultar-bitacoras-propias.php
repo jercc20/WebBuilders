@@ -26,12 +26,6 @@
 					<?php display_bitacoras_rows_paciente(); ?>
 				</tbody>
 			</table>
-			<div id="popup-view" class="hide">
-		
-			<table class="table-procedures">
-				<?php display_procedimientos_popup($idUsuario); ?>
-			</table>
-		</div>
 <?php
 	require_once 'includes/footer.php';
 ?>

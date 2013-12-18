@@ -1,8 +1,8 @@
 <?php
-	define('PAGE','editar-procedimiento'); //nombre de la pagina
-	define('TITLE','Editar Procedimiento'); //titulo de la pagina
+	define('PAGE','editarProcedimiento');
+	define('TITLE','Editar Procedimiento');
 	$pageConfig = array(
-		'plugins'=> array() //para incluir archivos de plugins (datatable, calendar, datepicker, print, etc)
+		'plugins'=> array()
 	);
 	require_once 'includes/functions.php';
 	require_once 'includes/header.php';

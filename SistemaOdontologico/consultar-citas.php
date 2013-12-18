@@ -1,5 +1,5 @@
 <?php
-	define('PAGE','consultar-citas');
+	define('PAGE','consultarCitas');
 	define('TITLE','Consultar Citas');
 	$pageConfig = array(
 		'plugins'=> array('datatable')
