@@ -8,19 +8,14 @@
 		$dateSql = do_sql_date_format($date);
 		$userId = ( isset( $_POST['id_patient'] ) ) ? $_POST['id_patient'] : '';
 
-		$query = "INSERT INTO tbodontogramas VALUES " . "(NULL, '$dentistId', '$dateSql', '$userId')";
+		print_r($_POST);
+
+		$query = "INSERT INTO tbodontogramas VALUES" . "(NULL, '$dentistId', '$dateSql', '$userId')";
+
+		echo $query;
 
 		$result = do_query( $query );
 		if( $result == 1 ){
-			$idOdontograma = mysql_insert_id();
-
-			foreach ($_POST['procedimientos'] as $key => $procedimiento) {
-
-				$insertProcedimiento = "INSERT INTO tbprocedimientosporodontograma VALUES ($idOdontograma, $procedimiento, 0, NULL)";
-
-				do_query( $insertProcedimiento );
-
-			}
 			echo 'El odontograma se ha creado exitosamente.';
 			js_redirect('consultar-odontogramas.php', 2500);
 		}

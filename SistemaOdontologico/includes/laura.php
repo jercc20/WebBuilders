@@ -11,7 +11,7 @@ function display_odontogramas_rows(){
 						echo '<td>' . $fila["o_nombre"] . " ". $fila["o_apellido"] . '</td>';
 						echo '<td>' . $fila["fecha"] . '</td>';
 						echo '<td>' . $fila["procedimiento"] . '</td>';
-						echo '<td><a href="editar-odontograma.php?idPaciente='  . $fila['idPaciente'] . '&idOdontograma=' . $fila['idOdontograma'] . '"><i class="icon-edit"></i></a><a href="#!?idBitacora=' . $fila['idOdontograma'] . '"> <i class="icon-remove item-remove"></i></a></td>';
+						echo '<td><a href="editar-odontograma.php?idPaciente='  . $fila['idPaciente'] . '&idBitacora=' . $fila['idBitacora'] . '"><i class="icon-edit"></i></a><a href="#!?idBitacora=' . $fila['idBitacora'] . '"> <i class="icon-remove item-remove"></i></a></td>';
 					echo '</tr>';
 	}
 }
@@ -23,7 +23,7 @@ function get_odontogramas(){
 			o.primerApellido AS o_apellido,
 			u.primerApellido AS u_apellido,
 			u.identificacion AS u_id
-					FROM tbodontogramas AS b
+					FROM tbbitacoras AS b
 					LEFT JOIN tbusuarios AS u ON (u.idUsuario = b.idPaciente)
 					LEFT JOIN tbusuarios AS o ON (o.idUsuario = b.idOdontologo)";
 
@@ -100,8 +100,8 @@ function display_add_procedimientos_popup(){
 		$i = 0;
 		while ($fila = mysql_fetch_assoc($procedimientos)) {
 			echo '<tr>';
-				echo '<td>' . '<input type="checkbox" name="procedure" id="'.$fila["idProcedimiento"].'"/>' . '<input type="hidden" name="procedimientos['. $i .']" value="'. $fila["idProcedimiento"] .'" />' . '</td>';
-				echo '<td>' .  '<label for="'.$fila["idProcedimiento"].'">'.$fila["nombre"] .'</label></td>';
+				echo '<td>' . '<input type="checkbox" name="procedure" />' . '<input type="hidden" name="procedimientos['. $i .']" value="'. $fila["idProcedimiento"] .'" />' . '<input type="hidden" name="idOdontograma['. $i .']" value="'. $fila["idOdontograma"] .'" />' . '</td>';
+				echo '<td>' . $fila["nombre"] .'</td>';
 			echo '</tr>';
 			$i++;
 		}
@@ -113,7 +113,7 @@ function display_add_procedimientos_popup(){
 
 function get_add_procedimientos_popup(){
 
-	$query = "SELECT * FROM tbprocedimientos";
+	$query = "SELECT * FROM tbprodimientos";
 
 	$result = do_query( $query );
 

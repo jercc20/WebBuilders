@@ -34,7 +34,7 @@
 		<h2 class="ac">Procedimientos</h2>
 		<div class="div-table ">
 			<table class="table-procedures">
-				<?php display_add_procedimientos_popup(); ?>
+				<!--<?php display_add_procedimientos_popup(); ?>-->
 			</table>
 		</div>
 		<div>
