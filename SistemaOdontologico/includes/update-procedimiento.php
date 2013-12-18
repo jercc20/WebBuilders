@@ -1,6 +1,6 @@
 <?php
 	if( $_POST ){
-		define('PAGE','editar-procedimiento');
+		define('PAGE','editarProcedimiento');
 		require_once 'functions.php';
 
 		$id = ( isset( $_POST['idProcedimiento'] ) ) ? $_POST['idProcedimiento'] : '';
