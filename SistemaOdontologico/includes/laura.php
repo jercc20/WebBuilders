@@ -4,7 +4,7 @@ function display_odontogramas_rows(){
 	$odontogramas = get_odontogramas();
 
 	while ($fila = mysql_fetch_assoc($odontogramas)) {
-					echo '<tr>';  
+					echo '<tr>';
 						echo '<td>' . $fila["idOdontograma"] . '</td>';
 						echo '<td>' . $fila["u_nombre"] . " ".$fila["u_apellido"] . '</td>';
 						echo '<td>' . $fila["u_id"] . '</td>';
@@ -13,13 +13,13 @@ function display_odontogramas_rows(){
 						echo '<td>' . $fila["procedimiento"] . '</td>';
 						echo '<td><a href="editar-odontograma.php?idPaciente='  . $fila['idPaciente'] . '&idBitacora=' . $fila['idBitacora'] . '"><i class="icon-edit"></i></a><a href="#!?idBitacora=' . $fila['idBitacora'] . '"> <i class="icon-remove item-remove"></i></a></td>';
 					echo '</tr>';
-	}				
+	}
 }
 
 function get_odontogramas(){
-	$query = "SELECT b.*, 
-			u.nombre AS u_nombre, 
-			o.nombre AS o_nombre, 
+	$query = "SELECT b.*,
+			u.nombre AS u_nombre,
+			o.nombre AS o_nombre,
 			o.primerApellido AS o_apellido,
 			u.primerApellido AS u_apellido,
 			u.identificacion AS u_id
@@ -32,8 +32,8 @@ function get_odontogramas(){
 }
 #################### CONSULTAR ODONTO ##########################################################################################
 //function display_odontogramas_rows(){
-	
-	//$query = "SELECT c.idOdontograma, u.nombre AS u_id, u.nombre AS o_id, u.primerApellido AS u_apellido, sum( abon.monto ) AS monto, max( abon.fecha ) AS fecha, 
+
+	//$query = "SELECT c.idOdontograma, u.nombre AS u_id, u.nombre AS o_id, u.primerApellido AS u_apellido, sum( abon.monto ) AS monto, max( abon.fecha ) AS fecha,
 						//(SELECT count( idprocedimiento )
 							//FROM tbprocedimientosporodontograma AS a
 							//WHERE a.idOdontograma = c.idOdontograma
@@ -70,12 +70,12 @@ function get_editar_odontograma(){
 
 ##################### CREAR ODONTO #############################################################################################
 function display_crear_odontograma(){
-	$crearBitacora = get_crear_odontograma();
+	$tabla = get_crear_odontograma();
 
-	$fila = mysql_fetch_array($crearOdontograma);
+	$fila = mysql_fetch_assoc($tabla);
 	$nombre = $fila['nombre'];
 	$apellido = $fila['primerApellido'];
-	$na = $nombre . " " . $apellido;
+	$na = $nombre . ' ' . $apellido;
 	$identificacion = $fila['identificacion'];
 	$id_patient = $fila['idUsuario'];
 
@@ -87,9 +87,36 @@ function display_crear_odontograma(){
 }
 function get_crear_odontograma(){
 	$id = ( isset( $_GET['id'] ) ) ? $_GET['id'] : '';
-	$query = "SELECT * FROM tbodontogramas WHERE idOdontograma = $id";
+	$query = "SELECT * FROM tbusuarios WHERE idUsuario = $id";
 
 	$result = do_query( $query );
+	return $result;
+}
+
+function display_add_procedimientos_popup(){
+
+	$procedimientos = get_add_procedimientos_popup();
+	if(mysql_num_rows($procedimientos) > 0){
+		$i = 0;
+		while ($fila = mysql_fetch_assoc($procedimientos)) {
+			echo '<tr>';
+				echo '<td>' . '<input type="checkbox" name="procedure" />' . '<input type="hidden" name="procedimientos['. $i .']" value="'. $fila["idProcedimiento"] .'" />' . '<input type="hidden" name="idOdontograma['. $i .']" value="'. $fila["idOdontograma"] .'" />' . '</td>';
+				echo '<td>' . $fila["nombre"] .'</td>';
+			echo '</tr>';
+			$i++;
+		}
+
+	}else{
+		echo "El usuario no tiene procedimientos pendientes";
+	}
+}
+
+function get_add_procedimientos_popup(){
+
+	$query = "SELECT * FROM tbprodimientos";
+
+	$result = do_query( $query );
+
 	return $result;
 }
 
@@ -101,7 +128,7 @@ function display_reporte_citas_rows(){
 	$citas = ( ! empty( $_POST ) ) ? get_citas_custom() : get_citas();
 	while( $fila = mysql_fetch_assoc($citas) ){
 
-		echo '<tr>';  
+		echo '<tr>';
 			echo '<td>' . $fila["idCita"] . '</td>';
 			echo '<td>' . $fila["u_nombre"] . " ".$fila["u_apellido"] . '</td>';
 			echo '<td>' . $fila["u_id"] . '</td>';
