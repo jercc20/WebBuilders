@@ -125,8 +125,6 @@ jQuery(function($) {
 	});
 	$('#btn-adv-search').on( 'click', function(){
 		SO.utils.showPopUp( $('#popup-adv-search').html() );
-		$('.datepicker').removeClass('hasDatepicker');
-		SO.global.datepickerInit();
 	});
 	$('#popup').on( 'click', '.btn-add', function(){
 		$('#delete-procedures').show();
