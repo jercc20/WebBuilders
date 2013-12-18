@@ -1,5 +1,5 @@
 <?php
-	define('PAGE','reporte-usuarios');
+	define('PAGE','reporteUsuarios');
 	define('TITLE','Reporte de usuarios');
 	$pageConfig = array(
 		'actions' => array(),
