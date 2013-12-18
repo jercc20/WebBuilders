@@ -1,5 +1,5 @@
 <?php
-	define('PAGE','consultar-usuarios');
+	define('PAGE','consultarUsuariosPacientes');
 	define('TITLE','Consultar Usuarios');
 	$pageConfig = array(
 		'actions' => array(),

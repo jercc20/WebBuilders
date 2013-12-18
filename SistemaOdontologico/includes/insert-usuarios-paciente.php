@@ -1,6 +1,6 @@
 <?php
 	if( $_POST ){
-		define('PAGE','crear-usuario');
+		define('PAGE','crearUsuario');
 		require_once 'functions.php';
 
 		$name = ( isset( $_POST['txt-user-name'] ) ) ? $_POST['txt-user-name'] : '';
