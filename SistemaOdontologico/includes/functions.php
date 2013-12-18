@@ -72,7 +72,7 @@ function check_user(){
 			//header('Location: inicio.php');
 			//exit();
 		}
-		if( ( ( defined('PAGE') && PAGE != 'inicio' && PAGE != 'select' ) && ! isset( $_POST['ajax-call'] )  )
+		if( ( ( defined('PAGE') && PAGE != 'inicio' && PAGE != 'select' && PAGE != 'perfil' ) && ! isset( $_POST['ajax-call'] )  )
 			&& ! check_permission( PAGE ) ){
 			echo "Revisar el PAGE con los permisos del rol actual<br />"; //TMP!!!
 			echo "Page actual: " . PAGE; //TMP!!!
