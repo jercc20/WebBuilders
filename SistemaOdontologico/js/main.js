@@ -52,6 +52,10 @@ jQuery(function($) {
 			SO.utils.showPopUp( $('#popup-remove').html() );
 		});
 
+		$table.on( 'click', '.item-view', function(){
+			SO.utils.showPopUp( $('#popup-view').html() );
+		});
+
 		$('#popup').on( 'click', '.btn-accept', function(){
 			urlVars = SO.utils.getUrlVars();
 			vars = "ajax-call=1&var="+urlVars[0]+
