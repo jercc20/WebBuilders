@@ -89,7 +89,7 @@
 				<input type="checkbox" name="chk-permissions[]" value="consultarUsuarios" id="consultarUsuarios" <?php if ($tabla['consultarUsuarios']) echo 'checked="checked"';?> />
 				<label for="consultarUsuariosPacientes">Consultar usuarios tipo paciente</label>
 				<input type="checkbox" name="chk-permissions[]" value="consultarUsuariosPacientes" id="consultarUsuariosPacientes" <?php if ($tabla['consultarUsuariosPacientes']) echo 'checked="checked"';?> />
-				<label for="crearUsuarioPaciente">Crear usuario tipo paciente</label>
+				<label for="crearUsuarioPaciente">Registrar usuario tipo paciente</label>
 				<input type="checkbox" name="chk-permissions[]" value="crearUsuarioPaciente" id="crearUsuarioPaciente" <?php if ($tabla['crearUsuarioPaciente']) echo 'checked="checked"';?> />
 				<label for="editarUsuarioPaciente">Editar usuario tipo paciente</label>
 				<input type="checkbox" name="chk-permissions[]" value="editarUsuarioPaciente" id="editarUsuarioPaciente" <?php if ($tabla['editarUsuarioPaciente']) echo 'checked="checked"';?> />

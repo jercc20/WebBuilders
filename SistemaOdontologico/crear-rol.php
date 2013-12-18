@@ -86,7 +86,7 @@
 				<input type="checkbox" name="chk-permissions[]" value="consultarUsuarios" id="consultarUsuarios" />
 				<label for="consultarUsuariosPacientes">Consultar usuario tipo paciente</label>
 				<input type="checkbox" name="chk-permissions[]" value="consultarUsuariosPacientes" id="consultarUsuariosPacientes" />
-				<label for="crearUsuarioPacientes">Crear usuario tipo paciente</label>
+				<label for="crearUsuarioPacientes">Registrar usuario tipo paciente</label>
 				<input type="checkbox" name="chk-permissions[]" value="crearUsuarioPaciente" id="crearUsuarioPaciente" />
 				<label for="editarUsuarioPaciente">Editar usuario tipo paciente</label>
 				<input type="checkbox" name="chk-permissions[]" value="editarUsuarioPaciente" id="editarUsuarioPaciente" />
