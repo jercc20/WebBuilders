@@ -1,6 +1,6 @@
 <?php
 	if( $_POST ){
-		define('PAGE','editar-perfil-usuario'); //mismo nombre de la pagina del formulario
+		define('PAGE','perfil'); //mismo nombre de la pagina del formulario
 		require_once 'functions.php';
 
 		$name = ( isset( $_POST['txt-user-name'] ) ) ? $_POST['txt-user-name'] : '';
@@ -14,8 +14,6 @@
 		$birthSql = do_sql_date_format($birth);
 		$domicilio = ( isset( $_POST['txt-user-address'] ) ) ? $_POST['txt-user-address'] : '';
 		$contrasennaNueva = ( isset( $_POST['psw-user-pnew'] ) ) ? md5($_POST['psw-user-pnew']) : '';
-
-		print_r( $_POST );
 
 		$query = "UPDATE tbusuarios SET nombre = '$name', primerApellido = '$lastname', segundoApellido = '$lastname2', telefonoCasa = '$housePhn', telefonoCelular = '$CellPhn', correoElectronico = '$email', fechaNacimiento = '$birthSql', domicilio = '$domicilio'";
 
@@ -39,8 +37,6 @@
 		}
 
 		$query .= " WHERE identificacion = '$userId'";
-
-		echo $query;
 
 		$result = do_query( $query );
 		if( $result == 1 ){
