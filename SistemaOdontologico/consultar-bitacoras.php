@@ -1,8 +1,8 @@
 <?php
-	define('PAGE','consultarBitacoras'); 
-	define('TITLE','Consultar Bitacoras'); 
+	define('PAGE','consultarBitacoras');
+	define('TITLE','Consultar Bitacoras');
 	$pageConfig = array(
-		'plugins'=> array('datatable') 
+		'plugins'=> array('datatable')
 	);
 	require_once 'includes/functions.php';
 	require_once 'includes/header.php';

@@ -17,7 +17,7 @@
 			<?php menu_desplegable_usuarios(3,1,'slt-odontologo'); ?>
 			<label for="odontograma_date">Fecha de realización</label>
 			<input id="odontograma_date" name="txt_date_realized" type="text" required="required" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" class="datepicker" />
-			<?php display_crear_odontograma(); ?>
+			<?php display_crear_odontograma();?>
 		</section>
 		<section class="form-section fr">
 			<label>Procedimientos</label><a href="#" class="add-procedure fr ar">+Agregar procedimiento</a>
@@ -34,7 +34,7 @@
 		<h2 class="ac">Procedimientos</h2>
 		<div class="div-table ">
 			<table class="table-procedures">
-				<!--<?php display_add_procedimientos_popup(); ?>-->
+				<?php display_add_procedimientos_popup(); ?>
 			</table>
 		</div>
 		<div>

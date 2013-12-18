@@ -1,14 +1,14 @@
 <?php
 
 	if( $_POST ){
-		define('PAGE','crearBitacora'); 
+		define('PAGE','crearBitacora');
 		require_once 'functions.php';
-		
-		if(empty($_POST['procedimientos'])){ 
-			echo "Debe agregar almenos un procedimiento"; 
+
+		if(empty($_POST['procedimientos'])){
+			echo "Debe agregar almenos un procedimiento";
 			exit();
 		}
-		
+
 		$dentistId = ( isset( $_POST['slt-odontologo'] ) ) ? $_POST['slt-odontologo'] : '';
 		$patientId = (isset( $_POST['id_patient'] ) ) ? $_POST['id_patient'] : '';
 		$date = ( isset( $_POST['txt-user-dob'] ) ) ? do_sql_date_format( $_POST['txt-user-dob'] ) : '';
@@ -23,7 +23,7 @@
 			$idBitacora = mysql_insert_id();
 			$idOdontograma = $_POST['idOdontograma'];
 			foreach ($_POST['procedimientos'] as $key => $procedimiento) {
-				
+
 				$insertProcedimiento = "INSERT INTO tbprocedimientosporbitacora VALUES('$idBitacora', '$procedimiento')";
 				$updateProcedimiento = "UPDATE tbprocedimientosporodontograma SET realizado = '1' WHERE idOdontograma = '$idOdontograma[$key]' AND idProcedimiento = '$procedimiento'";
 				do_query( $insertProcedimiento );
@@ -36,4 +36,4 @@
 		global $db_server;
 		mysql_close( $db_server );
 	}
-?> 
+?>

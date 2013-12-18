@@ -23,7 +23,7 @@ function get_odontogramas(){
 			o.primerApellido AS o_apellido,
 			u.primerApellido AS u_apellido,
 			u.identificacion AS u_id
-					FROM tbbitacoras AS b
+					FROM tbodontogramas AS b
 					LEFT JOIN tbusuarios AS u ON (u.idUsuario = b.idPaciente)
 					LEFT JOIN tbusuarios AS o ON (o.idUsuario = b.idOdontologo)";
 
@@ -93,27 +93,25 @@ function get_crear_odontograma(){
 	return $result;
 }
 
-function display_add_procedimientos_popup(){
+function display_add_procedimientos_popup() {
 
 	$procedimientos = get_add_procedimientos_popup();
 	if(mysql_num_rows($procedimientos) > 0){
 		$i = 0;
 		while ($fila = mysql_fetch_assoc($procedimientos)) {
 			echo '<tr>';
-				echo '<td>' . '<input type="checkbox" name="procedure" />' . '<input type="hidden" name="procedimientos['. $i .']" value="'. $fila["idProcedimiento"] .'" />' . '<input type="hidden" name="idOdontograma['. $i .']" value="'. $fila["idOdontograma"] .'" />' . '</td>';
+				echo '<td>' . '<input type="checkbox" name="procedure" />' . '<input type="hidden" name="procedimientos['. $i .']" value="'. $fila["idProcedimiento"] .'" />';
 				echo '<td>' . $fila["nombre"] .'</td>';
 			echo '</tr>';
 			$i++;
 		}
 
-	}else{
-		echo "El usuario no tiene procedimientos pendientes";
 	}
 }
 
-function get_add_procedimientos_popup(){
+function get_add_procedimientos_popup() {
 
-	$query = "SELECT * FROM tbprodimientos";
+	$query = "SELECT * FROM tbprocedimientos";
 
 	$result = do_query( $query );
 
