@@ -11,7 +11,7 @@ if( $_POST ){
 	$direccion = ( isset( $_POST['txt-system-address'] ) ) ? $_POST['txt-system-address'] : '';
 	$numeroAsientos = ( isset( $_POST['numero-asientos'] ) ) ? $_POST['numero-asientos'] : '';
 
-	$query = "UPDATE tbconfiguracion SET logo = '$logo', baner = '$baner', telefonos = '$telefonos', correoElectronico = '$correoElectronico', horario = '$horario', direccion = '$direccion', numeroAsientos = $numeroAsientos WHERE idConfiguracion = 1";
+	$query = "UPDATE tbconfiguracion SET logo = '$logo', banner = '$baner', telefonos = '$telefonos', correoElectronico = '$correoElectronico', horario = '$horario', direccion = '$direccion', numeroAsientos = $numeroAsientos WHERE idConfiguracion = 1";
 
 	echo do_query( $query );
 
