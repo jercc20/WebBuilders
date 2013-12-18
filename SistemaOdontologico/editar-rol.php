@@ -1,9 +1,9 @@
 <?php
-	define('PAGE','editar-rol'); //nombre de la pagina
-	define('TITLE','Editar rol'); //titulo de la pagina
+	define('PAGE','editarRol');
+	define('TITLE','Editar rol');
 	$pageConfig = array(
-		'actions' => array(), //array con las acciones adicionales de la pagina (editar, borrar, etc)php
-		'plugins'=> array() //para incluir archivos de plugins (datatable, calendar, datepicker, print, etc)
+		'actions' => array(),
+		'plugins'=> array()
 	);
 	require_once 'includes/functions.php';
 	require_once 'includes/header.php';
@@ -23,6 +23,11 @@
 				<a href="#" id="unselect-all-rol">Quitar todos</a>
 			</div>
 			<section class="chk-group-column">
+				<h3>Inicio</h3>
+				<label for="consultarRecordatorios">Consultar recordatorios</label>
+				<input type="checkbox" <?php if ($tabla['consultarRecordatorios']) echo 'checked="checked"';?>  name="chk-permissions[]" value="consultarRecordatorios" id="consultarRecordatorios" />
+			</section>
+			<section class="chk-group-column">
 				<h3>Citas</h3>
 				<label for="registrarCita">Registrar cita</label>
 				<input type="checkbox" name="chk-permissions[]" value="registrarCita" id="registrarCita" <?php if ($tabla['registrarCita']) echo 'checked="checked"';?> />
@@ -30,44 +35,10 @@
 				<input type="checkbox" name="chk-permissions[]" value="editarCita" id="editarCita" <?php if ($tabla['editarCita']) echo 'checked="checked"';?> />
 				<label for="eliminarCita">Eliminar cita</label>
 				<input type="checkbox" name="chk-permissions[]" value="eliminarCita" id="eliminarCita" <?php if ($tabla['eliminarCita']) echo 'checked="checked"';?> />
-				<label for="consultarCita">Consultar cita</label>
-				<input type="checkbox" name="chk-permissions[]" value="consultarCita" id="consultarCita" <?php if ($tabla['consultarCita']) echo 'checked="checked"';?> />
-				<label for="ingresarSeccionCitas">Ingresar a la Sección de citas</label>
-				<input type="checkbox" name="chk-permissions[]" value="ingresarSeccionCitas" id="ingresarSeccionCitas" <?php if ($tabla['ingresarSeccionCitas']) echo 'checked="checked"';?> />
-			</section>
-			<section class="chk-group-column">
-				<h3>Bitácoras</h3>
-				<label for="registrarBitacora">Registrar bitácora</label>
-				<input type="checkbox" name="chk-permissions[]" value="registrarBitacora" id="registrarBitacora" <?php if ($tabla['registrarBitacora']) echo 'checked="checked"';?> />
-				<label for="editarBitacora">Editar bitácora</label>
-				<input type="checkbox" name="chk-permissions[]" value="editarBitacora" id="editarBitacora" <?php if ($tabla['editarBitacora']) echo 'checked="checked"';?> />
-				<label for="eliminarBitacora">Eliminar bitácora</label>
-				<input type="checkbox" name="chk-permissions[]" value="eliminarBitacora" id="eliminarBitacora" <?php if ($tabla['eliminarBitacora']) echo 'checked="checked"';?> />
-				<label for="consultarBitacora">Consultar bitácora</label>
-				<input type="checkbox" name="chk-permissions[]" value="consultarBitacora" id="consultarBitacora" <?php if ($tabla['consultarBitacora']) echo 'checked="checked"';?> />
-				<label for="consultarBitacoraPropia">Consultar bitácora propia</label>
-				<input type="checkbox" name="chk-permissions[]" value="consultarBitacoraPropia" id="consultarBitacoraPropia" <?php if ($tabla['consultarBitacoraPropia']) echo 'checked="checked"';?> />
-				<label for="ingresarSeccionBitacoras">Ingresar a la Sección de bitácoras</label>
-				<input type="checkbox" name="chk-permissions[]" value="ingresarSeccionBitacoras" id="ingresarSeccionBitacoras" <?php if ($tabla['ingresarSeccionBitacoras']) echo 'checked="checked"';?> />
-			</section>
-			<section class="chk-group-column">
-				<h3>Usuarios</h3>
-				<label for="registrarUsuario">Registrar usuario</label>
-				<input type="checkbox" name="chk-permissions[]" value="registrarUsuario" id="registrarUsuario" <?php if ($tabla['registrarUsuario']) echo 'checked="checked"';?> />
-				<label for="editarUsuario">Editar usuario</label>
-				<input type="checkbox" name="chk-permissions[]" value="editarUsuario" id="editarUsuario" <?php if ($tabla['editarUsuario']) echo 'checked="checked"';?> />
-				<label for="eliminarUsuario">Eliminar usario</label>
-				<input type="checkbox" name="chk-permissions[]" value="eliminarUsuario" id="eliminarUsuario" <?php if ($tabla['eliminarUsuario']) echo 'checked="checked"';?> />
-				<label for="consultarUsuario">Consultar usuario</label>
-				<input type="checkbox" name="chk-permissions[]" value="consultarUsuario" id="consultarUsuario" <?php if ($tabla['consultarUsuario']) echo 'checked="checked"';?> />
-				<label for="consultarUsuarioPaciente">Consultar usuario tipo paciente</label>
-				<input type="checkbox" name="chk-permissions[]" value="consultarUsuarioPaciente" id="consultarUsuarioPaciente" <?php if ($tabla['consultarUsuarioPaciente']) echo 'checked="checked"';?> />
-				<label for="crearUsuarioPaciente">Crear usuario tipo paciente</label>
-				<input type="checkbox" name="chk-permissions[]" value="crearUsuarioPaciente" id="crearUsuarioPaciente" <?php if ($tabla['crearUsuarioPaciente']) echo 'checked="checked"';?> />
-				<label for="editarUsuarioPaciente">Editar usuario tipo paciente</label>
-				<input type="checkbox" name="chk-permissions[]" value="editarUsuarioPaciente" id="editarUsuarioPaciente" <?php if ($tabla['editarUsuarioPaciente']) echo 'checked="checked"';?> />
-				<label for="ingresarSeccionUsuarios">Ingresar a la Sección de usuarios</label>
-				<input type="checkbox" name="chk-permissions[]" value="ingresarSeccionUsuarios" id="ingresarSeccionUsuarios" <?php if ($tabla['ingresarSeccionUsuarios']) echo 'checked="checked"';?> />
+				<label for="consultarCitas">Consultar citas</label>
+				<input type="checkbox" name="chk-permissions[]" value="consultarCitas" id="consultarCitas" <?php if ($tabla['consultarCitas']) echo 'checked="checked"';?> />
+				<label for="consultarCalendario">Consultar calendario</label>
+				<input type="checkbox" name="chk-permissions[]" <?php if ($tabla['consultarCalendario']) echo 'checked="checked"';?> value="consultarCalendario" id="consultarCalendario" />
 			</section>
 			<section class="chk-group-column">
 				<h3>Odontogramas</h3>
@@ -79,34 +50,60 @@
 				<input type="checkbox" name="chk-permissions[]" value="eliminarOdontograma" id="eliminarOdontograma" <?php if ($tabla['eliminarOdontograma']) echo 'checked="checked"';?> />
 				<label for="consultarOdontogramas">Consultar odontogramas</label>
 				<input type="checkbox" name="chk-permissions[]" value="consultarOdontogramas" id="consultarOdontogramas" <?php if ($tabla['consultarOdontogramas']) echo 'checked="checked"';?> />
-				<label for="ingresarSeccionOdontogramas">Ingresar a la Sección de odontogramas</label>
-				<input type="checkbox" name="chk-permissions[]" value="ingresarSeccionOdontogramas" id="ingresarSeccionOdontogramas" <?php if ($tabla['ingresarSeccionOdontogramas']) echo 'checked="checked"';?> />
+			</section>
+			<section class="chk-group-column">
+				<h3>Bitácoras</h3>
+				<label for="registrarBitacora">Registrar bitácora</label>
+				<input type="checkbox" name="chk-permissions[]" value="registrarBitacora" id="registrarBitacora" <?php if ($tabla['registrarBitacora']) echo 'checked="checked"';?> />
+				<label for="editarBitacora">Editar bitácora</label>
+				<input type="checkbox" name="chk-permissions[]" value="editarBitacora" id="editarBitacora" <?php if ($tabla['editarBitacora']) echo 'checked="checked"';?> />
+				<label for="eliminarBitacora">Eliminar bitácora</label>
+				<input type="checkbox" name="chk-permissions[]" value="eliminarBitacora" id="eliminarBitacora" <?php if ($tabla['eliminarBitacora']) echo 'checked="checked"';?> />
+				<label for="consultarBitacoras">Consultar bitácoras</label>
+				<input type="checkbox" name="chk-permissions[]" value="consultarBitacoras" id="consultarBitacoras" <?php if ($tabla['consultarBitacoras']) echo 'checked="checked"';?> />
+				<label for="consultarBitacorasPropias">Consultar bitácoras propias</label>
+				<input type="checkbox" name="chk-permissions[]" value="consultarBitacorasPropias" id="consultarBitacorasPropias" <?php if ($tabla['consultarBitacorasPropias']) echo 'checked="checked"';?> />
 			</section>
 			<section class="chk-group-column">
 				<h3>Facturación</h3>
 				<label for="registrarFactura">Registrar factura</label>
 				<input type="checkbox" name="chk-permissions[]" value="registrarFactura" id="registrarFactura" <?php if ($tabla['registrarFactura']) echo 'checked="checked"';?> />
-				<label for="editarFactura">Editar factura</label>
-				<input type="checkbox" name="chk-permissions[]" value="editarFactura" id="editarFactura" <?php if ($tabla['editarFactura']) echo 'checked="checked"';?> />
 				<label for="eliminarFactura">Eliminar factura</label>
 				<input type="checkbox" name="chk-permissions[]" value="eliminarFactura" id="eliminarFactura" <?php if ($tabla['eliminarFactura']) echo 'checked="checked"';?> />
 				<label for="consultarFacturas">Consultar facturas</label>
 				<input type="checkbox" name="chk-permissions[]" value="consultarFacturas" id="consultarFacturas" <?php if ($tabla['consultarFacturas']) echo 'checked="checked"';?> />
-				<label for="ingresarSeccionFacturas">Ingresar a la Sección de facturas</label>
-				<input type="checkbox" name="chk-permissions[]" value="ingresarSeccionFacturas" id="ingresarSeccionFacturas" <?php if ($tabla['ingresarSeccionFacturas']) echo 'checked="checked"';?> />
+				<label for="consultarAbonos">Consultar abonos</label>
+				<input type="checkbox" name="chk-permissions[]" <?php if ($tabla['consultarAbonos']) echo 'checked="checked"';?>  value="consultarAbonos" id="consultarAbonos" />
+				<label for="crearAbono">Registar abono</label>
+				<input type="checkbox" name="chk-permissions[]" <?php if ($tabla['crearAbono']) echo 'checked="checked"';?>  value="crearAbono" id="crearAbono" />
 			</section>
 			<section class="chk-group-column">
-				<h3>Procedimientos</h3>
-				<label for="registrarProcedimiento">Registrar procedimiento</label>
-				<input type="checkbox" name="chk-permissions[]" value="registrarProcedimiento" id="registrarProcedimiento" <?php if ($tabla['registrarProcedimiento']) echo 'checked="checked"';?> />
-				<label for="editarProcedimiento">Editar procedimiento</label>
-				<input type="checkbox" name="chk-permissions[]" value="editarProcedimiento" id="editarProcedimiento" <?php if ($tabla['editarProcedimiento']) echo 'checked="checked"';?> />
-				<label for="eliminarProcedimiento">Eliminar procedimiento</label>
-				<input type="checkbox" name="chk-permissions[]" value="eliminarProcedimiento" id="eliminarProcedimiento" <?php if ($tabla['eliminarProcedimiento']) echo 'checked="checked"';?> />
-				<label for="consultarProcedimiento">Consultar procedimiento</label>
-				<input type="checkbox" name="chk-permissions[]" value="consultarProcedimiento" id="consultarProcedimiento" <?php if ($tabla['consultarProcedimiento']) echo 'checked="checked"';?> />
-				<label for="ingresarSeccionProcedimientos">Ingresar a la Sección de procedimientos</label>
-				<input type="checkbox" name="chk-permissions[]" value="ingresarSeccionProcedimientos" id="ingresarSeccionProcedimientos" <?php if ($tabla['ingresarSeccionProcedimientos']) echo 'checked="checked"';?> />
+				<h3>Usuarios</h3>
+				<label for="registrarUsuario">Registrar usuario</label>
+				<input type="checkbox" name="chk-permissions[]" value="registrarUsuario" id="registrarUsuario" <?php if ($tabla['registrarUsuario']) echo 'checked="checked"';?> />
+				<label for="editarUsuario">Editar usuario</label>
+				<input type="checkbox" name="chk-permissions[]" value="editarUsuario" id="editarUsuario" <?php if ($tabla['editarUsuario']) echo 'checked="checked"';?> />
+				<label for="eliminarUsuario">Eliminar usario</label>
+				<input type="checkbox" name="chk-permissions[]" value="eliminarUsuario" id="eliminarUsuario" <?php if ($tabla['eliminarUsuario']) echo 'checked="checked"';?> />
+				<label for="consultarUsuarios">Consultar usuarios</label>
+				<input type="checkbox" name="chk-permissions[]" value="consultarUsuarios" id="consultarUsuarios" <?php if ($tabla['consultarUsuarios']) echo 'checked="checked"';?> />
+				<label for="consultarUsuariosPacientes">Consultar usuarios tipo paciente</label>
+				<input type="checkbox" name="chk-permissions[]" value="consultarUsuariosPacientes" id="consultarUsuariosPacientes" <?php if ($tabla['consultarUsuariosPacientes']) echo 'checked="checked"';?> />
+				<label for="crearUsuarioPaciente">Crear usuario tipo paciente</label>
+				<input type="checkbox" name="chk-permissions[]" value="crearUsuarioPaciente" id="crearUsuarioPaciente" <?php if ($tabla['crearUsuarioPaciente']) echo 'checked="checked"';?> />
+				<label for="editarUsuarioPaciente">Editar usuario tipo paciente</label>
+				<input type="checkbox" name="chk-permissions[]" value="editarUsuarioPaciente" id="editarUsuarioPaciente" <?php if ($tabla['editarUsuarioPaciente']) echo 'checked="checked"';?> />
+			</section>
+			<section class="chk-group-column">
+				<h3>Roles</h3>
+				<label for="crearRol">Registrar rol</label>
+				<input type="checkbox" name="chk-permissions[]" <?php if ($tabla['crearRol']) echo 'checked="checked"';?> value="crearRol" id="crearRol" />
+				<label for="editarRol">Editar rol</label>
+				<input type="checkbox" name="chk-permissions[]" <?php if ($tabla['editarRol']) echo 'checked="checked"';?> value="editarRol" id="editarRol" />
+				<label for="eliminarRol">Eliminar rol</label>
+				<input type="checkbox" name="chk-permissions[]" <?php if ($tabla['eliminarRol']) echo 'checked="checked"';?> value="eliminarRol" id="eliminarRol" />
+				<label for="consultarRoles">Consultar roles</label>
+				<input type="checkbox" name="chk-permissions[]" <?php if ($tabla['consultarRoles']) echo 'checked="checked"';?> value="consultarRoles" id="consultarRoles" />
 			</section>
 			<section class="chk-group-column">
 				<h3>Reportes</h3>
@@ -125,10 +122,19 @@
 			</section>
 			<section class="chk-group-column">
 				<h3>Configuración</h3>
-				<label for="editarInformacion">Editar información del perfil</label>
+				<label for="editarInformacion">Editar la configuración del sistema</label>
 				<input type="checkbox" name="chk-permissions[]" value="editarInformacion" id="editarInformacion" <?php if ($tabla['editarInformacion']) echo 'checked="checked"';?> />
-				<label for="ingresarSeccionConfiguracion">Editar la configuración del sistema</label>
-				<input type="checkbox" name="chk-permissions[]" value="ingresarSeccionConfiguracion" id="ingresarSeccionConfiguracion" <?php if ($tabla['ingresarSeccionConfiguracion']) echo 'checked="checked"';?> />
+			</section>
+			<section class="chk-group-column">
+				<h3>Procedimientos</h3>
+				<label for="registrarProcedimiento">Registrar procedimiento</label>
+				<input type="checkbox" name="chk-permissions[]" value="registrarProcedimiento" id="registrarProcedimiento" <?php if ($tabla['registrarProcedimiento']) echo 'checked="checked"';?> />
+				<label for="editarProcedimiento">Editar procedimiento</label>
+				<input type="checkbox" name="chk-permissions[]" value="editarProcedimiento" id="editarProcedimiento" <?php if ($tabla['editarProcedimiento']) echo 'checked="checked"';?> />
+				<label for="eliminarProcedimiento">Eliminar procedimiento</label>
+				<input type="checkbox" name="chk-permissions[]" value="eliminarProcedimiento" id="eliminarProcedimiento" <?php if ($tabla['eliminarProcedimiento']) echo 'checked="checked"';?> />
+				<label for="consultarProcedimientos">Consultar procedimientos</label>
+				<input type="checkbox" name="chk-permissions[]" value="consultarProcedimientos" id="consultarProcedimientos" <?php if ($tabla['consultarProcedimientos']) echo 'checked="checked"';?> />
 			</section>
 		</section>
 		<div class="ac cb">

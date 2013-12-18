@@ -1,5 +1,5 @@
 <?php
-	define('PAGE','consultar-roles');
+	define('PAGE','consultarRoles');
 	define('TITLE','Consultar Roles');
 	$pageConfig = array(
 		'actions' => array(),

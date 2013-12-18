@@ -1,6 +1,6 @@
 <?php
 	if( $_POST ){
-		define('PAGE','editar-rol');
+		define('PAGE','editarRol');
 		require_once 'functions.php';
 
 		$nombreRol = ( isset( $_POST['txt-role-name'] ) ) ? $_POST['txt-role-name'] : '';
@@ -11,42 +11,44 @@
 		$registrarCita = ( in_array( 'registrarCita' , $permisos ) ) ? 1 : 0;
 		$editarCita = ( in_array( 'editarCita' , $permisos ) ) ? 1 : 0;
 		$eliminarCita = ( in_array( 'eliminarCita' , $permisos ) ) ? 1 : 0;
-		$consultarCita = ( in_array( 'consultarCita' , $permisos ) ) ? 1 : 0;
-		$ingresarSeccionCitas = ( in_array( 'ingresarSeccionCitas' , $permisos ) ) ? 1 : 0;
+		$consultarCitas = ( in_array( 'consultarCitas' , $permisos ) ) ? 1 : 0;
+		$consultarCalendario = ( in_array( 'consultarCalendario' , $permisos ) ) ? 1 : 0;
 		/*--Bitácoras--*/
 		$registrarBitacora = ( in_array( 'registrarBitacora' , $permisos ) ) ? 1 : 0;
 		$editarBitacora = ( in_array( 'editarBitacora' , $permisos ) ) ? 1 : 0;
 		$eliminarBitacora = ( in_array( 'eliminarBitacora' , $permisos ) ) ? 1 : 0;
-		$consultarBitacora = ( in_array( 'consultarBitacora' , $permisos ) ) ? 1 : 0;
-		$consultarBitacoraPropia = ( in_array( 'consultarBitacoraPropia' , $permisos ) ) ? 1 : 0;
-		$ingresarSeccionBitacoras = ( in_array( 'ingresarSeccionBitacoras' , $permisos ) ) ? 1 : 0;
+		$consultarBitacoras = ( in_array( 'consultarBitacoras' , $permisos ) ) ? 1 : 0;
+		$consultarBitacorasPropias = ( in_array( 'consultarBitacorasPropias' , $permisos ) ) ? 1 : 0;
 		/*--Usuarios--*/
 		$registrarUsuario = ( in_array( 'registrarUsuario' , $permisos ) ) ? 1 : 0;
 		$editarUsuario = ( in_array( 'editarUsuario' , $permisos ) ) ? 1 : 0;
 		$eliminarUsuario = ( in_array( 'eliminarUsuario' , $permisos ) ) ? 1 : 0;
-		$consultarUsuario = ( in_array( 'consultarUsuario' , $permisos ) ) ? 1 : 0;
-		$consultarUsuarioPaciente = ( in_array( 'consultarUsuarioPaciente' , $permisos ) ) ? 1 : 0;
+		$consultarUsuarios = ( in_array( 'consultarUsuarios' , $permisos ) ) ? 1 : 0;
+		$consultarUsuariosPacientes = ( in_array( 'consultarUsuariosPacientes' , $permisos ) ) ? 1 : 0;
 		$crearUsuarioPaciente = ( in_array( 'crearUsuarioPaciente' , $permisos ) ) ? 1 : 0;
 		$editarUsuarioPaciente = ( in_array( 'editarUsuarioPaciente' , $permisos ) ) ? 1 : 0;
-		$ingresarSeccionUsuarios = ( in_array( 'ingresarSeccionUsuarios' , $permisos ) ) ? 1 : 0;
-		/*--Odontograma--*/
+		/*--Roles--*/
+		$crearRol = ( in_array( 'crearRol' , $permisos ) ) ? 1 : 0;
+		$editarRol = ( in_array( 'editarRol' , $permisos ) ) ? 1 : 0;
+		$consultarRoles = ( in_array( 'consultarRoles' , $permisos ) ) ? 1 : 0;
+		$eliminarRol = ( in_array( 'eliminarRol' , $permisos ) ) ? 1 : 0;
+		/*--Odontogramas--*/
 		$registrarOdontograma = ( in_array( 'registrarOdontograma' , $permisos ) ) ? 1 : 0;
 		$editarOdontograma = ( in_array( 'editarOdontograma' , $permisos ) ) ? 1 : 0;
 		$eliminarOdontograma = ( in_array( 'eliminarOdontograma' , $permisos ) ) ? 1 : 0;
 		$consultarOdontogramas = ( in_array( 'consultarOdontogramas' , $permisos ) ) ? 1 : 0;
-		$ingresarSeccionOdontogramas = ( in_array( 'ingresarSeccionOdontogramas' , $permisos ) ) ? 1 : 0;
 		/*--Facturas--*/
 		$registrarFactura = ( in_array( 'registrarFactura' , $permisos ) ) ? 1 : 0;
 		$editarFactura = ( in_array( 'editarFactura' , $permisos ) ) ? 1 : 0;
 		$eliminarFactura = ( in_array( 'eliminarFactura' , $permisos ) ) ? 1 : 0;
 		$consultarFacturas = ( in_array( 'consultarFacturas' , $permisos ) ) ? 1 : 0;
-		$ingresarSeccionFacturas = ( in_array( 'ingresarSeccionFacturas' , $permisos ) ) ? 1 : 0;
+		$crearAbono = ( in_array( 'crearAbono' , $permisos ) ) ? 1 : 0;
+		$consultarAbonos = ( in_array( 'consultarAbonos' , $permisos ) ) ? 1 : 0;
 		/*--Procedimientos--*/
 		$registrarProcedimiento = ( in_array( 'registrarProcedimiento' , $permisos ) ) ? 1 : 0;
 		$editarProcedimiento = ( in_array( 'editarProcedimiento' , $permisos ) ) ? 1 : 0;
 		$eliminarProcedimiento = ( in_array( 'eliminarProcedimiento' , $permisos ) ) ? 1 : 0;
-		$consultarProcedimiento = ( in_array( 'consultarProcedimiento' , $permisos ) ) ? 1 : 0;
-		$ingresarSeccionProcedimientos = ( in_array( 'ingresarSeccionProcedimientos' , $permisos ) ) ? 1 : 0;
+		$consultarProcedimientos = ( in_array( 'consultarProcedimientos' , $permisos ) ) ? 1 : 0;
 		/*--Reportes--*/
 		$reporteCitas = ( in_array( 'reporteCitas' , $permisos ) ) ? 1 : 0;
 		$reporteOdontogramas = ( in_array( 'reporteOdontogramas' , $permisos ) ) ? 1 : 0;
@@ -56,31 +58,16 @@
 		$reporteProcedimientos = ( in_array( 'reporteProcedimientos' , $permisos ) ) ? 1 : 0;
 		/*--Sistema--*/
 		$editarInformacion = ( in_array( 'editarInformacion' , $permisos ) ) ? 1 : 0;
-		$ingresarSeccionConfiguracion = ( in_array( 'ingresarSeccionConfiguracion' , $permisos ) ) ? 1 : 0;
+		/*--Inicio--*/
+		$consultarRecordatorios = ( in_array( 'consultarRecordatorios' , $permisos ) ) ? 1 : 0;
 
-		$query = "SELECT nombreRol FROM tbroles";
+		$query = "UPDATE tbroles SET registrarCita = $registrarCita, editarCita = $editarCita, eliminarCita = $eliminarCita, consultarCitas = $consultarCitas, registrarBitacora = $registrarBitacora, editarBitacora = $editarBitacora, eliminarBitacora = $eliminarBitacora, consultarBitacoras = $consultarBitacoras, consultarBitacorasPropias = $consultarBitacorasPropias, registrarUsuario = $registrarUsuario, editarUsuario = $editarUsuario, eliminarUsuario = $eliminarUsuario, consultarUsuarios = $consultarUsuarios, consultarUsuariosPacientes = $consultarUsuariosPacientes, crearUsuarioPaciente = $crearUsuarioPaciente, editarUsuarioPaciente = $editarUsuarioPaciente, registrarOdontograma = $registrarOdontograma, editarOdontograma = $editarOdontograma, eliminarOdontograma = $eliminarOdontograma, consultarOdontogramas = $consultarOdontogramas, registrarFactura = $registrarFactura, eliminarFactura = $eliminarFactura, consultarFacturas = $consultarFacturas, registrarProcedimiento = $registrarProcedimiento, editarProcedimiento = $editarProcedimiento, eliminarProcedimiento = $eliminarProcedimiento, consultarProcedimientos = $consultarProcedimientos,  reporteCitas = $reporteCitas, reporteOdontogramas = $reporteOdontogramas, reporteBitacoras = $reporteBitacoras, reporteFacturacion = $reporteFacturacion, reporteUsuarios = $reporteUsuarios, reporteProcedimientos = $reporteProcedimientos, editarInformacion = $editarInformacion, crearAbono = $crearAbono, consultarAbonos = $consultarAbonos, consultarCalendario = $consultarCalendario, consultarRecordatorios = $consultarRecordatorios, consultarRoles = $consultarRoles, editarRol = $editarRol, eliminarRol = $eliminarRol, crearRol = $crearRol WHERE nombreRol = '$nombreRol'";
 
 		$result = do_query( $query );
-
-		$encontro = false;
-
-		while ($fila = mysql_fetch_row($result)) {
-
-			$nombreRolCom = $fila['0'];
-
-			if ( ! strcmp($nombreRol, $nombreRolCom) ) {
-				$encontro = true;
-			}
+		if( $result == 1 ){
+			echo 'Rol creado con exito';
+			js_redirect('consultar-roles.php', 4000);
 		}
-
-		if ( ! $encontro ) {
-			$query = "UPDATE tbroles SET registrarCita = $registrarCita, editarCita = $editarCita, eliminarCita = $eliminarCita, consultarCita = $consultarCita, ingresarSeccionCitas = $ingresarSeccionCitas, registrarBitacora = $registrarBitacora, editarBitacora = $editarBitacora, eliminarBitacora = $eliminarBitacora, consultarBitacora = $consultarBitacora, consultarBitacoraPropia = $consultarBitacoraPropia, ingresarSeccionBitacoras = $ingresarSeccionBitacoras, registrarUsuario = $registrarUsuario, editarUsuario = $editarUsuario, eliminarUsuario = $eliminarUsuario, consultarUsuario = $consultarUsuario, consultarUsuarioPaciente = $consultarUsuarioPaciente, crearUsuarioPaciente = $crearUsuarioPaciente, editarUsuarioPaciente = $editarUsuarioPaciente, ingresarSeccionUsuarios = $ingresarSeccionUsuarios, registrarOdontograma = $registrarOdontograma, editarOdontograma = $editarOdontograma, eliminarOdontograma = $eliminarOdontograma, consultarOdontogramas = $consultarOdontogramas, ingresarSeccionOdontogramas = $ingresarSeccionOdontogramas, registrarFactura = $registrarFactura, editarFactura = $editarFactura, eliminarFactura = $eliminarFactura, consultarFacturas = $consultarFacturas, ingresarSeccionFacturas = $ingresarSeccionFacturas, registrarProcedimiento = $registrarProcedimiento, editarProcedimiento = $editarProcedimiento, eliminarProcedimiento = $eliminarProcedimiento, consultarProcedimiento = $consultarProcedimiento, ingresarSeccionProcedimientos = $ingresarSeccionProcedimientos, reporteCitas = $reporteCitas, reporteOdontogramas = $reporteOdontogramas, reporteBitacoras = $reporteBitacoras, reporteFacturacion = $reporteFacturacion, reporteUsuarios = $reporteUsuarios, reporteProcedimientos = $reporteProcedimientos, editarInformacion = $editarInformacion, ingresarSeccionConfiguracion = $ingresarSeccionConfiguracion WHERE nombreRol = '$nombreRol'";
-
-			$result = do_query( $query );
-			if( $result == 1 ){
-				echo 'Rol creado con exito';
-				js_redirect('consultar-roles.php', 4000);
-			}
 		}else{
 			echo "El nombre ingresado para el rol ya está en uso";
 			exit();
@@ -90,7 +77,4 @@
 
 		global $db_server;
 		mysql_close( $db_server );
-	}
 ?>
-
-
