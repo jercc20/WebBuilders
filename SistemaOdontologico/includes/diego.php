@@ -128,9 +128,9 @@ function display_editar_odontograma_procedimiento(){
 
 		while ($fila = mysql_fetch_assoc($procedimientos)) {
 			echo '<tr>';
-				echo '<td>' . $fila["nombre"] .' </td>';
-				echo '<td>' . $fila["costo"] .' </td>';
-				echo '<td>' . $fila["zona"] .' </td>';
+				echo '<td>' . $fila["nombre"] .'</td>';
+				echo '<td>' . $fila["costo"] .'</td>';
+				echo '<td>' . $fila["zona"] .'</td>';
 			echo '</tr>';
 		}
 }

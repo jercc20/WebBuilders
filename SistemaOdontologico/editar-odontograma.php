@@ -31,6 +31,11 @@
 			<h2 class="ac">Procedimientos</h2>
 			<div class="div-table ">
 				<table class="table-procedures">
+					<tr>
+						<th>Nombre</th>
+						<th>Costo</th>
+						<th>Zona</th>
+					</tr>
 					<?php display_editar_odontograma_procedimiento(); ?>
 				</table>
 			</div>
