@@ -520,7 +520,15 @@ function get_odontograma(){
 			FROM tbodontogramas
 			JOIN tbusuarios ON idPaciente = idUsuario";
 
-	$result=do_query($query);
+	$result = do_query( $query );
+
+	return $result;
+}
+
+function get_bitacora( $idBitacora ){
+	$query =  "SELECT * FROM tbbitacoras WHERE idBitacora = $idBitacora";
+	$result = do_query( $query );
+
 	return $result;
 }
 ?>

@@ -9,12 +9,8 @@
 
     $idUsuario = ( isset( $_GET['id'] ) ) ? $_GET['id'] : '';
     $idBitacora = ( isset( $_GET['idBitacora'] ) ) ? $_GET['idBitacora'] : '';
-    $query =  "SELECT * FROM tbbitacoras WHERE idBitacora = $idBitacora";
 
-    $result = mysql_query($query);
-    if(!$result)die("Acceso a la BD falló: ". mysql_error());
-
-    $fila = mysql_fetch_array($result);
+    $fila = mysql_fetch_array( get_bitacora( $idBitacora ) );
     $id_bitacora = $fila['idBitacora'];
     $birth = do_date_format ( $fila['fecha'] );
     $asistentes = $fila['asistentes'];
