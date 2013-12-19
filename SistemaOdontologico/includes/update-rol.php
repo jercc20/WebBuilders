@@ -65,7 +65,7 @@
 
 		$result = do_query( $query );
 		if( $result == 1 ){
-			echo 'Rol creado con exito';
+			echo 'Rol modificado con exito';
 			js_redirect('consultar-roles.php', 4000);
 		}
 		}else{

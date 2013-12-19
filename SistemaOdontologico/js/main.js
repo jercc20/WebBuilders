@@ -150,8 +150,8 @@ jQuery(function($) {
 		$('#delete-procedures').show();
 		$items = $(this).parents('#popup').find('.table-procedures input:checked').parents('tr');
 		$items.each( function(){
-			if( $(this).hasClass('hasZone') )
-				$(this).append('<td><input type="text" placeholder="Zona" required="required">');
+			if( $(this).hasClass('has-zone') )
+				$(this).append('<td><input type="text" name="zone[]" placeholder="Zona" required="required">');
 		});
 		$('#table-procedures-added').prepend( $items );
 		$('#procedure-number').val( $('#table-procedures-added tr').size() );

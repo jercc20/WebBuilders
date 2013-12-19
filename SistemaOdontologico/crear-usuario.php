@@ -18,12 +18,12 @@
 				<input id="user-lastname2" name="txt-user-lastname2" type="text"  pattern=pattern="|^[a-zA-Z ñÑáéíóúüÁÉÍÓÚç]*$|" />
 				<label for="user-id"> Identificación o alias</label>
 				<input id="user-id" title="Esta sera su infomacion para ingresar sesion" name="txt-id-user"  type="text"  required="required" pattern="[a-zA-Z0-9]+" />
-				<label for="user-phone"> Teléfono de la casa</label>
+				<label for="user-phone"> Teléfono principal</label>
 				<input id="user-phone" name="txt-user-house-phone" type="text" pattern="\d{8,10}" required="required" />
-				<label for="user-cellphone"> Teléfono celular</label>
+				<label for="user-cellphone"> Teléfono secundario</label>
 				<input id="user-cellphone" name="txt-user-cellphone" type="text"  pattern="\d{8,10}" />
 				<label for="user-email"> Correo electrónico</label>
-				<input id="user-email" name="txt-user-email" type="text"  required="required" />
+				<input id="user-email" name="txt-user-email" type="email"  required="required" />
 				<label for="user-birthday"> Fecha de nacimiento</label>
 				<input id="user-birthday" name="txt-user-birthday" type="text"  required="required" placeholder ="dd-mm-yyyy" class="datepicker" />
 			</section>
@@ -39,16 +39,36 @@
 				<label for="user-cpsw">Confirmar contraseña</label>
 				<input id="user-cpsw" name="psw-user-pnew" type="password" required="required"/>
 				<label for="user-alergie"> Alergias</label>
-				<textarea cols='10' rows='10' id="user-alergie" name="txt-user-alergie"pattern="[A-Za-z]+"></textarea>
+				<textarea cols='10' rows='10' id="user-alergie" name="txt-user-alergie"></textarea>
 				<label for="user-adress"> Domicilio</label>
 				<textarea cols='10' rows='10' id="user-adress" name="txt-user-adress" required="required"></textarea>
 			</section>
 			<div class="ac cb">
 				<button class="form-cancel">Cancelar</button>
 				<button type="reset">Limpiar</button>
-				<button type="submit">Guardar</button>
+				<button type="submit" id="btnEnviar">Guardar</button>
 			</div>
 		</form>
 <?php
-	require_once 'includes/footer.php';
+	require_once 'includes/footer.php';//probar
 ?>
+<script type="text/javascript">
+document.getElementById('btnEnviar').addEventListener('click', validar);
+
+	function validar (e){
+		var txtContrasennaNueva = document.getElementById('txt-user-psw').value,
+			txtConinputnaNueva2 = document.getElementById('psw-user-pnew').value;
+
+			if (! (txtContrasennaNueva === txtContrasennaNueva2)) {
+				alert('Entró a contraseña nueva 2 y no son iguales');
+				SO.utils.showPopUp('Las contraseñas no son iguales');
+				e.preventDefault();
+			}
+			}else{
+				alert('Entró a contraseña actual, y no estaba');
+				SO.utils.showPopUp('Debe ingresar la contraseña actual');
+				e.preventDefault();
+			}
+		}
+	}
+</script>

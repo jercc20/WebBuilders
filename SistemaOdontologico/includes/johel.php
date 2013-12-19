@@ -90,7 +90,7 @@ function display_edit_usuarios_rows(){
 	$lastname2 = $fila['segundoApellido'];
 	$userId = $fila['identificacion'];
 	$housePhn = $fila['telefonoCasa'];
-	$CellPhn = $fila['telefonoCelular'];
+	$CellPhn = $fila['telefonoCelular'] && $fila['telefonoCelular']!=0;
 	$email = $fila['correoElectronico'];
 	$birth = $fila['fechaNacimiento'];
 	$datepickerBirth = do_date_format($birth);
@@ -110,12 +110,12 @@ function display_edit_usuarios_rows(){
 		echo "<input id='user-lastname2' name='txt_lastname2' type='text'  pattern='|^[a-zA-Z ñÑáéíóúüÁÉÍÓÚç]*$|' value='$lastname2'/>";
 		echo "<label for='user-id'> Identificación</label>";
 		echo "<input id='user-id' name='txt_user'  type='text' value='$userId'/>";
-		echo "<label for='user-phone'> Teléfono de la casa</label>";
+		echo "<label for='user-phone'> Teléfono principal</label>";
 		echo "<input id='user-phone' name='txt_phone' type='text' pattern='\d{8,10}' required='required' value='$housePhn'/>";
-		echo "<label for='user-cellphone'> Teléfono celular</label>";
+		echo "<label for='user-cellphone'> Teléfono secundario</label>";
 		echo "<input id='user-cellphone' name='txt_cellphone' type='text' value='$CellPhn'/>";
 		echo "<label for='user-email'> Correo electrónico</label>";
-		echo "<input id='user-email' name='txt_email' type='text'  required='required' value='$email'/>"; 
+		echo "<input id='user-email' name='txt_email' type='email'  required='required' value='$email'/>"; 
 		echo "<label for='user-birthday'> Fecha de nacimiento</label>";
 		echo "<input id='user-birthday' name='txt_birthday' type='text'  required='required' placeholder ='dd/mm/yyyy' class='datepicker' value='$datepickerBirth' />"; 
 		echo "</section>";
@@ -129,7 +129,7 @@ function display_edit_usuarios_rows(){
 		echo "<label for='user-cpsw'>Confirmar contraseña</label>";
 		echo "<input id='user-cpsw' name='psw-user-pnew' type='password' />";
 		echo "<label for='user-alergie'> Alergias</label>";
-		echo "<textarea cols='10' rows='10' id='user-alergie' name='txt-user-alergie' pattern='[A-Za-z]+ '>$alergie</textarea>"; 
+		echo "<textarea cols='10' rows='10' id='user-alergie' name='txt-user-alergie'>$alergie</textarea>"; 
 		echo "<label for='user-adress'> Domicilio</label>";
 		echo "<textarea cols='10' rows='10' id='user-adress' name='txt-user-adress' required='required'>$UserAdrs</textarea>";
 		echo "</section>";
@@ -145,7 +145,7 @@ function display_edit_usuarios_paciente_rows(){
 	$lastname2 = $fila['segundoApellido'];
 	$userId = $fila['identificacion'];
 	$housePhn = $fila['telefonoCasa'];
-	$CellPhn = $fila['telefonoCelular'];
+	$CellPhn = $fila['telefonoCelular'] && $fila['telefonoCelular']!=0;
 	$email = $fila['correoElectronico'];
 	$birth = $fila['fechaNacimiento'];
 	$datepickerBirth = do_date_format($birth);

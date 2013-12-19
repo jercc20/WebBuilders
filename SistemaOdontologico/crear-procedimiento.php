@@ -8,7 +8,7 @@
 	require_once 'includes/header.php';
 ?>
 	<h1 class="ac">Crear procedimiento</h1>
-	<form id="proced-box" class="form-edit box-wrap" action="includes/insert-procedimiento.php" method="post">
+	<form id="proced-box" class="form-edit box-wrap mid-side ma" action="includes/insert-procedimiento.php" method="post">
 		<section class="form-section">
 			<label for="name">Nombre del procedimiento</label>
 			<input id="name" name="txt_name" type="text" required="required" pattern="[a-z A-Z 0-9]+" />

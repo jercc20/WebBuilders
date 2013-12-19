@@ -155,8 +155,17 @@ function display_editar_cita_2_rows(){
 			echo "<label for='type'>Tipo de cita</label>";
 			echo "<select id='type' name='slt-cita' required='required'>";
 				echo "<option value=''>--Seleccione el tipo de cita--</option>";
-				echo "<option value='Normal'>Normal</option>";
-				echo "<option value='Emergencia'>Emergencia</option>";
+				$selected = "";
+				if($tipoCita === "Normal"){
+					$selected = ' selected="selected"';
+					echo "<option value='Normal'".$selected.">Normal</option>";
+					echo "<option value='Emergencia'>Emergencia</option>";
+				}else if($tipoCita === "Emergencia"){
+					$selected = ' selected="selected"';
+					echo "<option value='Emergencia'>Emergencia</option>";
+					echo "<option value='Emergencia'".$selected.">Emergencia</option>";
+
+				}
 				echo "</select>";
 			echo "<label for='dentist-name'>Seleccione el odontologo</label>";
 			
