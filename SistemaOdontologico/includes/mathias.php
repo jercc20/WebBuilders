@@ -94,7 +94,6 @@ function display_reporte_bitacoras_rows(){
 			echo '<td>' . $fila["u_id"] . '</td>';
 			echo '<td>' . $fila["o_nombre"] . " ". $fila["o_apellido"] . '</td>';
 			echo '<td>' . $fila["fecha"] . '</td>';
-			echo '<td>' . $fila["procedimiento"] . '</td>';
 		echo '</tr>';
 
 	}
