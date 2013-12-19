@@ -28,8 +28,15 @@
 			<label>Procedimientos</label><a href="#" class="add-procedure fr ar">Ver procedimientos</a>
 		</section>
 		<div id="popup-procedure" class="hide">
-			<p>Procedimientos</p>
-			<?php display_editar_odontograma_procedimiento(); ?>
+			<h2 class="ac">Procedimientos</h2>
+			<div class="div-table ">
+				<table class="table-procedures">
+					<?php display_editar_odontograma_procedimiento(); ?>
+				</table>
+			</div>
+			<div>
+				<button class="close btn-add btn-ac">Aceptar</button>
+			</div>
 		</div>
 		<div class="ac cb">
 			<button class="form-cancel">Cancelar</button>

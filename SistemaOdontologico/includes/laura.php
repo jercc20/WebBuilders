@@ -107,7 +107,7 @@ function display_add_procedimientos_popup() {
 				echo '<td>' . '<input type="checkbox" name="procedure" />' . '<input type="hidden" name="procedimientos['. $i .']" value="'. $fila["idProcedimiento"] .'" /></td>';
 				echo '<td>' . $fila["nombre"] .'</td>';
 				echo '<td>' . $fila["Costo"] .'</td>';
-				echo '<td class="has-zone"><input type="text​" name="zona['. $i .']" placeholde​r="Zona" required="​required" /></td>';
+				echo '<td class="has-zone"><input type="text​" name="zona['. $i .']" placeholder="Zona" required="​required" /></td>';
 			echo '</tr>';
 			$i++;
 		}
