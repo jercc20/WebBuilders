@@ -951,11 +951,11 @@ function get_usuarios_secretaria(){
 	return $result;
 }
 
-function display_select_roles($nombre){
+function display_select_roles($nombre, $idRol = -1){
 	$roles = get_roles_select();
 	echo "<select name='$nombre'>";
 	while ($fila = mysql_fetch_row($roles)){
-    	echo "<option value='$fila[0]'>$fila[1]</option>";
+    	echo "<option value='$fila[0]'" . ( ( $fila[0] == $idRol ) ? ' selected="selected"' : '' ) . ">$fila[1]</option>";
   	}
 	echo "</select>";
 };
@@ -1025,7 +1025,7 @@ function display_edit_usuarios_rows(){
 		echo "<label for='user-impairment'>Discapacidad</label>";
 		echo "<input type='checkbox' id='user-impairment'  name='txt_impairment' value='$impmt'/>";
 		echo "<label for='user-role'>Rol</label>";
-		display_select_roles('slt-user-role');
+		display_select_roles('slt-user-role', $fila['idRol']);
 		echo "<label for='user-psw'>Contraseña</label>";
 		echo "<input id='user-psw' name='txt-user-psw' type='password' />";
 		echo "<label for='user-cpsw'>Confirmar contraseña</label>";
