@@ -1,30 +1,22 @@
 <?php
 	if( $_POST ){
-		define('PAGE','editar-odontograma');
+		define('PAGE','editarOdontograma');
 		require_once 'functions.php';
 
-		$dentistId = ( isset( $_POST['txt_dentist_id'] ) ) ? $_POST['txt_dentist_id'] : '';
-		$dentistname = ( isset( $_POST['txt_dentist_name'] ) ) ? $_POST['txt_dentist_name'] : '';
-		$dentistlastname = ( isset( $_POST['txt_dentist_lastname'] ) ) ? $_POST['txt_dentist_lastname'] : '';
-		$dentistlastname2 = ( isset( $_POST['txt_dentist_lastname2'] ) ) ? $_POST['txt_dentist_lastname2'] : '';
-		$date = ( isset( $_POST['txt-date-realized'] ) ) ? $_POST['txt-date-realized'] : '';
-		$userId = ( isset( $_POST['txt_pacient_id'] ) ) ? $_POST['txt_pacient_id'] : '';
-		$username = ( isset( $_POST['txt_pacient_name'] ) ) ? $_POST['txt_pacient_name'] : '';
-		$userlastname = ( isset( $_POST['txt_pacient_lastname'] ) ) ? $_POST['txt_pacient_lastname'] : '';
-		$userlastname2 = ( isset( $_POST['txt_pacient_lastname2'] ) ) ? $_POST['txt_pacient_lastname2'] : '';
-		
-		$query = "UPDATE tbusuarios SET nombre = '$username', primerApellido = '$userlastname', segundoApellido = '$userlastname2',";
+		$dentistId = ( isset( $_POST['slt-odontologo'] ) ) ? $_POST['slt-odontologo'] : '';
+		$date = ( isset( $_POST['txt_date_realized'] ) ) ? do_sql_date_format( $_POST['txt_date_realized'] ) : '';
+		$userId = ( isset( $_POST['id_patient'] ) ) ? $_POST['id_patient'] : '';
+		$idOdontograma = ( isset( $_POST['odontograma'] ) ) ? $_POST['odontograma'] : '';
 
-		$query = "UPDATE tbodontogramas SET idOdontologo = '$dentistId', fecha = '$date'";
+		$query = "UPDATE tbodontogramas SET idOdontologo = '$dentistId', fecha = '$date', idPaciente = '$userId'  WHERE idOdontograma = $idOdontograma";
 
+		$result = do_query($query);
 
-		if( ! empty( $_POST['txt-user-psw'] ) ){
-			$userPsw = md5($_POST['txt-user-psw']);
-			$query .= ", contrasenna = '$userPsw'";
+		if ($result == 1) {
+			echo "El odontograma se ha modificado exitosamente.";
 		}
-				
-		$query .= " WHERE idUsuario = '$id'";
-		echo do_query( $query );
+
+		/*---------*/
 
 		global $db_server;
 		mysql_close( $db_server );
