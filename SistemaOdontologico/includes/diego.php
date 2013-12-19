@@ -14,10 +14,17 @@ function display_roles_rows(){
 
 	$roles = get_roles();
 	while( $row = mysql_fetch_assoc( $roles ) ){
+		if ($row['idRol'] <=4 && $row['idRol'] >=1) {
+		echo '<tr>'.
+			'<td>' . $row['nombreRol'] . '</td>'.
+			'<td><a href="editar-rol.php?id=' . $row['idRol'] . '"><i class="icon-edit"></i></a></td>'.
+		'</tr>';
+		}else{
 		echo '<tr>'.
 			'<td>' . $row['nombreRol'] . '</td>'.
 			'<td><a href="editar-rol.php?id=' . $row['idRol'] . '"><i class="icon-edit"></i></a> <a href="#!?idRol=' . $row['idRol'] . '"><i class="icon-remove item-remove"></i></a></td>'.
 		'</tr>';
+		}
 	}
 }
 
@@ -48,7 +55,7 @@ function display_reporte_usuarios_rows(){
 }
 
 function get_usuarios_custom(){
-	$query = "SELECT * FROM tbusuarios";
+	$query = "SELECT * FROM tbusuarios order by idRol";
 	if( ! empty( $_POST ) ){
 		$query .= " WHERE 1";
 
