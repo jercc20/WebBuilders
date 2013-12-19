@@ -476,4 +476,54 @@ function crear_factura( $idOdontograma ){
 
 	return $result;
 }
+
+function display_reporte_odontogramas_rows(){
+
+	$odontogramas = ( ! empty( $_POST ) ) ? get_odontograma_custom() : get_odontograma();
+	while ($fila = mysql_fetch_assoc($odontogramas)) {
+		$total = mysql_fetch_array( get_amount_odontograma( $fila['idOdontograma'] ) );
+		$total = array_shift( $total );
+		$numProcess = mysql_num_rows( get_procedimientos_odontograma( $fila['idOdontograma'] ) );
+		echo '<tr>';
+			echo '<td>' . $fila["idOdontograma"] . '</td>';
+			echo '<td>' . $fila["nombre"] . " ".$fila["u_apellido"] . '</td>';
+			echo '<td>' . $fila["identificacion"] . '</td>';
+			echo '<td>' . $fila["fecha"] . '</td>';
+			echo '<td>' . $numProcess . '</td>';
+			echo '<td>' . $total . '</td>';
+		echo '</tr>';
+	}
+}
+
+function get_odontograma_custom(){
+	$query = "SELECT * FROM tbodontogramas
+			 JOIN tbusuarios ON idPaciente = idUsuario";
+	if( ! empty( $_POST ) ){
+		$query .= " WHERE 1";
+		if( ! empty( $_POST['txt-patient-id'] ) )
+			$query .= " AND identificacion LIKE ('%" . $_POST['txt-patient-id'] . "%')";
+		if( ! empty( $_POST['txt-patient-name'] ) )
+			$query .= " AND nombre LIKE ('%" . $_POST['txt-patient-name'] . "%')";
+		if( ! empty( $_POST['txt-num-odonto'] ) )
+			$query .= " AND idOdontograma LIKE ('%" . $_POST['txt-num-odonto'] . "%')";
+		if( ! empty( $_POST['txt-start-date'] ) && ! empty( $_POST['txt-end-date'] ) )
+			$query .= " AND fecha BETWEEN '" . do_sql_date_format( $_POST['txt-start-date'] ) . "' AND '" . do_sql_date_format( $_POST['txt-end-date'] ) . "'";
+		elseif( ! empty( $_POST['txt-start-date'] ) )
+			$query .= " AND fecha >= '" . do_sql_date_format( $_POST['txt-start-date'] ) . "'";
+		elseif( ! empty( $_POST['txt-end-date'] ) )
+			$query .= " AND fecha <= '" . do_sql_date_format( $_POST['txt-end-date'] ) . "'";
+	}
+	$result = do_query( $query );
+
+	return $result;
+}
+
+function get_odontograma(){
+	$query = "SELECT *
+			FROM tbodontogramas
+			JOIN tbusuarios ON idPaciente = idUsuario";
+
+	$result=do_query($query);
+	return $result;
+}
 ?>

@@ -19,7 +19,6 @@
 						<th>Número de odontograma</th>
 	                    <th>Nombre del paciente</th>
 	                    <th>Identificación del paciente</th>
-	                    <th>Nombre del odontólogo</th>
 	                    <th>Última Fecha realizada</th>
 	                    <th>Número de procedimientos</th>
 	                    <th>Costo total</th>
@@ -36,8 +35,8 @@
 				<input id="patient-id" name="txt-patient-id" type="text" />
 				<label for="patient-name">Nombre del paciente: </label>
 				<input id="patient-name" name="txt-patient-name" type="text" />
-				<label for="patient-name">Número de Odontograma: </label>
-				<input id="patient-name" name="txt-patient-name" type="text" />
+				<label for="num-odonto">Número de Odontograma: </label>
+				<input id="num-odonto" name="txt-num-odonto" type="text" />
 				<label for="start-date">Fecha de inicio: </label>
 				<input id="start-date" name="txt-start-date" type="text" placeholder="dd-mm-yyyy" class="datepicker" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" />
 				<label for="end-date">Fecha de fin: </label>
