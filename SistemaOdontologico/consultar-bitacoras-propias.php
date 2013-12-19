@@ -18,7 +18,6 @@
 						<th>Identificación</th>
 						<th>Nombre Odontólogo</th>
 						<th>Fecha realizada</th>
-						<th>Numero Procedimientos</th>
 						<th class="column-icons"></th>
 			        </tr>
 			    </thead>
