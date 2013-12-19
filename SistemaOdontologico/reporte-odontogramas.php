@@ -1,6 +1,6 @@
 <?php
 	define('PAGE','reporte-Odontogramas');
-	define('TITLE','Reporte odontogramass');
+	define('TITLE','Reporte odontogramas');
 	$pageConfig = array(
 		'actions' => array(),
 		'plugins'=> array('datatable', 'datepicker', 'print')
