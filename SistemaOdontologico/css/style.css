@@ -41,6 +41,9 @@ h6 {
 .ar {
 	text-align: right;
 }
+.ma {
+	margin: 0 auto;
+}
 .mid-side {
 	width: 50%;
 }
