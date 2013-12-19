@@ -4,16 +4,19 @@ function display_odontogramas_rows(){
 	$odontogramas = get_odontogramas();
 
 	while ($fila = mysql_fetch_assoc($odontogramas)) {
-					echo '<tr>';
-						echo '<td>' . $fila["idOdontograma"] . '</td>';
-						echo '<td>' . $fila["u_nombre"] . " ".$fila["u_apellido"] . '</td>';
-						echo '<td>' . $fila["u_id"] . '</td>';
-						echo '<td>' . $fila["o_nombre"] . " ". $fila["o_apellido"] . '</td>';
-						echo '<td>' . $fila["fecha"] . '</td>';
-						echo '<td>' . '</td>';
-						echo '<td>' . '</td>';
-						echo '<td><a href="editar-odontograma.php?idPaciente='  . $fila['idPaciente'] . '&idOdontograma=' . $fila['idOdontograma'] . '"><i class="icon-edit"></i></a><a href="#!?idOdontograma=' . $fila['idOdontograma'] . '"><i class="icon-remove item-remove"></i></a></td>';
-					echo '</tr>';
+		$total = mysql_fetch_array( get_amount_odontograma( $fila['idOdontograma'] ) );
+		$total = array_shift( $total );
+		$numProcess = mysql_num_rows( get_procedimientos_odontograma( $fila['idOdontograma'] ) );
+		echo '<tr>';
+			echo '<td>' . $fila["idOdontograma"] . '</td>';
+			echo '<td>' . $fila["u_nombre"] . " ".$fila["u_apellido"] . '</td>';
+			echo '<td>' . $fila["u_id"] . '</td>';
+			echo '<td>' . $fila["o_nombre"] . " ". $fila["o_apellido"] . '</td>';
+			echo '<td>' . $fila["fecha"] . '</td>';
+			echo '<td>' . $numProcess . '</td>';
+			echo '<td>' . $total . '</td>';
+			echo '<td><a href="editar-odontograma.php?idPaciente='  . $fila['idPaciente'] . '&idOdontograma=' . $fila['idOdontograma'] . '"><i class="icon-edit"></i></a><a href="#!?idOdontograma=' . $fila['idOdontograma'] . '"><i class="icon-remove item-remove"></i></a></td>';
+		echo '</tr>';
 	}
 }
 

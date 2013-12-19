@@ -306,6 +306,12 @@ function get_abonos_factura( $idFactura ){
 	return $result;
 }
 
+function get_procedimientos_odontograma( $idOdontograma ){
+	$query = "SELECT * FROM tbprocedimientosporodontograma WHERE idOdontograma = '$idOdontograma'";
+	$result = do_query( $query );
+	return $result;
+}
+
 function get_total_abonos_factura( $idFactura ){
 	$query = "SELECT SUM(monto) AS total FROM tbabonos WHERE idFactura = '$idFactura'";
 	$result = do_query( $query );
