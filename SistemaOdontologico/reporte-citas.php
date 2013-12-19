@@ -1,5 +1,5 @@
 <?php
-	define('PAGE','reporte-citas');
+	define('PAGE','reporteCitas');
 	define('TITLE','Reporte Citas');
 	$pageConfig = array(
 		'actions' => array(),

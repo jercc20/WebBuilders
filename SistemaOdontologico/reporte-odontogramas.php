@@ -1,5 +1,5 @@
 <?php
-	define('PAGE','reporte-Odontogramas');
+	define('PAGE','reporteOdontogramas');
 	define('TITLE','Reporte odontogramas');
 	$pageConfig = array(
 		'actions' => array(),
