@@ -283,6 +283,13 @@ form div.ac {
 	margin: 5px 0;
 	font-size: 0;
 }
+#hour,
+#minute {
+	width: 116px;
+}
+#minute {
+	margin-left: 11px;
+}
 .chk-group-column {
 	float: left;
 	width: 19%;
