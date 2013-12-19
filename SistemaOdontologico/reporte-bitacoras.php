@@ -1,5 +1,5 @@
 <?php
-	define('PAGE','reporte-bitacoras');
+	define('PAGE','reporteBitacoras');
 	define('TITLE','Reporte bitacoras');
 	$pageConfig = array(
 		'actions' => array(),
