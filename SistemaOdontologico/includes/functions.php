@@ -4,7 +4,7 @@
 $db_hostname = 'localhost';
 $db_database = 'bdsistemaodontologico';
 $db_username = 'root';
-$db_password = '';
+$db_password = 'root';
 
 //TEMP!!! para las funciones de cada uno
 require_once 'diego.php';
