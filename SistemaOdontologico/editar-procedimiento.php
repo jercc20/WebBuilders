@@ -8,7 +8,7 @@
 	require_once 'includes/header.php';
 ?>
 	<h1 class="ac">Editar procedimiento</h1>
-	<form id="proced-box" class="form-edit box-wrap clearfix" action="includes/update-procedimiento.php" method="post">
+	<form id="proced-box" class="form-edit box-wrap clearfix ma mid-side" action="includes/update-procedimiento.php" method="post">
 		<section class="form-section">
 			<?php
 				display_edit_procedure_rows();
