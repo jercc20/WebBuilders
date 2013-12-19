@@ -1,5 +1,5 @@
 <?php
-	define('PAGE','reporte-odontogramas'); //nombre de la pagina
+	define('PAGE','reporteOdontogramas'); //nombre de la pagina
 	define('TITLE','Reporte de Odontogramas'); //titulo de la pagina
 	$pageConfig = array(
 		'actions' => array(), //array con las acciones adicionales de la pagina (editar, borrar, etc)php
