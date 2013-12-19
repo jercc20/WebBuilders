@@ -2,6 +2,7 @@
 	if( $_POST ){
 		define('PAGE','editarUsuarioPaciente');
 		require_once 'functions.php';
+
 		$id = ( isset( $_POST['idUsuario'] ) ) ? $_POST['idUsuario'] : '';
 		$name = ( isset( $_POST['txt_name'] ) ) ? $_POST['txt_name'] : '';
 		$lastname = ( isset( $_POST['txt_lastname'] ) ) ? $_POST['txt_lastname'] : '';
@@ -16,16 +17,17 @@
 		$role = ( isset( $_POST['slt-user-role'] ) ) ? $_POST['slt-user-role'] : '';
 		$alergie  = ( isset( $_POST['txt-user-alergie'] ) ) ? $_POST['txt-user-alergie'] : '';
 		$UserAdrs = ( isset( $_POST['txt-user-adress'] ) ) ? $_POST['txt-user-adress'] : '';
-		
-		$query= "SELECT identificacion FROM tbusuarios WHERE idUsuario NOT IN('$id') 
+
+		$query= "SELECT identificacion FROM tbusuarios WHERE idUsuario NOT IN('$id')
 					AND identificacion = '$userId'";
 		$result = do_query($query);
 		if(mysql_num_rows($result) > 0){
 			echo "La identificación/alias ya se encuentra en uso.";
 			exit();
+		}
 		if(!$encontro){
-			$query = "UPDATE tbusuarios SET nombre = '$name', primerApellido = '$lastname', segundoApellido = '$lastname2', identificacion = '$userId', 
-						 telefonoCasa = '$housePhn', telefonoCelular = '$CellPhn', correoElectronico = '$email', fechaNacimiento = '$birthSql', discapacidad = '$impmt', 
+			$query = "UPDATE tbusuarios SET nombre = '$name', primerApellido = '$lastname', segundoApellido = '$lastname2', identificacion = '$userId',
+						 telefonoCasa = '$housePhn', telefonoCelular = '$CellPhn', correoElectronico = '$email', fechaNacimiento = '$birthSql', discapacidad = '$impmt',
 						 idRol = '$role', alergias = '$alergie', domicilio = '$UserAdrs'";
 
 			if( ! empty( $_POST['txt-user-psw'] ) ){
@@ -34,7 +36,7 @@
 			}
 			$query .= " WHERE idUsuario = '$id'";
 			echo do_query( $query );
-			}
+		}
 		global $db_server;
 		mysql_close( $db_server );
 	}

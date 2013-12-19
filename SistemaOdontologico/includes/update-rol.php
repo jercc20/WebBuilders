@@ -68,13 +68,11 @@
 			echo 'Rol modificado con exito.';
 			js_redirect('consultar-roles.php', 4000);
 		}
-		}else{
-			echo "El nombre ingresado para el rol ya está en uso.";
-			exit();
-		}
 
 		/* ---- */
 
 		global $db_server;
 		mysql_close( $db_server );
+
+	}
 ?>

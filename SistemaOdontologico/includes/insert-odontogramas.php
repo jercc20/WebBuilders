@@ -10,7 +10,7 @@
 		$zona = ( isset( $_POST['zona'] ) ) ? $_POST['zona'] : '';
 
 		if( ! isset( $_POST['procedimientos'] ) ){
-			echo 'Debe mínimo seleccionar un procedimiento.';
+			echo 'Debe agregar mínimo un procedimiento.';
 			exit();
 		}
 

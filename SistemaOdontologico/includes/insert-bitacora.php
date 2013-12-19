@@ -5,7 +5,7 @@
 		require_once 'functions.php';
 
 		if(empty($_POST['procedimientos'])){
-			echo "Debe agregar mínimo un procedimiento";
+			echo "Debe agregar mínimo un procedimiento.";
 			exit();
 		}
 

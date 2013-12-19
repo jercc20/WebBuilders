@@ -16,24 +16,24 @@
 		$role = ( isset( $_POST['slt-user-role'] ) ) ? $_POST['slt-user-role'] : '';
 		$alergie  = ( isset( $_POST['txt-user-alergie'] ) ) ? $_POST['txt-user-alergie'] : '';
 		$UserAdrs = ( isset( $_POST['txt-user-adress'] ) ) ? $_POST['txt-user-adress'] : '';
-		
-		$query= "SELECT identificacion FROM tbusuarios WHERE idUsuario NOT IN('$id') 
+
+		$query= "SELECT identificacion FROM tbusuarios WHERE idUsuario NOT IN('$id')
 					AND identificacion = '$userId'";
 		$result = do_query($query);
 		if(mysql_num_rows($result) > 0){
 			echo "La identificación/alias ya se encuentra en uso.";
 			exit();
 		}
-		
-		$query = "UPDATE tbusuarios SET nombre = '$name', primerApellido = '$lastname', segundoApellido = '$lastname2', identificacion = '$userId', 
-						 telefonoCasa = '$housePhn', telefonoCelular = '$CellPhn', correoElectronico = '$email', fechaNacimiento = '$birthSql', discapacidad = '$impmt', 
+
+		$query = "UPDATE tbusuarios SET nombre = '$name', primerApellido = '$lastname', segundoApellido = '$lastname2', identificacion = '$userId',
+						 telefonoCasa = '$housePhn', telefonoCelular = '$CellPhn', correoElectronico = '$email', fechaNacimiento = '$birthSql', discapacidad = '$impmt',
 						 idRol = '$role', alergias = '$alergie', domicilio = '$UserAdrs'";
 
 		if( ! empty( $_POST['txt-user-psw'] ) ){
 			$userPsw = md5($_POST['txt-user-psw']);
 			$query .= ", contrasenna = '$userPsw'";
 		}
-				
+
 		$query .= " WHERE idUsuario = '$id'";
 		echo do_query( $query );
 
