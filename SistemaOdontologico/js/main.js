@@ -151,7 +151,7 @@ jQuery(function($) {
 		$items = $(this).parents('#popup').find('.table-procedures input:checked').parents('tr');
 		$items.each( function(){
 			if( $(this).hasClass('hasZone') )
-				$(this).append('<td><input type="text" placeholder="Zona" required="required">');
+				$(this).append('<td><input type="text" value="zone[]" placeholder="Zona" required="required">');
 		});
 		$('#table-procedures-added').prepend( $items );
 		$('#procedure-number').val( $('#table-procedures-added tr').size() );
