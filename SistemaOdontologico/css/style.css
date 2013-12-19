@@ -323,6 +323,9 @@ form div.ac {
 .table-procedures td {
 	text-align: left;
 }
+.table-procedures .has-zone {
+	display: none;
+}
 #table-procedures-added {
 	width: 97%;
 }
@@ -332,14 +335,11 @@ form div.ac {
 }
 #table-procedures-added td:nth-of-type(2),
 #table-procedures-added td:nth-of-type(3) {
-	text-indent:
+	text-indent: 10px;
 }
 #table-procedures-added td:nth-of-type(4) {
 	width: 115px;
 	padding-left: 20px;
-}
-#table-procedures-added.odonto-table td:nth-of-type(3){
-	padding-right: 10px;
 }
 #table-procedures-added input {
 	width: 100%;
