@@ -159,12 +159,20 @@ if( isset( $_POST['ajax-call'] ) && isset( $_POST['var'] ) ){
 
 		case 'idUsuario': //Eliminar Usuario
 			$usuario = ( isset( $_POST['idUsuario'] ) ) ? $_POST['idUsuario'] : '';
+			if( $usuario == $_SESSION['idUsuario'] ){
+				echo "No se puede borrar el usuario actual.";
+				break;
+			}
 			$query = "DELETE FROM tbusuarios WHERE idUsuario = '$usuario'";
 			echo do_query( $query );
 			break;
 
 		case 'idRol': //Eliminar rol
 			$rol = ( isset( $_POST['idRol'] ) ) ? $_POST['idRol'] : '';
+			if( $rol == $_SESSION['userinfo']['idRol'] ){
+				echo "No se puede borrar el rol del usuario actual.";
+				break;
+			}
 			$query = "DELETE FROM tbroles WHERE idRol = '$rol'";
 			echo do_query( $query );
 			break;
