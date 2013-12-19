@@ -31,7 +31,7 @@
             <?php
               menu_desplegable_usuarios(3,1,'slt-odontologo');
 
-              display_editar_bitacora();          
+              display_editar_bitacora();
             ?>
         <label for="txt-user-dob">Fecha realizada</label>
        <input id="txt-user-dob" class="datepicker" value="<?php echo $birth; ?>" name="txt-user-dob" type="text" required="required" placeholder="dd-mm-yyyy" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" />
@@ -39,12 +39,12 @@
          <label for="txt-asistentes">Asistentes que participaron</label>
          <textarea id="txt-asistentes" name="txt-asistentes"><?php echo $asistentes;?></textarea>
 
-       </section>  
+       </section>
 
           <section class='form-section fr'>
           <input id='procedure-number' name='txt-procedure-number' type='hidden' value="1" />
           <label>Procedimientos</label><a href="#" class="add-procedure fr ar">Ver procedimientos</a>
-          <label for='txt-notes'>Notas</label> 
+          <label for='txt-notes'>Notas</label>
           <textarea id="txt-notes" name="txt-notes"><?php echo $notas;?></textarea>
 
         </section>
@@ -58,7 +58,7 @@
           <div id="popup-procedure" class="hide">
             <h2 class="ac">Procedimientos</h2>
             <div class="div-table ">
-                <table class="table-procedures">
+                <table class="view-procedures">
                       <?php display_procedimientos_editar($idBitacora); ?>
                 </table>
              </div>
@@ -67,7 +67,6 @@
             </div>
           </div>
 
-<?php        
+<?php
   require_once 'includes/footer.php';
 ?>
- 

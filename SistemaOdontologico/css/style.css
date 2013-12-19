@@ -352,6 +352,15 @@ form div.ac {
 #delete-procedures {
 	padding-right: 13px;
 }
+.view-procedures {
+	width: 75%;
+	margin: 0 auto 15px;
+}
+.view-procedures td:nth-of-type(2),
+.view-procedures td:nth-of-type(3) {
+	max-width: 25%;
+	text-align: center;
+}
 /* stuff */
 .dataTables_wrapper {
 	padding-top: 10px;

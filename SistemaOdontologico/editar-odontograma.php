@@ -30,7 +30,7 @@
 		<div id="popup-procedure" class="hide">
 			<h2 class="ac">Procedimientos</h2>
 			<div class="div-table ">
-				<table class="table-procedures">
+				<table class="view-procedures">
 					<tr>
 						<th>Nombre</th>
 						<th>Costo</th>
