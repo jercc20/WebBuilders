@@ -21,7 +21,6 @@
 						<th>Identificación</th>
 						<th>Nombre Odontólogo</th>
 						<th>Fecha realizada</th>
-						<th>Número de procedimientos</th>
 					</tr>
 				</thead>
 				<tbody>

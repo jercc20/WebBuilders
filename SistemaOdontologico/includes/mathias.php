@@ -10,7 +10,6 @@ function display_bitacoras_rows(){
 						echo '<td>' . $fila["u_id"] . '</td>';
 						echo '<td>' . $fila["o_nombre"] . " ". $fila["o_apellido"] . '</td>';
 						echo '<td>' . $fila["fecha"] . '</td>';
-						echo '<td>' . $fila["procedimiento"] . '</td>';
 						echo '<td><a href="editar-bitacora.php?idPaciente='  . $fila['idPaciente'] . '&idBitacora=' . $fila['idBitacora'] . '"><i class="icon-edit"></i></a><a href="#!?idBitacora=' . $fila['idBitacora'] . '"> <i class="icon-remove item-remove"></i></a></td>';
 					echo '</tr>';
 	}				
@@ -178,7 +177,6 @@ function display_bitacoras_rows_paciente(){
 						echo '<td>' . $fila["u_id"] . '</td>';
 						echo '<td>' . $fila["o_nombre"] . " ". $fila["o_apellido"] . '</td>';
 						echo '<td>' . $fila["fecha"] . '</td>';
-						echo '<td>' . $fila["procedimiento"] . '</td>';
 						echo '<td><a class="item-view" href="#!"><i class="icon-view"></i></a></td>';
 					echo '</tr>';
 	}				
@@ -219,7 +217,7 @@ function get_procedimientos_editar( $id ){
 	$query = "SELECT nombre
 		FROM tbprocedimientosporbitacora AS pb,
 		tbprocedimientos AS p
-			WHERE pb.idBitacora = '$idBitacora'
+			WHERE pb.idBitacora = '$id'
 			AND p.idProcedimiento = pb.idProcedimiento";
 
 	$result = do_query( $query );
