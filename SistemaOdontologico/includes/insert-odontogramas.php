@@ -7,35 +7,31 @@
 		$date = ( isset( $_POST['txt_date_realized'] ) ) ? do_sql_date_format( $_POST['txt_date_realized'] ) : '';
 		$dateSql = do_sql_date_format($date);
 		$userId = ( isset( $_POST['id_patient'] ) ) ? $_POST['id_patient'] : '';
-		$zona = ( isset( $_POST['zone'] ) ) ? $_POST['zone'] : '';
+		$zona = ( isset( $_POST['zona'] ) ) ? $_POST['zona'] : '';
 
-		print_r($zona);
+		if( ! isset( $_POST['procedimientos'] ) ){
+			echo 'Debe seleccionar almenos un procedimiento.';
+			exit();
+		}
 
-		exit();
+		$query = "INSERT INTO tbodontogramas VALUES(NULL, '$dentistId', '$dateSql', '$userId')";
 
-		$query = "INSERT INTO tbodontogramas VALUES" . "(NULL, '$dentistId', '$dateSql', '$userId')";
+		$result = do_query( $query );
 
-		if( isset($_POST['procedimientos']) ){
+		if( $result == 1 ){
 
 			$idOdontograma = mysql_insert_id();
 
 			foreach ($_POST['procedimientos'] as $key => $procedimiento) {
 
-				echo $zona[$key] . '-' . $procedimiento . ':';
+				$insertProcedimiento = "INSERT INTO tbprocedimientosporodontograma VALUES ('$idOdontograma', '$procedimiento', '0', '$zona[$key]')";
 
-				$insertProcedimiento = "INSERT INTO tbprocedimientosporodontograma VALUES ($idOdontograma, $procedimiento, 0, NULL)";
-
-				//do_query( $insertProcedimiento );
+				do_query( $insertProcedimiento );
 
 			}
 
-			exit();
-
 			echo 'El odontograma se ha creado exitosamente.';
 			js_redirect('consultar-odontogramas.php', 2500);
-		}else{
-			echo 'Debe seleccionar un procedimiento';
-			exit();
 		}
 
 		global $db_server;
