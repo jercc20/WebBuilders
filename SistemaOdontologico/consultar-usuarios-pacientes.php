@@ -9,9 +9,11 @@
 	require_once 'includes/header.php';
 ?>
 	<h1 class="ac">Consultar Usuarios</h1>
-	<div id="add-user">
-		<a class="fr" href="crear-usuario-paciente.php">+ agregar usuario</a>
-	</div>
+	<?php if( check_permission( 'crearUsuarioPaciente' ) ) : ?>
+		<div id="add-user">
+			<a class="fr" href="crear-usuario-paciente.php">+ agregar usuario</a>
+		</div>
+	<?php endif; ?>
 	<table class="data-table display">
 		<thead>
 			<tr>
@@ -21,7 +23,9 @@
 				<th>Teléfonos</th>
 				<th>Correo</th>
 				<th>Dirección</th>
-				<th class="column-icons"></th>
+				<?php if( check_permission( 'editarUsuarioPaciente' ) ) : ?>
+					<th class="column-icons"></th>
+				<?php endif; ?>
 			</tr>
 		</thead>
 		<tbody>
