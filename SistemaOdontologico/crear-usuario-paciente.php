@@ -18,9 +18,9 @@
 				<input id="user-lastname2" name="txt-user-lastname2" type="text"  pattern=pattern="|^[a-zA-Z ñÑáéíóúüÁÉÍÓÚç]*$|" />
 				<label for="user-id"> Identificación o alias</label>
 				<input id="user-id" title="Esta sera su infomacion para ingresar sesion" name="txt-id-user"  type="text"  required="required" pattern="[a-zA-Z0-9]+" />
-				<label for="user-phone"> Teléfono de la casa</label>
+				<label for="user-phone"> Teléfono principal</label>
 				<input id="user-phone" name="txt-user-house-phone" type="text" pattern="\d{8,10}" required="required" />
-				<label for="user-cellphone"> Teléfono celular</label>
+				<label for="user-cellphone"> Teléfono secundario</label>
 				<input id="user-cellphone" name="txt-user-cellphone" type="text"  pattern="\d{8,10}" />
 				<label for="user-email"> Correo electrónico</label>
 				<input id="user-email" name="txt-user-email" type="email"  required="required" />

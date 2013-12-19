@@ -120,4 +120,40 @@ function get_perfil_user($pidUsuario){
 
 	return $tabla;
 }
+
+function display_editar_odontograma_procedimiento(){
+	$odontograma = $_GET['idOdontograma'];
+
+	$procedimientos = get_odontograma_procedimientos($odontograma);
+
+		while ($fila = mysql_fetch_assoc($procedimientos)) {
+			echo '<tr>';
+				echo '<td>' . $fila["nombre"] .' </td>';
+				echo '<td>' . $fila["costo"] .' </td>';
+				echo '<td>' . $fila["zona"] .' </td>';
+			echo '</tr>';
+		}
+}
+
+function get_odontograma_procedimientos($pid){
+	$query = "SELECT nombre, costo, zona
+		FROM tbprocedimientosporodontograma AS pb,
+		tbprocedimientos AS p
+			WHERE pb.idOdontograma = '$pid'
+			AND p.idProcedimiento = pb.idProcedimiento";
+
+	$result=do_query($query);
+
+	return $result;
+}
+
+function get_datos_odontograma(){
+	$query = "SELECT * FROM tbodontogramas";
+
+	$result = do_query($query);
+
+	$datos = mysql_fetch_assoc($result);
+
+	return $datos;
+}
 ?>

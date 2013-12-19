@@ -176,53 +176,13 @@ function get_citas_custom(){
 
 function display_reporte_procedimientos_rows(){
 
-	$procedimiento = ( ! empty( $_POST ) ) ? get_procedimiento_custom() : get_procedimiento();
-	while( $fila = mysql_fetch_assoc($procedimiento) ){
-
+	$procedimientos = get_procedimientos();
+	while ($fila = mysql_fetch_assoc($procedimientos)) {
 		echo '<tr>';
-			echo '<td>' . $fila["idProcedimiento"] . '</td>';
-			echo '<td>' . $fila["u_nombre"] . " ".$fila["u_apellido"] . '</td>';
-			echo '<td>' . $fila["u_id"] . '</td>';
-			echo '<td>' . $fila["o_nombre"] . " ". $fila["o_apellido"] . '</td>';
-			echo '<td>' . $fila["fecha"] . '</td>';
-			echo '<td>' . $fila["procedimiento"] . '</td>';
-		echo '</tr>';
-
+			echo '<td>' . $fila["nombre"] . '</td>';
+			echo '<td>' . $fila["descripcion"] . '</td>';
+			echo '<td>' . $fila["Costo"]  . '</td>';
+		}
 	}
-}
-
-function get_procedimiento_custom(){
-	$query = "SELECT * FROM tbprocedimientos order by id";
-	if( ! empty( $_POST ) ){
-		$query .= " WHERE 1";
-
-		if( ! empty( $_POST['user-id'] ) )
-			$query .= " AND identificacion LIKE ('%" . $_POST['user-id'] . "%')";
-		if( ! empty( $_POST['txt-user-name'] ) )
-			$query .= " AND nombre LIKE ('%" . $_POST['txt-user-name'] . "%')";
-		if( ! empty( $_POST['txt-user-lastname'] ) )
-			$query .= " AND primerApellido LIKE ('%" . $_POST['txt-user-lastname'] . "%')";
-		if ( ! empty( $_POST['user-rol'] ) && $_POST['user-rol'] !=0 )
-			$query .= " AND idRol = " . $_POST['user-rol'] . "";
-	}
-	$result = do_query( $query );
-
-	return $result;
-}
-
-function get_procedimiento(){
-	$query = "SELECT b.*,
-			u.nombre AS u_nombre,
-			o.nombre AS o_nombre,
-			o.primerApellido AS o_apellido,
-			u.primerApellido AS u_apellido,
-			u.identificacion AS u_id
-					FROM tbbitacoras AS b
-					LEFT JOIN tbusuarios AS u ON (u.idUsuario = b.idPaciente)
-					LEFT JOIN tbusuarios AS o ON (o.idUsuario = b.idOdontologo)";
-
-	$result=do_query($query);
-	return $result;
-}
 
 ?>

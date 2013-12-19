@@ -166,9 +166,9 @@ function display_edit_usuarios_paciente_rows(){
 		echo "<input id='user-lastname2' name='txt_lastname2' type='text'  pattern='|^[a-zA-Z ñÑáéíóúüÁÉÍÓÚç]*$|' value='$lastname2'/>";
 		echo "<label for='user-id'> Identificación</label>";
 		echo "<input id='user-id' name='txt_user'  type='text' value='$userId'/>";
-		echo "<label for='user-phone'> Teléfono de la casa</label>";
+		echo "<label for='user-phone'>Teléfono principal</label>";
 		echo "<input id='user-phone' name='txt_phone' type='text' pattern='\d{8,10}' placeholder ='22222222' required='required' value='$housePhn'/>";
-		echo "<label for='user-cellphone'> Teléfono celular</label>";
+		echo "<label for='user-cellphone'>Teléfono secundario</label>";
 		echo "<input id='user-cellphone' name='txt_cellphone' type='text' placeholder ='22222222' value='$CellPhn'/>";
 		echo "<label for='user-email'> Correo electrónico</label>";
 		echo "<input id='user-email' name='txt_email' type='email'  required='required' value='$email'/>";
