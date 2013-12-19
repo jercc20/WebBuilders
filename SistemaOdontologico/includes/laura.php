@@ -138,4 +138,37 @@ function display_reporte_citas_rows(){
 	}
 }
 
+function display_reporte_procedimientos_rows(){
+	$procedimientos = ( ! empty( $_POST ) ) ? get_procedimientos_custom() : get_procedimientos();
+	while( $fila = mysql_fetch_assoc($procedimientos) ){
+
+	echo '<tr>';  
+			echo '<td>' . $fila["idProcedimiento"] . '</td>';
+			echo '<td>' . $fila["u_nombre"] . " ".$fila["u_apellido"] . '</td>';
+			echo '<td>' . $fila["u_id"] . '</td>';
+			echo '<td>' . $fila["o_nombre"] . " ". $fila["o_apellido"] . '</td>';
+			echo '<td>' . $fila["fecha"] . '</td>';
+			echo '<td>' . $fila["procedimiento"] . '</td>';
+		echo '</tr>';
+	}
+}
+
+
+function display_reporte_odontogramas_rows(){
+
+	$bitacoras = ( ! empty( $_POST ) ) ? get_bitacoras_custom() : get_bitacoras();
+	while( $fila = mysql_fetch_assoc($bitacoras) ){
+
+		echo '<tr>';  
+			echo '<td>' . $fila["idBitacora"] . '</td>';
+			echo '<td>' . $fila["u_nombre"] . " ".$fila["u_apellido"] . '</td>';
+			echo '<td>' . $fila["u_id"] . '</td>';
+			echo '<td>' . $fila["o_nombre"] . " ". $fila["o_apellido"] . '</td>';
+			echo '<td>' . $fila["fecha"] . '</td>';
+			echo '<td>' . $fila["procedimiento"] . '</td>';
+		echo '</tr>';
+
+	}
+}
+
 ?>
