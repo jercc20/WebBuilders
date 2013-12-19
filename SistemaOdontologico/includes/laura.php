@@ -102,6 +102,8 @@ function display_add_procedimientos_popup() {
 			echo '<tr>';
 				echo '<td>' . '<input type="checkbox" name="procedure" />' . '<input type="hidden" name="procedimientos['. $i .']" value="'. $fila["idProcedimiento"] .'" />';
 				echo '<td>' . $fila["nombre"] .'</td>';
+				echo '<td>' . $fila["Costo"] .'</td>';
+				echo '<td class="has-zone"><input type="text​" name="zone​['. $i .']" placeholde​r="Zona" required="​required" /></td>';
 			echo '</tr>';
 			$i++;
 		}
@@ -191,7 +193,7 @@ function display_reporte_odontogramas_rows(){
 	$bitacoras = ( ! empty( $_POST ) ) ? get_bitacoras_custom() : get_bitacoras();
 	while( $fila = mysql_fetch_assoc($bitacoras) ){
 
-		echo '<tr>';  
+		echo '<tr>';
 			echo '<td>' . $fila["idBitacora"] . '</td>';
 			echo '<td>' . $fila["u_nombre"] . " ".$fila["u_apellido"] . '</td>';
 			echo '<td>' . $fila["u_id"] . '</td>';

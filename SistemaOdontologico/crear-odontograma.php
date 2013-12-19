@@ -13,12 +13,11 @@
 	<h1 class="ac">Crear Odontograma</h1>
 	<form id="proced-box" class="form-edit box-wrap" action="includes/insert-odontogramas.php" method="post">
 		<section class="form-section fl">
-
+			<?php display_crear_odontograma();?>
 			<label for="odontologo">Seleccione el odontólogo</label>
 			<?php menu_desplegable_usuarios(3,1,'slt-odontologo'); ?>
 			<label for="odontograma_date">Fecha de realización</label>
-			<input id="odontograma_date" name="txt_date_realized" type="text" required="required" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" class="datepicker" />
-			<?php display_crear_odontograma();?>
+			<input id="odontograma_date" name="txt_date_realized" placeholder="dd-mm-yyyy" type="text" required="required" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" class="datepicker" />
 		</section>
 
 		<section class="form-section fr">
@@ -26,7 +25,7 @@
 			<table id='table-procedures-added' class='cb'></table>
 			<a href='#' id='delete-procedures' class='fr ar hide'>-Borrar procedimiento</a>
 		</section>
-		
+
 		<div class="ac cb">
 			<button class="form-cancel">Cancelar</button>
 			<input type="reset" value="Limpiar" />
