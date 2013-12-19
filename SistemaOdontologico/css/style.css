@@ -290,6 +290,10 @@ form div.ac {
 #minute {
 	margin-left: 11px;
 }
+.div-tabla {
+	padding: 10px 10px 10px 40px;
+	margin: 0px 35px 0px 5px;
+}
 .chk-group-column {
 	float: left;
 	width: 19%;
@@ -308,12 +312,31 @@ form div.ac {
 .chk-group-column input {
 	width: auto;
 }
+.table-procedures {
+	width: 75%;
+	margin: 0 auto 15px;
+}
+.table-procedures tr td:first-child {
+	width: 18%;
+	text-align: center;
+}
+.table-procedures td {
+	text-align: left;
+}
 #table-procedures-added {
 	width: 97%;
 }
-#table-procedures-added td:nth-of-type(2) {
+#table-procedures-added tr td:first-child {
+	width: 12%;
+	text-align: center;
+}
+#table-procedures-added td:nth-of-type(2),
+#table-procedures-added td:nth-of-type(3) {
+	text-indent:
+}
+#table-procedures-added td:nth-of-type(4) {
 	width: 115px;
-	padding: 0 20px;
+	padding-left: 20px;
 }
 #table-procedures-added.odonto-table td:nth-of-type(3){
 	padding-right: 10px;
