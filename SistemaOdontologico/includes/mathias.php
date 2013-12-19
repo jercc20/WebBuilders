@@ -9,7 +9,7 @@ function display_bitacoras_rows(){
 						echo '<td>' . $fila["u_nombre"] . " ".$fila["u_apellido"] . '</td>';
 						echo '<td>' . $fila["u_id"] . '</td>';
 						echo '<td>' . $fila["o_nombre"] . " ". $fila["o_apellido"] . '</td>';
-						echo '<td>' . $fila["fecha"] . '</td>';
+						echo '<td>' . do_date_format($fila["fecha"]) . '</td>';
 						echo '<td><a href="editar-bitacora.php?idPaciente='  . $fila['idPaciente'] . '&idBitacora=' . $fila['idBitacora'] . '"><i class="icon-edit"></i></a><a href="#!?idBitacora=' . $fila['idBitacora'] . '"> <i class="icon-remove item-remove"></i></a></td>';
 					echo '</tr>';
 	}				
@@ -93,7 +93,7 @@ function display_reporte_bitacoras_rows(){
 			echo '<td>' . $fila["u_nombre"] . " ".$fila["u_apellido"] . '</td>';
 			echo '<td>' . $fila["u_id"] . '</td>';
 			echo '<td>' . $fila["o_nombre"] . " ". $fila["o_apellido"] . '</td>';
-			echo '<td>' . $fila["fecha"] . '</td>';
+			echo '<td>' . do_date_format($fila["fecha"]) . '</td>';
 		echo '</tr>';
 
 	}
@@ -175,7 +175,7 @@ function display_bitacoras_rows_paciente(){
 						echo '<td>' . $fila["u_nombre"] . " ".$fila["u_apellido"] . '</td>';
 						echo '<td>' . $fila["u_id"] . '</td>';
 						echo '<td>' . $fila["o_nombre"] . " ". $fila["o_apellido"] . '</td>';
-						echo '<td>' . $fila["fecha"] . '</td>';
+						echo '<td>' . do_date_format($fila["fecha"]) . '</td>';
 					echo '</tr>';
 	}				
 }

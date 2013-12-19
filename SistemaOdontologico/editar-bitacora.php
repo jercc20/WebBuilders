@@ -16,7 +16,7 @@
 
     $fila = mysql_fetch_array($result);
     $id_bitacora = $fila['idBitacora'];
-    $birth = $fila['fecha'];
+    $birth = do_date_format ( $fila['fecha'] );
     $asistentes = $fila['asistentes'];
     $notas = $fila['notas'];
 ?>
@@ -24,7 +24,7 @@
       <form class="form-add box-wrap clearfix" method="post" action="includes/update-bitacora.php">
         <section class="form-section fl">
 
-          <label for="id-bitacora">Numero de bitácora</label>
+          <label for="id-bitacora">Número de bitácora</label>
           <input id="bitacora" name="txt-num-bitacora" type="text" readonly="readonly" value="<?php echo $idBitacora; ?>" />
 
         <label for="slt-odontologo">Seleccione el odontólogo</label>

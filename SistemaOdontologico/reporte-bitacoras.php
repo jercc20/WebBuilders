@@ -1,4 +1,4 @@
-<?php
+5<?php
 	define('PAGE','reporteBitacoras');
 	define('TITLE','Reporte bitacoras');
 	$pageConfig = array(
