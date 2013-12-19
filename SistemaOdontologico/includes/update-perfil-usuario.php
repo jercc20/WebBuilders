@@ -1,6 +1,6 @@
 <?php
 	if( $_POST ){
-		define('PAGE','perfil'); //mismo nombre de la pagina del formulario
+		define('PAGE','perfil');
 		require_once 'functions.php';
 
 		$name = ( isset( $_POST['txt-user-name'] ) ) ? $_POST['txt-user-name'] : '';
