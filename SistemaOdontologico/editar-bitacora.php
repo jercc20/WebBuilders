@@ -24,10 +24,10 @@
       <form class="form-add box-wrap clearfix" method="post" action="includes/update-bitacora.php">
         <section class="form-section fl">
 
-          <label for="id-bitacora">Numero de bitacora</label>
+          <label for="id-bitacora">Numero de bitácora</label>
           <input id="bitacora" name="txt-num-bitacora" type="text" readonly="readonly" value="<?php echo $idBitacora; ?>" />
 
-        <label for="slt-odontologo">Seleccione el odontologo</label>
+        <label for="slt-odontologo">Seleccione el odontólogo</label>
             <?php
               menu_desplegable_usuarios(3,1,'slt-odontologo');
 

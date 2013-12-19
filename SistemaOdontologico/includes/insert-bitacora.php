@@ -11,10 +11,10 @@
 
 		$dentistId = ( isset( $_POST['slt-odontologo'] ) ) ? $_POST['slt-odontologo'] : '';
 		$patientId = (isset( $_POST['id_patient'] ) ) ? $_POST['id_patient'] : '';
-		$date = ( isset( $_POST['txt-user-dob'] ) ) ? do_sql_date_format( $_POST['txt-user-dob'] ) : '';
+		$date = ( isset( $_POST['txt-user-dob'] ) ) ? $_POST['txt-user-dob'] : '';
 		$dateSql = do_sql_date_format($date);
-		$asistentes = ( isset( $_POST['txt-asistentes'] ) ) ? $_POST['txt-asistentes'] : '';
-		$notes = ( isset( $_POST['txt-notes'] ) ) ? $_POST['txt-notes'] : '';
+		$asistentes = ( isset( $_POST['txt-asistentes'] ) ) ? $_POST['txt-asistentes'] : NULL;
+		$notes = ( isset( $_POST['txt-notes'] ) ) ? $_POST['txt-notes'] : NULL;
 
 		$query = "INSERT INTO tbbitacoras VALUES" . "(NULL, '$dentistId', '$patientId', '$dateSql', '$asistentes', '$notes')";
 

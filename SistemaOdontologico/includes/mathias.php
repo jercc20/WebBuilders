@@ -176,10 +176,10 @@ function display_bitacoras_rows_paciente(){
 						echo '<td>' . $fila["u_id"] . '</td>';
 						echo '<td>' . $fila["o_nombre"] . " ". $fila["o_apellido"] . '</td>';
 						echo '<td>' . $fila["fecha"] . '</td>';
-						echo '<td><a class="item-view" href="#!"><i class="icon-view"></i></a></td>';
 					echo '</tr>';
 	}				
 }
+#################################################################################################################################
 function get_bitacoras_paciente(){
 
 	$query = "SELECT b.*, 

@@ -9,12 +9,12 @@
 ?>
 	<h1 class="ac">Consultar Bitácoras</h1>
 			<div id="add-bitacora" class="fr">
-				<a href="select-usuario.php?url=crear-bitacora.php">+ Agregar Bitacora</a>
+				<a href="select-usuario.php?url=crear-bitacora.php">+ Agregar Bitácora</a>
 			</div>
 			<table class="data-table display">
 				<thead>
 			        <tr>
-			        	<th>Numero bitacora</th>
+			        	<th>Número bitácora</th>
 						<th>Nombre Usuario</th>
 						<th>Identificación</th>
 						<th>Nombre Odontólogo</th>

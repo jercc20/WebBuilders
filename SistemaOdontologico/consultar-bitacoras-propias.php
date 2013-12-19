@@ -13,12 +13,11 @@
 			<table class="data-table display">
 				<thead>
 			        <tr>
-			        	<th>Numero bitacora</th>
+			        	<th>Numero bitácora</th>
 						<th>Nombre Usuario</th>
 						<th>Identificación</th>
 						<th>Nombre Odontólogo</th>
 						<th>Fecha realizada</th>
-						<th class="column-icons"></th>
 			        </tr>
 			    </thead>
 				<tbody>
@@ -26,13 +25,9 @@
 				</tbody>
 			</table>
 	<div id="popup-view" class="hide">
-		<div>
-			<table id="my-table" class="al">
-				<?php
-					display_procedimientos_editar($idBitacora);
-				?>
-			</table>
-		</div>
+		<tbody>
+			<?php display_procedimientos_editar($idBitacora); ?>
+		</tbody>
 	</div>
 <?php
 	require_once 'includes/footer.php';
