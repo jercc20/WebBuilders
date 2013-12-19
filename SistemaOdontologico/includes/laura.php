@@ -12,7 +12,7 @@ function display_odontogramas_rows(){
 						echo '<td>' . $fila["fecha"] . '</td>';
 						echo '<td>' . '</td>';
 						echo '<td>' . '</td>';
-						echo '<td><a href="editar-odontograma.php?idPaciente='  . $fila['idPaciente'] . '&idOdontograma=' . $fila['idOdontograma'] . '"><i class="icon-edit"></i></a><a href="#!?idOdontograma=' . $fila['idOdontograma'] . '"> <i class="icon-remove item-remove"></i></a></td>';
+						echo '<td><a href="editar-odontograma.php?idPaciente='  . $fila['idPaciente'] . '&idOdontograma=' . $fila['idOdontograma'] . '"><i class="icon-edit"></i></a><a href="#!?idOdontograma=' . $fila['idOdontograma'] . '"><i class="icon-remove item-remove"></i></a></td>';
 					echo '</tr>';
 	}
 }
@@ -101,10 +101,10 @@ function display_add_procedimientos_popup() {
 		$i = 0;
 		while ($fila = mysql_fetch_assoc($procedimientos)) {
 			echo '<tr>';
-				echo '<td>' . '<input type="checkbox" name="procedure" />' . '<input type="hidden" name="procedimientos['. $i .']" value="'. $fila["idProcedimiento"] .'" />';
+				echo '<td>' . '<input type="checkbox" name="procedure" />' . '<input type="hidden" name="procedimientos['. $i .']" value="'. $fila["idProcedimiento"] .'" /></td>';
 				echo '<td>' . $fila["nombre"] .'</td>';
 				echo '<td>' . $fila["Costo"] .'</td>';
-				echo '<td class="has-zone"><input type="text​" name="zone​['. $i .']" placeholde​r="Zona" required="​required" /></td>';
+				echo '<td class="has-zone"><input type="text​" name="zona['. $i .']" placeholde​r="Zona" required="​required" /></td>';
 			echo '</tr>';
 			$i++;
 		}
@@ -165,7 +165,7 @@ function display_reporte_odontogramas_rows(){
 	$odontograma = ( ! empty( $_POST ) ) ? get_odontograma_custom() : get_odontograma();
 	while( $fila = mysql_fetch_assoc($odontograma) ){
 
-		echo '<tr>';  
+		echo '<tr>';
 			echo '<td>' . $fila["idOdontograma"] . '</td>';
 			echo '<td>' . $fila["u_nombre"] . " ".$fila["u_apellido"] . '</td>';
 			echo '<td>' . $fila["u_id"] . '</td>';
@@ -197,9 +197,9 @@ function get_odontograma_custom(){
 }
 
 function get_odontograma(){
-	$query = "SELECT b.*, 
-			u.nombre AS u_nombre, 
-			o.nombre AS o_nombre, 
+	$query = "SELECT b.*,
+			u.nombre AS u_nombre,
+			o.nombre AS o_nombre,
 			o.primerApellido AS o_apellido,
 			u.primerApellido AS u_apellido,
 			u.identificacion AS u_id
@@ -217,7 +217,7 @@ function display_reporte_procedimientos_rows(){
 	$procedimiento = ( ! empty( $_POST ) ) ? get_procedimiento_custom() : get_procedimiento();
 	while( $fila = mysql_fetch_assoc($procedimiento) ){
 
-		echo '<tr>';  
+		echo '<tr>';
 			echo '<td>' . $fila["idProcedimiento"] . '</td>';
 			echo '<td>' . $fila["u_nombre"] . " ".$fila["u_apellido"] . '</td>';
 			echo '<td>' . $fila["u_id"] . '</td>';
@@ -249,9 +249,9 @@ function get_procedimiento_custom(){
 }
 
 function get_procedimiento(){
-	$query = "SELECT b.*, 
-			u.nombre AS u_nombre, 
-			o.nombre AS o_nombre, 
+	$query = "SELECT b.*,
+			u.nombre AS u_nombre,
+			o.nombre AS o_nombre,
 			o.primerApellido AS o_apellido,
 			u.primerApellido AS u_apellido,
 			u.identificacion AS u_id
