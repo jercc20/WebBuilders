@@ -4,7 +4,7 @@
 $db_hostname = 'localhost';
 $db_database = 'bdsistemaodontologico';
 $db_username = 'root';
-$db_password = 'root';
+$db_password = '';
 
 //TEMP!!! para las funciones de cada uno
 require_once 'diego.php';
@@ -486,9 +486,9 @@ function display_reporte_odontogramas_rows(){
 		$numProcess = mysql_num_rows( get_procedimientos_odontograma( $fila['idOdontograma'] ) );
 		echo '<tr>';
 			echo '<td>' . $fila["idOdontograma"] . '</td>';
-			echo '<td>' . $fila["nombre"] . " ".$fila["u_apellido"] . '</td>';
+			echo '<td>' . $fila["nombre"] . '</td>';
 			echo '<td>' . $fila["identificacion"] . '</td>';
-			echo '<td>' . $fila["fecha"] . '</td>';
+			echo '<td>' . do_date_format( $fila["fecha"] ) . '</td>';
 			echo '<td>' . $numProcess . '</td>';
 			echo '<td>' . $total . '</td>';
 		echo '</tr>';
