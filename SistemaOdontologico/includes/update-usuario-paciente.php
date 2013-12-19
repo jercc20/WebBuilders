@@ -1,6 +1,6 @@
 <?php
 	if( $_POST ){
-		define('PAGE','editarUsuario');
+		define('PAGE','editarUsuarioPaciente');
 		require_once 'functions.php';
 		$id = ( isset( $_POST['idUsuario'] ) ) ? $_POST['idUsuario'] : '';
 		$name = ( isset( $_POST['txt_name'] ) ) ? $_POST['txt_name'] : '';
@@ -23,20 +23,18 @@
 		if(mysql_num_rows($result) > 0){
 			echo "La identificación/alias ya se encuentra en uso.";
 			exit();
-		}
-		
-		$query = "UPDATE tbusuarios SET nombre = '$name', primerApellido = '$lastname', segundoApellido = '$lastname2', identificacion = '$userId', 
+		if(!$encontro){
+			$query = "UPDATE tbusuarios SET nombre = '$name', primerApellido = '$lastname', segundoApellido = '$lastname2', identificacion = '$userId', 
 						 telefonoCasa = '$housePhn', telefonoCelular = '$CellPhn', correoElectronico = '$email', fechaNacimiento = '$birthSql', discapacidad = '$impmt', 
 						 idRol = '$role', alergias = '$alergie', domicilio = '$UserAdrs'";
 
-		if( ! empty( $_POST['txt-user-psw'] ) ){
-			$userPsw = md5($_POST['txt-user-psw']);
-			$query .= ", contrasenna = '$userPsw'";
-		}
-				
-		$query .= " WHERE idUsuario = '$id'";
-		echo do_query( $query );
-
+			if( ! empty( $_POST['txt-user-psw'] ) ){
+				$userPsw = md5($_POST['txt-user-psw']);
+				$query .= ", contrasenna = '$userPsw'";
+			}
+			$query .= " WHERE idUsuario = '$id'";
+			echo do_query( $query );
+			}
 		global $db_server;
 		mysql_close( $db_server );
 	}

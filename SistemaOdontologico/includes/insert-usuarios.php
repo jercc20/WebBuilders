@@ -18,23 +18,21 @@
 		$alergie = ( isset( $_POST['txt-user-alergie'] ) ) ? $_POST['txt-user-alergie'] : NULL;
 		$UserAdrs = ( isset( $_POST['txt-user-adress'] ) ) ? $_POST['txt-user-adress'] : NULL;
 
-		//probar
-		$query = "SELECT COUNT(identificacion) FROM tbusuarios WHERE identificacion = '$userId'";
-		$result = do_query( $query );
-		$resultRows = mysqli_num_rows($result); 
-		if( $resultRows > 0 ){
-			echo "Esta identificacion o alias se encuentra en uso";
+		$query= "SELECT identificacion FROM tbusuarios WHERE identificacion = '$userId'";
+		$result = do_query($query);
+		if(mysql_num_rows($result) > 0){
+			echo "La identificación/alias ya se encuentra en uso.";
 			exit();
 		}
+
 		$query = "INSERT INTO tbusuarios VALUES" . "('NULL','$name', '$lastname', '$lastname2', '$userId ', '$housePhn', 
 			      '$CellPhn', '$email', '$birthSql', '$impmt', '$role', '$userPsw', '$alergie', '$UserAdrs')";
-		
 		$result = do_query( $query );
+
 		if( $result == 1 ){
 			echo 'El usuario se ha creado exitosamente.';
 			js_redirect('consultar-usuarios.php', 2500);
 		}
-
 		global $db_server;
 		mysql_close( $db_server );
 	}

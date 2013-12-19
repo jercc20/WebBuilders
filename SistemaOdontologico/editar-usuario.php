@@ -16,9 +16,22 @@
 		</section>
 		<div class="ac cb">
 			<button class="form-cancel">Cancelar</button>
-			<button type="submit">Guardar</button>
+			<button type="submit" id="btnEnviar" >Guardar</button>
 		</div>
 	</form>
 <?php
 	require_once 'includes/footer.php';
 ?>
+<script type="text/javascript">
+document.getElementById('btnEnviar').addEventListener('click', validar);
+
+	function validar (e){
+		var txtContrasennaNueva = document.getElementById("user-psw").value,
+			txtContrasennaNueva2 = document.getElementById("user-cpsw").value;
+
+			if (! (txtContrasennaNueva === txtContrasennaNueva2)) {
+				SO.utils.showPopUp('Las contraseñas no son iguales');
+				e.preventDefault();
+			}
+	}		
+</script>

@@ -6,7 +6,7 @@ function display_usuarios_rows(){
 			echo '<td>' . $fila["nombre"]." ".$fila["primerApellido"]." ".$fila["segundoApellido"] . '</td>';
 			echo '<td>' . $fila["identificacion"] . '</td>';
 			echo '<td>' . $fila["nombreRol"] . '</td>';
-			echo '<td>' . $fila["telefonoCasa"] .' / '.$fila["telefonoCelular"]. '</td>';
+			echo '<td>' . $fila["telefonoCasa"] .( ( isset( $fila["telefonoCelular"] ) && $fila["telefonoCelular"] != 0 ) ? ' / ' . $fila["telefonoCelular"] : '' ). '</td>';
 			echo '<td>' . $fila["correoElectronico"] . '</td>';
 			echo '<td>' . $fila["domicilio"] . '</td>';
 			$id = $fila['idUsuario'];
@@ -31,7 +31,7 @@ function display_usuarios_secretaria_rows(){
 			echo '<td>' . $fila["nombre"]." ".$fila["primerApellido"]." ".$fila["segundoApellido"] . '</td>';
 			echo '<td>' . $fila["identificacion"] . '</td>';
 			echo '<td>' . $fila["nombreRol"] . '</td>';
-			echo '<td>' . $fila["telefonoCasa"] .' / '.$fila["telefonoCelular"]. '</td>';
+			echo '<td>' . $fila["telefonoCasa"] .( ( isset( $fila["telefonoCelular"] ) && $fila["telefonoCelular"] != 0 ) ? ' / ' . $fila["telefonoCelular"] : '' ). '</td>';
 			echo '<td>' . $fila["correoElectronico"] . '</td>';
 			echo '<td>' . $fila["domicilio"] . '</td>';
 			$id = $fila['idUsuario'];
@@ -111,13 +111,14 @@ function display_edit_usuarios_rows(){
 		echo "<label for='user-id'> Identificación</label>";
 		echo "<input id='user-id' name='txt_user'  type='text' value='$userId'/>";
 		echo "<label for='user-phone'> Teléfono principal</label>";
-		echo "<input id='user-phone' name='txt_phone' type='text' pattern='\d{8,10}' required='required' value='$housePhn'/>";
+		echo "<input id='user-phone' name='txt_phone' type='text' pattern='\d{8,10}' placeholder ='22222222' required='required' value='$housePhn'/>";
 		echo "<label for='user-cellphone'> Teléfono secundario</label>";
-		echo "<input id='user-cellphone' name='txt_cellphone' type='text' value='$CellPhn'/>";
+		echo "<input id='user-cellphone' name='txt_cellphone' type='text' placeholder ='22222222' value='$CellPhn'/>";
 		echo "<label for='user-email'> Correo electrónico</label>";
 		echo "<input id='user-email' name='txt_email' type='email'  required='required' value='$email'/>"; 
 		echo "<label for='user-birthday'> Fecha de nacimiento</label>";
-		echo "<input id='user-birthday' name='txt_birthday' type='text'  required='required' placeholder ='dd/mm/yyyy' class='datepicker' value='$datepickerBirth' />"; 
+		echo "<input id='user-birthday' name='txt_birthday' type='text'  required='required' pattern='(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d' 
+				placeholder ='dd/mm/yyyy' class='datepicker' value='$datepickerBirth' />"; 
 		echo "</section>";
 		echo "<section class='form-section fr'>";
 		echo "<label for='user-impairment'>Discapacidad</label>";
@@ -166,13 +167,14 @@ function display_edit_usuarios_paciente_rows(){
 		echo "<label for='user-id'> Identificación</label>";
 		echo "<input id='user-id' name='txt_user'  type='text' value='$userId'/>";
 		echo "<label for='user-phone'> Teléfono de la casa</label>";
-		echo "<input id='user-phone' name='txt_phone' type='text' pattern='\d{8,10}' required='required' value='$housePhn'/>";
+		echo "<input id='user-phone' name='txt_phone' type='text' pattern='\d{8,10}' placeholder ='22222222' required='required' value='$housePhn'/>";
 		echo "<label for='user-cellphone'> Teléfono celular</label>";
-		echo "<input id='user-cellphone' name='txt_cellphone' type='text' value='$CellPhn'/>";
+		echo "<input id='user-cellphone' name='txt_cellphone' type='text' placeholder ='22222222' value='$CellPhn'/>";
 		echo "<label for='user-email'> Correo electrónico</label>";
-		echo "<input id='user-email' name='txt_email' type='text'  required='required' value='$email'/>"; 
+		echo "<input id='user-email' name='txt_email' type='email'  required='required' value='$email'/>"; 
 		echo "<label for='user-birthday'> Fecha de nacimiento</label>";
-		echo "<input id='user-birthday' name='txt_birthday' type='text'  required='required' placeholder ='dd/mm/yyyy' class='datepicker' value='$datepickerBirth' />"; 
+		echo "<input id='user-birthday' name='txt_birthday' type='text'  required='required' placeholder ='dd/mm/yyyy' pattern='(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d' 
+				class='datepicker' value='$datepickerBirth' />"; 
 		echo "</section>";
 		echo "<section class='form-section fr'>";
 		echo "<label for='user-impairment'>Discapacidad</label>";

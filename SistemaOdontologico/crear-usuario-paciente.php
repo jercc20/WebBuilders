@@ -23,9 +23,10 @@
 				<label for="user-cellphone"> Teléfono celular</label>
 				<input id="user-cellphone" name="txt-user-cellphone" type="text"  pattern="\d{8,10}" />
 				<label for="user-email"> Correo electrónico</label>
-				<input id="user-email" name="txt-user-email" type="text"  required="required" />
+				<input id="user-email" name="txt-user-email" type="email"  required="required" />
 				<label for="user-birthday"> Fecha de nacimiento</label>
-				<input id="user-birthday" name="txt-user-birthday" type="text"  required="required" placeholder ="dd-mm-yyyy" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" class="datepicker" />
+				<input id="user-birthday" name="txt-user-birthday" type="text"  required="required" placeholder ="dd-mm-yyyy" 
+						pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" class="datepicker" />
 			</section>
 			<section class="form-section fr">
 				<label for="user-impairment">Discapacidad</label>
@@ -46,9 +47,22 @@
 			<div class="ac cb">
 				<button class="form-cancel">Cancelar</button>
 				<button type="reset">Limpiar</button>
-				<button type="submit">Guardar</button>
+				<button type="submit" id="btnEnviar">Guardar</button>
 			</div>
 		</form>
 <?php
 	require_once 'includes/footer.php';
 ?>
+<script type="text/javascript">
+document.getElementById('btnEnviar').addEventListener('click', validar);
+
+	function validar (e){
+		var txtContrasennaNueva = document.getElementById("user-psw").value,
+			txtContrasennaNueva2 = document.getElementById("user-cpsw").value;
+
+			if (! (txtContrasennaNueva === txtContrasennaNueva2)) {
+				SO.utils.showPopUp('Las contraseñas no son iguales');
+				e.preventDefault();
+			}
+	}		
+</script>

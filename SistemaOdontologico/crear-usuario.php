@@ -19,13 +19,14 @@
 				<label for="user-id"> Identificación o alias</label>
 				<input id="user-id" title="Esta sera su infomacion para ingresar sesion" name="txt-id-user"  type="text"  required="required" pattern="[a-zA-Z0-9]+" />
 				<label for="user-phone"> Teléfono principal</label>
-				<input id="user-phone" name="txt-user-house-phone" type="text" pattern="\d{8,10}" required="required" />
+				<input id="user-phone" name="txt-user-house-phone" type="text" pattern="\d{8,10}" placeholder ="22222222" required="required" />
 				<label for="user-cellphone"> Teléfono secundario</label>
-				<input id="user-cellphone" name="txt-user-cellphone" type="text"  pattern="\d{8,10}" />
+				<input id="user-cellphone" name="txt-user-cellphone" type="text"  placeholder ="22222222" pattern="\d{8,10}" />
 				<label for="user-email"> Correo electrónico</label>
 				<input id="user-email" name="txt-user-email" type="email"  required="required" />
 				<label for="user-birthday"> Fecha de nacimiento</label>
-				<input id="user-birthday" name="txt-user-birthday" type="text"  required="required" placeholder ="dd-mm-yyyy" class="datepicker" />
+				<input id="user-birthday" name="txt-user-birthday" type="text" required="required" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d"
+						placeholder ="dd-mm-yyyy" class="datepicker" />
 			</section>
 			<section class="form-section fr">
 				<label for="user-impairment">Discapacidad</label>
@@ -50,25 +51,18 @@
 			</div>
 		</form>
 <?php
-	require_once 'includes/footer.php';//probar
+	require_once 'includes/footer.php';
 ?>
 <script type="text/javascript">
 document.getElementById('btnEnviar').addEventListener('click', validar);
 
 	function validar (e){
-		var txtContrasennaNueva = document.getElementById('txt-user-psw').value,
-			txtConinputnaNueva2 = document.getElementById('psw-user-pnew').value;
+		var txtContrasennaNueva = document.getElementById("user-psw").value,
+			txtContrasennaNueva2 = document.getElementById("user-cpsw").value;
 
 			if (! (txtContrasennaNueva === txtContrasennaNueva2)) {
-				alert('Entró a contraseña nueva 2 y no son iguales');
 				SO.utils.showPopUp('Las contraseñas no son iguales');
 				e.preventDefault();
 			}
-			}else{
-				alert('Entró a contraseña actual, y no estaba');
-				SO.utils.showPopUp('Debe ingresar la contraseña actual');
-				e.preventDefault();
-			}
-		}
-	}
+	}		
 </script>

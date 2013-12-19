@@ -1,6 +1,6 @@
 <?php
 	if( $_POST ){
-		define('PAGE','crearUsuario');
+		define('PAGE','crearUsuarioPaciente');
 		require_once 'functions.php';
 
 		$name = ( isset( $_POST['txt-user-name'] ) ) ? $_POST['txt-user-name'] : '';
@@ -15,15 +15,22 @@
 		$role = ( isset( $_POST['slt-user-role'] ) ) ? $_POST['slt-user-role'] : '';
 		$userPsw = ( isset( $_POST['txt-user-psw'] ) ) ? md5( $_POST['txt-user-psw'] ) : '';
 		$alergie = ( isset( $_POST['txt-user-alergie'] ) ) ? $_POST['txt-user-alergie'] : '';
-		$UserAdrs = ( isset( $_POST['txt-user-alergie'] ) ) ? $_POST['txt-user-alergie'] : '';
+		$UserAdrs = ( isset( $_POST['txt-user-adress'] ) ) ? $_POST['txt-user-adress'] : '';
 		
+		$query= "SELECT identificacion FROM tbusuarios WHERE identificacion = '$userId'"; 
+		$result = do_query($query);
+		if(mysql_num_rows($result) > 0){
+			echo "La identificación/alias ya se encuentra en uso.";
+			exit();
+		}
+
 		$query = "INSERT INTO tbusuarios VALUES" . "('NULL','$name', '$lastname', '$lastname2', '$userId ', '$housePhn', 
-			      '$CellPhn', '$email', '$birth', '$impmt', '$role', '$userPsw', '$alergie', '$UserAdrs')";
-		
+			      '$CellPhn', '$email', '$birthSql', '$impmt', '$role', '$userPsw', '$alergie', '$UserAdrs')";
 		$result = do_query( $query );
+
 		if( $result == 1 ){
 			echo 'El usuario se ha creado exitosamente.';
-			js_redirect('consultar-usuarios-secretaria.php', 2500);
+			js_redirect('consultar-usuarios.php', 2500);
 		}
 
 		global $db_server;
