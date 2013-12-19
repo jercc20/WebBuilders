@@ -10,8 +10,8 @@ function display_odontogramas_rows(){
 						echo '<td>' . $fila["u_id"] . '</td>';
 						echo '<td>' . $fila["o_nombre"] . " ". $fila["o_apellido"] . '</td>';
 						echo '<td>' . $fila["fecha"] . '</td>';
-						//echo '<td>' . $fila["procedimiento"] . '</td>';
-						//echo '<td>' . $fila["costo"] . '</td>';
+						echo '<td>' . '</td>';
+						echo '<td>' . '</td>';
 						echo '<td><a href="editar-odontograma.php?idPaciente='  . $fila['idPaciente'] . '&idOdontograma=' . $fila['idOdontograma'] . '"><i class="icon-edit"></i></a><a href="#!?idOdontograma=' . $fila['idOdontograma'] . '"> <i class="icon-remove item-remove"></i></a></td>';
 					echo '</tr>';
 	}
