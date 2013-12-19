@@ -583,7 +583,7 @@ function display_reporte_usuarios_rows(){
 }
 
 function get_usuarios_custom(){
-	$query = "SELECT * FROM tbusuarios order by idRol";
+	$query = "SELECT * FROM tbusuarios";
 	if( ! empty( $_POST ) ){
 		$query .= " WHERE 1";
 
