@@ -991,7 +991,7 @@ function display_edit_usuarios_rows(){
 	$lastname2 = $fila['segundoApellido'];
 	$userId = $fila['identificacion'];
 	$housePhn = $fila['telefonoCasa'];
-	$CellPhn = $fila['telefonoCelular'] && $fila['telefonoCelular']!=0;
+	$CellPhn = ( $fila['telefonoCelular'] && $fila['telefonoCelular'] !=0 ) ? $fila['telefonoCelular'] : '';
 	$email = $fila['correoElectronico'];
 	$birth = $fila['fechaNacimiento'];
 	$datepickerBirth = do_date_format($birth);
@@ -1047,7 +1047,7 @@ function display_edit_usuarios_paciente_rows(){
 	$lastname2 = $fila['segundoApellido'];
 	$userId = $fila['identificacion'];
 	$housePhn = $fila['telefonoCasa'];
-	$CellPhn = $fila['telefonoCelular'] && $fila['telefonoCelular']!=0;
+	$CellPhn = ( $fila['telefonoCelular'] && $fila['telefonoCelular'] !=0 ) ? $fila['telefonoCelular'] : '';
 	$email = $fila['correoElectronico'];
 	$birth = $fila['fechaNacimiento'];
 	$datepickerBirth = do_date_format($birth);
