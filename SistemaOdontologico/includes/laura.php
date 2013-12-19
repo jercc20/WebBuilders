@@ -11,6 +11,7 @@ function display_odontogramas_rows(){
 						echo '<td>' . $fila["o_nombre"] . " ". $fila["o_apellido"] . '</td>';
 						echo '<td>' . $fila["fecha"] . '</td>';
 						//echo '<td>' . $fila["procedimiento"] . '</td>';
+						//echo '<td>' . $fila["costo"] . '</td>';
 						echo '<td><a href="editar-odontograma.php?idPaciente='  . $fila['idPaciente'] . '&idOdontograma=' . $fila['idOdontograma'] . '"><i class="icon-edit"></i></a><a href="#!?idOdontograma=' . $fila['idOdontograma'] . '"> <i class="icon-remove item-remove"></i></a></td>';
 					echo '</tr>';
 	}
@@ -122,7 +123,6 @@ function get_add_procedimientos_popup() {
 
 ################################ REPORTES ######################################################################################
 
-
 function display_reporte_citas_rows(){
 
 	$citas = ( ! empty( $_POST ) ) ? get_citas_custom() : get_citas();
@@ -140,61 +140,33 @@ function display_reporte_citas_rows(){
 	}
 }
 
-/*function display_reporte_procedimientos_rows(){
-	$procedimientos = ( ! empty( $_POST ) ) ? get_procedimientos_custom() : get_procedimientos();
-	while( $row = mysql_fetch_assoc( $procedimientos ) ){
-		$user = mysql_fetch_assoc( get_user_factura( $row['idProcedimiento'] ) );
-		$total = mysql_fetch_array( get_amount_odontograma( $row['idOdontograma'] ) );
-		$total = array_shift( $total );
-		$numAbonos = mysql_num_rows( get_abonos_factura( $row['idFactura'] ) );
-		$totalAbonos = mysql_fetch_array( get_total_abonos_factura( $row['idFactura'] ) );
-		$totalAbonos = array_shift( $totalAbonos );
-		echo '<tr>'.
-				'<td>' . $row['idFactura'] . '</td>'.
-				'<td>' . get_full_user_name( $user ) . '</td>'.
-				'<td>' . $user['identificacion'] . '</td>'.
-				'<td>' . $total . '</td>'.
-				'<td>' . $numAbonos . '</td>'.
-				'<td>' . do_minus( $total, $totalAbonos ) . '</td>'.
-			'</tr>';
-	}
-}
-
-function get_procedimientos_custom(){
-	$query = "SELECT * FROM tbfacturas";
+function get_citas_custom(){
+	$query = "SELECT * FROM tbcitas order by id";
 	if( ! empty( $_POST ) ){
-		if( ! empty( $_POST['txt-patient-id'] ) ||
-			! empty( $_POST['txt-patient-name'] ) ||
-			! empty( $_POST['txt-patient-lastname'] ) ){
-			$query .= " JOIN tbodontogramas USING(idOdontograma)";
-			$query .= " JOIN tbusuarios ON idPaciente = idUsuario";
-		}
 		$query .= " WHERE 1";
-		if( ! empty( $_POST['txt-patient-id'] ) )
-			$query .= " AND identificacion LIKE ('%" . $_POST['txt-patient-id'] . "%')";
-		if( ! empty( $_POST['txt-patient-name'] ) )
-			$query .= " AND nombre LIKE ('%" . $_POST['txt-patient-name'] . "%')";
-		if( ! empty( $_POST['txt-patient-lastname'] ) )
-			$query .= " AND primerApellido LIKE ('%" . $_POST['txt-patient-lastname'] . "%')";
-		if( ! empty( $_POST['txt-start-date'] ) && ! empty( $_POST['txt-end-date'] ) )
-			$query .= " AND fecha BETWEEN '" . do_sql_date_format( $_POST['txt-start-date'] ) . "' AND '" . do_sql_date_format( $_POST['txt-end-date'] ) . "'";
-		elseif( ! empty( $_POST['txt-start-date'] ) )
-			$query .= " AND fecha >= '" . do_sql_date_format( $_POST['txt-start-date'] ) . "'";
-		elseif( ! empty( $_POST['txt-end-date'] ) )
-			$query .= " AND fecha <= '" . do_sql_date_format( $_POST['txt-end-date'] ) . "'";
+
+		if( ! empty( $_POST['user-id'] ) )
+			$query .= " AND identificacion LIKE ('%" . $_POST['user-id'] . "%')";
+		if( ! empty( $_POST['txt-user-name'] ) )
+			$query .= " AND nombre LIKE ('%" . $_POST['txt-user-name'] . "%')";
+		if( ! empty( $_POST['txt-user-lastname'] ) )
+			$query .= " AND primerApellido LIKE ('%" . $_POST['txt-user-lastname'] . "%')";
+		if ( ! empty( $_POST['user-rol'] ) && $_POST['user-rol'] !=0 )
+			$query .= " AND idRol = " . $_POST['user-rol'] . "";
 	}
 	$result = do_query( $query );
 
 	return $result;
 }
-*/
+
+################################################################################################################################
 function display_reporte_odontogramas_rows(){
 
-	$bitacoras = ( ! empty( $_POST ) ) ? get_bitacoras_custom() : get_bitacoras();
-	while( $fila = mysql_fetch_assoc($bitacoras) ){
+	$odontograma = ( ! empty( $_POST ) ) ? get_odontograma_custom() : get_odontograma();
+	while( $fila = mysql_fetch_assoc($odontograma) ){
 
-		echo '<tr>';
-			echo '<td>' . $fila["idBitacora"] . '</td>';
+		echo '<tr>';  
+			echo '<td>' . $fila["idOdontograma"] . '</td>';
 			echo '<td>' . $fila["u_nombre"] . " ".$fila["u_apellido"] . '</td>';
 			echo '<td>' . $fila["u_id"] . '</td>';
 			echo '<td>' . $fila["o_nombre"] . " ". $fila["o_apellido"] . '</td>';
@@ -204,5 +176,40 @@ function display_reporte_odontogramas_rows(){
 
 	}
 }
+
+function get_odontograma_custom(){
+	$query = "SELECT * FROM tbodontogramas order by id";
+	if( ! empty( $_POST ) ){
+		$query .= " WHERE 1";
+
+		if( ! empty( $_POST['user-id'] ) )
+			$query .= " AND identificacion LIKE ('%" . $_POST['user-id'] . "%')";
+		if( ! empty( $_POST['txt-user-name'] ) )
+			$query .= " AND nombre LIKE ('%" . $_POST['txt-user-name'] . "%')";
+		if( ! empty( $_POST['txt-user-lastname'] ) )
+			$query .= " AND primerApellido LIKE ('%" . $_POST['txt-user-lastname'] . "%')";
+		if ( ! empty( $_POST['user-rol'] ) && $_POST['user-rol'] !=0 )
+			$query .= " AND idRol = " . $_POST['user-rol'] . "";
+	}
+	$result = do_query( $query );
+
+	return $result;
+}
+
+function get_odontograma(){
+	$query = "SELECT b.*, 
+			u.nombre AS u_nombre, 
+			o.nombre AS o_nombre, 
+			o.primerApellido AS o_apellido,
+			u.primerApellido AS u_apellido,
+			u.identificacion AS u_id
+					FROM tbbitacoras AS b
+					LEFT JOIN tbusuarios AS u ON (u.idUsuario = b.idPaciente)
+					LEFT JOIN tbusuarios AS o ON (o.idUsuario = b.idOdontologo)";
+
+	$result=do_query($query);
+	return $result;
+}
+?>
 
 ?>

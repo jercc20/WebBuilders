@@ -1,5 +1,5 @@
 <?php
-        define('PAGE','consultarOdontograma');
+        define('PAGE','consultarOdontogramas');
         define('TITLE','Consultar Odontogramas');
         $pageConfig = array(
                 'actions' => array(),
@@ -22,8 +22,8 @@
                                 <th>Nombre del odontólogo</th>
                                 <th>Última Fecha realizada</th>
                                 <th>Número de procedimientos</th>
-                                <th>Costo total</th>
-                                <th class="column-icons"></th>
+                                <!--<th>Costo total</th>
+                                <th class="column-icons"></th>-->
                         </tr>
                 </thead>
                 <tbody>
