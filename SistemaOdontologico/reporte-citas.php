@@ -17,9 +17,11 @@
 				<thead>
 					<tr>
 	                    <th>Nombre del paciente</th>
-	                    <th>Identificación del paciente</th>
-	                    <th>Fecha Inicio</th>
-	                    <th>Fecha de Fin</th>
+	                    <th>Identificación</th>
+	                    <th>Nombre del Odontólogo</th>
+	                    <th>Fecha</th>
+	                    <th>Hora</th>
+	                    <th>Notas</th>
 					</tr>
 				</thead>
 				<tbody>

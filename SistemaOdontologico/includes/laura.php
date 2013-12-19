@@ -128,39 +128,50 @@ function get_add_procedimientos_popup() {
 
 function display_reporte_citas_rows(){
 
-	$citas = ( ! empty( $_POST ) ) ? get_citas_custom() : get_citas();
-	while( $fila = mysql_fetch_assoc($citas) ){
-
+	$citas = get_citas_custom();
+	while ($fila = mysql_fetch_assoc($citas)) {
 		echo '<tr>';
-			echo '<td>' . $fila["idCita"] . '</td>';
-			echo '<td>' . $fila["u_nombre"] . " ".$fila["u_apellido"] . '</td>';
-			echo '<td>' . $fila["u_id"] . '</td>';
-			echo '<td>' . $fila["o_nombre"] . " ". $fila["o_apellido"] . '</td>';
-			echo '<td>' . $fila["fecha"] . '</td>';
-			echo '<td>' . $fila["procedimiento"] . '</td>';
+			echo '<td>' . $fila["p_nombre"] . " " . $fila["p_apellido"] . '</td>';
+			echo '<td>' . $fila["p_id"] . '</td>';
+			echo '<td>' . $fila["o_nombre"] . " " . $fila["o_apellido"] . '</td>';
+			echo '<td>' . do_date_format( $fila["fecha"] ) . '</td>';
+			echo '<td>' . do_time_format( $fila["hora"] ) . '</td>';
+			echo '<td>' . $fila["notas"] . '</td>';
 		echo '</tr>';
-
 	}
 }
-
 function get_citas_custom(){
-	$query = "SELECT * FROM tbcitas order by id";
-	if( ! empty( $_POST ) ){
-		$query .= " WHERE 1";
+	$query = "SELECT c.*, p.nombre AS p_nombre,
+				o.nombre AS o_nombre,
+				p.primerApellido AS p_apellido,
+				o.primerApellido AS o_apellido,
+				p.identificacion AS p_id
+					FROM tbcitas AS c
+					LEFT JOIN tbusuarios AS p ON (p.idUsuario = c.idPaciente)
+					LEFT JOIN tbusuarios AS o ON (o.idUsuario = c.idOdontologo)";
 
-		if( ! empty( $_POST['user-id'] ) )
-			$query .= " AND identificacion LIKE ('%" . $_POST['user-id'] . "%')";
-		if( ! empty( $_POST['txt-user-name'] ) )
-			$query .= " AND nombre LIKE ('%" . $_POST['txt-user-name'] . "%')";
-		if( ! empty( $_POST['txt-user-lastname'] ) )
-			$query .= " AND primerApellido LIKE ('%" . $_POST['txt-user-lastname'] . "%')";
-		if ( ! empty( $_POST['user-rol'] ) && $_POST['user-rol'] !=0 )
-			$query .= " AND idRol = " . $_POST['user-rol'] . "";
+	if( ! empty( $_POST ) ){
+		if( ! empty( $_POST['txt-patient-id'] ) ||
+			! empty( $_POST['txt-patient-name'] ) ){
+					
+		}
+		$query .= " WHERE 1";
+		if( ! empty( $_POST['txt-patient-id'] ) )
+			$query .= " AND p.identificacion LIKE ('%" . $_POST['txt-patient-id'] . "%')";
+		if( ! empty( $_POST['txt-patient-name'] ) )
+			$query .= " AND p.nombre LIKE ('%" . $_POST['txt-patient-name'] . "%')";
+		if( ! empty( $_POST['txt-start-date'] ) && ! empty( $_POST['txt-end-date'] ) )
+			$query .= " AND fecha BETWEEN '" . do_sql_date_format( $_POST['txt-start-date'] ) . "' AND '" . do_sql_date_format( $_POST['txt-end-date'] ) . "'";
+		elseif( ! empty( $_POST['txt-start-date'] ) )
+			$query .= " AND fecha >= '" . do_sql_date_format( $_POST['txt-start-date'] ) . "'";
+		elseif( ! empty( $_POST['txt-end-date'] ) )
+			$query .= " AND fecha <= '" . do_sql_date_format( $_POST['txt-end-date'] ) . "'";
 	}
 	$result = do_query( $query );
 
 	return $result;
 }
+
 
 ################################################################################################################################
 function display_reporte_odontogramas_rows(){
