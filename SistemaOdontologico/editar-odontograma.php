@@ -1,5 +1,5 @@
 <?php
-	define('PAGE','editar-odontograma');
+	define('PAGE','editarOdontograma');
 	define('TITLE','Editar Odontograma');
 	$pageConfig = array(
 		'plugins'=> array('datepicker')
