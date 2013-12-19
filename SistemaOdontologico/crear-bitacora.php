@@ -1,15 +1,13 @@
 <?php
-	define('PAGE','registrarBitacora'); //nombre de la pagina
-	define('TITLE','Crear Bitacora'); //titulo de la pagina
+	define('PAGE','registrarBitacora');
+	define('TITLE','Crear Bitacora');
 	$pageConfig = array(
-		'actions' => array(), //array con las acciones adicionales de la pagina (editar, borrar, etc)php
-		'plugins'=> array('datepicker') //para incluir archivos de plugins (datatable, calendar, datepicker, print, etc)
+		'plugins'=> array('datepicker')
 	);
 	require_once 'includes/functions.php';
 	require_once 'includes/header.php';
-	
+
 		$idUsuario = ( isset( $_GET['id'] ) ) ? $_GET['id'] : '';
-		//debug_query(get_procedimientos_popup(5));
 ?>
 		<h1 class='ac'>Crear Bitácora</h1>
 			<form class='form-add box-wrap clearfix' method='post' action='includes/insert-bitacora.php'>
@@ -29,7 +27,7 @@
 					<label for='txt-asistentes'>Asistentes que participaron</label>
 					<textarea id='txt-asistentes' name='txt-asistentes'></textarea>
 
-				</section>	
+				</section>
 				<section class='form-section fr'>
 
 					<input id='procedure-number' name='txt-procedure-number' type='hidden' value="1" />
@@ -61,6 +59,6 @@
 							<button class="close btn-ac">Cancelar</button>
 						</div>
 					</div>
-<?php 				
+<?php
 	require_once 'includes/footer.php';
 ?>

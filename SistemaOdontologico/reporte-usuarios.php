@@ -2,7 +2,6 @@
 	define('PAGE','reporteUsuarios');
 	define('TITLE','Reporte de usuarios');
 	$pageConfig = array(
-		'actions' => array(),
 		'plugins'=> array('datatable', 'print')
 	);
 	require_once 'includes/functions.php';

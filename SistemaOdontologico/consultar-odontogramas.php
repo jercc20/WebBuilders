@@ -2,12 +2,10 @@
         define('PAGE','consultarOdontogramas');
         define('TITLE','Consultar Odontogramas');
         $pageConfig = array(
-                'actions' => array(),
                 'plugins'=> array('datatable')
         );
         require_once 'includes/functions.php';
         require_once 'includes/header.php';
-        require_once 'includes/laura.php';
 ?>
         <h1 class="ac">Consultar Odontogramas</h1>
         <div id="add-user">

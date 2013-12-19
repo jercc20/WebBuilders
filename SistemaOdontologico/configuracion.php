@@ -2,7 +2,6 @@
 	define('PAGE','editarInformacion');
 	define('TITLE','Configuracion del sistema');
 	$pageConfig = array(
-		'actions' => array(),
 		'plugins'=> array()
 	);
 	require_once 'includes/functions.php';

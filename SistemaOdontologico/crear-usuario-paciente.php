@@ -15,7 +15,7 @@
 				<label for="user-lastname">Primer apellido</label>
 				<input id="user-lastname" name="txt-user-lastname" required="required" type="text"  pattern="|^[a-zA-Z ñÑáéíóúüÁÉÍÓÚç]*$|"/>
 				<label for="user-lastname2"> Segundo apellido</label>
-				<input id="user-lastname2" name="txt-user-lastname2" type="text"  pattern=pattern="|^[a-zA-Z ñÑáéíóúüÁÉÍÓÚç]*$|" />
+				<input id="user-lastname2" name="txt-user-lastname2" type="text" pattern="|^[a-zA-Z ñÑáéíóúüÁÉÍÓÚç]*$|" />
 				<label for="user-id"> Identificación o alias</label>
 				<input id="user-id" title="Esta sera su infomacion para ingresar sesion" name="txt-id-user"  type="text"  required="required" pattern="[a-zA-Z0-9]+" />
 				<label for="user-phone"> Teléfono principal</label>
@@ -25,7 +25,7 @@
 				<label for="user-email"> Correo electrónico</label>
 				<input id="user-email" name="txt-user-email" type="email"  required="required" />
 				<label for="user-birthday"> Fecha de nacimiento</label>
-				<input id="user-birthday" name="txt-user-birthday" type="text"  required="required" placeholder ="dd-mm-yyyy" 
+				<input id="user-birthday" name="txt-user-birthday" type="text"  required="required" placeholder ="dd-mm-yyyy"
 						pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" class="datepicker" />
 			</section>
 			<section class="form-section fr">
@@ -64,5 +64,5 @@ document.getElementById('btnEnviar').addEventListener('click', validar);
 				SO.utils.showPopUp('Las contraseñas no son iguales');
 				e.preventDefault();
 			}
-	}		
+	}
 </script>

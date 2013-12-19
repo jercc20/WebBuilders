@@ -2,7 +2,6 @@
 	define('PAGE','editarRol');
 	define('TITLE','Editar rol');
 	$pageConfig = array(
-		'actions' => array(),
 		'plugins'=> array()
 	);
 	require_once 'includes/functions.php';

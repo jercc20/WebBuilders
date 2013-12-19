@@ -2,7 +2,6 @@
 	define('PAGE','crearRol');
 	define('TITLE','Crear Rol');
 	$pageConfig = array(
-		'actions' => array(),
 		'plugins'=> array()
 	);
 	require_once 'includes/functions.php';

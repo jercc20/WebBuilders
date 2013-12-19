@@ -2,7 +2,6 @@
 	define('PAGE','reporteCitas');
 	define('TITLE','Reporte Citas');
 	$pageConfig = array(
-		'actions' => array(),
 		'plugins'=> array('datatable', 'datepicker', 'print')
 	);
 	require_once 'includes/functions.php';

@@ -2,7 +2,6 @@
 	define('PAGE','reporteOdontogramas');
 	define('TITLE','Reporte odontogramas');
 	$pageConfig = array(
-		'actions' => array(),
 		'plugins'=> array('datatable', 'datepicker', 'print')
 	);
 	require_once 'includes/functions.php';

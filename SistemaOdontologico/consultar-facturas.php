@@ -2,7 +2,6 @@
 	define('PAGE','consultarFacturas');
 	define('TITLE','Consultar Facturas');
 	$pageConfig = array(
-		'actions' => array(),
 		'plugins'=> array('datatable')
 	);
 	require_once 'includes/functions.php';

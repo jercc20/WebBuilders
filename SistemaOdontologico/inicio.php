@@ -2,7 +2,6 @@
 	define('PAGE','inicio');
 	define('TITLE','Inicio');
 	$pageConfig = array(
-		'actions' => array(),
 		'plugins'=> array('datatable')
 	);
 	require_once 'includes/functions.php';

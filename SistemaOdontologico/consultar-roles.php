@@ -2,7 +2,6 @@
 	define('PAGE','consultarRoles');
 	define('TITLE','Consultar Roles');
 	$pageConfig = array(
-		'actions' => array(),
 		'plugins'=> array('datatable')
 	);
 	require_once 'includes/functions.php';

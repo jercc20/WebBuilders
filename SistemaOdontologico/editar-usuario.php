@@ -1,8 +1,8 @@
 <?php
-	define('PAGE','editarUsuario'); //nombre de la pagina
-	define('TITLE','Editar Usuario'); //titulo de la pagina
+	define('PAGE','editarUsuario');
+	define('TITLE','Editar Usuario');
 	$pageConfig = array(
-		'plugins'=> array('datepicker') //para incluir archivos de plugins (datatable, calendar, datepicker, print, etc)
+		'plugins'=> array('datepicker')
 	);
 	require_once 'includes/functions.php';
 	require_once 'includes/header.php';
@@ -33,5 +33,5 @@ document.getElementById('btnEnviar').addEventListener('click', validar);
 				SO.utils.showPopUp('Las contraseñas no son iguales');
 				e.preventDefault();
 			}
-	}		
+	}
 </script>

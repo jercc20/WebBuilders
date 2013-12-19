@@ -2,7 +2,6 @@
 	define('PAGE','consultarUsuariosPacientes');
 	define('TITLE','Consultar Usuarios');
 	$pageConfig = array(
-		'actions' => array(),
 		'plugins'=> array('datatable')
 	);
 	require_once 'includes/functions.php';

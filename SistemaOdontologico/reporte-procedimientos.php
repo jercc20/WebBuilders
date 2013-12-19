@@ -2,7 +2,6 @@
 	define('PAGE','reporteProcedimientos');
 	define('TITLE','Reporte Procedimientos');
 	$pageConfig = array(
-		'actions' => array(),
 		'plugins'=> array('datatable', 'datepicker', 'print')
 	);
 	require_once 'includes/functions.php';

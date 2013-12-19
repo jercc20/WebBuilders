@@ -2,7 +2,6 @@
 	define('PAGE','consultarAbonos');
 	define('TITLE','Consultar Abonos');
 	$pageConfig = array(
-		'actions' => array(),
 		'plugins'=> array('datatable')
 	);
 	require_once 'includes/functions.php';

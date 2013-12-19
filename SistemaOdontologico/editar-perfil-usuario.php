@@ -2,7 +2,6 @@
 	define('PAGE','perfil');
 	define('TITLE','Editar el perfil del usuario');
 	$pageConfig = array(
-		'actions' => array(),
 		'plugins'=> array('datepicker')
 	);
 	require_once 'includes/functions.php';

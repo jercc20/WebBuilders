@@ -2,7 +2,6 @@
 	define('PAGE','login');
 	define('TITLE','Iniciar sesión');
 	$pageConfig = array(
-		'actions' => array(),
 		'plugins'=> array()
 	);
 	require_once 'includes/functions.php';

@@ -2,7 +2,6 @@
 	define('PAGE','crearAbono');
 	define('TITLE','Crear Abono');
 	$pageConfig = array(
-		'actions' => array(),
 		'plugins'=> array('datepicker')
 	);
 	require_once 'includes/functions.php';

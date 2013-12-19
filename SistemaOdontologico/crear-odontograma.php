@@ -2,7 +2,6 @@
 	define('PAGE','registrarOdontograma');
 	define('TITLE','Crear Odontograma');
 	$pageConfig = array(
-		'actions' => array(),
 		'plugins'=> array('datepicker')
 	);
 	require_once 'includes/functions.php';

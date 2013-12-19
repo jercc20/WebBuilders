@@ -2,7 +2,6 @@
 	define('PAGE','consultarProcedimientos');
 	define('TITLE','Consultar Procedimientos');
 	$pageConfig = array(
-		'actions' => array(),
 		'plugins'=> array('datatable')
 	);
 	require_once 'includes/functions.php';
