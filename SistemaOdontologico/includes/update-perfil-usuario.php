@@ -32,7 +32,7 @@
 				$query .= ", contrasenna = '$contrasennaNueva'";
 
 			}else{
-				echo 'Contraseña actual incorrecta';
+				echo 'Contraseña actual incorrecta.';
 				exit();
 			}
 		}
@@ -41,7 +41,7 @@
 
 		$result = do_query( $query );
 		if( $result == 1 ){
-			echo 'Perfil modificado con exito';
+			echo 'Perfil modificado con exito.';
 			js_redirect('editar-perfil-usuario.php', 4000);
 		}
 

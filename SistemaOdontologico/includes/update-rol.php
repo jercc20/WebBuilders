@@ -65,11 +65,11 @@
 
 		$result = do_query( $query );
 		if( $result == 1 ){
-			echo 'Rol modificado con exito';
+			echo 'Rol modificado con exito.';
 			js_redirect('consultar-roles.php', 4000);
 		}
 		}else{
-			echo "El nombre ingresado para el rol ya está en uso";
+			echo "El nombre ingresado para el rol ya está en uso.";
 			exit();
 		}
 

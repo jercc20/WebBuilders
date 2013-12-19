@@ -62,11 +62,11 @@ document.getElementById('btnEnviar').addEventListener('click', validar);
 		if (txtContrasennaNueva.length > 0) {
 			if (txtContrasennaActual.length > 0) {
 				if (! (txtContrasennaNueva === txtContrasennaNueva2)) {
-					SO.utils.showPopUp('Las contraseñas no son iguales');
+					SO.utils.showPopUp('Las contraseñas no son iguales.');
 					e.preventDefault();
 				}
 			}else{
-				SO.utils.showPopUp('Debe ingresar la contraseña actual');
+				SO.utils.showPopUp('Debe ingresar la contraseña actual.');
 				e.preventDefault();
 			}
 		}

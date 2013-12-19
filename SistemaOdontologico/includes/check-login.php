@@ -18,7 +18,7 @@
 			echo 'Iniciando sesión...';
 			js_redirect('inicio.php', 2500);
 		}else{
-			echo 'Usuario o contraseña incorrectas';
+			echo 'Usuario o contraseña incorrectas.';
 			exit();
 		}
 
