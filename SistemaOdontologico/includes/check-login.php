@@ -19,7 +19,7 @@
 			js_redirect('inicio.php', 2500);
 		}else{
 			echo 'Usuario o contraseña incorrectas';
-			js_redirect('login.php',2500);
+			exit();
 		}
 
 		/* ---- */

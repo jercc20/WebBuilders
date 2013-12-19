@@ -11,7 +11,7 @@
 		$time = do_sql_time_format( $hour, $minutes );
 		$cita = ( isset( $_POST['slt-cita'] ) ) ? $_POST['slt-cita'] : '';
 		$id_dentist = ( isset( $_POST['slt-odontologo'] ) ) ? $_POST['slt-odontologo'] : '';
-		$notes = ( isset( $_POST['txt-notes'] ) ) ? $_POST['txt-notes'] : '';
+		$notes = ( isset( $_POST['txt-notes'] ) ) ? $_POST['txt-notes'] : NULL;
 
 		$query = "UPDATE tbcitas SET fecha = '$dateSql', hora = '$time', tipoCita = '$cita', idOdontologo = '$id_dentist', notas = '$notes'
 					WHERE idCita = '$id'";

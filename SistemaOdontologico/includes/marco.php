@@ -28,7 +28,7 @@ function display_citas_rows(){
 			echo '<td>' . $fila["p_id"] . '</td>';
 			echo '<td>' . $fila["o_nombre"] . " " . $fila["o_apellido"] . '</td>';
 			echo '<td>' . $fila["tipoCita"] . '</td>';
-			echo '<td>' . $fila["fecha"] . '</td>';
+			echo '<td>' . do_date_format( $fila["fecha"] ) . '</td>';
 			echo '<td>' . do_time_format( $fila["hora"] ) . '</td>';
 			echo '<td>' . $fila["notas"] . '</td>';
 			echo '<td><a href="editar-cita.php?idPaciente=' . $fila['idPaciente'] . '&idCita=' . $fila['idCita'] . '"><i class="icon-edit"></i></a><a href="#!?idCita=' . $fila['idCita'] . '"><i class="icon-remove item-remove"></i></a></td>';
@@ -123,7 +123,7 @@ function display_editar_cita_2_rows(){
 	$editarCita_2 = get_editar_cita_2();
 
 	$fila = mysql_fetch_array($editarCita_2);
-	$date = $fila['fecha'];
+	$date = do_date_format ( $fila['fecha'] );
 	$hour = split_time( $fila['hora'] );
 	$tipoCita = $fila['tipoCita'];
 	$odontologo = $fila['idOdontologo'];
@@ -210,10 +210,10 @@ function menu_desplegable_usuarios($id,$valor,$nombre){
 	echo "<select name='$nombre'>";
 	while ($fila=mysql_fetch_row($result)){
 	if ($fila[0]==$valor){
-		echo "<option selected value='$fila[0]'>$fila[1] $fila[2] $fila[3]</option>";
+		echo "<option selected value='$fila[0]'>$fila[1] $fila[2] - $fila[3]</option>";
 	}
 	else{
-		echo "<option value='$fila[0]'>$fila[1] $fila[2] $fila[3]</option>";
+		echo "<option value='$fila[0]'>$fila[1] $fila[2] - $fila[3]</option>";
 	}
   }
    echo "</select>";

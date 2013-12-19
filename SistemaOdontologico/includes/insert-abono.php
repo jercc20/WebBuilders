@@ -1,6 +1,6 @@
 <?php
 	if( $_POST ){
-		define('PAGE','crear-abono');
+		define('PAGE','crearAbono');
 		require_once 'functions.php';
 
 		if( isset( $_POST['txt-bill-num'] ) && ! empty( $_POST['txt-bill-num'] )  ){
