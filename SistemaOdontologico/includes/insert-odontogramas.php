@@ -30,6 +30,8 @@
 
 			}
 
+			crear_factura( $idOdontograma );
+
 			echo 'El odontograma se ha creado exitosamente.';
 			js_redirect('consultar-odontogramas.php', 2500);
 		}

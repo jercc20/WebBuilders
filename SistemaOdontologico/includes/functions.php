@@ -464,4 +464,10 @@ function get_banner(){
 
 	return $result;
 }
+function crear_factura( $idOdontograma ){
+	$query = "INSERT INTO tbfacturas VALUES (NULL , '$idOdontograma')";
+	$result = do_query( $query );
+
+	return $result;
+}
 ?>
