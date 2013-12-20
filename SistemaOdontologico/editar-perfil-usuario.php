@@ -21,7 +21,7 @@
 			<label for="user-lastname">Apellido</label>
 			<input id="user-lastname" name="txt-user-lastname" type="text" required="required" <?php echo 'value="'. $tabla["primerApellido"] .'"' ?> />
 			<label for="user-lastname2">Segundo apellido</label>
-			<input id="user-lastname2" name="txt-user-lastname2" type="text" value="Campos" <?php if($tabla["segundoApellido"]) echo 'value="'. $tabla["segundoApellido"] .'"' ?>  />
+			<input id="user-lastname2" name="txt-user-lastname2" type="text" <?php if($tabla["segundoApellido"]) echo 'value="'. $tabla["segundoApellido"] .'"' ?>  />
 			<label for="user-phone">Teléfono principal</label>
 			<input id="user-phone" name="txt-user-phone" type="text" required <?php if(isset($tabla["telefonoCasa"]) && $tabla["telefonoCasa"] != 0)  echo 'value="'. $tabla["telefonoCasa"] .'"' ?> pattern="[\d]{8,10}" placeholder="22222222" />
 			<label for="user-cellphone">Teléfono secundario</label>
